@@ -10,7 +10,7 @@ Amplify.configure(config)
 
 function SignOutButton() {
   const { signOut } = useAuthenticator();
-  return <Button title="Sign Out" onPress={signOut} />;
+  return <Button color='#ffffff' title="Sign Out" onPress={signOut} />;
 }
 
 export default function App() {
@@ -25,7 +25,7 @@ export default function App() {
         ]}
       >
         <View style={style.container}>
-          <SignOutButton />
+          <SignOutButton  />
         </View>
       </Authenticator>
     </Authenticator.Provider>
@@ -33,5 +33,6 @@ export default function App() {
 }
 
 const style = StyleSheet.create({
-  container: { flex: 1, alignItems: 'center', justifyContent: 'center' },
+  container: { flex: 1, alignItems: 'center', justifyContent: 'center', backgroundColor: '#E33737'},
+  button: {},
 });
