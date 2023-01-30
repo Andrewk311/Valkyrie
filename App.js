@@ -38,11 +38,6 @@ const Navigator = createAppContainer(AppNavigator);
 
 Amplify.configure(config)
 
-function SignOutButton() {
-  const { signOut } = useAuthenticator();
-  return <Button color='#ffffff' title="Sign Out" onPress={signOut} />;
-}
-
 export default function App() {
   return (
     <Authenticator.Provider>
