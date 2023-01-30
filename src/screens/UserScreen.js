@@ -9,8 +9,7 @@ const User = () => {
       <Text style={{ color: "#006600", fontSize: 40 }}>
         User Screen!
       </Text>
-      <Ionicons name="ios-person-circle-outline" 
-                size={80} color="#006600" />
+      <Ionicons name="ios-person-circle-outline" size={80} color="#006600" />
     </View>
   );
 };

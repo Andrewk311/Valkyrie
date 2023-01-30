@@ -1,6 +1,8 @@
 import React from "react";
-import { Text, View } from "react-native";
+import { Text, View, Button } from "react-native";
 import { Ionicons } from "@expo/vector-icons";
+import {Item, HeaderButton, HeaderButtons,} from "react-navigation-header-buttons";
+
   
 const Settings = () => {
   return (
@@ -10,5 +12,29 @@ const Settings = () => {
     </View>
   );
 };
+
+const HeaderButtonComponent = (props) => (
+    <HeaderButton
+      IconComponent={Ionicons}
+      iconSize={23}
+      color="#FFF"    //changed the color of the settings wheel at the top of the home screen but when deleted nothing changes 
+      {...props}
+    />
+  );
+
+Settings.navigationOptions = (navData) => {
+    return {
+      headerTitle: "Settings",
+      headerRight: () => (
+      <HeaderButtons HeaderButtonComponent={HeaderButtonComponent}>
+          <Item
+          title="User"
+          iconName="person-outline"
+          onPress={() => navData.navigation.navigate("User")}
+          />
+      </HeaderButtons>
+      ),
+    };
+  };
   
 export default Settings;

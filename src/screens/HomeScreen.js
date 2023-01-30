@@ -1,14 +1,10 @@
 import React, { useState } from "react";
 import { Text, View, TextInput, Button, StyleSheet} from "react-native";
 import { Ionicons } from "@expo/vector-icons";
-import {
-  Item,
-  HeaderButton,
-  HeaderButtons,
-} from "react-navigation-header-buttons";
+import {Item, HeaderButton, HeaderButtons,} from "react-navigation-header-buttons";
 import { Authenticator, useAuthenticator } from '@aws-amplify/ui-react-native';
 import { withAuthenticator } from 'aws-amplify-react-native'
-  
+
 const Home = (props) => {
   const [input, setInput] = useState("");
   return (
@@ -27,8 +23,9 @@ const Home = (props) => {
                     color="#006600"
                     onPress={() => props.navigation.navigate("User", { username: input })}
                 />
+                <SignOutButton />
             </View>
-            <SignOutButton />
+            
         </Authenticator>
     </Authenticator.Provider>
   );
@@ -38,7 +35,7 @@ const HeaderButtonComponent = (props) => (
   <HeaderButton
     IconComponent={Ionicons}
     iconSize={23}
-    color="#FFF"
+    color="#FFF" 
     {...props}
   />
 );
@@ -59,7 +56,15 @@ Home.navigationOptions = (navData) => {
         onPress={() => navData.navigation.navigate("Setting")}
         />
     </HeaderButtons>
-
+    ),
+    headerLeft: () => (
+    <HeaderButtons HeaderButtonComponent={HeaderButtonComponent}>
+        <Item 
+        title="User"
+        iconName="person-outline"
+        onPress={() => navData.navigation.navigate("User")}
+        />
+    </HeaderButtons>
     ),
   };
 };
