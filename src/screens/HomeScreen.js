@@ -18,7 +18,7 @@ const Home = (props) => {
                 <Text style={{ color: "#006600", fontSize: 40 }}>Home Screen!</Text>
                     <Ionicons name="ios-home" size={80} color="#006600" />
                         <TextInput
-                            placeholder="Enter your name"
+                            placeholder="Enter your name!"
                             value={input} 
                             onChangeText={(value) => setInput(value)}
                         />
