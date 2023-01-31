@@ -1,6 +1,6 @@
 import React from 'react';
 import { Button } from 'react-native';
-import { StyleSheet, Text, View } from 'react-native';
+import { StyleSheet, Text, View, Dimensions } from 'react-native';
 import { Authenticator, useAuthenticator } from '@aws-amplify/ui-react-native';
 import { withAuthenticator } from 'aws-amplify-react-native'
 import HomeScreen from "./src/screens/HomeScreen";
@@ -64,12 +64,13 @@ const BottomTabNavigator = createMaterialBottomTabNavigator(
   },
   {
     initialRouteName: "Home",
-    barStyle: { backgroundColor: "#006600" },
+    barStyle: { backgroundColor: "#AA9798" },
   }
 );
   
 const botNavigator = createAppContainer(BottomTabNavigator);
 
+// used currently
 const TopTabNavigator = createMaterialBottomTabNavigator(
   {
     Home: {
@@ -114,7 +115,11 @@ const TopTabNavigator = createMaterialBottomTabNavigator(
   },
   {
     initialRouteName: "Home",
-    barStyle: { backgroundColor: "#006600" },
+    activeColor: "#000000",
+    inactiveColor:"#FFFFFF",
+    barStyle: { backgroundColor: "#AA9798", height: 80},
+
+
   }
 );
 
@@ -231,6 +236,7 @@ const TopTabNavigator = createMaterialBottomTabNavigator(
 //     initialRouteName: "Home",
 //   }
 // );
+
 
 const Navigator2 = createAppContainer(TopTabNavigator);
 
