@@ -19,6 +19,10 @@ import { createMaterialTopTabNavigator } from '@react-navigation/material-top-ta
 import CartScreen from "./src/screens/CartScreen";
 import MessagesScreen from "./src/screens/MessagesScreen";
 import SettingsScreen from "./src/screens/SettingsScreen";
+import TopBarNavigator from './src/navigators/TopBarNavigator';
+import BottomTabNavigator from './src/navigators/BottomTabNavigator';
+import { SafeAreaProvider } from 'react-native-safe-area-context';
+//import BottomTabNavigator from './src/navigators/BottomTabNavigator';
 
 // const BottomTabNavigator = createMaterialBottomTabNavigator(
 //   {
@@ -71,57 +75,57 @@ import SettingsScreen from "./src/screens/SettingsScreen";
 // const botNavigator = createAppContainer(BottomTabNavigator);
 
 // used currently
-const BottomTabNavigator = createMaterialBottomTabNavigator(
-  {
-    Home: {
-      screen: HomeScreen2,
-      navigationOptions: {
-        tabBarLabel: "Home",
-        tabBarIcon: (tabInfo) => (
-          <Ionicons
-            name="ios-home-outline"
-            size={tabInfo.focused ? 26 : 20}
-            color={tabInfo.tintColor}
-          />
-        ),
-      },
-    },
-    Browse: {
-      screen: BrowseScreen,
-      navigationOptions: {
-        tabBarLabel: "Browse",
-        tabBarIcon: (tabInfo) => (
-          <Ionicons
-            name="ios-cart-outline"
-            size={tabInfo.focused ? 26 : 20}
-            color={tabInfo.tintColor}
-          />
-        ),
-      },
-    },
-    Account: {
-      screen: AccountScreen,
-      navigationOptions: {
-        tabBarLabel: "Account",
-        tabBarIcon: (tabInfo) => (
-          <Ionicons
-            name="ios-person-circle-outline"
-            size={tabInfo.focused ? 26 : 20}
-            color={tabInfo.tintColor}
-          />
-        ),
-      },
-    },
-  },
-  {
-    initialRouteName: "Home",
-    activeColor: "#000000",
-    inactiveColor:"#FFFFFF",
-    barStyle: { backgroundColor: "#AA9798", height: 80},
+// const BottomTabNavigator = createMaterialBottomTabNavigator(
+//   {
+//     Home: {
+//       screen: HomeScreen2,
+//       navigationOptions: {
+//         tabBarLabel: "Home",
+//         tabBarIcon: (tabInfo) => (
+//           <Ionicons
+//             name="ios-home-outline"
+//             size={tabInfo.focused ? 26 : 20}
+//             color={tabInfo.tintColor}
+//           />
+//         ),
+//       },
+//     },
+//     Browse: {
+//       screen: BrowseScreen,
+//       navigationOptions: {
+//         tabBarLabel: "Browse",
+//         tabBarIcon: (tabInfo) => (
+//           <Ionicons
+//             name="ios-cart-outline"
+//             size={tabInfo.focused ? 26 : 20}
+//             color={tabInfo.tintColor}
+//           />
+//         ),
+//       },
+//     },
+//     Account: {
+//       screen: AccountScreen,
+//       navigationOptions: {
+//         tabBarLabel: "Account",
+//         tabBarIcon: (tabInfo) => (
+//           <Ionicons
+//             name="ios-person-circle-outline"
+//             size={tabInfo.focused ? 26 : 20}
+//             color={tabInfo.tintColor}
+//           />
+//         ),
+//       },
+//     },
+//   },
+//   {
+//     initialRouteName: "Home",
+//     activeColor: "#000000",
+//     inactiveColor:"#FFFFFF",
+//     barStyle: { backgroundColor: "#AA9798", height: 80},
 
 
-  }
-);
+//   }
+// );
 
 // const TopTabNavigator = createMaterialTopTabNavigator(
 //   {
@@ -237,7 +241,7 @@ const BottomTabNavigator = createMaterialBottomTabNavigator(
 //   }
 // );
 
-const Navigator = createAppContainer(BottomTabNavigator);
+//const Navigator = createAppContainer(BottomTabNavigator);
 //const Navigator2 = createAppContainer(TopTabNavigator);
 
 Amplify.configure(config)
@@ -253,9 +257,9 @@ export default function App() {
           "phone_number",
         ]}
       >
-        <Navigator>
-          <HomeScreen />
-        </Navigator>
+        <SafeAreaProvider>
+          <BottomTabNavigator/>
+        </SafeAreaProvider>
       </Authenticator>
     </Authenticator.Provider>
   );
