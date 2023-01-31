@@ -15,7 +15,7 @@ import Amplify from '@aws-amplify/core'
 import config from './src/aws-exports'
 import { createMaterialBottomTabNavigator } from "react-navigation-material-bottom-tabs";
 import { Ionicons } from "@expo/vector-icons";
-import { createMaterialTopTabNavigator } from '@react-navigation';
+import { createMaterialTopTabNavigator } from '@react-navigation/material-top-tabs';
 import CartScreen from "./src/screens/CartScreen";
 import MessagesScreen from "./src/screens/MessagesScreen";
 import SettingsScreen from "./src/screens/SettingsScreen";
