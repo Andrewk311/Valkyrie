@@ -3,9 +3,9 @@ import { Button } from 'react-native';
 import { StyleSheet, Text, View, Dimensions } from 'react-native';
 import { Authenticator, useAuthenticator } from '@aws-amplify/ui-react-native';
 import { withAuthenticator } from 'aws-amplify-react-native'
-import HomeScreen from "./src/screens/HomeScreen";
-import UserScreen from "./src/screens/UserScreen";
-import SettingScreen from "./src/screens/SettingScreen";
+import HomeScreen from "./src/OldFiles/HomeScreen";
+import UserScreen from "./src/OldFiles/UserScreen";
+import SettingScreen from "./src/OldFiles/SettingScreen";
 import HomeScreen2 from "./src/screens/HomeScreen2";
 import BrowseScreen from "./src/screens/BrowseScreen";
 import AccountScreen from "./src/screens/AccountScreen";
@@ -19,9 +19,10 @@ import { createMaterialTopTabNavigator } from '@react-navigation/material-top-ta
 import CartScreen from "./src/screens/CartScreen";
 import MessagesScreen from "./src/screens/MessagesScreen";
 import SettingsScreen from "./src/screens/SettingsScreen";
-import TopBarNavigator from './src/navigators/TopBarNavigator';
+import TopBarNavigator from './src/OldFiles/TopBarNavigator';
 import BottomTabNavigator from './src/navigators/BottomTabNavigator';
 import { SafeAreaProvider } from 'react-native-safe-area-context';
+import CustomNavigation from './src/navigators/CustomNavigationAccount';
 //import BottomTabNavigator from './src/navigators/BottomTabNavigator';
 
 // const BottomTabNavigator = createMaterialBottomTabNavigator(
@@ -257,9 +258,9 @@ export default function App() {
           "phone_number",
         ]}
       >
-        <SafeAreaProvider>
-          <BottomTabNavigator/>
-        </SafeAreaProvider>
+      <SafeAreaProvider>
+        <BottomTabNavigator />
+      </SafeAreaProvider>
       </Authenticator>
     </Authenticator.Provider>
   );
