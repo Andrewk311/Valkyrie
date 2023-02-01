@@ -6,8 +6,9 @@ import HomeScreen from "./../screens/HomeScreen2";
 import BrowseScreen from "./../screens/BrowseScreen";
 import AccountScreen from "./../screens/AccountScreen";
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
-import TopBarNavigator from './TopBarNavigator';
-
+import TopBarNavigator from '../OldFiles/TopBarNavigator';
+import CustomNavigationAccount from './CustomNavigationAccount';
+import CustomNavigationBrowse from './CustomNavigationBrowse';
 
 const Tab = createMaterialBottomTabNavigator();
 
@@ -34,12 +35,12 @@ function MyTabs() {
             />
             <Tab.Screen
                 name="Browse"
-                component={TopBarNavigator}
+                component={CustomNavigationBrowse}
                 options={{ tabBarLabel: "Browse" }}
             />
             <Tab.Screen
                 name="Account"
-                component={AccountScreen}
+                component={CustomNavigationAccount}
                 options={{ tabBarLabel: "Account" }}
             />
 
