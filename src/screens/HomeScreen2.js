@@ -36,7 +36,7 @@ function SignOutButton() {
 Home.navigationOptions = ({ navigation }) => {
     const { navigate } = navigation
     return  {
-        title: 'Account',
+        title: 'Home',
         headerRight: () => (
         <>
         <Button 
