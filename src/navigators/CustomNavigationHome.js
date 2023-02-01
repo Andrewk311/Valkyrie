@@ -18,13 +18,21 @@ const AppNavigator = createStackNavigator(
   {
     defaultNavigationOptions: {
       headerStyle: {
-        backgroundColor: "#006600",
+        backgroundColor: "#FFFFFF",
+        elevation: 0,
+        shadowOpacity: 0,
+        borderBottomWidth: 0,
       },
       headerTitleStyle: {
         fontWeight: "bold",
-        color: "#FFF",
+        fontFamily:'Avenir',
+        fontSize:25,
+        color: "#92989B",
+        marginLeft:-15
       },
-      headerTintColor: "#FFF",
+      headerTintColor: "#92989B",
+      headerTitleAlign: 'left',
+
     },
   },
   {
