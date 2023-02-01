@@ -9,6 +9,7 @@ import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import TopBarNavigator from '../OldFiles/TopBarNavigator';
 import CustomNavigationAccount from './CustomNavigationAccount';
 import CustomNavigationBrowse from './CustomNavigationBrowse';
+import CustomNavigationHome from './CustomNavigationHome';
 
 const Tab = createMaterialBottomTabNavigator();
 
@@ -30,7 +31,7 @@ function MyTabs() {
         >
             <Tab.Screen
                 name="Home"
-                component={HomeScreen}
+                component={CustomNavigationHome}
                 options={{ tabBarLabel: "Home" }}
             />
             <Tab.Screen
