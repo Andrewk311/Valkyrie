@@ -1,16 +1,16 @@
 import React from "react";
 import { createAppContainer } from "react-navigation";
 import { createStackNavigator } from "react-navigation-stack";
-import CartScreen from "../screens/CartScreen";
-import MessagesScreen from "../screens/MessagesScreen";
-import SettingsScreen from "../screens/SettingsScreen";
+import CartScreen from "../screens/headerScreens/CartScreen";
+import MessagesScreen from "../screens/headerScreens/MessagesScreen";
+import AboutUsScreen from "../screens/headerScreens/AboutUsScreen";
 import AccountScreen from "../screens/AccountScreen";
 
   
 const AppNavigator = createStackNavigator(
   {
     Account: AccountScreen,
-    Settings: SettingsScreen,
+    About: AboutUsScreen,
     Messages: MessagesScreen,
     Cart: CartScreen
 

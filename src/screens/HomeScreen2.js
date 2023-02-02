@@ -95,10 +95,10 @@ Home.navigationOptions = ({ navigation }) => {
           <View style={styles.buttonContainer}>
           <TouchableOpacity
               style={styles.customBtn}
-              onPress={() => navigate('Settings')} 
+              onPress={() => navigate('About')} 
             >
-              <Ionicons name="settings" size={20} color="#000000" />
-              <Text style={styles.customBtnText}>Settings</Text>
+              <Ionicons name="people-sharp" size={20} color="#000000" />
+              <Text style={styles.customBtnText}>About Us</Text>
            </TouchableOpacity>
           </View>
 

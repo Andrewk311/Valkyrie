@@ -41,8 +41,8 @@ Account.navigationOptions = ({ navigation }) => {
     headerRight: () => (
       <>
       <Button 
-        title="Settings" backgroundColor="rgba(0,0,0,0)" color="rgba(0,122,255,1)"
-        onPress={() => navigate('Settings')}
+        title="About Us" backgroundColor="rgba(0,0,0,0)" color="rgba(0,122,255,1)"
+        onPress={() => navigate('About')}
       />
       <Button 
         title="Messages" backgroundColor="rgba(0,0,0,0)" color="rgba(0,122,255,1)"

@@ -11,8 +11,8 @@ const Tracking = (props) => {
         <Text style={{ color: "#006600", fontSize: 40 }}>Tracking Screen!</Text>
         <Ionicons name="ios-map-sharp" size={80} color="#006600" />
         <MapView style={styles.map} initialRegion={{
-          latitude: 40.524195,
-          longitude: -74.459590,
+          latitude: 40.499046325683594,
+          longitude: -74.4476089477539,
           latitudeDelta: 0.005,
           longitudeDelta: 0.005,}} 
         />
@@ -26,7 +26,7 @@ Tracking.navigationOptions = ({ navigation: { goBack } }) => {
       title: 'Tracking',
       headerLeft: (props) => (
         <Button
-        title="Back"
+        title="<--"
         onPress={() => {
             goBack();
         }}

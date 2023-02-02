@@ -1,18 +1,19 @@
 import React from "react";
 import { createAppContainer } from "react-navigation";
 import { createStackNavigator } from "react-navigation-stack";
-import CartScreen from "../screens/CartScreen";
-import MessagesScreen from "../screens/MessagesScreen";
-import SettingsScreen from "../screens/SettingsScreen";
+import CartScreen from "../screens/headerScreens/CartScreen";
+import MessagesScreen from "../screens/headerScreens/MessagesScreen";
+import SettingsScreen from "../screens/accountScreens/SettingsScreen";
 import HomeScreen from "../screens/HomeScreen2";
-import TrackingScreen from "../screens/TrackingScreen";
-import ContactScreen from "../screens/ContactScreen";
-import PrescriptionScreen from "../screens/PrescriptionScreen";
+import TrackingScreen from "../screens/homeScreens/TrackingScreen";
+import ContactScreen from "../screens/homeScreens/ContactScreen";
+import PrescriptionScreen from "../screens/homeScreens/PrescriptionScreen";
+import AboutUsScreen from "../screens/headerScreens/AboutUsScreen";
   
 const AppNavigator = createStackNavigator(
   {
     Home: HomeScreen,
-    Settings: SettingsScreen,
+    About: AboutUsScreen,
     Messages: MessagesScreen,
     Cart: CartScreen,
     Tracking: TrackingScreen,
