@@ -32,27 +32,27 @@ const Home = (props) => {
           </View>
           <View style={styles.widgetContainer}>
             <TouchableOpacity
-                style={styles.widgetBtn}
+                style={styles.widget}
                 onPress={() => props.navigation.navigate('Prescription')} 
               >
+                <Ionicons name="mail" size={20} color="#000000" alignSelf="center" />
                 <Text style={styles.customBtnText}>Refill a Prescription</Text>
-                <Ionicons name="mail" size={20} color="#000000" />
             </TouchableOpacity>
 
               <TouchableOpacity
-                style={styles.widgetBtn}
+                style={styles.widget}
                 onPress={() => props.navigation.navigate('Contact')} 
               >
+                <Ionicons name="mail" size={20} color="#000000" alignSelf="center" />
                 <Text style={styles.customBtnText}>Contact a Pharmacist</Text>
-                <Ionicons name="mail" size={20} color="#000000" />
             </TouchableOpacity>
-          
+
               <TouchableOpacity
-                style={styles.widgetBtn}
+                style={styles.widget}
                 onPress={() => props.navigation.navigate('Tracking')} 
               >
+                <Ionicons name="mail" size={20} color="#000000" alignSelf="center" />
                 <Text style={styles.customBtnText}>Track Your Order</Text>
-                <Ionicons name="mail" size={20} color="#000000" />
             </TouchableOpacity>
           </View>
           <View style={styles.ad2}>
@@ -168,6 +168,10 @@ const styles = StyleSheet.create({
     justifyContent: 'flex-start',
     paddingLeft: 8
   },
+  customBtnText: {
+    alignContent:"center",
+    marginLeft:2,
+  },
   ad: {
     borderRadius: 15,
     backgroundColor: "white",
@@ -179,23 +183,17 @@ const styles = StyleSheet.create({
   widgetContainer:{
     flex: 1,
     flexDirection: 'row',
+    justifyContent: 'center',
     alignContent:"center",
     marginTop:10,
+    alignContent:"center",
   },
-  widgetBtn: {
+  widget: {
     backgroundColor: "white", 
     width: win.width/3.5, 
     borderRadius: 30,
     marginLeft:10,
-    marginRight:10,
-    alignContent:"center"
-  },
-  customBtnText: {
-    width:"80%",
-    marginLeft:"20%",
-    marginTop:"30%",
-    fontWeight:"bold",
-
+    marginRight:10
   },
   ad2: {
     borderRadius: 15,
