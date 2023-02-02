@@ -5,10 +5,18 @@ import MapView from 'react-native-maps';
   
 const Tracking = (props) => {
     return (
+      
       <View style={{ flex: 1, alignItems: "center", justifyContent: "center" }}>
+
         <Text style={{ color: "#006600", fontSize: 40 }}>Tracking Screen!</Text>
         <Ionicons name="ios-map-sharp" size={80} color="#006600" />
-        <MapView style={styles.map} />
+        <MapView style={styles.map} initialRegion={{
+          latitude: 40.524195,
+          longitude: -74.459590,
+          latitudeDelta: 0.005,
+          longitudeDelta: 0.005,}} 
+        />
+        
       </View>
     );
   };
@@ -34,7 +42,8 @@ const styles = StyleSheet.create({
     flex: 1,
   },
   map: {
-    width: '100%',
-    height: '100%',
+    width: '90%',
+    height: '60%',
+    borderColor: '#FF0000',
   },
 });
