@@ -11,15 +11,9 @@ function MyTabs() {
     return (
         <Tab.Navigator
             initialRouteName="Home"
-            screenOptions={{
-                "tabBarActiveTintColor": "#e91e63",
-                "tabBarLabelStyle": {
-                  "fontSize": 12
-                },
-                "tabBarStyle": {
-                  "backgroundColor": "white ",
-                }
-              }}
+            activeColor="#FFFFFF"
+            inactiveColor="#FFFFFF"
+            barStyle={{ backgroundColor: '#AA9798' }}
         >
             <Tab.Screen
                 name="Home"
