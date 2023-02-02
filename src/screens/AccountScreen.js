@@ -1,35 +1,48 @@
 import React, { useState } from "react";
 import { Text, View, TextInput, Button } from "react-native";
 import { Ionicons } from "@expo/vector-icons";
-import {
-  Item,
-  HeaderButton,
-  HeaderButtons,
-} from "react-navigation-header-buttons";
+import { Item, HeaderButton, HeaderButtons} from "react-navigation-header-buttons";
+import { Authenticator, useAuthenticator } from '@aws-amplify/ui-react-native';
+import { Auth } from 'aws-amplify';
+
 
 const Account = (props) => {
   const [input, setInput] = useState("");
   return (
-    <View style={{ flex: 1, alignItems: "center", justifyContent: "center" }}>
-      <Text style={{ color: "#006600", fontSize: 40 }}>Account Screen!</Text>
-      <Ionicons name="ios-home" size={80} color="#006600" />
-      <TextInput
-        placeholder="Enter your name"
-        value={input}
-        onChangeText={(value) => setInput(value)}
-      />
-      <Button
-        title="Go to Cart Screen"
-        color="#006600"
-        onPress={() => props.navigation.navigate("Cart", { username: input })}
-      />
-    </View>
+    <Authenticator.Provider>
+        <Authenticator>
+        <View style={{ flex: 1, alignItems: "center", justifyContent: "center" }}>
+          <Text style={{ color: "#006600", fontSize: 40 }}>Account Screen!</Text>
+          <Ionicons name="ios-home" size={80} color="#006600" />
+          <TextInput
+            placeholder="Enter your name"
+            value={input}
+            onChangeText={(value) => setInput(value)}
+          />
+          <Button
+            title="Go to Cart Screen"
+            color="#006600"
+            onPress={() => props.navigation.navigate("Cart", { username: input })}
+          />
+          <SignOutButton />
+        </View>
+      </Authenticator>
+    </Authenticator.Provider>
   );
 };
 
-function test(navData) {
-  console.log(navData);
+function SignOutButton() {
+  const { signOut } = useAuthenticator();
+  return <Button color='#E33737' title="Sign Out" onPress={signOut} />;
 }
+
+// async function signOut() {
+//     try {
+//         await Auth.signOut();
+//     } catch (error) {
+//         console.log('error signing out: ', error);
+//     }
+// }
 
 const HeaderButtonComponent = (props) => (
   <HeaderButton
