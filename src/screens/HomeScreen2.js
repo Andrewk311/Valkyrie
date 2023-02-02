@@ -33,7 +33,7 @@ const Home = (props) => {
           <View style={styles.widgetContainer}>
             <TouchableOpacity
                 style={styles.widget}
-                onPress={() => navigate('Messages')} 
+                onPress={() => props.navigation.navigate('Prescription')} 
               >
                 <Ionicons name="mail" size={20} color="#000000" alignSelf="center" />
                 <Text style={styles.customBtnText}>Refill a Prescription</Text>
@@ -41,7 +41,7 @@ const Home = (props) => {
 
               <TouchableOpacity
                 style={styles.widget}
-                onPress={() => navigate('Messages')} 
+                onPress={() => props.navigation.navigate('Contact')} 
               >
                 <Ionicons name="mail" size={20} color="#000000" alignSelf="center" />
                 <Text style={styles.customBtnText}>Contact a Pharmacist</Text>
@@ -49,7 +49,7 @@ const Home = (props) => {
 
               <TouchableOpacity
                 style={styles.widget}
-                onPress={() => navigate('Messages')} 
+                onPress={() => props.navigation.navigate('Tracking')} 
               >
                 <Ionicons name="mail" size={20} color="#000000" alignSelf="center" />
                 <Text style={styles.customBtnText}>Track Your Order</Text>
