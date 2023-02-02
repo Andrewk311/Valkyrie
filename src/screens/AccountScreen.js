@@ -3,8 +3,6 @@ import { Text, View, TextInput, Button } from "react-native";
 import { Ionicons } from "@expo/vector-icons";
 import { Item, HeaderButton, HeaderButtons} from "react-navigation-header-buttons";
 import { Authenticator, useAuthenticator } from '@aws-amplify/ui-react-native';
-import { Auth } from 'aws-amplify';
-
 
 const Account = (props) => {
   const [input, setInput] = useState("");
@@ -35,77 +33,6 @@ function SignOutButton() {
   const { signOut } = useAuthenticator();
   return <Button color='#E33737' title="Sign Out" onPress={signOut} />;
 }
-
-// async function signOut() {
-//     try {
-//         await Auth.signOut();
-//     } catch (error) {
-//         console.log('error signing out: ', error);
-//     }
-// }
-
-const HeaderButtonComponent = (props) => (
-  <HeaderButton
-    IconComponent={Ionicons}
-    iconSize={23}
-    color="#FFF"
-    {...props}
-  />
-  // <Button
-  // title="Go to Cart Screen"
-  // color="#006600"
-  // onPress={() => {
-  //   console.log(props);
-  //   //props.navigation.navigate("Settings")
-  // }}
-  // />
-
-);
-
-// Account.navigationOptions = (navData) => {
-//   return {
-//     headerTitle: "Account",
-//     headerRight: () => (
-//     <HeaderButtons HeaderButtonComponent={HeaderButtonComponent}>
-//         <Item
-//         title="Settings"
-//         iconName="ios-settings-outline"
-//         onPress={() => navData.navigation.navigate("Setting")}
-//         />
-//     </HeaderButtons>
-//     ),
-//   };
-// };
-
-// Account.navigationOptions = ({ navigation }) => {
-//   return {
-//     headerTitle: "Home",
-//     headerRight: (props) => (
-//       // <HeaderButtons HeaderButtonComponent={HeaderButtonComponent}>
-//       //   <Item
-//       //     title="Setting"
-//       //     iconName="ios-settings-outline"
-//       //     onPress={() => {
-//       //       console.log(props);
-//       //       navigation.navigate('Settings');
-//       //       // navData.navigation.navigate("Settings")
-//       //     }}
-//       //     {...test(navData)}
-//       //   />
-//       // </HeaderButtons>
-//       <Button
-//         title="Go to Cart Screen"
-//         color="#006600"
-//         onPress={() => {
-//           navigation.navigate('Settings');
-
-//           //props.navigation.navigate("Settings")
-//         }}
-//       />
-
-//     ),
-//   };
-// };
 
 Account.navigationOptions = ({ navigation }) => {
   const { navigate } = navigation

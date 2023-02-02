@@ -1,11 +1,6 @@
 import React, { useState } from "react";
 import { Text, View, TextInput, Button } from "react-native";
 import { Ionicons } from "@expo/vector-icons";
-import {
-  Item,
-  HeaderButton,
-  HeaderButtons,
-} from "react-navigation-header-buttons";
 
 const Browse = (props) => {
   const [input, setInput] = useState("");

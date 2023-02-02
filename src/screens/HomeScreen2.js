@@ -64,11 +64,6 @@ const Home = (props) => {
   );
 };
 
-function SignOutButton() {
-    const { signOut } = useAuthenticator();
-    return <Button color='#E33737' title="Sign Out" onPress={signOut} />;
-  }
-
 Home.navigationOptions = ({ navigation }) => {
     const { navigate } = navigation
     return {

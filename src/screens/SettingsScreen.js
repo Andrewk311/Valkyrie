@@ -1,7 +1,6 @@
 import React from "react";
 import { Text, View, Button } from "react-native";
 import { Ionicons } from "@expo/vector-icons";
-import { HeaderBackButton } from "react-navigation-stack";
   
 const Settings = (props) => {
     return (
