@@ -42,7 +42,7 @@ const Home = (props) => {
                 onPress={() => props.navigation.navigate('Prescription')} 
               >                
               <Text style={styles.customWidgetText}>Refill a{"\n"}Prescription</Text>
-                <View style={{position:"relative", marginLeft:60}}>
+                <View style={{position:"relative", marginLeft:60, marginTop:10}}>
                 <Ionicons name="ios-alarm" size={30} color="#AD3A5C"/>
                 </View>
             </TouchableOpacity>
@@ -52,7 +52,7 @@ const Home = (props) => {
                 onPress={() => props.navigation.navigate('Contact')} 
               >
                 <Text style={styles.customWidgetText}>Contact a{"\n"}Pharmacist</Text>
-                <View style={{position:"relative", marginLeft:60}}>
+                <View style={{position:"relative", marginLeft:60, marginTop:10}}>
                 <Ionicons name="ios-call" size={30} color="#AD3A5C"/>
                 </View>
             </TouchableOpacity>
@@ -62,7 +62,7 @@ const Home = (props) => {
                 onPress={() => props.navigation.navigate('Tracking')} 
               >
                 <Text style={styles.customWidgetText}>Track Your{"\n"}Order</Text>
-                <View style={{position:"relative", marginLeft:60}}>
+                <View style={{position:"relative", marginLeft:60, marginTop:10}}>
                 <Ionicons name="ios-map" size={30} color="#AD3A5C"/>
                 </View>
             </TouchableOpacity>
