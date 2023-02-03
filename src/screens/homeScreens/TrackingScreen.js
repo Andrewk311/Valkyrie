@@ -1,5 +1,5 @@
 import React from "react";
-import { Text, View, Button, StyleSheet } from "react-native";
+import { Text, View, Button, StyleSheet, Image } from "react-native";
 import { Ionicons } from "@expo/vector-icons";
 import MapView from 'react-native-maps';
 import { Dimensions } from "react-native";
@@ -21,7 +21,18 @@ const Tracking = (props) => {
           longitudeDelta: 0.005,}} 
         />
         <View style={styles.rect2}>
-
+          <Image style={styles.tinyLogo}
+          source={require('./../../customIcons/OrderPlaced.png')}
+          />
+          <Image style={styles.tinyLogo}
+          source={require('./../../customIcons/OrderVerified.png')}
+          />
+          <Image style={styles.tinyLogo}
+          source={require('./../../customIcons/OrderShipped.png')}
+          />
+          <Image style={styles.tinyLogo}
+          source={require('./../../customIcons/OrderDelivered.png')}
+          />
         </View>
         
       </View>
@@ -86,5 +97,9 @@ const styles = StyleSheet.create({
   },
   iconBox: {
 
+  },
+  tinyLogo: {
+    width: 50,
+    height: 50,
   },
 });
