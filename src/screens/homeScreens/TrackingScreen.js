@@ -21,10 +21,7 @@ const Tracking = (props) => {
           longitudeDelta: 0.005,}} 
         />
         <View style={styles.rect2}>
-          <View>
-            <Ionicons name="cart" size={widthL*(0.1)} color="#AD3A5C" />
-          </View>
-          
+
         </View>
         
       </View>
@@ -86,5 +83,8 @@ const styles = StyleSheet.create({
     alignItems: "center",
     position: "absolute",
     bottom: 0
+  },
+  iconBox: {
+
   },
 });
