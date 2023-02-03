@@ -132,7 +132,8 @@ export default Home;
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: "rgba(227,55,55,1)"
+    backgroundColor: "rgba(227,55,55,1)",
+    marginTop: -10
   },
   rect: {
     width: Dimensions.get('window').width,
