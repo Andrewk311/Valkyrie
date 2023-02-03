@@ -107,7 +107,7 @@ Home.navigationOptions = ({ navigation }) => {
               style={styles.customBtn}
               onPress={() => navigate('Messages')} 
             >
-              <Ionicons name="mail" size={20} color="#000000" alignSelf="center" />
+              <Ionicons name="mail" size={20} color="#000000"/>
               <Text style={styles.customBtnText}>Messages</Text>
            </TouchableOpacity>
           </View>
@@ -117,7 +117,7 @@ Home.navigationOptions = ({ navigation }) => {
               style={styles.customBtn}
               onPress={() => navigate('Cart')} 
             >
-              <Ionicons name="cart" size={20} color="#000000" alignContent="center"/>
+              <Ionicons name="cart" size={20} color="#000000"/>
               <Text style={styles.customBtnText}>Cart</Text>
            </TouchableOpacity>
           </View>
@@ -216,6 +216,7 @@ const styles = StyleSheet.create({
     fontWeight:"bold",
     marginLeft:10,
     fontSize:win.width/30,
+    marginBottom:-10,
   },
   ad2: {
     borderRadius: 15,
