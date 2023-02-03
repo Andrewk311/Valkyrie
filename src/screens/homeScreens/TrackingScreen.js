@@ -10,15 +10,16 @@ const Tracking = (props) => {
         <View style={styles.rect}>
           <Text style={styles.where}> Where's My Order? </Text>
         </View>
+          <Text style={{fontWeight:"bold", color:"#000000", fontSize:24, marginTop: -460}}>ORDER #NB10992</Text>
         <MapView style={styles.map} initialRegion={{
           latitude: 40.499046325683594,
           longitude: -74.4476089477539,
           latitudeDelta: 0.005,
           longitudeDelta: 0.005,}} 
         />
-        {/* <View style={styles.rect2}>
+        <View style={styles.rect2}>
 
-        </View> */}
+        </View>
         
       </View>
     );
@@ -50,14 +51,16 @@ const styles = StyleSheet.create({
     borderColor: '#FF0000',
     paddingHorizontal: 50,
     paddingVertical:40,
-    marginTop: 100
+    position: "absolute",
+    borderRadius: 15,
   },
   rect: {
     width: Dimensions.get('window').width,
     height: 69,
     alignSelf: "center",
     backgroundColor: "#FFFFFF",
-    marginTop: -117
+    position: "absolute",
+    top:0
   },
   where: {
     color: "#AA9798",
@@ -68,11 +71,16 @@ const styles = StyleSheet.create({
     fontWeight:"bold", 
     marginTop: 20
   }, 
-  // rect2: {
-  //   width: Dimensions.get('window').width,
-  //   height: 69,
-  //   alignSelf: "center",
-  //   backgroundColor: "#FFFFFF",
-  //   marginTop: 138
-  // },
+  rect2: {
+    width: Dimensions.get('window').width,
+    backgroundColor: "white",
+    alignSelf:"center",
+    marginTop:10,
+    paddingVertical:50,
+    flexDirection: "row",
+    justifyContent: "space-between",
+    alignItems: "center",
+    position: "absolute",
+    bottom: 0
+  },
 });
