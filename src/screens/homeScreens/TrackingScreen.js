@@ -3,7 +3,10 @@ import { Text, View, Button, StyleSheet } from "react-native";
 import { Ionicons } from "@expo/vector-icons";
 import MapView from 'react-native-maps';
 import { Dimensions } from "react-native";
-  
+
+const win = Dimensions.get('window');
+const widthL = win.width;
+
 const Tracking = (props) => {
     return (
       <View style={{ flex: 1, alignItems: "center", justifyContent: "center", backgroundColor: "rgba(227,55,55,1)", flex: 1}}>
@@ -18,7 +21,10 @@ const Tracking = (props) => {
           longitudeDelta: 0.005,}} 
         />
         <View style={styles.rect2}>
-
+          <View>
+            <Ionicons name="cart" size={widthL*(0.1)} color="#AD3A5C" />
+          </View>
+          
         </View>
         
       </View>
