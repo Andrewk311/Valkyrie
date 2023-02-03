@@ -24,7 +24,7 @@ const Account = (props) => {
         <ScrollView style={{marginHorizontal:0, backgroundColor:"rgba(227,55,55,1)"}}>
           <TouchableOpacity
             style={styles.orderStatusBtn}
-            onPress={() => props.navigation.navigate('Prescription')} 
+            onPress={() => props.navigation.navigate('Tracking')} 
           >         
           <Ionicons name="ios-map" size={50} color="black" />
           <View style={{marginLeft:20}}>     
@@ -36,7 +36,7 @@ const Account = (props) => {
           <View style={styles.optionsContainer}>
             <TouchableOpacity
                 style={styles.optionBtn}
-                onPress={() => props.navigation.navigate('Prescription')} 
+                onPress={() => props.navigation.navigate('Settings')} 
               >         
               <View>     
               <Text style={styles.optionTitle}>Settings</Text>
@@ -47,7 +47,7 @@ const Account = (props) => {
 
               <TouchableOpacity
                 style={styles.optionBtn}
-                onPress={() => props.navigation.navigate('Contact')} 
+                onPress={() => props.navigation.navigate('Insurance')} 
               >
                 <View>
                 <Text style={styles.optionTitle}>Insurance Card</Text>
@@ -58,7 +58,7 @@ const Account = (props) => {
 
             <TouchableOpacity
               style={styles.optionBtn}
-              onPress={() => props.navigation.navigate('Tracking')} 
+              onPress={() => props.navigation.navigate('Prescription')} 
             >
               <View>
               <Text style={styles.optionTitle}>Manage Prescription</Text>
@@ -69,7 +69,7 @@ const Account = (props) => {
 
             <TouchableOpacity
               style={styles.optionBtn}
-              onPress={() => props.navigation.navigate('Tracking')} 
+              onPress={() => props.navigation.navigate('Payment')} 
             >
               <View>
               <Text style={styles.optionTitle}>Payment Options</Text>
@@ -77,19 +77,9 @@ const Account = (props) => {
               </View>
               <Ionicons name="ios-arrow-forward" size={30} color="#AA9798"/>
             </TouchableOpacity>
-            {/* <TouchableOpacity
-              style={styles.optionBtn}
-              onPress={() => props.navigation.navigate('Tracking')} 
-            >
-              <View>
-              <Text style={styles.optionTitle}>Profile Settings</Text>
-              <Text style={styles.optionDescription}>Change password, personal information, and notifications</Text>
-              </View>
-              <Ionicons name="ios-arrow-forward" size={30} color="#AA9798" marginRight="0"/>
-            </TouchableOpacity> */}
             <TouchableOpacity
               style={styles.optionBtn}
-              onPress={() => props.navigation.navigate('Tracking')} 
+              onPress={() => props.navigation.navigate('OrderHistory')} 
             >
               <View>
               <Text style={styles.optionTitle}>Order History</Text>

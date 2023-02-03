@@ -5,6 +5,12 @@ import CartScreen from "../screens/headerScreens/CartScreen";
 import MessagesScreen from "../screens/headerScreens/MessagesScreen";
 import AboutUsScreen from "../screens/headerScreens/AboutUsScreen";
 import AccountScreen from "../screens/AccountScreen";
+import SettingsScreen from "../screens/accountScreens/SettingsScreen";
+import InsuranceScreen from "../screens/accountScreens/InsuranceScreen";
+import PaymentScreen from "../screens/accountScreens/PaymentScreen";
+import OrderHistoryScreen from "../screens/accountScreens/OrderHistoryScreen";
+import TrackingScreen from "../screens/homeScreens/TrackingScreen";
+import PrescriptionScreen from "../screens/homeScreens/PrescriptionScreen";
 
   
 const AppNavigator = createStackNavigator(
@@ -12,8 +18,13 @@ const AppNavigator = createStackNavigator(
     Account: AccountScreen,
     About: AboutUsScreen,
     Messages: MessagesScreen,
-    Cart: CartScreen
-
+    Cart: CartScreen,
+    Settings: SettingsScreen,
+    Insurance: InsuranceScreen,
+    Payment: PaymentScreen,
+    OrderHistory: OrderHistoryScreen,
+    Tracking: TrackingScreen,
+    Prescription: PrescriptionScreen
   },
   {
     defaultNavigationOptions: {
