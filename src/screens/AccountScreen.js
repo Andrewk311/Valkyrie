@@ -4,31 +4,24 @@ import { ScrollView, StyleSheet } from 'react-native';
 import { Ionicons } from "@expo/vector-icons";
 import { Item, HeaderButton, HeaderButtons} from "react-navigation-header-buttons";
 import { Authenticator, useAuthenticator } from '@aws-amplify/ui-react-native';
+import { Auth } from 'aws-amplify';
 
 const win = Dimensions.get('window');
 const Account = (props) => {
   const [input, setInput] = useState("");
+
+  async function signOut() {
+    try {
+        await Auth.signOut();
+    } catch (error) {
+        console.log('error signing out: ', error);
+    }
+}
+
   return (
     <Authenticator.Provider>
         <Authenticator>
         <ScrollView style={{marginHorizontal:0, backgroundColor:"rgba(227,55,55,1)"}}>
-        {/*
-        <View style={{ flex: 1, alignItems: "center", justifyContent: "center" }}>
-          <Text style={{ color: "#006600", fontSize: 40 }}>Account Screen!</Text>
-          <Ionicons name="ios-home" size={80} color="#006600" />
-          <TextInput
-            placeholder="Enter your name"
-            value={input}
-            onChangeText={(value) => setInput(value)}
-          />
-          <Button
-            title="Go to Cart Screen"
-            color="#006600"
-            onPress={() => props.navigation.navigate("Cart", { username: input })}
-          />
-          <SignOutButton />
-        </View>
-        */}
           <TouchableOpacity
             style={styles.orderStatusBtn}
             onPress={() => props.navigation.navigate('Prescription')} 
@@ -46,8 +39,8 @@ const Account = (props) => {
                 onPress={() => props.navigation.navigate('Prescription')} 
               >         
               <View>     
-              <Text style={styles.optionTitle}>Delivery Settings</Text>
-              <Text style={styles.optionDescription}>Pin-point your drop-off location</Text>
+              <Text style={styles.optionTitle}>Settings</Text>
+              <Text style={styles.optionDescription}>Change drop-off location, password, and personal information</Text>
               </View>  
               <Ionicons name="ios-arrow-forward" size={30} color="#AA9798"/>
             </TouchableOpacity>
@@ -84,7 +77,7 @@ const Account = (props) => {
               </View>
               <Ionicons name="ios-arrow-forward" size={30} color="#AA9798"/>
             </TouchableOpacity>
-            <TouchableOpacity
+            {/* <TouchableOpacity
               style={styles.optionBtn}
               onPress={() => props.navigation.navigate('Tracking')} 
             >
@@ -93,7 +86,7 @@ const Account = (props) => {
               <Text style={styles.optionDescription}>Change password, personal information, and notifications</Text>
               </View>
               <Ionicons name="ios-arrow-forward" size={30} color="#AA9798" marginRight="0"/>
-            </TouchableOpacity>
+            </TouchableOpacity> */}
             <TouchableOpacity
               style={styles.optionBtn}
               onPress={() => props.navigation.navigate('Tracking')} 
@@ -104,6 +97,16 @@ const Account = (props) => {
               </View>
               <Ionicons name="ios-arrow-forward" size={30} color="#AA9798" marginRight="0"/>
             </TouchableOpacity>
+            <TouchableOpacity
+            style={styles.SignOutBtn}
+            >         
+              <View>  
+                <SignOutButton />   
+                {/* <Text style={{color:"#000000", fontWeight:"bold", fontSize:20, textAlign:"center"}}>Sign Out</Text> */}
+              </View>  
+              <Ionicons name="ios-exit-sharp" size={50} color="black"  />
+
+          </TouchableOpacity>
           </View>
 
         </ScrollView>
@@ -112,9 +115,10 @@ const Account = (props) => {
   );
 };
 
+
 function SignOutButton() {
   const { signOut } = useAuthenticator();
-  return <Button color='#E33737' title="Sign Out" onPress={signOut} />;
+  return <Button color='#000000' title="Sign Out" onPress={signOut} />;
 }
 
 Account.navigationOptions = ({ navigation }) => {
@@ -179,6 +183,16 @@ const styles = StyleSheet.create({
     paddingVertical:10,
     paddingHorizontal:70,
     marginTop:20,
+  },
+  SignOutBtn:{
+    backgroundColor: "#D7CBCB",
+    flexDirection: "row",
+    justifyContent: 'center',
+    alignItems:'center',
+    borderRadius: 20,
+    paddingVertical:0,
+    paddingHorizontal:70,
+    marginTop:10,
   },
   optionsContainer:{
     flexDirection: 'column',
