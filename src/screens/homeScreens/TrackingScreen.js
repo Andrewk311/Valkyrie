@@ -64,9 +64,7 @@ const styles = StyleSheet.create({
   },
   where: {
     color: "#AA9798",
-    height: 47,
-    width: 375,
-    fontSize: 40,
+    fontSize: 30,
     textAlign: "center",
     fontWeight:"bold", 
     marginTop: 20
