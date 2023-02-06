@@ -2,18 +2,18 @@ import React from "react";
 import { Text, View, Button } from "react-native";
 import { Ionicons } from "@expo/vector-icons";
   
-const ImmuneSupport = (props) => {
+const Pharmacy = (props) => {
     return (
       <View style={{ flex: 1, alignItems: "center", justifyContent: "center" }}>
-        <Text style={{ color: "#006600", fontSize: 40 }}>Immune Support Screen!</Text>
+        <Text style={{ color: "#006600", fontSize: 40 }}>Pharmacy Screen!</Text>
         <Ionicons name="ios-settings-sharp" size={80} color="#006600" />
       </View>
     );
   };
 
-ImmuneSupport.navigationOptions = ({ navigation: { goBack } }) => {
+Pharmacy.navigationOptions = ({ navigation: { goBack } }) => {
     return  {
-      title: 'Immune Support',
+      title: 'Pharmacy',
       headerLeft: (props) => (
         <Button
         title="Back"
@@ -25,4 +25,4 @@ ImmuneSupport.navigationOptions = ({ navigation: { goBack } }) => {
     }             
   }
 
-export default ImmuneSupport;
+export default Pharmacy;

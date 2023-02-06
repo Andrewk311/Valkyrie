@@ -23,7 +23,7 @@ const Browse = (props) => {
         <View style={styles.column1}>
           <TouchableOpacity
                   style={styles.category}
-                  onPress={() => props.navigation.navigate('Settings')} 
+                  onPress={() => props.navigation.navigate('FirstAidCare')} 
                 >         
                 <View>     
                 <Text style={styles.optionTitle}>COVID-19{"\n"}Tests</Text>
@@ -34,7 +34,7 @@ const Browse = (props) => {
               </TouchableOpacity>
             <TouchableOpacity
                 style={styles.category}
-                onPress={() => props.navigation.navigate('Settings')} 
+                onPress={() => props.navigation.navigate('ImmuneSupport')} 
               >         
               <View>     
               <Text style={styles.optionTitle}>Immune{"\n"}Support</Text>
@@ -45,7 +45,7 @@ const Browse = (props) => {
             </TouchableOpacity>
             <TouchableOpacity
                 style={styles.category}
-                onPress={() => props.navigation.navigate('Settings')} 
+                onPress={() => props.navigation.navigate('Medicine')} 
               >         
               <View>     
               <Text style={styles.optionTitle}>Flu/Cold{"\n"}Medicine</Text>
@@ -58,7 +58,7 @@ const Browse = (props) => {
         <View style={styles.columns}>
         <TouchableOpacity
                   style={styles.category}
-                  onPress={() => props.navigation.navigate('Settings')} 
+                  onPress={() => props.navigation.navigate('FirstAidCare')} 
                 >         
                 <View>     
                 <Text style={styles.optionTitle}>First-Aid{"\n"}Care</Text>
@@ -69,7 +69,7 @@ const Browse = (props) => {
               </TouchableOpacity>
             <TouchableOpacity
                 style={styles.category}
-                onPress={() => props.navigation.navigate('Settings')} 
+                onPress={() => props.navigation.navigate('SanitationSupplies')} 
               >         
               <View>     
               <Text style={styles.optionTitle}>Sanitation Supplies</Text>
@@ -80,7 +80,7 @@ const Browse = (props) => {
             </TouchableOpacity>
             <TouchableOpacity
                 style={styles.category}
-                onPress={() => props.navigation.navigate('Settings')} 
+                onPress={() => props.navigation.navigate('Pharmacy')} 
               >         
               <View>     
               <Text style={styles.optionTitle}>Pharmacy{"\n"}</Text>

@@ -5,15 +5,23 @@ import CartScreen from "../screens/headerScreens/CartScreen";
 import MessagesScreen from "../screens/headerScreens/MessagesScreen";
 import AboutUsScreen from "../screens/headerScreens/AboutUsScreen";
 import BrowseScreen from "../screens/BrowseScreen";
-
+import FirstAidCareScreen from "../screens/browseScreens/FirstAidCareScreen";
+import ImmuneSupportScreen from "../screens/browseScreens/ImmuneSupportScreen";
+import MedicineScreen from "../screens/browseScreens/MedicineScreen";
+import SanitationSuppliesScreen from "../screens/browseScreens/SanitationSuppliesScreen";
+import PharmacyScreen from "../screens/browseScreens/PharmacyScreen";
   
 const AppNavigator = createStackNavigator(
   {
     Browse: BrowseScreen,
     About: AboutUsScreen,
     Messages: MessagesScreen,
-    Cart: CartScreen
-
+    Cart: CartScreen,
+    FirstAidCare: FirstAidCareScreen,
+    Medicine: MedicineScreen,
+    ImmuneSupport: ImmuneSupportScreen,
+    SanitationSupplies: SanitationSuppliesScreen,
+    Pharmacy: PharmacyScreen
   },
   {
     defaultNavigationOptions: {
