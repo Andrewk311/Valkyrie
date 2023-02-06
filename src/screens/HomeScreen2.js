@@ -12,32 +12,6 @@ const win = Dimensions.get('window');
 const widthL = win.width;
 const heightL = win.heigh - 56;
 
-// Auth.currentAuthenticatedUser({
-//   bypassCache: true // Optional, By default is false. If set to true, this call will send a request to Cognito to get the latest user data
-// })
-//   .then((user) => console.log(user))
-//   .catch((err) => console.log(err));
-
-// async function getUserInfo() { 
-//   const user = await Auth.currentAuthenticatedUser();
-//   //console.log('attributes:', user.attributes.name);
-//   return user.attributes.name;
-// }
-
-// const attributes = null;
-
-// async function getUserInfo(){
-//   const authUser = await Auth.currentAuthenticatedUser();
-//   attributes = await Auth.userAttributes(authUser);
-//   // the next line is a convenience that moves the attributes into
-//   // the authUser object
-//   attributes.forEach((attr) => {
-//   authUser.attributes[attr.Name] = attr.Value;
-//   //console.log(attributes);
-// });
-
-// }
-
 const Home = (props) => {
   const [attributes, setAttributes] = React.useState(null);
 
