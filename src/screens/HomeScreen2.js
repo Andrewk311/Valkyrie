@@ -1,23 +1,70 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import { ScrollView, StyleSheet } from 'react-native';
 import { Text, View, Button, TouchableOpacity} from "react-native";
 import { Dimensions } from "react-native";
 import { Image } from "react-native";
 import { Ionicons } from "@expo/vector-icons";
-import { Authenticator, useAuthenticator } from '@aws-amplify/ui-react-native';
+import { Authenticator, useAuthenticator} from '@aws-amplify/ui-react-native';
+import { Auth } from 'aws-amplify';
 import Icon from "react-native-vector-icons/Ionicons";
 
 const win = Dimensions.get('window');
 const widthL = win.width;
 const heightL = win.heigh - 56;
+
+// Auth.currentAuthenticatedUser({
+//   bypassCache: true // Optional, By default is false. If set to true, this call will send a request to Cognito to get the latest user data
+// })
+//   .then((user) => console.log(user))
+//   .catch((err) => console.log(err));
+
+// async function getUserInfo() { 
+//   const user = await Auth.currentAuthenticatedUser();
+//   //console.log('attributes:', user.attributes.name);
+//   return user.attributes.name;
+// }
+
+// const attributes = null;
+
+// async function getUserInfo(){
+//   const authUser = await Auth.currentAuthenticatedUser();
+//   attributes = await Auth.userAttributes(authUser);
+//   // the next line is a convenience that moves the attributes into
+//   // the authUser object
+//   attributes.forEach((attr) => {
+//   authUser.attributes[attr.Name] = attr.Value;
+//   //console.log(attributes);
+// });
+
+// }
+
 const Home = (props) => {
-  return (
+  const [attributes, setAttributes] = React.useState(null);
+
+  React.useEffect(() => {
+    async function getUserInfo() {
+      const user = await Auth.currentAuthenticatedUser();
+      setAttributes(user);
+    }
+    console.log('hi');
+    getUserInfo(); 
+  }, []);
+
+  var name = ''
+  if(attributes == null){
+    console.log('null');
+  } else {
+    console.log(attributes.attributes.name);
+    name = attributes.attributes.name.toString();
+  }
+
+  return ( 
     <Authenticator.Provider>
         <Authenticator>
           <ScrollView style={{marginHorizontal:0, backgroundColor:"rgba(227,55,55,1)"}}>
           <View style={styles.container}>
             <View style={styles.rect}>
-              <Text style={styles.welcome}>WELCOME</Text>
+              <Text style={styles.welcome}>WELCOME {name}</Text>
             </View>
             <View style={styles.rect1}>
               <Text style={styles.blackBold}>Selected Pharmacy</Text>
