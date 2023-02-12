@@ -40,7 +40,7 @@ const Account = (props) => {
               >         
               <View>     
               <Text style={styles.optionTitle}>Settings</Text>
-              <Text style={styles.optionDescription}>Change drop-off location, password, and personal information</Text>
+              <Text style={styles.optionDescription}>Change drop-off location and personal information</Text>
               </View>  
               <Ionicons name="ios-arrow-forward" size={30} color="#AA9798"/>
             </TouchableOpacity>
@@ -208,6 +208,7 @@ const styles = StyleSheet.create({
     color:"black",
     fontSize:12,
     marginLeft:10,
+    width:win.width - 50,
     marginBottom:0,
   },
   container1: {

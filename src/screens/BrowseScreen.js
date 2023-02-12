@@ -48,7 +48,7 @@ const Browse = (props) => {
                 onPress={() => props.navigation.navigate('Medicine')} 
               >         
               <View>     
-              <Text style={styles.optionTitle}>Flu/Cold{"\n"}Medicine</Text>
+              <Text style={styles.optionTitle}>Cold/Flu{"\n"}Medicine</Text>
               </View>  
               <Image style={styles.tinyLogo}
               source={require('./../customIcons/Medicine.png')}
@@ -72,7 +72,7 @@ const Browse = (props) => {
                 onPress={() => props.navigation.navigate('SanitationSupplies')} 
               >         
               <View>     
-              <Text style={styles.optionTitle}>Sanitation Supplies</Text>
+              <Text style={styles.optionTitle}>Sanitation{"\n"}Supplies</Text>
               </View>  
               <Image style={styles.tinyLogo}
               source={require('./../customIcons/Sanitize.png')}
@@ -162,17 +162,17 @@ const styles = StyleSheet.create({
     backgroundColor: "white",
     borderRadius:12,
     width:Dimensions.get('window').width*(0.98)*(0.45),
-    height:Dimensions.get('window').width*(0.37),
+    height:Dimensions.get('window').width*(0.45),
     marginTop:14,
     flexDirection: 'column',
   },
   optionTitle:{
     fontWeight:"bold",
-    fontSize:23,
+    fontSize:28,
     color:"black",
     marginLeft:-20,
     alignSelf:'center',
-    marginTop:20
+    marginTop:30
   },
   tinyLogo:{
     width: 40,

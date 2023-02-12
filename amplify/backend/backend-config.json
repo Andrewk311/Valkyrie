@@ -1,4 +1,5 @@
 {
+  "api": {},
   "auth": {
     "valkyrie9d01b9df": {
       "customAuth": false,
@@ -27,5 +28,7 @@
       "providerPlugin": "awscloudformation",
       "service": "Cognito"
     }
-  }
+  },
+  "function": {},
+  "storage": {}
 }
