@@ -1,31 +1,32 @@
-import { useEffect, useState, useContext } from "react";
-import { Text, View, Button, Dimensions, TouchableOpacity, Image} from "react-native";
-import { ScrollView, FlatList, StyleSheet } from 'react-native';
+import { useEffect, useState, useContext} from "react";
+import { View, Button} from "react-native";
+import { FlatList, StyleSheet } from 'react-native';
 import * as React from 'react';
-import { Ionicons } from "@expo/vector-icons";
 import { Product } from "../../components/Product";
 import { getProducts } from "../../services/ProductsService";
 import { CartContext } from "./CartContext";
 
 
 const Medicine = (props) => {
-  /* broken line --> const { addItemToCart } = useContext(CartContext);
-  */
-
-  function renderProduct({item: product}) {
-    return (
-      <Product {...product} 
-      onPress={() => {props.navigation.navigate('FirstAidCare')}
-      }
-      />
-    );
-  }
-
+  const { addItemToCart, getItemsCount } = useContext(CartContext);
+  const [product, setProduct] = useState({});
   const [products, setProducts] = useState([]);
 
   useEffect(() => {
     setProducts(getProducts());
   });
+
+  function onAddToCart(productId) {
+    addItemToCart(productId);
+  }
+
+  function renderProduct({item: product}) {
+    return (
+      <Product {...product} 
+      onPress={() => {onAddToCart(product.id)}}
+      />
+    );
+  }
 
   return (
     <View style={{backgroundColor:"rgba(227,55,55,1)"}}>
@@ -38,7 +39,7 @@ const Medicine = (props) => {
     />
     </View>
   );
-  };
+};
 
 Medicine.navigationOptions = ({ navigation: { goBack } }) => {
     return  {

@@ -5,7 +5,7 @@ import { Ionicons } from "@expo/vector-icons";
 const Cart = (props) => {
     return (
       <View style={{ flex: 1, alignItems: "center", justifyContent: "center" }}>
-        <Text style={{ color: "#006600", fontSize: 40 }}>Settings Screen!</Text>
+        <Text style={{ color: "#006600", fontSize: 40 }}>Cart Screen!</Text>
         <Ionicons name="ios-settings-sharp" size={80} color="#006600" />
       </View>
     );

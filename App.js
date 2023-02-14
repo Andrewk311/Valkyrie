@@ -4,11 +4,13 @@ import Amplify from '@aws-amplify/core'
 import config from './src/aws-exports'
 import BottomTabNavigator from './src/navigators/BottomTabNavigator';
 import { SafeAreaProvider } from 'react-native-safe-area-context';
+import { CartProvider } from './src/screens/browseScreens/CartContext';
 
 Amplify.configure(config)
 
 export default function App() {
   return (
+    <CartProvider>
     <Authenticator.Provider>
       <Authenticator
         signUpAttributes={[
@@ -23,5 +25,6 @@ export default function App() {
       </SafeAreaProvider>
       </Authenticator>
     </Authenticator.Provider>
+    </CartProvider>
   );
 }

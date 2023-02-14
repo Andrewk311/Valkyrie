@@ -10,6 +10,7 @@ import ImmuneSupportScreen from "../screens/browseScreens/ImmuneSupportScreen";
 import MedicineScreen from "../screens/browseScreens/MedicineScreen";
 import SanitationSuppliesScreen from "../screens/browseScreens/SanitationSuppliesScreen";
 import PharmacyScreen from "../screens/browseScreens/PharmacyScreen";
+import CartSummaryScreen from "../screens/headerScreens/CartSummaryScreen";
   
 const AppNavigator = createStackNavigator(
   {
@@ -21,7 +22,9 @@ const AppNavigator = createStackNavigator(
     Medicine: MedicineScreen,
     ImmuneSupport: ImmuneSupportScreen,
     SanitationSupplies: SanitationSuppliesScreen,
-    Pharmacy: PharmacyScreen
+    Pharmacy: PharmacyScreen, 
+    CartSummary: CartSummaryScreen
+
   },
   {
     defaultNavigationOptions: {

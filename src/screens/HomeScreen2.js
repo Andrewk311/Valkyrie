@@ -177,7 +177,7 @@ const styles = StyleSheet.create({
     marginTop: 10,
     borderRadius: 15,
     width:win.width*(0.98),
-    alignSelf:"center"
+    alignSelf:"center",
   },
   blackBold: {
     color: "#00000",
@@ -215,9 +215,9 @@ const styles = StyleSheet.create({
     marginTop:10,
     flexDirection: "row",
     justifyContent: "space-between",
-    alignItems: "center",
+    textAlign:'center',
     paddingVertical:15,
-    paddingHorizontal:20
+    paddingHorizontal:50
   },
   widgetContainer:{
     flexDirection: 'row',

@@ -28,7 +28,7 @@ function MyTabs() {
                 options={{ 
                     tabBarLabel:"Home",
                     tabBarIcon: (tabInfo) => (
-                        <Ionicons name="ios-home" size={30} />
+                        <Ionicons name="ios-home" size={25} />
                     ),
                 }}
             />
@@ -38,7 +38,7 @@ function MyTabs() {
                 options={{ 
                     tabBarLabel: "Browse",
                     tabBarIcon: (tabInfo) => (
-                        <Ionicons name="ios-cart" size={50} resizeMode='contain'/>
+                        <Ionicons name="ios-cart" size={25} resizeMode='contain'/>
                     ),
                 }}
             />
@@ -48,7 +48,7 @@ function MyTabs() {
                 options={{ 
                     tabBarLabel: "Account",
                     tabBarIcon: (tabInfo) => (
-                        <Ionicons name="ios-person" size={30} resizeMode='contain'/>
+                        <Ionicons name="ios-person" size={25} resizeMode='contain'/>
                     ), }}
             />
 

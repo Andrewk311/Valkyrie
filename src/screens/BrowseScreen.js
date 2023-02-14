@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Text, View, TextInput, Button, Dimensions, TouchableOpacity, Image} from "react-native";
+import { Text, View, Dimensions, TouchableOpacity, Image} from "react-native";
 import { ScrollView, StyleSheet } from 'react-native';
 import * as React from 'react';
 import { Searchbar } from 'react-native-paper';
@@ -132,7 +132,7 @@ Browse.navigationOptions = ({ navigation }) => {
         <View style={styles.buttonContainer}>
           <TouchableOpacity
             style={styles.customBtn}
-            onPress={() => navigate('Cart')} 
+            onPress={() => navigate('CartSummary')} 
           >
             <Ionicons name="cart" size={20} color="#000000"/>
             <Text style={styles.customBtnText}>Cart</Text>
