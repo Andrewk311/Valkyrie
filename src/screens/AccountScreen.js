@@ -201,7 +201,7 @@ const styles = StyleSheet.create({
   },
   optionDescription:{
     color:"black",
-    fontSize:win.width*(0.045),
+    fontSize:win.width*(0.03),
     marginLeft:10,
     width:win.width - 50,
     marginBottom:0,
