@@ -5,6 +5,7 @@ import { Ionicons } from "@expo/vector-icons";
 import { Item, HeaderButton, HeaderButtons} from "react-navigation-header-buttons";
 import { Authenticator, useAuthenticator } from '@aws-amplify/ui-react-native';
 import { Auth } from 'aws-amplify';
+import { CartCountIcon } from "../components/CartCountIcon";
 
 const win = Dimensions.get('window');
 const Account = (props) => {
@@ -146,13 +147,7 @@ Account.navigationOptions = ({ navigation }) => {
         </View>
 
         <View style={styles.buttonContainer}>
-          <TouchableOpacity
-            style={styles.customBtn}
-            onPress={() => navigate('Cart')} 
-          >
-            <Ionicons name="cart" size={20} color="#000000"/>
-            <Text style={styles.customBtnText}>Cart</Text>
-         </TouchableOpacity>
+        <CartCountIcon navigation={navigation}/>
         </View>
 
       </View>
@@ -199,14 +194,14 @@ const styles = StyleSheet.create({
   },
   optionTitle:{
     fontWeight:"bold",
-    fontSize:23,
+    fontSize:win.width*(0.09),
     color:"#AA9798",
     marginLeft:10,
     width:win.width-50,
   },
   optionDescription:{
     color:"black",
-    fontSize:12,
+    fontSize:win.width*(0.045),
     marginLeft:10,
     width:win.width - 50,
     marginBottom:0,

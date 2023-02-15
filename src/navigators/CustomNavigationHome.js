@@ -9,16 +9,18 @@ import TrackingScreen from "../screens/homeScreens/TrackingScreen";
 import ContactScreen from "../screens/homeScreens/ContactScreen";
 import PrescriptionScreen from "../screens/homeScreens/PrescriptionScreen";
 import AboutUsScreen from "../screens/headerScreens/AboutUsScreen";
+import CartSummaryScreen from "../screens/headerScreens/CartSummaryScreen";
   
 const AppNavigator = createStackNavigator(
   {
     Home: HomeScreen,
     About: AboutUsScreen,
     Messages: MessagesScreen,
-    Cart: CartScreen,
+    CartSummary: CartSummaryScreen,
     Tracking: TrackingScreen,
     Contact: ContactScreen,
     Prescription: PrescriptionScreen
+
   },
   {
     defaultNavigationOptions: {

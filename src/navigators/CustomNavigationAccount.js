@@ -11,6 +11,7 @@ import PaymentScreen from "../screens/accountScreens/PaymentScreen";
 import OrderHistoryScreen from "../screens/accountScreens/OrderHistoryScreen";
 import TrackingScreen from "../screens/homeScreens/TrackingScreen";
 import PrescriptionScreen from "../screens/homeScreens/PrescriptionScreen";
+import CartSummaryScreen from "../screens/headerScreens/CartSummaryScreen";
 
   
 const AppNavigator = createStackNavigator(
@@ -18,7 +19,7 @@ const AppNavigator = createStackNavigator(
     Account: AccountScreen,
     About: AboutUsScreen,
     Messages: MessagesScreen,
-    Cart: CartScreen,
+    CartSummary: CartSummaryScreen,
     Settings: SettingsScreen,
     Insurance: InsuranceScreen,
     Payment: PaymentScreen,

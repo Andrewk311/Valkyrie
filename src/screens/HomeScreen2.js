@@ -6,6 +6,7 @@ import { Image } from "react-native";
 import { Ionicons } from "@expo/vector-icons";
 import { Authenticator, useAuthenticator} from '@aws-amplify/ui-react-native';
 import { Auth } from 'aws-amplify';
+import {CartCountIcon} from "../components/CartCountIcon";
 import Icon from "react-native-vector-icons/Ionicons";
 
 const win = Dimensions.get('window');
@@ -38,7 +39,7 @@ const Home = (props) => {
           <ScrollView style={{marginHorizontal:0, backgroundColor:"rgba(227,55,55,1)"}}>
           <View style={styles.container}>
             <View style={styles.rect}>
-              <Text style={styles.welcome}>WELCOME {name}</Text>
+              <Text style={styles.welcome}>Welcome {name}!</Text>
             </View>
             <View style={styles.rect1}>
               <Text style={styles.blackBold}>Selected Pharmacy</Text>
@@ -132,17 +133,9 @@ Home.navigationOptions = ({ navigation }) => {
               <Text style={styles.customBtnText}>Messages</Text>
            </TouchableOpacity>
           </View>
-
           <View style={styles.buttonContainer}>
-            <TouchableOpacity
-              style={styles.customBtn}
-              onPress={() => navigate('Cart')} 
-            >
-              <Ionicons name="cart" size={20} color="#000000"/>
-              <Text style={styles.customBtnText}>Cart</Text>
-           </TouchableOpacity>
+          <CartCountIcon navigation={navigation}/>
           </View>
-
         </View>
           </>
         )

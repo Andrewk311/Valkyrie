@@ -4,6 +4,7 @@ import { ScrollView, StyleSheet } from 'react-native';
 import * as React from 'react';
 import { Searchbar } from 'react-native-paper';
 import { Ionicons } from "@expo/vector-icons";
+import { CartCountIcon } from "../components/CartCountIcon";
 
 const Browse = (props) => {
   const [input, setInput] = useState("");
@@ -130,13 +131,7 @@ Browse.navigationOptions = ({ navigation }) => {
         </View>
 
         <View style={styles.buttonContainer}>
-          <TouchableOpacity
-            style={styles.customBtn}
-            onPress={() => navigate('CartSummary')} 
-          >
-            <Ionicons name="cart" size={20} color="#000000"/>
-            <Text style={styles.customBtnText}>Cart</Text>
-         </TouchableOpacity>
+        <CartCountIcon navigation={navigation}/>
         </View>
 
       </View>

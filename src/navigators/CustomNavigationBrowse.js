@@ -17,7 +17,6 @@ const AppNavigator = createStackNavigator(
     Browse: BrowseScreen,
     About: AboutUsScreen,
     Messages: MessagesScreen,
-    Cart: CartScreen,
     FirstAidCare: FirstAidCareScreen,
     Medicine: MedicineScreen,
     ImmuneSupport: ImmuneSupportScreen,
