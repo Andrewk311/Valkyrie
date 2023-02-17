@@ -32,6 +32,12 @@
     "categories": {
       "auth": {
         "valkyrie9d01b9df": {}
+      },
+      "hosting": {
+        "amplifyhosting": {
+          "appId": "d1jzuqt9o031yl",
+          "type": "manual"
+        }
       }
     }
   }
