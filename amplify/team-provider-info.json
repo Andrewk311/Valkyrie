@@ -1,5 +1,5 @@
 {
-  "main": {
+  "dev": {
     "awscloudformation": {
       "AuthRoleName": "amplify-valkyrie-dev-174600-authRole",
       "UnauthRoleArn": "arn:aws:iam::245402807648:role/amplify-valkyrie-dev-174600-unauthRole",
@@ -17,7 +17,7 @@
       }
     }
   },
-  "dev": {
+  "main": {
     "awscloudformation": {
       "AuthRoleName": "amplify-valkyrie-dev-174600-authRole",
       "UnauthRoleArn": "arn:aws:iam::245402807648:role/amplify-valkyrie-dev-174600-unauthRole",
@@ -32,12 +32,6 @@
     "categories": {
       "auth": {
         "valkyrie9d01b9df": {}
-      },
-      "hosting": {
-        "amplifyhosting": {
-          "appId": "d1jzuqt9o031yl",
-          "type": "manual"
-        }
       }
     }
   }
