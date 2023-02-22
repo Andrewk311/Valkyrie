@@ -1,0 +1,20 @@
+{
+  "staging": {
+    "awscloudformation": {
+      "AuthRoleName": "amplify-amplify6afab6f9385c4-staging-232325-authRole",
+      "UnauthRoleArn": "arn:aws:iam::245402807648:role/amplify-amplify6afab6f9385c4-staging-232325-unauthRole",
+      "AuthRoleArn": "arn:aws:iam::245402807648:role/amplify-amplify6afab6f9385c4-staging-232325-authRole",
+      "Region": "us-east-1",
+      "DeploymentBucketName": "amplify-amplify6afab6f9385c4-staging-232325-deployment",
+      "UnauthRoleName": "amplify-amplify6afab6f9385c4-staging-232325-unauthRole",
+      "StackName": "amplify-amplify6afab6f9385c4-staging-232325",
+      "StackId": "arn:aws:cloudformation:us-east-1:245402807648:stack/amplify-amplify6afab6f9385c4-staging-232325/bdcb30c0-b23e-11ed-bb94-129696100363",
+      "AmplifyAppId": "d3i0cltd0177o8"
+    },
+    "categories": {
+      "auth": {
+        "valkyriepharmacywebs73bbe42e": {}
+      }
+    }
+  }
+}
