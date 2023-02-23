@@ -42,3 +42,7 @@ amplifytools.xcconfig
 .secret-*
 **.sample
 #amplify-do-not-edit-end
+
+#website and app files
+../app
+../website
