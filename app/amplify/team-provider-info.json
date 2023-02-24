@@ -14,24 +14,18 @@
     "categories": {
       "auth": {
         "valkyrie9d01b9df": {}
-      }
-    }
-  },
-  "main": {
-    "awscloudformation": {
-      "AuthRoleName": "amplify-valkyrie-dev-174600-authRole",
-      "UnauthRoleArn": "arn:aws:iam::245402807648:role/amplify-valkyrie-dev-174600-unauthRole",
-      "AuthRoleArn": "arn:aws:iam::245402807648:role/amplify-valkyrie-dev-174600-authRole",
-      "Region": "us-east-1",
-      "DeploymentBucketName": "amplify-valkyrie-dev-174600-deployment",
-      "UnauthRoleName": "amplify-valkyrie-dev-174600-unauthRole",
-      "StackName": "amplify-valkyrie-dev-174600",
-      "StackId": "arn:aws:cloudformation:us-east-1:245402807648:stack/amplify-valkyrie-dev-174600/362bde80-9dcb-11ed-927f-0e984dbc01f5",
-      "AmplifyAppId": "d1jzuqt9o031yl"
-    },
-    "categories": {
-      "auth": {
-        "valkyrie9d01b9df": {}
+      },
+      "storage": {
+        "valkyrie": {}
+      },
+      "function": {
+        "valkyrieTriggercc96d192": {
+          "deploymentBucketName": "amplify-valkyrie-dev-174600-deployment",
+          "s3Key": "amplify-builds/valkyrieTriggercc96d192-794c6f33367257317a61-build.zip"
+        }
+      },
+      "api": {
+        "valkyrie": {}
       }
     }
   }

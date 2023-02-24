@@ -1,5 +1,22 @@
 {
-  "api": {},
+  "api": {
+    "valkyrie": {
+      "dependsOn": [],
+      "output": {
+        "authConfig": {
+          "additionalAuthenticationProviders": [],
+          "defaultAuthentication": {
+            "apiKeyConfig": {
+              "apiKeyExpirationDays": 7
+            },
+            "authenticationType": "API_KEY"
+          }
+        }
+      },
+      "providerPlugin": "awscloudformation",
+      "service": "AppSync"
+    }
+  },
   "auth": {
     "valkyrie9d01b9df": {
       "customAuth": false,
@@ -29,7 +46,47 @@
       "service": "Cognito"
     }
   },
-  "function": {},
+  "function": {
+    "valkyrieTriggercc96d192": {
+      "build": true,
+      "dependsOn": [
+        {
+          "attributes": [
+            "Name",
+            "Arn",
+            "StreamArn"
+          ],
+          "category": "storage",
+          "resourceName": "valkyrie"
+        }
+      ],
+      "providerPlugin": "awscloudformation",
+      "service": "Lambda"
+    }
+  },
   "hosting": {},
-  "storage": {}
+  "parameters": {
+    "AMPLIFY_function_valkyrieTriggercc96d192_deploymentBucketName": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "valkyrieTriggercc96d192"
+        }
+      ]
+    },
+    "AMPLIFY_function_valkyrieTriggercc96d192_s3Key": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "valkyrieTriggercc96d192"
+        }
+      ]
+    }
+  },
+  "storage": {
+    "valkyrie": {
+      "providerPlugin": "awscloudformation",
+      "service": "DynamoDB"
+    }
+  }
 }
