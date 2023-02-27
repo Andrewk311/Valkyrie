@@ -25,15 +25,15 @@ const signOut = () => {
 
 function App() {
 
-  const navigate = useNavigate();
+  // const navigate = useNavigate();
 
-  function handleOrdersClick(){
-    navigate('/orders')
-  }
+  // function handleOrdersClick(){
+  //   navigate('/orders')
+  // }
 
-  function handleInventoryClick(){
-    navigate('/inventory')
-  }
+  // function handleInventoryClick(){
+  //   navigate('/inventory')
+  // }
 
   return (
     <Authenticator.Provider>
