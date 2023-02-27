@@ -38,17 +38,25 @@ function App() {
   return (
     <Authenticator.Provider>
       <Authenticator>
-      <div className="App">
-          <div className='App-header'>
-            <p style={{ color:'#92989B', fontWeight: 'bold', whiteSpace:'pre-line', textAlign:'center'}}>VALKYRIE{"\n"}
-            <p style={{ color:'#92989B', fontWeight: 'normal', whiteSpace:'pre-line', textAlign:'center', marginTop:'5px'}}>Welcome to the Pharmacy Portal</p>
-            </p>
+        <BrowserRouter>
+          <Routes>
+            <Route path="/orders" element={<Orders />}/>
+            <Route path="/inventory" element={<Inventory />}>
+              {/* render the inventory screen component */}
+            </Route>
+          </Routes>
+        <div className="App">
+            <div className='App-header'>
+              <p style={{ color:'#92989B', fontWeight: 'bold', whiteSpace:'pre-line', textAlign:'center'}}>VALKYRIE{"\n"}
+              <p style={{ color:'#92989B', fontWeight: 'normal', whiteSpace:'pre-line', textAlign:'center', marginTop:'5px'}}>Welcome to the Pharmacy Portal</p>
+              </p>
+            </div>
+            <img className='image' src={require('./logo.png')}></img>
+              <button className="button">View Orders</button>
+              <button className="button">View Inventory</button>
+              <button onClick={signOut} className="button">Sign Out</button>
           </div>
-          <img className='image' src={require('./logo.png')}></img>
-            <button className="button">View Orders</button>
-            <button className="button">View Inventory</button>
-            <button onClick={signOut} className="button">Sign Out</button>
-        </div>
+          </BrowserRouter>
       </Authenticator>
     </Authenticator.Provider>
   );
