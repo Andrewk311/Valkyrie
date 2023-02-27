@@ -34,10 +34,14 @@ function App() {
             <p style={{ color:'#92989B', fontWeight: 'normal', whiteSpace:'pre-line', textAlign:'center', marginTop:'5px'}}>Welcome to the Pharmacy Portal</p>
             </p>
           </div>
+          <div className='imageContainer'>
           <img className='image' src={require('./logo.png')}></img>
+          </div>
+          <div className='buttonContainer'>
             <button className="button">View Orders</button>
             <button className="button">View Inventory</button>
             <button onClick={signOut} className="button">Sign Out</button>
+        </div>
         </div>
       </Authenticator>
     </Authenticator.Provider>

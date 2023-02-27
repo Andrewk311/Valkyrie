@@ -8,8 +8,6 @@
   align-content:center ;
   align-items: center;
   height: 100vh;
-  display: flex;
-  flex-direction: column;
   overflow-y: scroll;
 }
 .App-header {
@@ -22,6 +20,11 @@
   justify-content: center;
   background-color: white;
 }
+.imageContainer{
+  justify-content: center;
+  display: flex;
+  margin-top: 5%;
+}
 
 .image{
   width:20%;
@@ -29,12 +32,20 @@
   margin-top: 5%;
   margin-bottom: 7%;
 }
+.buttonContainer{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 40px;
 
+}
 .button{
     background-color: #AA9798;
     border-radius: 25px;
+    width:70%;
+    height:120px;
     width:70vw;
-    height:160px;
+    height:13vh;
     border-width: 1;
     margin-bottom: 5%;
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
