@@ -23,22 +23,25 @@ const signOut = () => {
     .then(() => console.log('Signed out'))
     .catch(err => console.log('Error signing out: ', err));
 }
+
 function App() {
   return (
     <Authenticator.Provider>
       <Authenticator>
-        <div className="App">
-          <header className="App-header">
-          
-            <p>
-              PHARM portal
+      <div className="App">
+          <div className='App-header'>
+            <p style={{ color:'#92989B', fontWeight: 'bold', whiteSpace:'pre-line', textAlign:'center'}}>VALKYRIE{"\n"}
+            <p style={{ color:'#92989B', fontWeight: 'normal', whiteSpace:'pre-line', textAlign:'center', marginTop:'5px'}}>Welcome to the Pharmacy Portal</p>
             </p>
-            <nav>
-              <a href="https://www.valkyriedrone.io"> Back to landing page</a>
-            </nav>
-            <button onClick={signOut} className="signOutButton">SignOut</button>
-            <img src={dog}/>
-          </header>
+          </div>
+          <div className='imageContainer'>
+          <img className='image' src={require('./logo.png')}></img>
+          </div>
+          <div className='buttonContainer'>
+            <button className="button">View Orders</button>
+            <button className="button">View Inventory</button>
+            <button onClick={signOut} className="button">Sign Out</button>
+          </div>
         </div>
       </Authenticator>
     </Authenticator.Provider>
