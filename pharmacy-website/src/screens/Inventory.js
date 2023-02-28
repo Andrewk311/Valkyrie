@@ -38,7 +38,7 @@ function Inventory() {
             console.log('Error adding to inventory', err);
         }
       }
-
+    //MAKE TABLE THAT HOLDS DATA ABOUT ALL MEDICATIONS. ADD PAGINATION AS WELL SHOULD BE EASY WITH THIS LIBRARY
     return (
         <div className="App">
             <div className='App-header'>
