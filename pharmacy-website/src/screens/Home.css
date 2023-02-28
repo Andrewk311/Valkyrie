@@ -30,6 +30,45 @@
   margin-bottom: 7%;
 }
 
+.my-button {
+  background: red;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  padding: 8px 16px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+/* Apply .my-button to amplify-button */
+.amplify-button {
+  display: inline-block;
+  margin: 8px;
+  font-family: inherit;
+}
+
+.amplify-button.primary {
+  background: blue;
+  color: white;
+}
+
+.amplify-button.secondary {
+  background: yellow;
+  color: black;
+}
+
+/* .amplify-button[data-variation='primary'] {
+  background: linear-gradient(
+    to right,
+    var(--amplify-colors-green-80),
+    var(--amplify-colors-orange-40)
+  );
+} */
+
+.amplify-tabs {
+  display: none;
+}
+
 .button{
     background-color: #AA9798;
     border-radius: 25px;
