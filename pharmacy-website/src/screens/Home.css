@@ -40,21 +40,18 @@
   cursor: pointer;
 }
 
-/* Apply .my-button to amplify-button */
+
+
+/* All components have a class name starting with `amplify` */
 .amplify-button {
-  display: inline-block;
-  margin: 8px;
-  font-family: inherit;
+  font-size: 2rem;
+  padding: 1rem 2rem;
+  background: none;
+  border: 2px solid black;
 }
 
-.amplify-button.primary {
-  background: blue;
-  color: white;
-}
-
-.amplify-button.secondary {
-  background: yellow;
-  color: black;
+.amplify-button:hover {
+  background: gray;
 }
 
 /* .amplify-button[data-variation='primary'] {
