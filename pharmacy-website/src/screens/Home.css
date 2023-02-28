@@ -41,7 +41,6 @@
 }
 
 
-
 /* All components have a class name starting with `amplify` */
 .amplify-button {
   font-size: 2rem;
@@ -54,13 +53,6 @@
   background: gray;
 }
 
-/* .amplify-button[data-variation='primary'] {
-  background: linear-gradient(
-    to right,
-    var(--amplify-colors-green-80),
-    var(--amplify-colors-orange-40)
-  );
-} */
 
 .amplify-tabs {
   display: none;
