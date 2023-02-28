@@ -5,13 +5,13 @@ import { addInventoryItem } from './../services/addInventory';
 
 function Inventory() {
     const [inventories, setInventories] = useState([]);
-
     useEffect(() => {
         async function fetchInventories() {
           try {
             const filter = 'Cold and Flu'; 
             const items = await getInventoriesByPartitionKey(filter);
             setInventories(items);
+            console.log(items);
           } catch (err) {
             console.log('Error fetching inventories', err);
           }
@@ -25,6 +25,7 @@ function Inventory() {
 
       async function addInventory(){
         try{
+          console.log('add')
             const input = {
                 product_inventory: 10,
                 product_name: 'something',
@@ -42,8 +43,12 @@ function Inventory() {
         <div className="App">
             <div className='App-header'>
               <p style={{ color:'#92989B', fontWeight: 'bold', whiteSpace:'pre-line', textAlign:'center'}}>VALKYRIE{"\n"}
-              <p style={{ color:'#92989B', fontWeight: 'normal', whiteSpace:'pre-line', textAlign:'center', marginTop:'5px'}}>Inventory</p>
               </p>
+            </div>
+            <p style={{color:'#FFFFFF', alignSelf:'flex-start' , marginLeft: 20,fontSize: 'calc(35px + 2vmin)', fontWeight:'bold'}}>Inventory</p>
+            <hr style={{border:'1px solid white', width: '98%'}}></hr>
+            <div>
+
             </div>
             <img className='image' src={require('./../logo.png')}></img>
             <button onClick={checkInventory}>check</button>

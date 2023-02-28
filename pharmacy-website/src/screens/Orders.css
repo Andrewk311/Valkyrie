@@ -15,7 +15,7 @@
 .App-header {
   min-height: 13vmin;
   width: 100vw;
-  font-size: calc(10px + 2vmin);
+  font-size: calc(20px + 2vmin);
   color: white;
   display: flex;
   flex-direction: row;

@@ -15,21 +15,13 @@
 .App-header {
   min-height: 13vmin;
   width: 100vw;
-  font-size: calc(10px + 2vmin);
+  font-size: calc(20px + 2vmin);
   color: white;
   display: flex;
   flex-direction: row;
   justify-content: center;
   background-color: white;
 }
-
-.image{
-  width:20%;
-  height:20%;
-  margin-top: 5%;
-  margin-bottom: 7%;
-}
-
 .button{
     background-color: #AA9798;
     border-radius: 25px;
