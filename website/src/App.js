@@ -1,20 +1,25 @@
 import dog from './Dallas.JPG';
 import './App.css';
+import {
+  LandingPage 
+ } from './ui-components';
 
 function App() {
   return (
     <div className="App">
       <header className="App-header">
-      <p>
+      {/* <p>
         Valkyrie Drone Landing Page!
-      </p>
+      </p> */}
       <nav>
         <a href="https://pharmacy.valkyriedrone.io"> Pharm portal</a>
       </nav>
-      <img src={dog} />
+      <LandingPage />
       </header>
     </div>
   );
 }
+
+ 
 
 export default App;
