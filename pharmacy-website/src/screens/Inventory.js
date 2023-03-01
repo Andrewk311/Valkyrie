@@ -2,7 +2,6 @@ import './Inventory.css';
 import { getInventoriesByPartitionKey } from './../services/ListInventories';
 import { useState, useEffect } from 'react';
 import { addInventoryItem } from './../services/addInventory';
-import Select from "react-dropdown-select";
 
 function Inventory() {
     const [inventories, setInventories] = useState([]);
