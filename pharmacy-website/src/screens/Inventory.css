@@ -21,6 +21,7 @@
   flex-direction: row;
   justify-content: center;
   background-color: white;
+  margin-bottom: 0;
 }
 .button{
     background-color: #AA9798;
@@ -38,6 +39,40 @@
 .App-link {
   color: #61dafb;
 }
+
+.table{
+  border: 1px solid;
+}
+.tableWrapper {
+  background-color: white;
+  width: 100%;
+  margin: 10px;
+  width:95%;
+  color: black;
+  border-collapse: collapse;
+  text-align: left;
+  border-radius: 10px;
+  margin-bottom: 30px;
+}
+.th{
+  padding: 15px;
+  border-bottom: 1px solid rgb(130, 118, 118);
+  border-collapse: collapse;
+}
+
+.td{
+  padding: 15px;
+  border-bottom: 1px solid rgb(130, 118, 118);
+  border-collapse: collapse;
+  font-weight: 430;
+}
+
+label {
+  color: black;
+  display: block;
+  width: 150px;
+  float: left;
+  }
 
 @media (prefers-reduced-motion: no-preference) {
 	.App-logo {
