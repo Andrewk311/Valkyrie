@@ -12,7 +12,7 @@ function Orders() {
             const filter = "9"; 
             const items = await getOrdersByNumber(filter);
             setOrders(items);
-            // console.log(items);
+            console.log(items);
           } catch (err) {
             console.log('Error fetching orders', err);
             setOrders([]);
