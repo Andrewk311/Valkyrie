@@ -31,6 +31,7 @@ export function CartProvider(props) {
 }
 
 function removeItemFromCart(id) {
+  console.log(items); 
   const product = getProduct(id);
   setItems((prevItems) => {
     const item = prevItems.find((item) => (item.id == id));

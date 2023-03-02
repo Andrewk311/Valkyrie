@@ -8,25 +8,29 @@ index 22c4155..c64e179 100644
  
 +  componentDidMount() {
 +    if (Platform.OS === 'ios') {
-+       this.keyboardWillShow = Keyboard.addListener('keyboardWillShow', this._handleKeyboardShow);
-+       this.keyboardWillHide = Keyboard.addListener('keyboardWillHide', this._handleKeyboardHide);
+-      Keyboard.addListener('keyboardWillShow', this._handleKeyboardShow);
+-      Keyboard.addListener('keyboardWillHide', this._handleKeyboardHide);
++      this.keyboardWillShow = Keyboard.addListener('keyboardWillShow', this._handleKeyboardShow);
++      this.keyboardWillHide = Keyboard.addListener('keyboardWillHide', this._handleKeyboardHide);
 +    } else {
-+       this.keyboardDidShow = Keyboard.addListener('keyboardDidShow', this._handleKeyboardShow);
-+       this.keyboardDidHide = Keyboard.addListener('keyboardDidHide', this._handleKeyboardHide);
+-      Keyboard.addListener('keyboardDidShow', this._handleKeyboardShow);
+-      Keyboard.addListener('keyboardDidHide', this._handleKeyboardHide);
++      this.keyboardDidShow = Keyboard.addListener('keyboardDidShow', this._handleKeyboardShow);
++      this.keyboardDidHide = Keyboard.addListener('keyboardDidHide', this._handleKeyboardHide);
 +    }
 +  }
 +
    componentWillUnmount() {
      if (Platform.OS === 'ios') {
--      Keyboard.removeListener('keyboardWillShow', this.handleKeyboardShow);
--      Keyboard.removeListener('keyboardWillHide', this.handleKeyboardHide);
-+       this.keyboardWillShow?.remove();
-+       this.keyboardWillHide?.remove();
+-      Keyboard.removeListener('keyboardWillShow', this._handleKeyboardShow);
+-      Keyboard.removeListener('keyboardWillHide', this._handleKeyboardHide);
++      this.keyboardWillShow?.remove();
++      this.keyboardWillHide?.remove();
      } else {
--      Keyboard.removeListener('keyboardDidShow', this.handleKeyboardShow);
--      Keyboard.removeListener('keyboardDidHide', this.handleKeyboardHide);
-+       this.keyboardDidShow?.remove();
-+       this.keyboardDidHide?.remove();
+-      Keyboard.removeListener('keyboardDidShow', this._handleKeyboardShow);
+-      Keyboard.removeListener('keyboardDidHide', this._handleKeyboardHide);
++      this.keyboardDidShow?.remove();
++      this.keyboardDidHide?.remove();
      }
    }
  

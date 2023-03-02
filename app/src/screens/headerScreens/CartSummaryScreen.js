@@ -16,6 +16,10 @@ const CartSummary = (props) => {
       removeItemFromCart(productId);
     }
 
+    function checkTotalItems(){
+      console.log(items);
+    }
+
   function Totals() {
     let [total, setTotal] = useState(0);
     useEffect(() => {
@@ -25,6 +29,7 @@ const CartSummary = (props) => {
        <View style={styles.cartLineTotal}>
           <Text style={{fontWeight:'bold', fontSize:20, marginTop:10}}>Total</Text>
           <Text style={{fontWeight:'bold', marginLeft:10, fontSize:20, marginTop:10}}>${total.toFixed(2)}</Text>
+          <Button title={"Checkout"} onPress={checkTotalItems}></Button>
        </View>
     );
   }
