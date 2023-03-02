@@ -2,6 +2,7 @@ import './Inventory.css';
 import { getInventoriesByPartitionKey } from './../services/ListInventories';
 import { useState, useEffect } from 'react';
 import { addInventoryItem } from './../services/addInventory';
+import Select from 'react-select';
 
 function Inventory() {
     const [inventories, setInventories] = useState([]);
@@ -9,34 +10,49 @@ function Inventory() {
     const [price, SetPrice] = useState(0);
     const [inventory, SetInventory] = useState(0);
     const [weight, SetWeight] = useState(0);
-    const [type, SetType] = useState("");
-    const [selectedType, SetSelectedType] = useState("");
+    const [message, setMessage] = useState('');
+    const [type, setType] = useState("")
+    
+
     const itemTypes = [
       {
-        id:1,
-        name:"Prescription"
+        label:"Prescription"
       },
       {
-        id:2,
-        name:"Cold and Flu"
+        label:"Cold and Flu"
       },
       {
-        id:3,
-        name:"OTC" 
+        label:"OTC" 
       },
       {
-        id:4,
-        name:"Vitamin and Immune Support" 
+        label:"Vitamin and Immune Support" 
       },
       {
-        id:4,
-        name:"Misc." 
+        label:"Misc." 
       },
     ];
+
+    const handleSubmit = (event) => {
+      event.preventDefault();
+      const name = event.target.product_name.value;
+      const price = event.target.product_price.value;
+      const inventory = event.target.product_inventory.value;
+      const weight = event.target.product_weight.value;
+      
+      if(addInventory(name, price, inventory, weight, type.label) == []){
+        setMessage('Error')
+      }
+      else{
+        setMessage('Added!')
+      }
+      
+      event.target.reset();
+    };
+
     useEffect(() => {
         async function fetchInventories() {
           try {
-            const filter = 'Testing'; 
+            const filter = 'UITEST'; 
             const items = await getInventoriesByPartitionKey(filter);
             setInventories(items);
             console.log(items);
@@ -98,7 +114,7 @@ function Inventory() {
       ))}
       </tbody>
     </table>
-    <form>
+    <form onSubmit={handleSubmit}>
   <label className='label'>
     Product Name:
     <input type="text" id="product_name" onChange={e => SetName(e.target.value)} required />
@@ -117,15 +133,18 @@ function Inventory() {
   </label>
   <label className='label'>
     Product Type:
-    <input type="text" id="product_type" onChange={e => SetType(e.target.value)} required />
+    <Select
+            isClearable={false}
+            className='dropdown'
+            options={itemTypes}
+            onChange={(type) => setType(type)}
+            required
+          />
   </label>
   <br></br>
-  <input type="Submit" value="Add" 
-      onClick={
-        addInventory(name, price, inventory, weight, type)
-
-      }/>
+  <input type="Submit" value="Add"/>
 </form>
+<h2>{message}</h2>
         </div>
     );
 }
