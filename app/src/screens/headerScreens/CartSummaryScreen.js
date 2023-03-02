@@ -4,10 +4,38 @@ import { Image } from "react-native";
 import { CartContext } from '../browseScreens/CartContext';
 import { getProduct } from '../../services/ProductsService';
 import { Ionicons } from "@expo/vector-icons";
+import { Auth } from 'aws-amplify';
 
 const CartSummary = (props) => {
     const {items, removeItemFromCart, getTotalPrice, addItemToCart} = useContext(CartContext);
     
+    const [attributes, setAttributes] = React.useState(null);
+
+    React.useEffect(() => {
+      async function getUserInfo() {
+        const user = await Auth.currentAuthenticatedUser();
+        await Auth.updateUserAttributes(user, {
+          'address': '14 east 32nd St. Bayonne, NJ 07002'
+        });
+        setAttributes(user);
+      }
+      console.log('hi');
+      getUserInfo(); 
+    }, []);
+
+    var email = ''
+    var address = ''
+    if(attributes == null){
+      console.log('null email');
+    } else {
+      console.log(attributes.attributes.email);
+      console.log(attributes.attributes.address);
+      email = attributes.attributes.email.toString(); //gets email
+      address = attributes.attributes.address.toString() //gets address
+    }
+
+    //use google maps api to switch it to latitude and longitude
+
     function onAddToCart(productId) {
       addItemToCart(productId);
     }
@@ -18,6 +46,8 @@ const CartSummary = (props) => {
 
     function checkTotalItems(){
       console.log(items);
+      console.log(email)
+      console.log(address)
     }
 
   function Totals() {
