@@ -5,5 +5,7 @@
  **************************************************************************/
 
 export { default as LandingPage } from "./LandingPage";
+export { default as Aboutus } from "./Aboutus";
 export { default as Frame2 } from "./Frame2";
+export { default as Howitsbuilt } from "./Howitsbuilt";
 export { default as studioTheme } from "./studioTheme";

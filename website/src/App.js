@@ -1,22 +1,21 @@
-import dog from './Dallas.JPG';
 import './App.css';
 import {
   LandingPage 
  } from './ui-components';
+import { BrowserRouter, Route, Routes } from 'react-router-dom';
+import Home from './screens/Home';
+import AboutUs from './screens/AboutUs';
+import How from './screens/How';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-      {/* <p>
-        Valkyrie Drone Landing Page!
-      </p> */}
-      <nav>
-        <a href="https://pharmacy.valkyriedrone.io"> Pharm portal</a>
-      </nav>
-      <LandingPage />
-      </header>
-    </div>
+    <BrowserRouter>
+      <Routes>
+        <Route path ="/" element={<Home />} />
+        <Route path ="/AboutUs" element={<AboutUs />} />
+        <Route path ="/HowitsBuilt" element={<How />} />
+      </Routes>
+    </BrowserRouter>
   );
 }
 
