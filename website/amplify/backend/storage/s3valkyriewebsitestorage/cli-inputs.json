@@ -1,0 +1,10 @@
+{
+  "resourceName": "s3valkyriewebsitestorage",
+  "bucketName": "valkyrie-website-storage",
+  "policyUUID": "3c936b96",
+  "storageAccess": "auth",
+  "guestAccess": [],
+  "authAccess": [
+    "READ"
+  ]
+}

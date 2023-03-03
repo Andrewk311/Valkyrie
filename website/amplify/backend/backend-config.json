@@ -31,5 +31,11 @@
   },
   "function": {},
   "hosting": {},
-  "storage": {}
+  "storage": {
+    "s3valkyriewebsitestorage": {
+      "dependsOn": [],
+      "providerPlugin": "awscloudformation",
+      "service": "S3"
+    }
+  }
 }
