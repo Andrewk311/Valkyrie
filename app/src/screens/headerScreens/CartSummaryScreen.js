@@ -5,6 +5,7 @@ import { CartContext } from '../browseScreens/CartContext';
 import { getProduct } from '../../services/ProductsService';
 import { Ionicons } from "@expo/vector-icons";
 import { Auth } from 'aws-amplify';
+import { createOrder } from '../../services/AddOrder';
 
 const CartSummary = (props) => {
     const {items, removeItemFromCart, getTotalPrice, addItemToCart} = useContext(CartContext);
@@ -44,10 +45,35 @@ const CartSummary = (props) => {
       removeItemFromCart(productId);
     }
 
+    const orderData = {
+      latitude: 33,
+      longitude: -87,
+      totalPrice: 44,
+      totalWeight: 2.7,
+      email: "testing3@gmail.com",
+      isActive: true,
+      orderNumber: "13",  //change every order or it wont go through
+      orders: [
+        { name: "Bandage", quantity: 10 },
+        { name: "VitaminD", quantity: 1 },
+        { name: "Ashwaganda", quantity: 2 }
+      ]
+    };
+
     function checkTotalItems(){
       console.log(items);
-      console.log(email)
-      console.log(address)
+      console.log(email);
+      console.log(address);
+      addOrder(orderData);
+    }
+
+    async function addOrder(order){
+      try{
+        createOrder(order);
+        console.log('added order number #' + order.orderNumber);
+      } catch (err) {
+        console.log('Error adding order', err);
+      }
     }
 
   function Totals() {

@@ -23,9 +23,6 @@
           "deploymentBucketName": "amplify-valkyrie-dev-174600-deployment",
           "s3Key": "amplify-builds/valkyrieTriggercc96d192-794c6f33367257317a61-build.zip"
         }
-      },
-      "api": {
-        "valkyrie": {}
       }
     }
   }

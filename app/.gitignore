@@ -13,6 +13,10 @@ web-build/
 # macOS
 .DS_Store
 
+
+../pharmacy-website
+../website
+
 #amplify-do-not-edit-begin
 amplify/\#current-cloud-backend
 amplify/.config/local-*
@@ -34,6 +38,3 @@ amplifytools.xcconfig
 .secret-*
 **.sample
 #amplify-do-not-edit-end
-
-../pharmacy-website
-../website
