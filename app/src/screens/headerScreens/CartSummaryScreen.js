@@ -6,13 +6,17 @@ import { getProduct } from '../../services/ProductsService';
 import { Ionicons } from "@expo/vector-icons";
 import { Auth } from 'aws-amplify';
 import { createOrder } from '../../services/AddOrder';
+import Geocoder from 'react-native-geocoding';
 
 const CartSummary = (props) => {
     const {items, removeItemFromCart, getTotalPrice, addItemToCart} = useContext(CartContext);
     
     const [attributes, setAttributes] = React.useState(null);
 
-    React.useEffect(() => {
+    googleMapsAPI = "AIzaSyBmF_o7JmYo55KiewrTHqiDOupJ5FcbxRA";   //google maps api key to convert address to lat and long
+    Geocoder.init(googleMapsAPI);
+
+    React.useEffect(() => {   //address given address field to the auth user. Need to move to different file.
       async function getUserInfo() {
         const user = await Auth.currentAuthenticatedUser();
         await Auth.updateUserAttributes(user, {
@@ -33,6 +37,14 @@ const CartSummary = (props) => {
       console.log(attributes.attributes.address);
       email = attributes.attributes.email.toString(); //gets email
       address = attributes.attributes.address.toString() //gets address
+    }
+
+    function getLatLong(){  //function to convert address to lat and long
+      Geocoder.from(address).then(json => {
+        const { lat, lng } = json.results[0].geometry.location;
+        console.log('Latitude:', lat);
+        console.log('Longitude:', lng);
+      }).catch(error => console.warn(error));
     }
 
     //use google maps api to switch it to latitude and longitude
@@ -64,7 +76,8 @@ const CartSummary = (props) => {
       console.log(items);
       console.log(email);
       console.log(address);
-      addOrder(orderData);
+      // getLatLong();
+      // addOrder(orderData);
     }
 
     async function addOrder(order){
