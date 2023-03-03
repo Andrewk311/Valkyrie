@@ -114,36 +114,37 @@ function Inventory() {
       ))}
       </tbody>
     </table>
+    <div className='formContainer'>
     <form onSubmit={handleSubmit}>
   <label className='label'>
     Product Name:
-    <input type="text" id="product_name" onChange={e => SetName(e.target.value)} required />
+    <input className = 'input' type="text" id="product_name" onChange={e => SetName(e.target.value)} required />
   </label>
   <label className='label'>
     Product Price:
-    <input type="number" step="0.01" id="product_price" onChange={e => SetPrice(e.target.value)} required />
+    <input className = 'input' type="number" step="0.01" id="product_price" onChange={e => SetPrice(e.target.value)} required />
   </label >
   <label className='label'>
     Product Inventory:
-    <input type="number" id="product_inventory" onChange={e => SetInventory(e.target.value)} required />
+    <input className = 'input' type="number" id="product_inventory" onChange={e => SetInventory(e.target.value)} required />
   </label >
   <label className='label'>
     Product Weight:
-    <input type="number" step="0.01" id="product_weight" onChange={e => SetWeight(e.target.value)} required/>
+    <input className = 'input' type="number" step="0.01" id="product_weight" onChange={e => SetWeight(e.target.value)} required/>
   </label>
   <label className='label'>
     Product Type:
     <Select
             isClearable={false}
-            className='dropdown'
+            className = 'dropdown'
             options={itemTypes}
             onChange={(type) => setType(type)}
             required
           />
   </label>
-  <br></br>
-  <input type="Submit" value="Add"/>
+  <input className="submitBtn" type="Submit" value="Add Product"/>
 </form>
+</div>
 <h2>{message}</h2>
         </div>
     );
