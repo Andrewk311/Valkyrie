@@ -77,9 +77,6 @@ function Orders() {
       </tbody>
     </table>
 <h2>{message}</h2>
-            <button onClick={handleShowOrderClick}>Show Order</button>
-            <img className='image' src={require('./../logo.png')}></img>
-            
         </div>
     );
 }
