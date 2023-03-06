@@ -1,8 +1,12 @@
 import json
 
 def handler(event, context):
+
+    latitude = event.get("latitude")
+    longitude = event.get("longitude")
+
     body = {
-        "message": "Hello from your new Lambda function!",
+        "message": f"Sending the drone the coordinates latitude: {latitude} and longitude: {longitude}!",
         "input": event
     }
 

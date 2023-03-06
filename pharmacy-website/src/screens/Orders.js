@@ -17,7 +17,8 @@ function Orders() {
       try {
         const response = await API.post('lambdatrigger', '/test', {
           body: {
-            // Your request body here
+            "latitude": 37.7749,
+            "longitude": -122.4194
           }
         });
         console.log(response);
