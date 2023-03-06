@@ -1,5 +1,19 @@
 {
   "api": {
+    "lambdatrigger": {
+      "dependsOn": [
+        {
+          "attributes": [
+            "Name",
+            "Arn"
+          ],
+          "category": "function",
+          "resourceName": "OrderExecution"
+        }
+      ],
+      "providerPlugin": "awscloudformation",
+      "service": "API Gateway"
+    },
     "valkyriepharmacywebs": {
       "dependsOn": [],
       "output": {

@@ -16,12 +16,13 @@
         "valkyriepharmacywebs73bbe42e": {}
       },
       "api": {
-        "valkyriepharmacywebs": {}
+        "valkyriepharmacywebs": {},
+        "lambdatrigger": {}
       },
       "function": {
         "OrderExecution": {
           "deploymentBucketName": "amplify-amplify6afab6f9385c4-staging-232325-deployment",
-          "s3Key": "amplify-builds/OrderExecution-5a586d4c395a63385269-build.zip"
+          "s3Key": "amplify-builds/OrderExecution-397932617436446e2b2b-build.zip"
         }
       }
     }

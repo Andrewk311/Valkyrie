@@ -1,6 +1,7 @@
 import './Orders.css';
 import { getOrdersByNumber } from './../services/ListOrders';
 import { useEffect, useState } from 'react';
+import { API } from 'aws-amplify';
 
 function Orders() {
 
@@ -12,7 +13,18 @@ function Orders() {
     const [message, setMessage] = useState('');
     const [type, setType] = useState("");
 
-
+    const testLambda = async () => {
+      try {
+        const response = await API.post('lambdatrigger', '/test', {
+          body: {
+            // Your request body here
+          }
+        });
+        console.log(response);
+      } catch (error) {
+        console.error(error);
+      }
+    }
 
     useEffect(() => {
         async function fetchOrder() {
@@ -77,6 +89,7 @@ function Orders() {
       </tbody>
     </table>
 <h2>{message}</h2>
+            <button onClick={testLambda}>Trigger Lambda</button>
         </div>
     );
 }
