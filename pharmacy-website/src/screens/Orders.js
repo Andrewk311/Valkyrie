@@ -47,7 +47,7 @@ function Orders() {
     }
 
     function approveOrder(order){
-
+      //here we need to add query to gather the location data from that specific order and insert it into the body of the lambda function, then call that.
     }
      
     function declineOrder(order){
