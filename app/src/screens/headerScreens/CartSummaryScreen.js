@@ -10,17 +10,17 @@ import Geocoder from 'react-native-geocoding';
 
 const CartSummary = (props) => {
     const {items, removeItemFromCart, getTotalPrice, addItemToCart} = useContext(CartContext);
-    
     const [attributes, setAttributes] = React.useState(null);
 
     googleMapsAPI = "AIzaSyBmF_o7JmYo55KiewrTHqiDOupJ5FcbxRA";   //google maps api key to convert address to lat and long
     Geocoder.init(googleMapsAPI);
 
+
     React.useEffect(() => {   //address given address field to the auth user. Need to move to different file.
       async function getUserInfo() {
         const user = await Auth.currentAuthenticatedUser();
         await Auth.updateUserAttributes(user, {
-          'address': '14 east 32nd St. Bayonne, NJ 07002'
+          'address': "421 75th st, North Bergen, NJ, 07047"
         });
         setAttributes(user);
       }
@@ -28,6 +28,7 @@ const CartSummary = (props) => {
       getUserInfo(); 
     }, []);
 
+    // will remove this eventually 
     var email = ''
     var address = ''
     if(attributes == null){
@@ -36,48 +37,42 @@ const CartSummary = (props) => {
       console.log(attributes.attributes.email);
       console.log(attributes.attributes.address);
       email = attributes.attributes.email.toString(); //gets email
-      address = attributes.attributes.address.toString() //gets address
+      address = attributes.attributes.address.toString(); //gets address
     }
 
-    function getLatLong(){  //function to convert address to lat and long
+    // checkout functions
+    const [errorMessage, setErrorMessage] = React.useState("");
+    const checkoutAction = (message) => {
+      setErrorMessage(message);
+      if (message == 'Order Placed!'){
+        createOrderObject();
+      }
+    }
+
+    function createOrderObject(){
+      const orderDetails = [];
       Geocoder.from(address).then(json => {
-        const { lat, lng } = json.results[0].geometry.location;
-        console.log('Latitude:', lat);
-        console.log('Longitude:', lng);
+       const { lat, lng } = json.results[0].geometry.location;
+       for(var i =0; i < items.length; i++){
+        console.log(getProduct(items[i].id).name);
+        console.log(items[i].qty);
+        orderDetails.push({name:getProduct(items[i].id).name, quantity: items[i].qty});
+      }
+      console.log(orderDetails);
+      const orderData = {
+        latitude: lat,
+        longitude: lng,
+        totalPrice: getTotalPrice(),
+        totalWeight: 2.7,
+        email: attributes.attributes.email.toString(),
+        isActive: true,
+        orderNumber: "14",  //change every order or it wont go through
+        orders: orderDetails,
+      };
+
+      addOrder(orderData);
+
       }).catch(error => console.warn(error));
-    }
-
-    //use google maps api to switch it to latitude and longitude
-
-    function onAddToCart(productId) {
-      addItemToCart(productId);
-    }
-
-    function onRemoveFromCart(productId) {
-      removeItemFromCart(productId);
-    }
-
-    const orderData = {
-      latitude: 33,
-      longitude: -87,
-      totalPrice: 44,
-      totalWeight: 2.7,
-      email: "testing3@gmail.com",
-      isActive: true,
-      orderNumber: "13",  //change every order or it wont go through
-      orders: [
-        { name: "Bandage", quantity: 10 },
-        { name: "VitaminD", quantity: 1 },
-        { name: "Ashwaganda", quantity: 2 }
-      ]
-    };
-
-    function checkTotalItems(){
-      console.log(items);
-      console.log(email);
-      console.log(address);
-      // getLatLong();
-      // addOrder(orderData);
     }
 
     async function addOrder(order){
@@ -89,6 +84,15 @@ const CartSummary = (props) => {
       }
     }
 
+    // add/remove items from cart
+    function onAddToCart(productId) {
+      addItemToCart(productId);
+    }
+
+    function onRemoveFromCart(productId) {
+      removeItemFromCart(productId);
+    }
+
   function Totals() {
     let [total, setTotal] = useState(0);
     useEffect(() => {
@@ -96,10 +100,16 @@ const CartSummary = (props) => {
     });
     return (
        <View style={styles.cartLineTotal}>
-          <Text style={{fontWeight:'bold', fontSize:20, marginTop:10}}>Total</Text>
-          <Text style={{fontWeight:'bold', marginLeft:10, fontSize:20, marginTop:10}}>${total.toFixed(2)}</Text>
-          <Button title={"Checkout"} onPress={checkTotalItems}></Button>
-       </View>
+        <View style={{flexDirection:'row', marginTop:10, marginBottom:10}}>
+          <Text style={{fontWeight:'bold', fontSize:20}}>Total: </Text>
+          <Text style={{fontWeight:'bold', fontSize:20}}>${total.toFixed(2)}</Text>
+          </View>
+          <TouchableOpacity style ={styles.checkoutBtn} 
+          onPress={() => {checkoutAction((attributes.attributes.address == " ") ? 'Error: Please Enter Your Address in Settings!' : 'Order Placed!')}} >
+            <Text style={{fontSize:20, fontWeight:'350'}}>Checkout</Text>
+          </TouchableOpacity>
+          {errorMessage && <Text style={{fontSize:'15', marginTop:15, }}> {errorMessage} </Text>}
+      </View>
     );
   }
 function renderItem({item}) {
@@ -168,11 +178,13 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
   },
   cartLineTotal: { 
-    flexDirection: 'row',
+    flexDirection: 'column',
     borderTopColor: "#AD3A5C",
     borderTopWidth: 3, 
     alignItems:'center',
-    width:370,
+    justifyContent:'center',
+    alignSelf:'center',
+    width:380,
   },
   totalText: {
     fontSize: 20, 
@@ -218,4 +230,16 @@ button: {
   alignContent:'center',
   justifyContent:'center',
 },
+
+checkoutBtn: {
+  backgroundColor: 'white',
+  width: 250,
+  height: 75,
+  borderWidth: 2,
+  fontColor:'black',
+  borderRadius: (45 / 2),
+  borderColor:"#AD3A5C",
+  alignItems:"center",
+  justifyContent:'center',
+}
 });
