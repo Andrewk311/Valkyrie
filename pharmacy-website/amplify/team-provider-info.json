@@ -22,7 +22,7 @@
       "function": {
         "OrderExecution": {
           "deploymentBucketName": "amplify-amplify6afab6f9385c4-staging-232325-deployment",
-          "s3Key": "amplify-builds/OrderExecution-62384b7153714a767172-build.zip"
+          "s3Key": "amplify-builds/OrderExecution-62764a754742464c4633-build.zip"
         }
       }
     }
