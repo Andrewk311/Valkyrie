@@ -12,8 +12,8 @@ export default function Aboutus(props) {
   const { overrides, ...rest } = props;
   return (
     <View
-      width="1920px"
-      height="1080px"
+      width="1560px"
+      height="788px"
       display="block"
       gap="unset"
       alignItems="unset"
@@ -26,8 +26,8 @@ export default function Aboutus(props) {
       {...rest}
     >
       <View
-        width="1920px"
-        height="1080px"
+        width="1971.56px"
+        height="1109px"
         display="block"
         gap="unset"
         alignItems="unset"
@@ -36,46 +36,45 @@ export default function Aboutus(props) {
         top="0px"
         left="0px"
         padding="0px 0px 0px 0px"
-        backgroundColor="rgba(253,70,64,1)"
+        backgroundColor="rgba(217,217,217,1)"
         {...getOverrideProps(overrides, "Rectangle 68")}
       ></View>
       <Text
         fontFamily="Alumni Sans"
-        fontSize="100px"
+        fontSize="60px"
         fontWeight="700"
-        color="rgba(255,255,255,1)"
-        lineHeight="120.00000762939453px"
+        color="rgba(0,0,0,1)"
+        lineHeight="72px"
         textAlign="center"
         display="block"
         direction="column"
         justifyContent="unset"
-        width="1000px"
-        height="248px"
+        width="1140px"
+        height="165px"
         gap="unset"
         alignItems="unset"
         position="absolute"
-        top="-39px"
-        left="432px"
+        top="0px"
+        left="209.77px"
         padding="0px 0px 0px 0px"
         whiteSpace="pre-wrap"
-        children="About us"
-        {...getOverrideProps(overrides, "About us")}
+        children="Rutgers ECE Capstone Group 19"
+        {...getOverrideProps(overrides, "Rutgers ECE Capstone Group 19")}
       ></Text>
       <Icon
-        width="182.33px"
-        height="162.09px"
+        width="154.4px"
+        height="172.01px"
         viewBox={{
           minX: 0,
           minY: 0,
-          width: 182.326904296875,
-          height: 162.086181640625,
+          width: 154.398193359375,
+          height: 172.005126953125,
         }}
         paths={[
           {
-            d: "M126.318 17.7837C126.409 18.6071 127.151 19.2004 127.974 19.1089C128.798 19.0174 129.391 18.2758 129.299 17.4524L126.318 17.7837ZM1.74176 42.2833L0.263738 42.0275L1.74176 42.2833ZM173.42 123.326L172.172 122.494L172.172 122.494L173.42 123.326ZM175.573 58.1396L176.757 57.2186L176.757 57.2186L175.573 58.1396ZM110.665 -1.42302C109.879 -1.685 109.03 -1.26026 108.768 -0.474342C108.506 0.311573 108.93 1.16105 109.716 1.42302L110.665 -1.42302ZM129.299 17.4524C128.744 12.4504 124.522 9.19042 119.227 7.04269C113.858 4.86523 106.863 3.60342 99.733 2.87149C85.4616 1.40653 70.1246 2.02361 65.1667 2.02361L65.1667 5.02361C70.2938 5.02361 85.3582 4.41167 99.4267 5.85581C106.466 6.57842 113.126 7.80569 118.099 9.82274C123.146 11.8695 125.954 14.5095 126.318 17.7837L129.299 17.4524ZM65.1667 2.02361C51.7281 2.02361 36.9654 3.90461 24.8274 9.82739C12.6209 15.7835 3.06531 25.8406 0.263738 42.0275L3.21979 42.5391C5.83114 27.4513 14.6561 18.1286 26.1429 12.5235C37.6982 6.88513 51.9415 5.02361 65.1667 5.02361L65.1667 2.02361ZM0.263738 42.0275C-11.3219 108.967 35.5113 163.586 101.186 163.586L101.186 160.586C37.384 160.586 -8.0503 107.655 3.21979 42.5391L0.263738 42.0275ZM101.186 163.586C120.212 163.586 133.312 161.807 144.332 155.888C155.351 149.97 164.094 140.019 174.668 124.158L172.172 122.494C161.66 138.262 153.255 147.691 142.912 153.245C132.572 158.799 120.097 160.586 101.186 160.586L101.186 163.586ZM174.668 124.158C179.708 116.598 182.992 103.484 183.688 90.6204C184.038 84.1578 183.739 77.6798 182.651 71.9025C181.566 66.1452 179.676 60.9712 176.757 57.2186L174.389 59.0605C176.902 62.2907 178.664 66.9462 179.703 72.4579C180.737 77.9497 181.032 84.1802 180.692 90.4584C180.01 103.077 176.786 115.573 172.172 122.494L174.668 124.158ZM176.757 57.2186C158.589 33.8596 140.203 8.42299 110.665 -1.42302L109.716 1.42302C138.215 10.9225 156.038 35.4664 174.389 59.0605L176.757 57.2186Z",
-            stroke: "rgba(255,255,255,1)",
+            d: "M-0.000137329 0L154.398 0L154.398 172.005L-0.000137329 172.005L-0.000137329 0Z",
+            fill: "rgba(253,70,64,1)",
             fillRule: "nonzero",
-            strokeWidth: 3,
           },
         ]}
         display="block"
@@ -83,25 +82,66 @@ export default function Aboutus(props) {
         alignItems="unset"
         justifyContent="unset"
         position="absolute"
-        top="371.34px"
-        left="812.67px"
-        {...getOverrideProps(overrides, "Vector 35")}
+        top="252px"
+        left="115.77px"
+        {...getOverrideProps(overrides, "Rectangle 69")}
       ></Icon>
+      <View
+        width="154.4px"
+        height="172.01px"
+        display="block"
+        gap="unset"
+        alignItems="unset"
+        justifyContent="unset"
+        position="absolute"
+        top="252px"
+        left="409.77px"
+        padding="0px 0px 0px 0px"
+        backgroundColor="rgba(253,70,64,1)"
+        {...getOverrideProps(overrides, "Rectangle 70")}
+      ></View>
+      <View
+        width="154.4px"
+        height="172.01px"
+        display="block"
+        gap="unset"
+        alignItems="unset"
+        justifyContent="unset"
+        position="absolute"
+        top="252px"
+        left="702.77px"
+        padding="0px 0px 0px 0px"
+        backgroundColor="rgba(253,70,64,1)"
+        {...getOverrideProps(overrides, "Rectangle 71")}
+      ></View>
+      <View
+        width="154.4px"
+        height="172.01px"
+        display="block"
+        gap="unset"
+        alignItems="unset"
+        justifyContent="unset"
+        position="absolute"
+        top="252px"
+        left="996.77px"
+        padding="0px 0px 0px 0px"
+        backgroundColor="rgba(253,70,64,1)"
+        {...getOverrideProps(overrides, "Rectangle 72")}
+      ></View>
       <Icon
-        width="24.67px"
-        height="246.65px"
+        width="154.4px"
+        height="172.01px"
         viewBox={{
           minX: 0,
           minY: 0,
-          width: 24.665283203125,
-          height: 246.65283203125,
+          width: 154.398193359375,
+          height: 172.005126953125,
         }}
         paths={[
           {
-            d: "M1.34164 -0.67082C0.971157 -1.41179 0.0701474 -1.71212 -0.67082 -1.34164C-1.41179 -0.971157 -1.71212 -0.0701474 -1.34164 0.67082L1.34164 -0.67082ZM15.8562 111.385L17.3471 111.22L15.8562 111.385ZM23.1653 246.653C23.1653 247.481 23.8368 248.153 24.6653 248.153C25.4937 248.153 26.1653 247.481 26.1653 246.653L23.1653 246.653ZM-1.34164 0.67082C6.79638 16.9469 9.74319 35.5519 11.1349 54.7021C11.8306 64.2748 12.1355 73.9355 12.5179 83.4993C12.8997 93.0472 13.3586 102.489 14.3654 111.551L17.3471 111.22C16.353 102.273 15.8972 92.9231 15.5156 83.3794C15.1346 73.8514 14.8273 64.1205 14.127 54.4847C12.7268 35.2179 9.74645 16.1388 1.34164 -0.67082L-1.34164 0.67082ZM14.3654 111.551C19.3766 156.651 23.1653 201.362 23.1653 246.653L26.1653 246.653C26.1653 201.2 22.3631 156.364 17.3471 111.22L14.3654 111.551Z",
-            stroke: "rgba(255,255,255,1)",
+            d: "M1.52588e-05 0L154.398 0L154.398 172.005L1.52588e-05 172.005L1.52588e-05 0Z",
+            fill: "rgba(253,70,64,1)",
             fillRule: "nonzero",
-            strokeWidth: 3,
           },
         ]}
         display="block"
@@ -109,114 +149,230 @@ export default function Aboutus(props) {
         alignItems="unset"
         justifyContent="unset"
         position="absolute"
-        top="533.43px"
-        left="894.67px"
-        {...getOverrideProps(overrides, "Vector 36")}
+        top="252px"
+        left="1290px"
+        {...getOverrideProps(overrides, "Rectangle 73")}
       ></Icon>
-      <Icon
-        width="133.9px"
-        height="126.85px"
-        viewBox={{
-          minX: 0,
-          minY: 0,
-          width: 133.897216796875,
-          height: 126.85009765625,
-        }}
-        paths={[
-          {
-            d: "M-0.427455 125.412C-1.22153 125.648 -1.67388 126.483 -1.4378 127.277C-1.20173 128.071 -0.366622 128.524 0.427455 128.288L-0.427455 125.412ZM135.183 0.771744C135.61 0.0613732 135.379 -0.860017 134.669 -1.28624C133.959 -1.71246 133.037 -1.48211 132.611 -0.771744L135.183 0.771744ZM0.427455 128.288C29.0949 119.765 55.4887 100.011 78.3253 76.3896C101.175 52.7544 120.556 25.1511 135.183 0.771744L132.611 -0.771744C118.06 23.4801 98.8124 50.8821 76.1685 74.3044C53.5114 97.7402 27.546 117.096 -0.427455 125.412L0.427455 128.288Z",
-            stroke: "rgba(255,255,255,1)",
-            fillRule: "nonzero",
-            strokeWidth: 3,
-          },
-        ]}
+      <Text
+        fontFamily="Alumni Sans"
+        fontSize="35px"
+        fontWeight="700"
+        color="rgba(0,0,0,1)"
+        lineHeight="42px"
+        textAlign="center"
         display="block"
+        direction="column"
+        justifyContent="unset"
+        width="257px"
+        height="21px"
         gap="unset"
         alignItems="unset"
-        justifyContent="unset"
         position="absolute"
-        top="551.05px"
-        left="915.81px"
-        {...getOverrideProps(overrides, "Vector 37")}
-      ></Icon>
-      <Icon
-        width="186.75px"
-        height="95.14px"
-        viewBox={{
-          minX: 0,
-          minY: 0,
-          width: 186.7513427734375,
-          height: 95.13720703125,
-        }}
-        paths={[
-          {
-            d: "M186.615 96.6313C187.441 96.7063 188.17 96.0983 188.245 95.2733C188.32 94.4482 187.712 93.7186 186.887 93.6436L186.615 96.6313ZM135.072 75.1703L135.835 73.8791L135.835 73.8791L135.072 75.1703ZM0.598089 -1.37561C-0.161637 -1.70592 -1.04529 -1.35781 -1.37561 -0.598089C-1.70592 0.161637 -1.35781 1.04529 -0.598089 1.37561L0.598089 -1.37561ZM186.887 93.6436C169.218 92.0374 151.023 82.8588 135.835 73.8791L134.308 76.4615C149.53 85.4614 168.226 94.9595 186.615 96.6313L186.887 93.6436ZM135.835 73.8791C91.0302 47.3886 48.6211 19.504 0.598089 -1.37561L-0.598089 1.37561C47.1993 22.1571 89.3426 49.876 134.308 76.4615L135.835 73.8791Z",
-            stroke: "rgba(255,255,255,1)",
-            fillRule: "nonzero",
-            strokeWidth: 3,
-          },
-        ]}
+        top="424px"
+        left="65px"
+        padding="0px 0px 0px 0px"
+        whiteSpace="pre-wrap"
+        children="Andrew King"
+        {...getOverrideProps(overrides, "Andrew King")}
+      ></Text>
+      <Text
+        fontFamily="Alumni Sans"
+        fontSize="35px"
+        fontWeight="700"
+        color="rgba(0,0,0,1)"
+        lineHeight="42px"
+        textAlign="center"
         display="block"
+        direction="column"
+        justifyContent="unset"
+        width="261px"
+        height="20px"
         gap="unset"
         alignItems="unset"
-        justifyContent="unset"
         position="absolute"
-        top="579.24px"
-        left="722.01px"
-        {...getOverrideProps(overrides, "Vector 38")}
-      ></Icon>
-      <Icon
-        width="123.33px"
-        height="144.47px"
-        viewBox={{
-          minX: 0,
-          minY: 0,
-          width: 123.3262939453125,
-          height: 144.4677734375,
-        }}
-        paths={[
-          {
-            d: "M1.12211 -0.995422C0.572356 -1.61515 -0.375697 -1.67187 -0.995422 -1.12211C-1.61515 -0.572356 -1.67187 0.375697 -1.12211 0.995422L1.12211 -0.995422ZM75.5618 78.3024L76.7007 77.3262L76.7007 77.3262L75.5618 78.3024ZM122.078 145.3C122.538 145.989 123.469 146.176 124.158 145.716C124.848 145.257 125.034 144.325 124.574 143.636L122.078 145.3ZM-1.12211 0.995422C11.0074 14.6687 24.0131 27.3706 36.9086 40.073C49.8175 52.7887 62.6208 65.5094 74.423 79.2786L76.7007 77.3262C64.8055 63.4484 51.9169 50.6457 39.0139 37.9358C26.0974 25.2126 13.1709 12.5868 1.12211 -0.995422L-1.12211 0.995422ZM74.423 79.2786C92.43 100.287 106.7 122.233 122.078 145.3L124.574 143.636C109.23 120.619 94.851 98.5016 76.7007 77.3262L74.423 79.2786Z",
-            stroke: "rgba(255,255,255,1)",
-            fillRule: "nonzero",
-            strokeWidth: 3,
-          },
-        ]}
+        top="424px"
+        left="357px"
+        padding="0px 0px 0px 0px"
+        whiteSpace="pre-wrap"
+        children="Ayleen Durasno"
+        {...getOverrideProps(overrides, "Ayleen Durasno")}
+      ></Text>
+      <Text
+        fontFamily="Alumni Sans"
+        fontSize="35px"
+        fontWeight="700"
+        color="rgba(0,0,0,1)"
+        lineHeight="42px"
+        textAlign="center"
         display="block"
+        direction="column"
+        justifyContent="unset"
+        width="230px"
+        height="20px"
         gap="unset"
         alignItems="unset"
-        justifyContent="unset"
         position="absolute"
-        top="780.08px"
-        left="919.33px"
-        {...getOverrideProps(overrides, "Vector 39")}
-      ></Icon>
-      <Icon
-        width="42.41px"
-        height="162.09px"
-        viewBox={{
-          minX: 0,
-          minY: 0,
-          width: 42.4066162109375,
-          height: 162.0859375,
-        }}
-        paths={[
-          {
-            d: "M43.9022 0.115045C43.9657 -0.710942 43.3477 -1.43204 42.5217 -1.49558C41.6957 -1.55912 40.9746 -0.941032 40.911 -0.115045L43.9022 0.115045ZM4.42995 135.855L3.18706 135.015L3.18706 135.015L4.42995 135.855ZM-1.37669 162.086C-1.37669 162.914 -0.705113 163.586 0.123314 163.586C0.951741 163.586 1.62331 162.914 1.62331 162.086L-1.37669 162.086ZM40.911 -0.115045C37.3526 46.1453 29.7398 95.7169 3.18706 135.015L5.67283 136.695C32.6968 96.699 40.3392 46.4339 43.9022 0.115045L40.911 -0.115045ZM3.18706 135.015C-2.71173 143.745 -1.37669 152.698 -1.37669 162.086L1.62331 162.086C1.62331 152.129 0.428845 144.456 5.67283 136.695L3.18706 135.015Z",
-            stroke: "rgba(255,255,255,1)",
-            fillRule: "nonzero",
-            strokeWidth: 3,
-          },
-        ]}
+        top="424px"
+        left="660px"
+        padding="0px 0px 0px 0px"
+        whiteSpace="pre-wrap"
+        children="Bobby Putra"
+        {...getOverrideProps(overrides, "Bobby Putra")}
+      ></Text>
+      <Text
+        fontFamily="Alumni Sans"
+        fontSize="35px"
+        fontWeight="700"
+        color="rgba(0,0,0,1)"
+        lineHeight="42px"
+        textAlign="center"
         display="block"
+        direction="column"
+        justifyContent="unset"
+        width="225px"
+        height="20px"
         gap="unset"
         alignItems="unset"
-        justifyContent="unset"
         position="absolute"
-        top="787.13px"
-        left="880.45px"
-        {...getOverrideProps(overrides, "Vector 40")}
-      ></Icon>
+        top="425px"
+        left="962px"
+        padding="0px 0px 0px 0px"
+        whiteSpace="pre-wrap"
+        children="Kieran Burns"
+        {...getOverrideProps(overrides, "Kieran Burns")}
+      ></Text>
+      <Text
+        fontFamily="Alumni Sans"
+        fontSize="35px"
+        fontWeight="700"
+        color="rgba(0,0,0,1)"
+        lineHeight="42px"
+        textAlign="center"
+        display="block"
+        direction="column"
+        justifyContent="unset"
+        width="277px"
+        height="20px"
+        gap="unset"
+        alignItems="unset"
+        position="absolute"
+        top="424px"
+        left="1229px"
+        padding="0px 0px 0px 0px"
+        whiteSpace="pre-wrap"
+        children="Sunit Pradhan"
+        {...getOverrideProps(overrides, "Sunit Pradhan")}
+      ></Text>
+      <Text
+        fontFamily="Alumni Sans"
+        fontSize="13.560599327087402px"
+        fontWeight="400"
+        color="rgba(0,0,0,1)"
+        lineHeight="16.272720336914062px"
+        textAlign="center"
+        display="block"
+        direction="column"
+        justifyContent="unset"
+        width="120.92px"
+        height="16.95px"
+        gap="unset"
+        alignItems="unset"
+        position="absolute"
+        top="505px"
+        left="133px"
+        padding="0px 0px 0px 0px"
+        whiteSpace="pre-wrap"
+        children="Back-end/Front-end Development"
+        {...getOverrideProps(overrides, "Back-end/Front-end Development")}
+      ></Text>
+      <Text
+        fontFamily="Alumni Sans"
+        fontSize="13.560599327087402px"
+        fontWeight="400"
+        color="rgba(0,0,0,1)"
+        lineHeight="16.272720336914062px"
+        textAlign="center"
+        display="block"
+        direction="column"
+        justifyContent="unset"
+        width="120.92px"
+        height="16.95px"
+        gap="unset"
+        alignItems="unset"
+        position="absolute"
+        top="497px"
+        left="427px"
+        padding="0px 0px 0px 0px"
+        whiteSpace="pre-wrap"
+        children="Front-end Development"
+        {...getOverrideProps(overrides, "Front-end Development")}
+      ></Text>
+      <Text
+        fontFamily="Alumni Sans"
+        fontSize="13.560599327087402px"
+        fontWeight="400"
+        color="rgba(0,0,0,1)"
+        lineHeight="16.272720336914062px"
+        textAlign="center"
+        display="block"
+        direction="column"
+        justifyContent="unset"
+        width="120.92px"
+        height="16.95px"
+        gap="unset"
+        alignItems="unset"
+        position="absolute"
+        top="497px"
+        left="720px"
+        padding="0px 0px 0px 0px"
+        whiteSpace="pre-wrap"
+        children="Drone Design"
+        {...getOverrideProps(overrides, "Drone Design")}
+      ></Text>
+      <Text
+        fontFamily="Alumni Sans"
+        fontSize="13.560599327087402px"
+        fontWeight="400"
+        color="rgba(0,0,0,1)"
+        lineHeight="16.272720336914062px"
+        textAlign="center"
+        display="block"
+        direction="column"
+        justifyContent="unset"
+        width="120.92px"
+        height="16.95px"
+        gap="unset"
+        alignItems="unset"
+        position="absolute"
+        top="497px"
+        left="1014px"
+        padding="0px 0px 0px 0px"
+        whiteSpace="pre-wrap"
+        children="APDS"
+        {...getOverrideProps(overrides, "APDS")}
+      ></Text>
+      <Text
+        fontFamily="Alumni Sans"
+        fontSize="13.560599327087402px"
+        fontWeight="400"
+        color="rgba(0,0,0,1)"
+        lineHeight="16.272720336914062px"
+        textAlign="center"
+        display="block"
+        direction="column"
+        justifyContent="unset"
+        width="120.92px"
+        height="16.95px"
+        gap="unset"
+        alignItems="unset"
+        position="absolute"
+        top="497px"
+        left="1307px"
+        padding="0px 0px 0px 0px"
+        whiteSpace="pre-wrap"
+        children="Testing"
+        {...getOverrideProps(overrides, "Testing")}
+      ></Text>
     </View>
   );
 }
