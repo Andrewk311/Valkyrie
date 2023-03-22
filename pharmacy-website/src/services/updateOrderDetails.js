@@ -6,12 +6,11 @@ export const UPDATE_ORDER_MUTATION = `
       order_number
       isAccepted
       inTransit
-      isActive
     }
   }
 `;
 
-export const updateOrder = async (orderNumber, isAccepted, inTransit, isActive) => {
+export const updateOrder = async (orderNumber, isAccepted, inTransit) => {
   try {
     const result = await API.graphql({
       query: UPDATE_ORDER_MUTATION,
@@ -19,7 +18,6 @@ export const updateOrder = async (orderNumber, isAccepted, inTransit, isActive) 
         order_number: orderNumber,
         isAccepted: isAccepted,
         inTransit: inTransit,
-        isActive: isActive
       }
     });
     console.log(`Successfully updated order ${orderNumber}`);

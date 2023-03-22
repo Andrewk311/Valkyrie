@@ -57,11 +57,10 @@ function Orders() {
 
     async function updateOrderDetails(){    //currently only updates based on the values here when you press the button.
       var orderNumber = 1;
-      var isAccepted = true;
+      var isAccepted = 0;
       var inTransit = false;
-      var isActive = true;
       try {
-        updateOrder(orderNumber, isAccepted, inTransit, isActive);
+        updateOrder(orderNumber, isAccepted, inTransit);
       } catch (err) {
           console.log('error updating inventory: ', err);
       }
@@ -81,19 +80,17 @@ function Orders() {
       <tr key={"header"}>
         <th className='th'>Order Number</th>
         <th className='th'>Email</th>
-        <th className='th'> Order Status</th>
+        <th className='th'>Order Status</th>
         <th className='th'>Order Location</th>
         <th className='th'>Order Details</th>
         <th className='th'>Order Specification</th>
         <th className='th'>Approval Status</th>
         <th className='th'>Transit Status</th>
-        <th className='th'>Active</th>
       </tr>
       {orders.map((order) => (
         <tr key={order.id}>
           <td className='td'>{order['order_number']}</td> 
           <td className='td'>{order['email']}</td>
-          <td className='td'>{order['isActive']? <div>In Progress</div> : 'Completed'}</td>
           <td className='td'>Latitude: {order['location']['latitude']}<br></br><br></br>longitude: {order['location']['longitude']}</td>
           <td className='td'>
             {order['orders'].map(function(d, idx){

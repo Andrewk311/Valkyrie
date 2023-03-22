@@ -7,7 +7,6 @@ export const LIST_ORDERS_QUERY = `
             email
             isAccepted
             inTransit
-            isActive
             location {
                 latitude
                 longitude
