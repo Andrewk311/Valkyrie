@@ -5,7 +5,7 @@ import * as React from 'react';
 import { Product } from "../../components/Product";
 import { getProducts } from "../../services/ProductsService";
 import { CartContext } from "./CartContext";
-import { LIST_INVENTORIES_QUERY, getInventoriesByPartitionKey } from './../../services/ListInventories';
+import { getAllInventory, getInventoriesByPartitionKey } from './../../services/ListInventories';
 import { API } from 'aws-amplify';
 
 

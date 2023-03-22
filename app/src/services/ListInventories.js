@@ -33,3 +33,23 @@ export const getInventoriesByPartitionKey = async (productType) => {
     return [];
   }
 };
+
+export const getAllInventory = async () => {
+  try {
+    const filter = {
+        product_inventory: {
+            gt: 0,
+        }
+    }
+    const result = await API.graphql({
+      query: LIST_INVENTORIES_QUERY,
+      variables: {
+        filter
+      }
+    });
+    return result.data.listValkyrieInventories.items;
+  } catch (err) {
+    console.log('Error fetching inventories', err);
+    return [];
+  }
+};
