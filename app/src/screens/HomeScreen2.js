@@ -38,9 +38,7 @@ const Home = (props) => {
         <Authenticator>
           <ScrollView style={{marginHorizontal:0, backgroundColor:"rgba(227,55,55,1)"}}>
           <View style={styles.container}>
-            <View style={styles.rect}>
-              <Text style={styles.welcome}>Welcome {name}!</Text>
-            </View>
+            <Text style={styles.welcome}>Welcome {name}!</Text>
             <View style={styles.rect1}>
               <Text style={styles.blackBold}>Selected Pharmacy</Text>
               <Text style={{fontWeight:"bold", color:"#AD3A5C", marginLeft:win.width/10,marginTop:8, fontSize:18}}>
@@ -152,16 +150,18 @@ const styles = StyleSheet.create({
   rect: {
     width: Dimensions.get('window').width,
     height: 69,
-    alignSelf: "center"
+    alignSelf: "center",
+    alignItems:'center',
   },
   welcome: {
     color: "#FFFFFF",
     height: 47,
     width: 375,
     fontSize: 40,
-    textAlign: "center",
+    alignSelf:'center',
     fontWeight:"bold", 
-    marginTop: 20
+    marginTop: 20,
+    textAlign:'center',
   }, 
   rect1: {
     width: Dimensions.get('window').width,

@@ -43,38 +43,42 @@ const CartSummary = (props) => {
     // checkout functions
     const [errorMessage, setErrorMessage] = React.useState("");
     const checkoutAction = (message) => {
-      setErrorMessage(message);
-      if (message == 'Order Placed!'){
+      if (message == 'Order Sent!'){
         createOrderObject();
       }
     }
 
     function createOrderObject(){
       const orderDetails = [];
-      Geocoder.from(address).then(json => {
-       const { lat, lng } = json.results[0].geometry.location;
-       for(var i =0; i < items.length; i++){
-        console.log(getProduct(items[i].id).name);
-        console.log(items[i].qty);
-        orderDetails.push({name:getProduct(items[i].id).name, quantity: items[i].qty});
+      if(items.length == 0){
+        setErrorMessage("Cart is Empty, Please add items to checkout.");
       }
-      console.log(orderDetails);
-      const orderData = {
-        latitude: lat,
-        longitude: lng,
-        totalPrice: getTotalPrice(),
-        totalWeight: 2.7,
-        email: attributes.attributes.email.toString(),
-        isActive: true,
-        orderNumber: "14",  //change every order or it wont go through
-        inTransit : false,
-        isAccepted: false,
-        orders: orderDetails,
-      };
+      else{
+        Geocoder.from(address).then(json => {
+        const { lat, lng } = json.results[0].geometry.location;
+        for(var i =0; i < items.length; i++){
+          console.log(getProduct(items[i].id).name);
+          console.log(items[i].qty);
+          orderDetails.push({name:getProduct(items[i].id).name, quantity: items[i].qty});
+        }
+        console.log(orderDetails);
+        const orderData = {
+          latitude: lat,
+          longitude: lng,
+          totalPrice: getTotalPrice(),
+          totalWeight: 2.7,
+          email: attributes.attributes.email.toString(),
+          isActive: true,
+          orderNumber: "15",  //change every order or it wont go through
+          inTransit : false,
+          isAccepted: false,
+          orders: orderDetails,
+        };
 
-      addOrder(orderData);
+        addOrder(orderData);
 
-      }).catch(error => console.warn(error));
+        }).catch(error => console.warn(error));
+    }
     }
 
     
@@ -83,6 +87,7 @@ const CartSummary = (props) => {
       try{
         createOrder(order);
         console.log('added order number #' + order.orderNumber);
+        setErrorMessage('Order Placed!');
       } catch (err) {
         console.log('Error adding order', err);
       }
@@ -109,7 +114,7 @@ const CartSummary = (props) => {
           <Text style={{fontWeight:'bold', fontSize:20}}>${total.toFixed(2)}</Text>
           </View>
           <TouchableOpacity style ={styles.checkoutBtn} 
-          onPress={() => {checkoutAction((attributes.attributes.address == " ") ? 'Error: Please Enter Your Address in Settings!' : 'Order Placed!')}} >
+          onPress={() => {checkoutAction((attributes.attributes.address == " ") ? 'Address is Missing, unable to Checkout' : 'Order Sent!')}} >
             <Text style={{fontSize:20, fontWeight:'350'}}>Checkout</Text>
           </TouchableOpacity>
           {errorMessage && <Text style={{fontSize:'15', marginTop:15, }}> {errorMessage} </Text>}
