@@ -16,7 +16,6 @@ export const CREATE_ORDER_MUTATION = `
           quantity
         }
         email
-        isActive
         order_number
         inTransit
         isAccepted
@@ -39,7 +38,6 @@ export const createOrder = async (orderData) => {
                 totalWeight: orderData.totalWeight
             },
             email: orderData.email,
-            isActive: orderData.isActive,
             order_number: orderData.orderNumber,
             inTransit: orderData.inTransit,
             isAccepted: orderData.isAccepted,
