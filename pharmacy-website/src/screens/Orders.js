@@ -2,6 +2,7 @@ import './Orders.css';
 import { getOrdersByNumber } from './../services/ListOrders';
 import { useEffect, useState } from 'react';
 import { API } from 'aws-amplify';
+import { updateOrder } from './../services/updateOrderDetails';
 
 function Orders() {
 
@@ -28,12 +29,12 @@ function Orders() {
     }
 
     useEffect(() => {
-        async function fetchOrder() {
+        async function fetchOrder() { //can change this to any order greater than 0 to list all. Can also show active orders only if thats what you want lmk
           try {
-            const filter = "9"; 
+            const filter = "1"; //for now leaving it to just show one order but easy change for the other thing.
             const items = await getOrdersByNumber(filter);
             setOrders(items);
-            console.log(items);
+            console.log(items); //transit and accepted fields are in here too idk how to add that to the table, but i added the columns for it. Order status and transit are prob the same thing.
           } catch (err) {
             console.log('Error fetching orders', err);
             setOrders([]);
@@ -52,6 +53,18 @@ function Orders() {
      
     function declineOrder(order){
 
+    }
+
+    async function updateOrderDetails(){    //currently only updates based on the values here when you press the button.
+      var orderNumber = 1;
+      var isAccepted = true;
+      var inTransit = false;
+      var isActive = true;
+      try {
+        updateOrder(orderNumber, isAccepted, inTransit, isActive);
+      } catch (err) {
+          console.log('error updating inventory: ', err);
+      }
     }
 
 
@@ -73,6 +86,8 @@ function Orders() {
         <th className='th'>Order Details</th>
         <th className='th'>Order Specification</th>
         <th className='th'>Approval Status</th>
+        <th className='th'>Transit Status</th>
+        <th className='th'>Active</th>
       </tr>
       {orders.map((order) => (
         <tr key={order.id}>
@@ -91,6 +106,7 @@ function Orders() {
     </table>
 <h2>{message}</h2>
             <button onClick={testLambda}>Trigger Lambda</button>
+            <button onClick={updateOrderDetails}>Update Order 1</button>
         </div>
     );
 }

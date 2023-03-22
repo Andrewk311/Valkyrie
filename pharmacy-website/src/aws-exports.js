@@ -26,8 +26,7 @@ const awsmobile = {
     ],
     "aws_appsync_graphqlEndpoint": "https://aajxsyuaszf37ou3pg47ri55o4.appsync-api.us-east-1.amazonaws.com/graphql",
     "aws_appsync_region": "us-east-1",
-    "aws_appsync_authenticationType": "API_KEY",
-    "aws_appsync_apiKey": "da2-txipf5rmjngx7c3zpqf3bkoqci",
+    "aws_appsync_authenticationType": "AMAZON_COGNITO_USER_POOLS",
     "aws_cloud_logic_custom": [
         {
             "name": "lambdatrigger",

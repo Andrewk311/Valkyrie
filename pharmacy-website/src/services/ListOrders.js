@@ -5,6 +5,8 @@ export const LIST_ORDERS_QUERY = `
     listValkyrieOrders(filter: $filter) {
         items {
             email
+            isAccepted
+            inTransit
             isActive
             location {
                 latitude
