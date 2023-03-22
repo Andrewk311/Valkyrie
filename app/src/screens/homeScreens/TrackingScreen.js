@@ -3,27 +3,56 @@ import { Text, View, Button, StyleSheet, Image } from "react-native";
 import { Ionicons } from "@expo/vector-icons";
 import MapView, {Marker} from 'react-native-maps';
 import { Dimensions } from "react-native";
+import axios from 'axios';
 
 const win = Dimensions.get('window');
 const widthL = win.width;
 
 const Tracking = (props) => {
   
+  const [location, setLocation] = useState(null);
+
+  useEffect(() => {
+
+    const getCoordinates = async () => {
+      const response = await axios.get('https://xdl9mfzmz4.execute-api.us-east-1.amazonaws.com/production/coordinates');
+      console.log(response.data);
+      console.log(response.data.body);
+      const body = JSON.parse(response.data.body)
+      setLocation(body.location);
+    }
+
+    const interval = setInterval(() => {
+      getCoordinates();
+    }, 5000);
+
+    return () => clearInterval(interval);
+
+  }, []);
+
+  
+
     return (
       <View style={{ flex: 1, alignItems: "center", justifyContent: "center", backgroundColor: "rgba(227,55,55,1)", flex: 1}}>
         <View style={styles.rect}>
           <Text style={styles.where}> Where's My Order? </Text>
         </View>
           <Text style={{fontWeight:"bold", color:"#000000", fontSize:24, marginTop: -460}}>ORDER #NB10992</Text>
+          {location ? (
         <MapView style={styles.map} initialRegion={{
-          latitude: 40.499046325683594,
-          longitude: -74.4476089477539,
-          latitudeDelta: 0.005,
-          longitudeDelta: 0.005,}}
-          showsUserLocation 
-        > 
-          
+          latitude: 40.505730,
+          longitude: -74.448979,
+          latitudeDelta: 0.0922,
+          longitudeDelta: 0.0421,
+        }}>
+          <Marker coordinate={{
+            latitude: location.lat,
+            longitude: location.lng,
+          }} />
         </MapView>
+      ) : (
+        <Text>Loading...</Text>
+      )}
 
         <View style={styles.rect2}>
         {/* <View style={styles.iconBoxStatusBars}>
