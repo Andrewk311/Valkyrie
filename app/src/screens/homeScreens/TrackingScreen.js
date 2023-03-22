@@ -1,13 +1,14 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import { Text, View, Button, StyleSheet, Image } from "react-native";
 import { Ionicons } from "@expo/vector-icons";
-import MapView from 'react-native-maps';
+import MapView, {Marker} from 'react-native-maps';
 import { Dimensions } from "react-native";
 
 const win = Dimensions.get('window');
 const widthL = win.width;
 
 const Tracking = (props) => {
+  
     return (
       <View style={{ flex: 1, alignItems: "center", justifyContent: "center", backgroundColor: "rgba(227,55,55,1)", flex: 1}}>
         <View style={styles.rect}>
@@ -18,8 +19,12 @@ const Tracking = (props) => {
           latitude: 40.499046325683594,
           longitude: -74.4476089477539,
           latitudeDelta: 0.005,
-          longitudeDelta: 0.005,}} 
-        />
+          longitudeDelta: 0.005,}}
+          showsUserLocation 
+        > 
+          
+        </MapView>
+
         <View style={styles.rect2}>
         {/* <View style={styles.iconBoxStatusBars}>
             <Image style={styles.tinyLogoStatus}

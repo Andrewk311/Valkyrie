@@ -38,12 +38,15 @@ const CartSummary = (props) => {
       email = attributes.attributes.email.toString(); //gets email
       address = attributes.attributes.address.toString() //gets address
     }
-
-    function getLatLong(){  //function to convert address to lat and long
-      Geocoder.from(address).then(json => {
+    var latitudeVal = 0
+    var longitudeVal = 0
+    async function getLatLong(){  //function to convert address to lat and long
+      await Geocoder.from(address).then(json => {
         const { lat, lng } = json.results[0].geometry.location;
         console.log('Latitude:', lat);
         console.log('Longitude:', lng);
+        latitudeVal = lat;
+        longitudeVal = lng;
       }).catch(error => console.warn(error));
     }
 
@@ -57,28 +60,37 @@ const CartSummary = (props) => {
       removeItemFromCart(productId);
     }
 
-    const orderData = {
-      latitude: 33,
-      longitude: -87,
-      totalPrice: 44,
-      totalWeight: 2.7,
-      email: "testing3@gmail.com",
-      isActive: true,
-      orderNumber: "13",  //change every order or it wont go through
-      orders: [
-        { name: "Bandage", quantity: 10 },
-        { name: "VitaminD", quantity: 1 },
-        { name: "Ashwaganda", quantity: 2 }
-      ]
-    };
+    
 
-    function checkTotalItems(){
+    async function checkTotalItems(){
       console.log(items);
       console.log(email);
       console.log(address);
-      // getLatLong();
-      // addOrder(orderData);
+      await getLatLong();
+      console.log(latitudeVal)
+      console.log(longitudeVal)
+
+      const orderData = {
+        latitude: latitudeVal,
+        longitude: longitudeVal,
+        totalPrice: 44,
+        totalWeight: 2.7,
+        email: "testing3@gmail.com",
+        isActive: true,
+        orderNumber: "13",  //change every order or it wont go through
+        inTransit : false,
+        isAccepted: false,
+        orders: [
+          { name: "Bandage", quantity: 10 },
+          { name: "VitaminD", quantity: 1 },
+          { name: "Ashwaganda", quantity: 2 }
+        ]
+      };
+      console.log(orderData);
+      addOrder(orderData);
     }
+
+    
 
     async function addOrder(order){
       try{
