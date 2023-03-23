@@ -7,6 +7,7 @@ export const LIST_ORDERS_QUERY = `
             email
             isAccepted
             inTransit
+            isActive
             location {
                 latitude
                 longitude
@@ -25,12 +26,12 @@ export const LIST_ORDERS_QUERY = `
   }
 `;
 
-export const getOrdersByNumber = async (orderNumber) => {
+export const getOrdersByNumber = async () => {
     console.log('plz work 1')
   try {
     const filter = {
         order_number: {
-            eq: orderNumber,
+            gt: "0",
         }
     }
     console.log('plz work')
