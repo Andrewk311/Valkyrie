@@ -10,7 +10,7 @@ import Geocoder from 'react-native-geocoding';
 import { WebSocketContext } from '../../WebSocketContext';
 
 const CartSummary = (props) => {
-    const {items, removeItemFromCart, getTotalPrice, addItemToCart} = useContext(CartContext);
+    const {items, removeItemFromCart, getTotalPrice, addItemToCart, getTotalWeight } = useContext(CartContext);
     const [attributes, setAttributes] = React.useState(null);
     const { websocket, setWebsocket } = useContext(WebSocketContext);
 
@@ -71,7 +71,7 @@ const CartSummary = (props) => {
           latitude: lat,
           longitude: lng,
           totalPrice: getTotalPrice(),
-          totalWeight: 2.7,
+          totalWeight: getTotalWeight(),
           email: attributes.attributes.email.toString(),
           orderNumber: "15",  //change every order or it wont go through
           inTransit : false,
@@ -90,7 +90,7 @@ const CartSummary = (props) => {
 
     async function addOrder(order){
       try{
-        //createOrder(order);
+        createOrder(order);
         console.log('added order number #' + order.orderNumber);
         setErrorMessage('Order Placed!');
         if (!websocket || websocket.readyState !== WebSocket.OPEN) {
