@@ -21,9 +21,6 @@ const CartSummary = (props) => {
     React.useEffect(() => {   //address given address field to the auth user. Need to move to different file.
       async function getUserInfo() {
         const user = await Auth.currentAuthenticatedUser();
-        await Auth.updateUserAttributes(user, {
-          'address': "421 75th st, North Bergen, NJ, 07047"
-        });
         setAttributes(user);
       }
       console.log('hi');
@@ -34,19 +31,25 @@ const CartSummary = (props) => {
     var email = ''
     var address = ''
     if(attributes == null){
-      console.log('null email');
+      console.log('null attributes');
     } else {
       console.log(attributes.attributes.email);
       console.log(attributes.attributes.address);
       email = attributes.attributes.email.toString(); //gets email
-      address = attributes.attributes.address.toString(); //gets address
+      if (attributes.attributes.address != null){
+        address = attributes.attributes.address.toString(); //gets address
+      }
     }
 
     // checkout functions
     const [errorMessage, setErrorMessage] = React.useState("");
     const checkoutAction = (message) => {
       if (message == 'Order Sent!'){
-        createOrderObject();
+        if(address == ''){
+          setErrorMessage('Missing Delivery Address, Head to Account Settings!')
+        }else{
+          createOrderObject();
+        }
       }
     }
 
