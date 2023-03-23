@@ -45,6 +45,7 @@ function Orders() {
       if (websocket && websocket.readyState === WebSocket.OPEN) {
         websocket.send(JSON.stringify({ "action": 'orderStatusUpdate', "data": { "status": status}}));
         console.log('Order status updated (hopefully)');
+        window.location.reload();
       }
     };
 
@@ -86,6 +87,7 @@ function Orders() {
         try {
           console.log('approved order')
           updateOrder(order['order_number'],1, false, true);
+          sendOrderStatusUpdate('Order Confirmed'); //sends data to app side and will refresh
         } catch (err) {
             console.log('error updating inventory: ', err);
         }
@@ -106,10 +108,13 @@ function Orders() {
     function inTransit(order){
       try {
         updateOrder(order['order_number'],order['isAccepted'], true, true);
+        sendOrderStatusUpdate('Order Shipped'); //sends data to app side and will refresh 
       } catch (err) {
           console.log('error updating inventory: ', err);
       }
     }
+
+
 
     function isDelivered(order){
       try {
@@ -118,7 +123,6 @@ function Orders() {
           console.log('error updating inventory: ', err);
       }
     }
-
 
     async function updateOrderDetails(){    //currently only updates based on the values here when you press the button.
       var orderNumber = 1;
