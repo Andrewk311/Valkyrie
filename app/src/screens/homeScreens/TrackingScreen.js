@@ -15,11 +15,17 @@ const Tracking = (props) => {
   useEffect(() => {
 
     const getCoordinates = async () => {
-      const response = await axios.get('https://xdl9mfzmz4.execute-api.us-east-1.amazonaws.com/production/coordinates');
+      const response = await axios.get('https://l4ob0tegqc.execute-api.us-east-1.amazonaws.com/production/getcoordinates');
       console.log(response.data);
       console.log(response.data.body);
       const body = JSON.parse(response.data.body)
-      setLocation(body.location);
+      console.log('body is: ', body)
+      console.log(body.latitude)
+      setLocation({
+        latitude: body.latitude,
+        longitude: body.longitude,
+      });
+      console.log('location is: ',location)
     }
 
     const interval = setInterval(() => {
@@ -46,8 +52,8 @@ const Tracking = (props) => {
           longitudeDelta: 0.0421,
         }}>
           <Marker coordinate={{
-            latitude: location.lat,
-            longitude: location.lng,
+            latitude: location.latitude,
+            longitude: location.longitude,
           }} />
         </MapView>
       ) : (
