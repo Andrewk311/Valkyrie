@@ -180,7 +180,7 @@ function Orders() {
           order['inTransit'] ? 
           <td className='td'><button   className = 'button3' onClick={() => { isDelivered(order) }}>Verify Delivery</button></td> 
           : 
-          <td className= 'td'>Active</td>
+          <td className= 'td'>In Progress</td>
         : 
           <td className= 'td'>Completed</td>}
         </tr>
