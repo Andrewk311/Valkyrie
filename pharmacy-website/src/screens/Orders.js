@@ -17,7 +17,7 @@ function Orders() {
 
 
     useEffect(() => {
-      const ws = new WebSocket('wss://YOUR_API_GATEWAY_WEBSOCKET_URL');
+      const ws = new WebSocket('wss://07k3svmpdh.execute-api.us-east-1.amazonaws.com/production');
   
       ws.onopen = () => {
         console.log('Connected to WebSocket');
@@ -38,6 +38,7 @@ function Orders() {
     const sendOrderStatusUpdate = (status) => {
       if (websocket && websocket.readyState === WebSocket.OPEN) {
         websocket.send(JSON.stringify({ action: 'orderStatusUpdate', status }));
+        console.log('Order status updated (hopefully)');
       }
     };
 
