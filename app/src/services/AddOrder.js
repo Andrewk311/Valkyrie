@@ -19,6 +19,7 @@ export const CREATE_ORDER_MUTATION = `
         order_number
         inTransit
         isAccepted
+        isActive
       }
     }
 `;
@@ -41,6 +42,7 @@ export const createOrder = async (orderData) => {
             order_number: orderData.orderNumber,
             inTransit: orderData.inTransit,
             isAccepted: orderData.isAccepted,
+            isActive: orderData.isActive,
             orders: orderData.orders
         }
       }

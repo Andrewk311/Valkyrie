@@ -76,6 +76,7 @@ const CartSummary = (props) => {
           orderNumber: "15",  //change every order or it wont go through
           inTransit : false,
           isAccepted: 0,
+          isActive: true,
           orders: orderDetails,
         };
 
