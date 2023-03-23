@@ -15,7 +15,8 @@ export function CartProvider(props) {
               id,
               qty: 1,
               product,
-              totalPrice: product.cost
+              totalPrice: product.cost,
+              totalWeight: product.weight
           }];
       }
       else { 
@@ -23,6 +24,7 @@ export function CartProvider(props) {
             if(item.id == id) {
               item.qty++;
               item.totalPrice += product.cost;
+              item.totalWeight += product.weight;
             }
             return item;
           });
@@ -40,7 +42,8 @@ function removeItemFromCart(id) {
             id,
             qty: 1,
             product,
-            totalPrice: product.cost
+            totalPrice: product.cost,
+            totalWeight: product.weight
         }];
     }
     else { 
@@ -48,6 +51,7 @@ function removeItemFromCart(id) {
           if(item.id == id) {
             item.qty--;
             item.totalPrice -= product.cost;
+            item.totalWeight -= product.weight;
           }
           return item;
         });
@@ -55,16 +59,20 @@ function removeItemFromCart(id) {
   });
 }
 function getItemsCount() {
-      return items.reduce((sum, item) => (sum + item.qty), 0);
-  }
+  return items.reduce((sum, item) => (sum + item.qty), 0);
+}
 
-  function getTotalPrice() {
-      return items.reduce((sum, item) => (sum + item.totalPrice), 0);
-  }  
+function getTotalPrice() {
+  return items.reduce((sum, item) => (sum + item.totalPrice), 0);
+}  
+
+function getTotalWeight() {
+  return items.reduce((sum, item) => (sum + item.totalWeight), 0);
+}  
 
   return (
     <CartContext.Provider 
-      value={{items, setItems, getItemsCount, addItemToCart, getTotalPrice, removeItemFromCart}}>
+      value={{items, setItems, getItemsCount, addItemToCart, getTotalPrice, getTotalWeight, removeItemFromCart}}>
       {props.children}
     </CartContext.Provider>
   );
