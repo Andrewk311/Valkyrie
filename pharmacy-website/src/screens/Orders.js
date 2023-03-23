@@ -13,6 +13,33 @@ function Orders() {
     const [weight, SetWeight] = useState(0);
     const [message, setMessage] = useState('');
     const [type, setType] = useState("");
+    const [websocket, setWebsocket] = useState(null);
+
+
+    useEffect(() => {
+      const ws = new WebSocket('wss://YOUR_API_GATEWAY_WEBSOCKET_URL');
+  
+      ws.onopen = () => {
+        console.log('Connected to WebSocket');
+        setWebsocket(ws);
+      };
+  
+      ws.onclose = () => {
+        console.log('WebSocket closed');
+      };
+  
+      return () => {
+        if (ws) {
+          ws.close();
+        }
+      };
+    }, []);
+  
+    const sendOrderStatusUpdate = (status) => {
+      if (websocket && websocket.readyState === WebSocket.OPEN) {
+        websocket.send(JSON.stringify({ action: 'orderStatusUpdate', status }));
+      }
+    };
 
     const testLambda = async () => {
       try {
@@ -104,6 +131,8 @@ function Orders() {
 <h2>{message}</h2>
             <button onClick={testLambda}>Trigger Lambda</button>
             <button onClick={updateOrderDetails}>Update Order 1</button>
+            <button onClick={() => sendOrderStatusUpdate('Order Confirmed')}>Confirm Order</button>
+            <button onClick={() => sendOrderStatusUpdate('Order Shipped')}>Ship Order</button>
         </div>
     );
 }
