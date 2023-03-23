@@ -92,9 +92,9 @@ function App() {
         <div className="App">
             <div className='App-header'>
                 <p style={{ color:'#92989B', fontWeight: 'bold', whiteSpace:'pre-line', textAlign:'center'}}>VALKYRIE{"\n"}
-                <p style={{ color:'#FFFFFF', fontWeight: 'normal', whiteSpace:'pre-line', textAlign:'center'}}>Welcome to the Pharmacy Portal!</p>
                 </p>
             </div>
+                <p style={{ color:'#FFFFFF', fontWeight: 'normal', textAlign:'center', fontSize: 'calc(20px + 2vmin)', marginBottom:5}}>Welcome to the Pharmacy Portal!</p>
                 <img className='image' src={require('./../logo.png')}></img>
                 <button onClick={handleOrdersClick} className="button">View Orders</button>
                 <button onClick={handleInventoryClick} className="button">View Inventory</button>
