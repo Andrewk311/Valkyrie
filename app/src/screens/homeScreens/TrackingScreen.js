@@ -1,9 +1,10 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useContext } from "react";
 import { Text, View, Button, StyleSheet, Image } from "react-native";
 import { Ionicons } from "@expo/vector-icons";
 import MapView, {Marker} from 'react-native-maps';
 import { Dimensions } from "react-native";
 import axios from 'axios';
+import { WebSocketContext } from "../../WebSocketContext";
 
 const win = Dimensions.get('window');
 const widthL = win.width;
@@ -11,21 +12,46 @@ const widthL = win.width;
 const Tracking = (props) => {
   
   const [location, setLocation] = useState(null);
+  const { websocket } = useContext(WebSocketContext);
+  const [orderStatus, setOrderStatus] = useState(null);
+
 
   useEffect(() => {
-
-    const getCoordinates = async () => {
-      const response = await axios.get('https://xdl9mfzmz4.execute-api.us-east-1.amazonaws.com/production/coordinates');
-      console.log(response.data);
-      console.log(response.data.body);
-      const body = JSON.parse(response.data.body)
-      setLocation(body.location);
+    if (websocket) {
+      websocket.addEventListener('message', (event) => {
+        const data = JSON.parse(event.data);
+        if (data.status) {
+          setOrderStatus(data.status);
+        }
+      });
     }
+    return () => {
+      if (websocket) {
+        websocket.removeEventListener('message');
+      }
+    };
+  }, [websocket]);
 
-    const interval = setInterval(() => {
-      getCoordinates();
-    }, 5000);
+  useEffect(() => {
+    if (orderStatus === 'Order Shipped'){
+      const getCoordinates = async () => {
+        const response = await axios.get('https://l4ob0tegqc.execute-api.us-east-1.amazonaws.com/production/getcoordinates');
+        // console.log(response.data);
+        // console.log(response.data.body);
+        const body = JSON.parse(response.data.body)
+        // console.log('body is: ', body)
+        // console.log(body.latitude)
+        setLocation({
+          latitude: body.latitude,
+          longitude: body.longitude,
+        });
+        // console.log('location is: ',location)
+      }
 
+      const interval = setInterval(() => {
+        getCoordinates();
+      }, 5000);
+    }
     return () => clearInterval(interval);
 
   }, []);
@@ -46,8 +72,8 @@ const Tracking = (props) => {
           longitudeDelta: 0.0421,
         }}>
           <Marker coordinate={{
-            latitude: location.lat,
-            longitude: location.lng,
+            latitude: location.latitude,
+            longitude: location.longitude,
           }} />
         </MapView>
       ) : (

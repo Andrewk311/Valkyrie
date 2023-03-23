@@ -7,10 +7,12 @@ import { Ionicons } from "@expo/vector-icons";
 import { Auth } from 'aws-amplify';
 import { createOrder } from '../../services/AddOrder';
 import Geocoder from 'react-native-geocoding';
+import { WebSocketContext } from '../../WebSocketContext';
 
 const CartSummary = (props) => {
     const {items, removeItemFromCart, getTotalPrice, addItemToCart} = useContext(CartContext);
     const [attributes, setAttributes] = React.useState(null);
+    const { websocket, setWebsocket } = useContext(WebSocketContext);
 
     googleMapsAPI = "AIzaSyBmF_o7JmYo55KiewrTHqiDOupJ5FcbxRA";   //google maps api key to convert address to lat and long
     Geocoder.init(googleMapsAPI);
@@ -84,9 +86,19 @@ const CartSummary = (props) => {
 
     async function addOrder(order){
       try{
-        createOrder(order);
+        //createOrder(order);
         console.log('added order number #' + order.orderNumber);
         setErrorMessage('Order Placed!');
+        if (!websocket || websocket.readyState !== WebSocket.OPEN) {
+          const ws = new WebSocket('wss://07k3svmpdh.execute-api.us-east-1.amazonaws.com/production');
+          ws.addEventListener('open', () => {
+            console.log('WebSocket connection opened');
+            ws.send(JSON.stringify({ status: 'Order Placed' }));
+          });
+          setWebsocket(ws);
+        } else {
+          websocket.send(JSON.stringify({ status: 'Order Placed' }));
+        }
       } catch (err) {
         console.log('Error adding order', err);
       }
