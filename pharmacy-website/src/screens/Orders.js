@@ -37,7 +37,7 @@ function Orders() {
   
     const sendOrderStatusUpdate = (status) => {
       if (websocket && websocket.readyState === WebSocket.OPEN) {
-        websocket.send(JSON.stringify({ action: 'orderStatusUpdate', status }));
+        websocket.send(JSON.stringify({ "action": 'orderStatusUpdate', "data": { "status": status}}));
         console.log('Order status updated (hopefully)');
       }
     };
