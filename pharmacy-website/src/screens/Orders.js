@@ -160,14 +160,14 @@ function Orders() {
         {(order['isActive']) ? 
           (order['isAccepted'] == 0) ?
             <>
-            <td className='td'><button  className = 'button2' onClick={approveOrder(order)}>Approve</button>
-            <button className = 'button2'  onClick={declineOrder(order)}>Decline</button></td>
+            <td className='td'><button  className = 'button2' onClick={() => { approveOrder(order) }}>Approve</button>
+            <button className = 'button2'  onClick={() => { declineOrder(order) }}>Decline</button></td>
             <td className='td'>Awaiting Approval</td>
             </>
           :
             (order['isAccepted'] == 1) ?
               order['inTransit'] == false ? 
-                <><td className ='td' >Order Approved</td><td className='td'><button   className = 'button3' onClick={inTransit(order)}>Trigger Delivery</button></td></>
+                <><td className ='td' >Order Approved</td><td className='td'><button   className = 'button3' onClick={() => { inTransit(order) }}>Trigger Delivery</button></td></>
               :
                 <><td className ='td' >Order Approved</td><td className ='td' >In Transit</td></>
             : 
@@ -178,7 +178,7 @@ function Orders() {
 
         {order['isActive']? 
           order['inTransit'] ? 
-          <td className='td'><button   className = 'button3' onClick={isDelivered(order)}>Verify Delivery</button></td> 
+          <td className='td'><button   className = 'button3' onClick={() => { isDelivered(order) }}>Verify Delivery</button></td> 
           : 
           <td className= 'td'>Active</td>
         : 
