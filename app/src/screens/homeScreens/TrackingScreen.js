@@ -55,7 +55,7 @@ const Tracking = (props) => {
 
       interval = setInterval(() => {
         getCoordinates();
-      }, 5000);
+      }, 3000);
     }
     return () => clearInterval(interval);
 

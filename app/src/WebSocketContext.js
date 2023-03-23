@@ -15,13 +15,18 @@ export const WebSocketProvider = ({ children }) => {
     };
 
     ws.onmessage = (event) => {
+      console.log("WebSocket readyState:", ws.readyState);
       console.log("Message received:", event.data);
       const data = JSON.parse(event.data);
       setOrderStatus(data.status); // Update orderStatus based on received message
     };
 
-    ws.onclose = () => {
-      console.log("WebSocket closed");
+    ws.onerror = (error) => {
+      console.error('Websocket error:', error);
+    };
+
+    ws.onclose = (event) => {
+      console.log("WebSocket closed:", event);
     };
 
     return () => {
