@@ -18,7 +18,8 @@ export const WebSocketProvider = ({ children }) => {
       console.log("WebSocket readyState:", ws.readyState);
       console.log("Message received:", event.data);
       const data = JSON.parse(event.data);
-      setOrderStatus(data.status); // Update orderStatus based on received message
+      console.log(data.data.status)
+      setOrderStatus(data.data.status); // Update orderStatus based on received message
     };
 
     ws.onerror = (error) => {

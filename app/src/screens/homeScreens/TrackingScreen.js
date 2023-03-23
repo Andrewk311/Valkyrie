@@ -23,7 +23,8 @@ const Tracking = (props) => {
         const data = JSON.parse(event.data);
         console.log(data);
         console.log(data.status);
-        setOrderStatus(data.status);
+        console.log(orderStatus)
+        // setOrderStatus(data.status);
       };
   
       websocket.addEventListener('message', handleMessage);
@@ -34,11 +35,13 @@ const Tracking = (props) => {
         }
       };
     }
-  }, [websocket]);
+  }, [websocket, orderStatus]);
 
   useEffect(() => {
     let interval;
-    if (orderStatus === 'Order Placed'){
+    console.log(orderStatus)
+    if (orderStatus === 'Order Confirmed'){
+      console.log('This should work');
       const getCoordinates = async () => {
         const response = await axios.get('https://l4ob0tegqc.execute-api.us-east-1.amazonaws.com/production/getcoordinates');
         // console.log(response.data);
