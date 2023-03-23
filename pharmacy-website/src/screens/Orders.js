@@ -29,6 +29,11 @@ function Orders() {
         console.log('WebSocket closed');
       };
   
+      ws.onmessage = (event) => {
+        console.log('event: ', event.data);
+        window.location.reload();
+      }
+
       return () => {
         if (ws) {
           ws.close();
