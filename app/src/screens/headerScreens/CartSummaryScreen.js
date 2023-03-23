@@ -90,14 +90,16 @@ const CartSummary = (props) => {
         console.log('added order number #' + order.orderNumber);
         setErrorMessage('Order Placed!');
         if (!websocket || websocket.readyState !== WebSocket.OPEN) {
-          const ws = new WebSocket('wss://YOUR_API_GATEWAY_WEBSOCKET_URL');
+          const ws = new WebSocket('wss://07k3svmpdh.execute-api.us-east-1.amazonaws.com/production');
           ws.addEventListener('open', () => {
             console.log('WebSocket connection opened');
             ws.send(JSON.stringify({ status: 'Order Placed' }));
           });
           setWebsocket(ws);
         } else {
-          websocket.send(JSON.stringify({ status: 'Order Placed' }));
+          console.log('ANYTHING PLEASE');
+          var test = { "action": "orderStatusUpdate", "data": { "status": "Order Placed" }};
+          websocket.send(JSON.stringify(test));
         }
       } catch (err) {
         console.log('Error adding order', err);

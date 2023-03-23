@@ -12,28 +12,33 @@ const widthL = win.width;
 const Tracking = (props) => {
   
   const [location, setLocation] = useState(null);
-  const { websocket } = useContext(WebSocketContext);
-  const [orderStatus, setOrderStatus] = useState(null);
-
+  const { websocket, orderStatus } = useContext(WebSocketContext);
 
   useEffect(() => {
     if (websocket) {
-      websocket.addEventListener('message', (event) => {
+      console.log('connected');
+      console.log(orderStatus);
+      const handleMessage = (event) => {
+        console.log("Message received (on tracking):", event.data);
         const data = JSON.parse(event.data);
-        if (data.status) {
-          setOrderStatus(data.status);
+        console.log(data);
+        console.log(data.status);
+        setOrderStatus(data.status);
+      };
+  
+      websocket.addEventListener('message', handleMessage);
+  
+      return () => {
+        if (websocket) {
+          websocket.removeEventListener('message', handleMessage);
         }
-      });
+      };
     }
-    return () => {
-      if (websocket) {
-        websocket.removeEventListener('message');
-      }
-    };
   }, [websocket]);
 
   useEffect(() => {
-    if (orderStatus === 'Order Shipped'){
+    let interval;
+    if (orderStatus === 'Order Placed'){
       const getCoordinates = async () => {
         const response = await axios.get('https://l4ob0tegqc.execute-api.us-east-1.amazonaws.com/production/getcoordinates');
         // console.log(response.data);
@@ -48,7 +53,7 @@ const Tracking = (props) => {
         // console.log('location is: ',location)
       }
 
-      const interval = setInterval(() => {
+      interval = setInterval(() => {
         getCoordinates();
       }, 5000);
     }
