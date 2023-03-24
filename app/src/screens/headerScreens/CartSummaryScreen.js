@@ -69,7 +69,7 @@ const CartSummary = (props) => {
           totalPrice: getTotalPrice(),
           totalWeight: getTotalWeight(),
           email: attributes.attributes.email.toString(),
-          orderNumber: "15",  //change every order or it wont go through
+          orderNumber: "10",  //change every order or it wont go through
           inTransit : false,
           isAccepted: 0,
           isActive: true,
