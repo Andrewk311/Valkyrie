@@ -5,6 +5,7 @@ import MapView, {Marker} from 'react-native-maps';
 import { Dimensions } from "react-native";
 import axios from 'axios';
 import { WebSocketContext } from "../../WebSocketContext";
+import { CartContext } from "../browseScreens/CartContext";
 
 const win = Dimensions.get('window');
 const widthL = win.width;
@@ -13,6 +14,7 @@ const Tracking = (props) => {
   
   const [location, setLocation] = useState(null);
   const { websocket, orderStatus } = useContext(WebSocketContext);
+  const { orderNumber } = useContext(CartContext);
 
   useEffect(() => {
     if (websocket) {
@@ -39,7 +41,8 @@ const Tracking = (props) => {
 
   useEffect(() => {
     let interval;
-    console.log(orderStatus)
+    console.log("OrderStatus: " + orderStatus)
+    console.log("OrderNum: "  + orderNumber);
     if (orderStatus === 'Order Confirmed'){
       console.log('This should work');
       const getCoordinates = async () => {
@@ -71,57 +74,126 @@ const Tracking = (props) => {
         <View style={styles.rect}>
           <Text style={styles.where}> Where's My Order? </Text>
         </View>
-          <Text style={{fontWeight:"bold", color:"#000000", fontSize:24, marginTop: -460}}>ORDER #NB10992</Text>
-          {location ? (
+        <View>
+          <Text style={{fontWeight:"bold", color:"#000000", fontSize:24, marginTop: -270, }}>ORDER #AD9817</Text>
+        </View>
+          {true ? (
         <MapView style={styles.map} initialRegion={{
           latitude: 40.505730,
           longitude: -74.448979,
           latitudeDelta: 0.0922,
           longitudeDelta: 0.0421,
         }}>
-          <Marker coordinate={{
-            latitude: location.latitude,
-            longitude: location.longitude,
-          }} />
         </MapView>
       ) : (
         <Text>Loading...</Text>
       )}
 
         <View style={styles.rect2}>
-        {/* <View style={styles.iconBoxStatusBars}>
-            <Image style={styles.tinyLogoStatus}
-                source={require('./../../customIcons/RedLine.png')}
-                />
-            <Image style={styles.tinyLogoStatus}
-                source={require('./../../customIcons/RedLine.png')}
-            />
-            <Image style={styles.tinyLogoStatus}
-                source={require('./../../customIcons/GrayLine.png')}
-            />
-          </View> */}
           <View style={styles.iconBoxStatus}>
+            {orderStatus == 'Order Placed' ? 
+              <><Image style={styles.tinyLogo}
+              source={require('./../../customIcons/RedCircle.png')} />
+              <Image style={styles.tinyLogoStatus}
+                source={require('./../../customIcons/RedLine.png')} />
+                <><Image style={styles.tinyLogo}
+              source={require('./../../customIcons/GrayCircle.png')} />
+              <Image style={styles.tinyLogoStatus}
+                source={require('./../../customIcons/GrayLine.png')} />
+            </>
             <Image style={styles.tinyLogo}
-              source={require('./../../customIcons/RedCircle.png')}
-            />
-            <Image style={styles.tinyLogoStatus}
-              source={require('./../../customIcons/RedLine.png')}
-            />
+              source={require('./../../customIcons/GrayCircle.png')} />
+              <Image style={styles.tinyLogoStatus}
+                source={require('./../../customIcons/GrayLine.png')} />
+                <><Image style={styles.tinyLogo}
+              source={require('./../../customIcons/GrayCircle.png')} />
+            </>
+            </>
+            : ''
+            }
+            { orderStatus == 'Order Confirmed' ? 
+              <><Image style={styles.tinyLogo}
+              source={require('./../../customIcons/RedCircle.png')} />
+              <Image style={styles.tinyLogoStatus}
+                source={require('./../../customIcons/RedLine.png')} />
+                <><Image style={styles.tinyLogo}
+              source={require('./../../customIcons/RedCircle.png')} />
+              <Image style={styles.tinyLogoStatus}
+                source={require('./../../customIcons/RedLine.png')} />
+            </>
             <Image style={styles.tinyLogo}
-              source={require('./../../customIcons/RedCircle.png')}
-            />
-            <Image style={styles.tinyLogoStatus}
-              source={require('./../../customIcons/RedLine.png')}
-            />
+              source={require('./../../customIcons/GrayCircle.png')} />
+              <Image style={styles.tinyLogoStatus}
+                source={require('./../../customIcons/GrayLine.png')} />
+                <><Image style={styles.tinyLogo}
+              source={require('./../../customIcons/GrayCircle.png')} />
+            </>
+            </>
+              : 
+              ''
+            }
+            { orderStatus == 'Order Shipped' ? 
+              <><Image style={styles.tinyLogo}
+              source={require('./../../customIcons/RedCircle.png')} />
+              <Image style={styles.tinyLogoStatus}
+                source={require('./../../customIcons/RedLine.png')} />
+                <><Image style={styles.tinyLogo}
+              source={require('./../../customIcons/RedCircle.png')} />
+              <Image style={styles.tinyLogoStatus}
+                source={require('./../../customIcons/RedLine.png')} />
+            </>
             <Image style={styles.tinyLogo}
-              source={require('./../../customIcons/RedCircle.png')}
-            />
-            <Image style={styles.tinyLogoStatus}
-              source={require('./../../customIcons/GrayLine.png')}
-            />
+              source={require('./../../customIcons/RedCircle.png')} />
+              <Image style={styles.tinyLogoStatus}
+                source={require('./../../customIcons/RedLine.png')} />
+                <><Image style={styles.tinyLogo}
+              source={require('./../../customIcons/GrayCircle.png')} />
+            </>
+            </>
+              : 
+              ''}
+
+            { orderStatus == 'Order Delivered' ? 
+              <><Image style={styles.tinyLogo}
+              source={require('./../../customIcons/RedCircle.png')} />
+              <Image style={styles.tinyLogoStatus}
+                source={require('./../../customIcons/RedLine.png')} />
+                <><Image style={styles.tinyLogo}
+              source={require('./../../customIcons/RedCircle.png')} />
+              <Image style={styles.tinyLogoStatus}
+                source={require('./../../customIcons/RedLine.png')} />
+            </>
             <Image style={styles.tinyLogo}
-              source={require('./../../customIcons/RedCircle.png')}
-            />
+              source={require('./../../customIcons/RedCircle.png')} />
+              <Image style={styles.tinyLogoStatus}
+                source={require('./../../customIcons/RedLine.png')} />
+                <><Image style={styles.tinyLogo}
+              source={require('./../../customIcons/RedCircle.png')} />
+            </>
+            </>
+              : 
+              ''
+            }
+            { orderStatus != 'Order Shipped' && orderStatus != 'Order Confirmed' && orderStatus != 'Order Placed' && orderStatus != 'Order Delivered' ? 
+              <><Image style={styles.tinyLogo}
+              source={require('./../../customIcons/GrayCircle.png')} />
+              <Image style={styles.tinyLogoStatus}
+                source={require('./../../customIcons/GrayLine.png')} />
+                <><Image style={styles.tinyLogo}
+              source={require('./../../customIcons/GrayCircle.png')} />
+              <Image style={styles.tinyLogoStatus}
+                source={require('./../../customIcons/GrayLine.png')} />
+            </>
+            <Image style={styles.tinyLogo}
+              source={require('./../../customIcons/GrayCircle.png')} />
+              <Image style={styles.tinyLogoStatus}
+                source={require('./../../customIcons/GrayLine.png')} />
+                <><Image style={styles.tinyLogo}
+              source={require('./../../customIcons/GrayCircle.png')} />
+            </>
+            </>
+            : ''
+          }
           </View>
           <View style={styles.iconBox}>
             <View style={styles.logoTextBox}>
@@ -143,17 +215,13 @@ const Tracking = (props) => {
               <Text style={styles.logoText}>Order Shipped</Text>
             </View>
             <View style={styles.logoTextBox}>
-              <Image style={styles.tinyLogo}
+            <Image style={styles.tinyLogo}
               source={require('./../../customIcons/OrderDelivered.png')}
               />
               <Text style={styles.logoText}>Delivered!</Text>
             </View>
-
-          
           </View>
-          
-        </View>
-        
+        </View>      
       </View>
     );
   };
@@ -163,7 +231,7 @@ Tracking.navigationOptions = ({ navigation: { goBack } }) => {
       title: 'Tracking',
       headerLeft: (props) => (
         <Button
-        title="<--"
+        title="Back"
         onPress={() => {
             goBack();
         }}
@@ -193,6 +261,7 @@ const styles = StyleSheet.create({
     alignSelf: "center",
     backgroundColor: "#FFFFFF",
     position: "absolute",
+    marginBottom:10,
     top:0
   },
   where: {
@@ -205,51 +274,33 @@ const styles = StyleSheet.create({
   rect2: {
     width: Dimensions.get('window').width,
     backgroundColor: "white",
-    alignSelf:"center",
-    marginTop:10,
     paddingVertical:50,
-    flexDirection: "row",
-    justifyContent: "space-between",
-    alignItems: "center",
     position: "absolute",
     bottom: 0
   },
   iconBox: {
-    width: Dimensions.get('window').width/1.16,
+    width: Dimensions.get('window').width/1.25,
     backgroundColor: "white",
-    alignSelf:"center",
     marginTop:-10,
-    paddingVertical:0,
     flexDirection: "row",
-    justifyContent: "space-between",
-    alignItems: "center",
     position: "absolute",
     bottom: 17,
-    right: 33
+    alignSelf:'center',
   },
   iconBoxStatus: {
     width: Dimensions.get('window').width/1.67,
     backgroundColor: "white",
     alignSelf:"center",
-    marginTop:-10,
-    paddingVertical:0,
     flexDirection: "row",
-    justifyContent: "space-between",
+    justifyContent: "center",
     alignItems: "center",
     position: "absolute",
     bottom: 60,
-    right: 103
   },
   iconBoxStatusBars: {
     width: Dimensions.get('window').width/1.67,
     backgroundColor: "white",
-    alignSelf:"center",
     marginTop:-10,
-    paddingVertical:0,
-    flexDirection: "row",
-    justifyContent: "space-between",
-    alignItems: "center",
-    position: "absolute",
     bottom: 60,
     right: 72
   },

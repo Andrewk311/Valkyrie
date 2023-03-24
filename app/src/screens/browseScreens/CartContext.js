@@ -5,6 +5,7 @@ export const CartContext = createContext();
 export function CartProvider(props) {
   
   const [items, setItems] = useState([]);
+  const [orderNumber, setOrderNumber] = useState("0");
 
   function addItemToCart(id) {
     const product = getProduct(id);
@@ -51,9 +52,6 @@ function removeItemFromCart(id) {
             item.qty--;
             item.totalPrice -= product.cost;
             item.totalWeight -= product.weight;
-            if(item.qty == 0){
-              prevItems.splice(prevItems.indexOf(item), 1);
-            }
           }
           return item;
         });
@@ -72,9 +70,13 @@ function getTotalWeight() {
   return items.reduce((sum, item) => (sum + item.totalWeight), 0);
 }  
 
+function setLatestOrderNumber(orderNumberInput){
+  setOrderNumber(orderNumberInput);
+}
+
   return (
     <CartContext.Provider 
-      value={{items, setItems, getItemsCount, addItemToCart, getTotalPrice, getTotalWeight, removeItemFromCart}}>
+      value={{items, setItems, getItemsCount, addItemToCart, getTotalPrice, getTotalWeight, setLatestOrderNumber, removeItemFromCart}}>
       {props.children}
     </CartContext.Provider>
   );

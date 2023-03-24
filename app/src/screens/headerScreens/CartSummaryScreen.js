@@ -10,11 +10,11 @@ import Geocoder from 'react-native-geocoding';
 import { WebSocketContext } from '../../WebSocketContext';
 
 const CartSummary = (props) => {
-    const {items, removeItemFromCart, getTotalPrice, addItemToCart, getTotalWeight } = useContext(CartContext);
+    const {items, removeItemFromCart, getTotalPrice, addItemToCart, setLatestOrderNumber, getTotalWeight } = useContext(CartContext);
     const [attributes, setAttributes] = React.useState(null);
     const { websocket, setWebsocket } = useContext(WebSocketContext);
 
-    googleMapsAPI = "AIzaSyBmF_o7JmYo55KiewrTHqiDOupJ5FcbxRA";   //google maps api key to convert address to lat and long
+    var googleMapsAPI = "AIzaSyBmF_o7JmYo55KiewrTHqiDOupJ5FcbxRA";   //google maps api key to convert address to lat and long
     Geocoder.init(googleMapsAPI);
 
 
@@ -61,15 +61,18 @@ const CartSummary = (props) => {
         Geocoder.from(address).then(json => {
         const { lat, lng } = json.results[0].geometry.location;
         for(var i =0; i < items.length; i++){
-          orderDetails.push({name:getProduct(items[i].id).name, quantity: items[i].qty});
+          if (items[i].qty){
+            orderDetails.push({name:getProduct(items[i].id).name, quantity: items[i].qty});
+          }
+
         }
         const orderData = {
           latitude: lat,
           longitude: lng,
-          totalPrice: getTotalPrice(),
-          totalWeight: getTotalWeight(),
+          totalPrice: getTotalPrice().toFixed(2),
+          totalWeight: getTotalWeight().toFixed(2),
           email: attributes.attributes.email.toString(),
-          orderNumber: "10",  //change every order or it wont go through
+          orderNumber: "AD" +  Math.floor(Math.random()*100000+1).toString(),  //change every order or it wont go through
           inTransit : false,
           isAccepted: 0,
           isActive: true,
@@ -88,12 +91,13 @@ const CartSummary = (props) => {
       try{
         createOrder(order);
         console.log('added order number #' + order.orderNumber);
+        onSetLatestOrderNumber(order.orderNumber);
         setErrorMessage('Order Placed!');
         if (!websocket || websocket.readyState !== WebSocket.OPEN) {
           const ws = new WebSocket('wss://07k3svmpdh.execute-api.us-east-1.amazonaws.com/production');
           ws.addEventListener('open', () => {
             console.log('WebSocket connection opened');
-            ws.send(JSON.stringify({ status: 'Order Placed' }));
+            ws.send(JSON.stringify({ "action": "orderStatusUpdate", "data": { "status": "Order Placed" }}));
           });
           setWebsocket(ws);
         } else {
@@ -113,6 +117,10 @@ const CartSummary = (props) => {
 
     function onRemoveFromCart(productId) {
       removeItemFromCart(productId);
+    }
+
+    function onSetLatestOrderNumber(orderNumber) {
+      setLatestOrderNumber(orderNumber);
     }
 
   function Totals() {
