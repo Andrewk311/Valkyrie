@@ -52,10 +52,18 @@ function Inventory() {
     useEffect(() => {
         async function fetchInventories() {
           try {
-            const filter = 'UITEST'; 
-            const items = await getInventoriesByPartitionKey(filter);
-            setInventories(items);
-            console.log(items);
+            const arr = ['Cold and Flu','OTC','Vitamins & Immune Support','Misc','Prescription'];
+            const arrVal = [];
+            for (var i = 0; i < arr.length; i++){
+              const items = await getInventoriesByPartitionKey(arr[i]);
+              console.log(items);
+              arrVal.push(...items);
+            }
+            // const filter = 'Cold and Flu'; 
+            // const items = await getInventoriesByPartitionKey(filter);
+            setInventories(arrVal);
+            // console.log(items);
+            console.log(inventories);
           } catch (err) {
             console.log('Error fetching inventories', err);
             setInventories([]);

@@ -198,10 +198,6 @@ function Orders() {
       </tbody>
     </table>
 <h2>{message}</h2>
-            <button onClick={testLambda}>Trigger Lambda</button>
-            <button onClick={updateOrderDetails}>Update Order 1</button>
-            <button onClick={() => sendOrderStatusUpdate('Order Confirmed')}>Confirm Order</button>
-            <button onClick={() => sendOrderStatusUpdate('Order Shipped')}>Ship Order</button>
         </div>
     );
 }
