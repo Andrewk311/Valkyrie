@@ -119,6 +119,7 @@ function Orders() {
     function isDelivered(order){
       try {
         updateOrder(order['order_number'],order['isAccepted'], false , false);
+        sendOrderStatusUpdate('Order Delivered'); //sends data to app side and will refresh
       } catch (err) {
           console.log('error updating inventory: ', err);
       }
