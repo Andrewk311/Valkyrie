@@ -23,7 +23,6 @@ const CartSummary = (props) => {
         const user = await Auth.currentAuthenticatedUser();
         setAttributes(user);
       }
-      console.log('hi');
       getUserInfo(); 
     }, []);
 
@@ -62,11 +61,8 @@ const CartSummary = (props) => {
         Geocoder.from(address).then(json => {
         const { lat, lng } = json.results[0].geometry.location;
         for(var i =0; i < items.length; i++){
-          console.log(getProduct(items[i].id).name);
-          console.log(items[i].qty);
           orderDetails.push({name:getProduct(items[i].id).name, quantity: items[i].qty});
         }
-        console.log(orderDetails);
         const orderData = {
           latitude: lat,
           longitude: lng,

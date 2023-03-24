@@ -33,7 +33,6 @@ export function CartProvider(props) {
 }
 
 function removeItemFromCart(id) {
-  console.log(items); 
   const product = getProduct(id);
   setItems((prevItems) => {
     const item = prevItems.find((item) => (item.id == id));
@@ -52,6 +51,9 @@ function removeItemFromCart(id) {
             item.qty--;
             item.totalPrice -= product.cost;
             item.totalWeight -= product.weight;
+            if(item.qty == 0){
+              prevItems.splice(prevItems.indexOf(item), 1);
+            }
           }
           return item;
         });
