@@ -43,7 +43,7 @@ const Tracking = (props) => {
     let interval;
     console.log("OrderStatus: " + orderStatus)
     console.log("OrderNum: "  + orderNumber);
-    if (orderStatus === 'Order Confirmed'){
+    if (orderStatus === 'Order Shipped'){
       console.log('This should work');
       const getCoordinates = async () => {
         const response = await axios.get('https://l4ob0tegqc.execute-api.us-east-1.amazonaws.com/production/getcoordinates');
@@ -75,20 +75,26 @@ const Tracking = (props) => {
           <Text style={styles.where}> Where's My Order? </Text>
         </View>
         <View>
-          <Text style={{fontWeight:"bold", color:"#000000", fontSize:24, marginTop: -270, }}>ORDER #AD9817</Text>
+          <Text style={{fontWeight:"bold", color:"#000000", fontSize:24, marginTop: -250, }}>ORDER #AD9817</Text>
         </View>
-          {true ? (
-        <MapView style={styles.map} initialRegion={{
-          latitude: 40.505730,
-          longitude: -74.448979,
-          latitudeDelta: 0.0922,
-          longitudeDelta: 0.0421,
-        }}>
+        <MapView
+          style={styles.map}
+          initialRegion={{
+            latitude: 40.505730,
+            longitude: -74.448979,
+            latitudeDelta: 0.0922,
+            longitudeDelta: 0.0421,
+          }}
+        >
+          {location && (
+            <Marker
+              coordinate={{
+                latitude: location.latitude,
+                longitude: location.longitude,
+              }}
+            />
+          )}
         </MapView>
-      ) : (
-        <Text>Loading...</Text>
-      )}
-
         <View style={styles.rect2}>
           <View style={styles.iconBoxStatus}>
             {orderStatus == 'Order Placed' ? 
