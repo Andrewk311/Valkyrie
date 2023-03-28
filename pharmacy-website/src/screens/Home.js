@@ -96,11 +96,11 @@ function App() {
             </div>
             <div className='homeContents'>
                 <p style={{ color:'#FFFFFF', fontWeight: 'normal', textAlign:'center', fontSize: 'calc(20px + 2vmin)', position:'absolute', top: '10%', left:'36%'}}>Welcome to the Pharmacy Portal!</p>
+                <button onClick={signOut} className="signOutButton">Sign Out</button>
                 <img className='image' src={require('./../logo.png')}></img>
                 <div className='button-container'>
                   <button onClick={handleOrdersClick} className="button">View Orders</button>
                   <button onClick={handleInventoryClick} className="button">View Inventory</button>
-                  <button onClick={signOut} className="button">Sign Out</button>
                 </div>
                 </div>
             </div>
