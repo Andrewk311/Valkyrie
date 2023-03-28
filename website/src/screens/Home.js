@@ -91,6 +91,7 @@ function Home() {
                 face transportation challenges. Our mission is to make healthcare
                 more accessible, affordable and convenient for everyone.
               </p>
+              <button className="button-header" onClick={handleAboutUsClick}>Learn more</button>
             </div>
             <div className="about-image">
               <img src="./images/team.jpg" alt="team" /> {/* import your team image */}

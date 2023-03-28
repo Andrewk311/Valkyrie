@@ -71,6 +71,7 @@ nav a:hover {
   border: none;
   font-family: 'Montserrat', sans-serif;
   cursor: pointer;
+  transition: opacity 0.3s ease-in-out;
 }
 
 .button-margin {
@@ -82,7 +83,7 @@ nav a:hover {
 }
 
 button:hover {
-  background-color: darken(var(--primary-color), 10%);
+  opacity: 0.2;
 }
 
 /* Style the hero section */
