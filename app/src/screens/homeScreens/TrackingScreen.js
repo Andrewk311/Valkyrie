@@ -58,14 +58,14 @@ const Tracking = (props) => {
         });
         // console.log('location is: ',location)
       }
-
+ 
       interval = setInterval(() => {
         getCoordinates();
       }, 3000);
     }
     return () => clearInterval(interval);
 
-  }, []);
+  }, [orderStatus]);
 
   
 
@@ -75,7 +75,8 @@ const Tracking = (props) => {
           <Text style={styles.where}> Where's My Order? </Text>
         </View>
         <View>
-          <Text style={{fontWeight:"bold", color:"#000000", fontSize:24, marginTop: -250, }}>ORDER #AD9817</Text>
+        {orderStatus===null && (<Text style={{fontWeight:"bold", color:"#000000", fontSize:24, marginTop: -250, }}>Place an order to see tracking!</Text>)}
+        {orderStatus!="null" && (<Text style={{fontWeight:"bold", color:"#000000", fontSize:24, marginTop: -250, }}>ORDER #AD67135</Text>)}
         </View>
         <MapView
           style={styles.map}
