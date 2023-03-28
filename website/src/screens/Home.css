@@ -1,39 +1,217 @@
-.App {
-    text-align: center;
-  }
-  
-  .App-logo {
-    height: 40vmin;
-    pointer-events: none;
-  }
-  
-  @media (prefers-reduced-motion: no-preference) {
-    .App-logo {
-      animation: App-logo-spin infinite 20s linear;
-    }
-  }
-  
-  .App-header {
-    background-color: #FFFFFF;
-    min-height: 100vh;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    font-size: calc(10px + 2vmin);
-    color: white;
-  }
-  
-  .App-link {
-    color: #61dafb;
-  }
-  
-  @keyframes App-logo-spin {
-    from {
-      transform: rotate(0deg);
-    }
-    to {
-      transform: rotate(360deg);
-    }
-  }
-  
+/* This is the css code for Valkyrie landing page */
+
+/* Use a custom font for the whole page */
+@import url('https://fonts.googleapis.com/css?family=Montserrat:300,400,500,600,700&display=swap');
+* {
+  font-family: 'Montserrat', sans-serif;
+}
+
+/* Define some colors for convenience */
+:root {
+  --primary-color: #1a73e8; /* blue */
+  --secondary-color: #f8f9fa; /* light gray */
+  --tertiary-color: #343a40; /* dark gray */
+  --quaternary-color: #ffffff; /* white */
+}
+
+.homePageHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.5rem 2rem;
+  background-color: var(--quaternary-color);
+  min-height: 50px; /* add this line */
+}
+
+.portal-button {
+  display: inline-block;
+  padding: .5rem 1rem;
+  background-color: var(--primary-color);
+  color: var(--quaternary-color);
+  text-decoration: none;
+  border-radius: .25rem;
+  transition: background-color 0.3s ease;
+}
+
+.portal-button:hover {
+  background-color: darken(var(--primary-color), 10%);
+}
+
+/* Style the logo */
+.App-logo {
+  width: 150px;
+  height: auto;
+}
+
+/* Style the navigation links */
+nav {
+  display: flex;
+  list-style: none;
+}
+
+nav a {
+  margin-left: 1rem;
+  color: var(--tertiary-color);
+  text-decoration: none;
+}
+
+nav a:hover {
+  color: var(--primary-color);
+}
+
+/* Style the buttons */
+.button-header {
+  display: inline-block;
+  padding: .5rem 1rem;
+  background-color: var(--primary-color);
+  color: var(--quaternary-color);
+  text-decoration: none;
+  border-radius: .25rem;
+  transition: background-color 0.3s ease;
+  border: none;
+  font-family: 'Montserrat', sans-serif;
+  cursor: pointer;
+}
+
+.button-margin {
+  margin-right: 0.5rem;
+}
+
+.buttons-container {
+  display: flex;
+}
+
+button:hover {
+  background-color: darken(var(--primary-color), 10%);
+}
+
+/* Style the hero section */
+.hero {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 2rem;
+  background-color: var(--primary-color); /* change this line */
+}
+
+
+/* Style the hero content */
+.hero-content {
+  max-width: 50%;
+}
+
+.hero-title {
+  font-size: 3rem;
+  font-weight: bold;
+  color: var(--quaternary-color);
+}
+
+.hero-subtitle {
+  font-size: 1.5rem;
+  color: var(--quaternary-color);
+}
+
+/* Style the hero button */
+.hero-button {
+  display: inline-block;
+  margin-top: 1rem;
+  padding: .75rem 1.5rem;
+  border-radius: .25rem;
+  background-color: var(--primary-color);
+  color: var(--quaternary-color);
+  text-decoration: none;
+}
+
+.hero-button:hover {
+  background-color: darken(var(--primary-color),10%);
+}
+
+/* Style the hero image */
+.hero-image {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.hero-image img { /* add this new rule */
+  max-width: 20%;
+  max-height: 20%;
+  object-fit: contain;
+}
+
+
+
+
+
+/* Style the features section */
+.features {
+  display: flex;
+  flex-wrap: wrap;
+  padding: 2rem;
+  justify-content: space-between; /* add this line */
+}
+
+/* Style each feature card */
+.feature-card {
+  flex-basis: calc(33.333% - .5rem); /* use three columns per row */
+  margin-bottom: .5rem; /* add some space between rows */
+}
+
+.feature-card:nth-child(odd) { /* alternate the margin for odd and even cards */
+    margin-right: .5rem; 
+}
+
+.feature-card:nth-child(even) { 
+    margin-left:.5rem; 
+}
+
+.feature-icon img {
+  max-width: 10%; /* Adjust this value as needed */
+  max-height: 10%; /* Adjust this value as needed */
+  object-fit: contain;
+}
+
+.feature-title {
+    font-size:1.25rem; 
+    font-weight:bold; 
+    color:#212529; /* dark gray */ 
+    text-align:center; 
+    margin-top:.5rem; 
+}
+
+.feature-description { 
+    font-size:.875rem; 
+    color:#6c757d; /* gray */ 
+    text-align:center; 
+    margin-top:.25rem; 
+}
+
+/* Style the about section */
+.about {
+  display: flex;
+  align-items: center;
+  justify-content: space-between; /* change this line */
+  padding: 2rem; /* change this line */
+  background-color: var(--secondary-color); /* change this line */
+}
+
+/* Style the about text */
+.about-text {
+  max-width: 50%;
+}
+
+.about-text h2 {
+  font-size: 2rem;
+  font-weight: bold;
+  color: #212529; /* dark gray */
+}
+
+.about-text p {
+  font-size: 1rem;
+  color: #6c757d; /* gray */
+}
+
+/* Style the about image */
+.about-image {
+  width: 40%;
+}
