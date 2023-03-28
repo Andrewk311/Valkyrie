@@ -1,17 +1,19 @@
 .App-logo {
-	height: 40vmin;
-	pointer-events: none;
+  height: 40vmin;
+  pointer-events: none;
 }
 
 .App {
   background-color: #E33737;
-  align-content:center ;
-  align-items: center;
-  height: 100vh;
   display: flex;
   flex-direction: column;
-  overflow-y: scroll;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  overflow-y: hidden;
+  padding: 0 2rem;
 }
+
 .App-header {
   min-height: 13vmin;
   width: 100vw;
@@ -21,70 +23,75 @@
   flex-direction: row;
   justify-content: center;
   background-color: white;
+  position: absolute;
+  top: 0;
 }
 
-.image{
-  width:20%;
-  height:20%;
-  margin-bottom: 7%;
+/* .homeContents {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0%;
+  width: 100%;
+  max-width: 90%;
+} */
+
+.image {
+  width: 15%;
+  height: 15%;
+  margin-bottom: 0%;
+  position: absolute;
+  top: 12%;
+  left: 43%;
 }
 
-.my-button {
-  background: red;
+.button-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0%;
+  width: 100%;
+  position: absolute;
+  right:0%;
+  top: 30%;
+  height: 10%;
+  
+}
+
+.button {
+  background-color: #AA9798;
+  border-radius: 25px;
+  width: 40vw;
+  height: 80px;
+  border-width: 1;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  font-size: calc(8px + 1.5vmin);
   color: white;
-  border: none;
-  border-radius: 4px;
-  padding: 8px 16px;
-  font-size: 16px;
-  cursor: pointer;
+  font-weight: bold;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
-
-/* All components have a class name starting with `amplify` */
-.amplify-button {
-  font-size: 2rem;
-  padding: 1rem 2rem;
-  background: none;
-  border: 2px solid black;
+.button:hover {
+  background-color: #927373;
 }
 
-.amplify-button:hover {
-  background: gray;
-}
-
-
-.amplify-tabs {
-  display: none;
-}
-
-.button{
-    background-color: #AA9798;
-    border-radius: 25px;
-    width:70vw;
-    height:160px;
-    border-width: 1;
-    margin-bottom: 5%;
-    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-    font-size: calc(8px + 2vmin);
-    color:white;
-    font-weight: bold;
-    padding: 70px;
-}
 .App-link {
   color: #61dafb;
 }
 
 @media (prefers-reduced-motion: no-preference) {
-	.App-logo {
-		animation: App-logo-spin infinite 20s linear;
-	}
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
 }
 
 @keyframes App-logo-spin {
-	from {
-		transform: rotate(0deg);
-	}
-	to {
-		transform: rotate(360deg);
-	}
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
 }

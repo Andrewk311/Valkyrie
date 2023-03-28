@@ -150,8 +150,8 @@ function Orders() {
       <tr key={"header"}>
         <th className='th'>Order Number</th>
         <th className='th'>Email</th>
-        <th className='th'>Order Status</th>
         <th className='th'>Order Location</th>
+        <th className='th'>Order Status</th>
         <th className='th'>Order Details</th>
         <th className='th'>Approval Status</th>
         <th className='th'>Transit Status</th>

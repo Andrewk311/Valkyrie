@@ -1,17 +1,18 @@
 .App-logo {
-	height: 40vmin;
-	pointer-events: none;
+  height: 40vmin;
+  pointer-events: none;
 }
 
 .App {
   background-color: #E33737;
-  align-content:center ;
+  align-content: center;
   align-items: center;
   height: 100vh;
   display: flex;
   flex-direction: column;
   overflow-y: scroll;
 }
+
 .App-header {
   min-height: 13vmin;
   width: 100vw;
@@ -23,79 +24,104 @@
   background-color: white;
   margin-bottom: 0;
 }
-.button2{
-  background-color: rgb(211, 200, 200);
-  width:100px;
-  height:30px;
-  margin-bottom: 5%;
-  color:black;
-  font-weight: bold;
-  margin-right: 10px;
+
+.button2, .button3 {
+  background-color: #e74c3c;
+  border: none;
+  color: white;
+  font-weight: 600;
+  cursor: pointer;
+  text-align: center;
+  display: inline-block;
+  font-size: 14px;
+  margin: 0 2px;
+  transition-duration: 0.4s;
+  border-radius: 4px;
+  padding: 6px 12px;
 }
 
-.button3{
-  background-color: rgb(211, 200, 200);
-  width:130px;
-  height:50px;
-  margin-bottom: 5%;
-  color:black;
-  font-weight: bold;
-  margin-right: 10px;
+.button2:hover, .button3:hover {
+  background-color: #c0392b;
 }
 
 .App-link {
   color: #61dafb;
 }
 
-.table{
-  border: 1px solid;
-}
-
 .tableWrapper {
   background-color: white;
   width: 100%;
   margin: 10px;
-  width:95%;
+  width: 95%;
   color: black;
   border-collapse: collapse;
   text-align: left;
   border-radius: 10px;
   margin-bottom: 30px;
-}
-.th{
-  border-right: 1px solid black;
-  border-bottom: 1px solid rgb(130, 118, 118);
-  border-collapse: collapse;
-  text-align: center;
+  overflow: hidden;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.3);
 }
 
-.td{
-  border-bottom: 1px solid rgb(130, 118, 118);
-  border-collapse: collapse;
+th, td {
+  padding: 12px 15px;
+  text-align: center;
+  border-bottom: 1px solid #ddd;
   font-weight: 500;
-  border-right: 1px solid black;
-  text-align: center;
-  align-content: center;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
+}
 
+th {
+  background-color: #d41f1f;
+  font-weight: bold;
+  color: white;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-size: 16px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2), 0 -2px 0 rgba(0, 0, 0, 0.05) inset;
+}
+
+tr:nth-child(even) {
+  background-image: linear-gradient(to bottom, #f4f4f4 0%, #e9e9e9 100%);
+}
+
+tr:nth-child(odd) {
+  background-image: linear-gradient(to bottom, #ffffff 0%, #f1f1f1 100%);
+}
+
+td {
+  color: #333333;
+  font-weight: 400;
+  border-right: 1px solid rgba(0, 0, 0, 0.1); /* Added thin and faint lines between columns */
+}
+
+td p {
+  margin: 0;
+  padding: 4px 0;
+}
+
+
+
+tr:hover {
+  background-color: #e6e6e6;
 }
 
 .label {
   color: black;
   display: block;
   margin: 20px;
-  }
+}
 
 @media (prefers-reduced-motion: no-preference) {
-	.App-logo {
-		animation: App-logo-spin infinite 20s linear;
-	}
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
 }
 
 @keyframes App-logo-spin {
-	from {
-		transform: rotate(0deg);
-	}
-	to {
-		transform: rotate(360deg);
-	}
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
 }

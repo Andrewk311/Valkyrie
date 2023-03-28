@@ -1,18 +1,19 @@
 .App-logo {
-	height: 40vmin;
-	pointer-events: none;
+  height: 40vmin;
+  pointer-events: none;
 }
 
-.App {
+.Inventory {
   background-color: #E33737;
-  align-content:center ;
+  align-content:center;
   align-items: center;
   height: 100vh;
   display: flex;
   flex-direction: column;
   overflow-y: scroll;
 }
-.App-header {
+
+.Inventory-header {
   min-height: 13vmin;
   width: 100vw;
   font-size: calc(20px + 2vmin);
@@ -23,100 +24,152 @@
   background-color: white;
   margin-bottom: 0;
 }
-.button{
-    background-color: #AA9798;
-    border-radius: 25px;
-    width:70vw;
-    height:160px;
-    border-width: 1;
-    margin-bottom: 5%;
-    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-    font-size: calc(8px + 2vmin);
-    color:white;
-    font-weight: bold;
-    padding: 70px;
+
+.button {
+  background-color: #AA9798;
+  border-radius: 25px;
+  width: 70vw;
+  height: 160px;
+  border-width: 1;
+  margin-bottom: 5%;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  font-size: calc(8px + 2vmin);
+  color: white;
+  font-weight: bold;
+  padding: 70px;
 }
+
 .App-link {
   color: #61dafb;
 }
-.table{
+
+.table {
   border: 1px solid;
 }
+
+.mainContent {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+}
+
 .tableWrapper {
   background-color: white;
-  width: 100%;
-  margin: 10px;
-  width:95%;
+  width: 95%;
   color: black;
   border-collapse: collapse;
   text-align: left;
   border-radius: 10px;
 }
-.th{
+
+.th {
   padding: 15px;
   border-bottom: 1px solid rgb(130, 118, 118);
   border-collapse: collapse;
 }
 
-.td{
+.td {
   padding: 15px;
   border-bottom: 1px solid rgb(130, 118, 118);
   border-collapse: collapse;
   font-weight: 430;
 }
 
-.formContainer{
+
+.formContainer {
   background-color: white;
-  width:95%;
+  width: 65%;
   color: black;
   text-align: left;
   border-radius: 10px;
-  justify-content: center;
-  align-items: center;
-  align-content: center;
-  align-self: center;
+  padding: 20px;
   display: flex;
+  flex-wrap: nowrap;
+  justify-content: center; /* Change to center */
+  align-items: center; /* Add align-items: center */
+  margin-top: 20px;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.5); /* Add box-shadow to create depth */
+}
+
+
+.form {
+  display:flex;
   flex-direction: row;
+  justify-content: space-between;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-right: 20px;
 }
 
 .label {
-  margin-top: 30px;
-  color: black;
-  display: block;
-  width: 150px;
-  float: left;
+  margin-bottom: 5px;
+  font-weight: bold; /* Add font-weight: bold */
+  text-transform: uppercase;
+  font-size: 14px;
+  margin-right: 10px;
 }
+
+
 .input {
- padding: 10px;
- border-radius: 4px;
- border-width: 1px;
+  padding: 8px 12px;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+  font-size: 14px;
+  font-weight: 500; /* Add font-weight to make text in the input boxes heavier */
 }
 
-.dropdown{
-  width: 150px;
-  height:70px;
-  border: black;
-  border-width: 2px;
+
+.dropdown {
+  margin-bottom: 20px;
 }
 
-.submitBtn{
-  width: 150px;
-  height:40px;
-  align-self: center;
-  margin-top: 40px;
+.submitBtn {
+  background-color: #D32F2F;
+  color: white;
+  font-weight: bold;
+  padding: 8px 12px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  text-transform: uppercase;
+  font-size: 14px;
+  width: auto;
+  margin-top: 20px;
+  height: fit-content;
+  align-self: center; /* Change to center */
+}
+
+
+
+
+.submitBtn:hover {
+  background-color: #B32828;
+}
+
+.submitBtn:active {
+  background-color: #8F1F1F;
+}
+
+.submitBtn:focus {
+  outline: none;
 }
 
 @media (prefers-reduced-motion: no-preference) {
-	.App-logo {
-		animation: App-logo-spin infinite 20s linear;
-	}
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
 }
 
 @keyframes App-logo-spin {
-	from {
-		transform: rotate(0deg);
-	}
-	to {
-		transform: rotate(360deg);
-	}
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
 }
