@@ -8,7 +8,11 @@ import convenience from './../Images/ConvenienceIcon.jpg';
 import drone2 from './../Images/Drone2.jpg';
 import drone3 from './../Images/Drone3.jpg';
 import dallas from './../Images/Dallas2.jpg';
-import tracking from './../Images/TrackOrder.png';
+import tracking from './../Images/TrackOrder2.PNG';
+import store from './../Images/StoreFront2.png';
+import homescreen from './../Images/HomePage.PNG';
+import settings from './../Images/Settings.PNG';
+import orders from './../Images/PharmPortalOrders2.jpg'
 
 const images = [drone, drone2, drone3];
 
@@ -117,8 +121,19 @@ function Home() {
                 </div>
             </section>
             <section className="app-features">
-                <div className="app-features-image">
-                    <img src={tracking} alt="app features" />
+                <div className="imageContainer">
+                    <div className="app-features-image app-features-image-rounded">
+                        <img src={homescreen} alt="app features" />
+                    </div>
+                    <div className="app-features-image app-features-image-rounded">
+                        <img src={tracking} alt="app features" />
+                    </div>
+                    <div className="app-features-image app-features-image-rounded">
+                        <img src={store} alt="app features" />
+                    </div>
+                    <div className="app-features-image app-features-image-rounded">
+                        <img src={settings} alt="app features" />
+                    </div>
                 </div>
                 <div className="app-features-text">
                     <h2>Stay Connected With Our App</h2>
@@ -128,7 +143,66 @@ function Home() {
                     <button className="button-header">Download App</button>
                 </div>
             </section>
-
+            <section className="pharmacy-portal">
+                <div className="container">
+                    <div className="row">
+                        <div className="col-md-6">
+                            <h2>Pharmacy Portal</h2>
+                            <p>
+                                On our pharmacy portal, pharmacists can log in to manage their
+                                location's inventory and address incoming orders from users. They
+                                have the ability to mark these orders as confirmed and then send them
+                                out for transit.
+                            </p>
+                        </div>
+                        <div className="col-md-6">
+                            <div className="pharmacy-portal-image-container">
+                                <div className="pharmacy-portal-image ">
+                                    <img src={orders} alt="first image" />
+                                </div>
+                                {/* <div className="pharmacy-portal-image app-features-image-rounded">
+                                    <img src={store} alt="second image" />
+                                </div>
+                                <div className="pharmacy-portal-image app-features-image-rounded">
+                                    <img src={homescreen} alt="third image" />
+                                </div>
+                                <div className="pharmacy-portal-image app-features-image-rounded">
+                                    <img src={settings} alt="fourth image" />
+                                </div> */}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <section className="how-its-built">
+                <div className="container">
+                    <div className="how-its-built-content">
+                        <div className="how-its-built-text">
+                            <h2>How It's Built</h2>
+                            <p>
+                                Our platform was built using a combination of cutting-edge technologies,
+                                including AWS services, Mission Planner drone flight software, React JS,
+                                and React Native/Expo. We've harnessed the power of these tools to create
+                                a seamless and efficient experience for our users.
+                            </p>
+                            <p>
+                                To learn more about the specific AWS services we used and how we've
+                                implemented them, check out our detailed page.
+                            </p>
+                            <button
+                                type="button"
+                                className="how-its-built-btn"
+                                onClick={handleHowClick}
+                            >
+                                How We Built It
+                            </button>
+                        </div>
+                        <div className="how-its-built-images">
+                            <img src="serviceLogosHere" alt="serviceLogos"/>
+                        </div>
+                    </div>
+                </div>
+            </section>
             {/* Add an about section with some text and an image */}
             <section className="about">
                 <div className="about-text">

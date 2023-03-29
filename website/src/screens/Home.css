@@ -13,6 +13,7 @@
   --tertiary-color: #343a40; /* dark gray */
   --quaternary-color: #ffffff; /* white */
   --quinary-color: #a5a5a5;
+  --senary-color: #ffe3e3;
 }
 
 .homePageHeader {
@@ -255,15 +256,24 @@ button:hover {
   background-color: var(--quinary-color);
 }
 
-/* Style the app features image */
 .app-features-image {
-  max-width: 10%; /* change this value to reduce the image size */
+  flex: 1;
+  flex-basis: calc(25% - 1rem); /* Adjust the percentage and subtraction value to control the width and gap */
+  margin: 0 0.02rem; /* Adjust the margin value to control the gap between the images */
 }
 
 .app-features-image img {
-  max-width: 100%;
+  width: 70%;
   height: auto;
-  object-fit: cover;
+}
+
+.app-features-image-rounded img {
+  border-radius: 1.5rem; /* adjust this value to control the rounding of the corners */
+}
+
+.imageContainer {
+  display: flex;
+  justify-content: space-between;
 }
 
 /* Style the app features text */
@@ -281,6 +291,89 @@ button:hover {
   font-size: 1rem;
   color: #ffffff; /* gray */
 }
+
+/* Style the pharm portal section */
+.pharmacy-portal {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 4rem 2rem;
+  background-color: var(--senary-color);
+}
+
+.pharmacy-portal h2 {
+  font-size: 2.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.pharmacy-portal-image-container {
+  display: flex;
+  justify-content: space-between;
+}
+
+.pharmacy-portal-image {
+  flex: 1;
+  margin-right: 1rem;
+}
+
+.pharmacy-portal-image:last-child {
+  margin-right: 0;
+}
+
+.pharmacy-portal-image img {
+  width: 90%;
+  height: auto;
+}
+
+/*How section */
+
+.how-its-built {
+  padding: 3rem 0; /* Increased padding for a larger section */
+}
+
+.how-its-built-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.how-its-built-text {
+  flex: 1;
+  margin-right: 1rem;
+}
+
+.how-its-built-text h2 {
+  font-size: 2.5rem; /* Increased font size for the title */
+  margin-bottom: 1rem;
+}
+
+.how-its-built-text p {
+  font-size: 1.2rem; /* Increased font size for the paragraphs */
+  margin-bottom: 1rem;
+}
+
+.how-its-built-images {
+  flex: 1;
+  margin-left: 1rem;
+}
+
+.how-its-built-btn {
+  background-color: #007bff;
+  color: #ffffff;
+  border: none;
+  border-radius: 0.25rem;
+  font-size: 1.2rem; /* Increased font size for the button */
+  padding: 0.75rem 1.5rem; /* Increased padding for a bigger button */
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.how-its-built-btn:hover {
+  background-color: #0056b3;
+}
+
+
+
 
 /* Style the about section */
 .about {
