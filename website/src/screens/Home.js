@@ -8,6 +8,7 @@ import convenience from './../Images/ConvenienceIcon.jpg';
 import drone2 from './../Images/Drone2.jpg';
 import drone3 from './../Images/Drone3.jpg';
 import dallas from './../Images/Dallas2.jpg';
+import tracking from './../Images/TrackOrder.png';
 
 const images = [drone, drone2, drone3];
 
@@ -115,6 +116,19 @@ function Home() {
                     </p>
                 </div>
             </section>
+            <section className="app-features">
+                <div className="app-features-image">
+                    <img src={tracking} alt="app features" />
+                </div>
+                <div className="app-features-text">
+                    <h2>Stay Connected With Our App</h2>
+                    <p>
+                        With our user-friendly app, you can easily track your drone delivery in real-time, order from a wide range of pharmacy products, and manage your prescriptions. Experience seamless access to healthcare like never before.
+                    </p>
+                    <button className="button-header">Download App</button>
+                </div>
+            </section>
+
             {/* Add an about section with some text and an image */}
             <section className="about">
                 <div className="about-text">

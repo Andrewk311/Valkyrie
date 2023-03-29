@@ -12,6 +12,7 @@
   --secondary-color: #f8f9fa; /* light gray */
   --tertiary-color: #343a40; /* dark gray */
   --quaternary-color: #ffffff; /* white */
+  --quinary-color: #a5a5a5;
 }
 
 .homePageHeader {
@@ -243,6 +244,42 @@ button:hover {
     color:#6c757d; /* gray */ 
     text-align:center; 
     margin-top:.25rem; 
+}
+
+/* Style the app features section */
+.app-features {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 4rem 2rem;
+  background-color: var(--quinary-color);
+}
+
+/* Style the app features image */
+.app-features-image {
+  max-width: 10%; /* change this value to reduce the image size */
+}
+
+.app-features-image img {
+  max-width: 100%;
+  height: auto;
+  object-fit: cover;
+}
+
+/* Style the app features text */
+.app-features-text {
+  max-width: 50%;
+}
+
+.app-features-text h2 {
+  font-size: 2rem;
+  font-weight: bold;
+  color: #212529; /* dark gray */
+}
+
+.app-features-text p {
+  font-size: 1rem;
+  color: #ffffff; /* gray */
 }
 
 /* Style the about section */
