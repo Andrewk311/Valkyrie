@@ -328,7 +328,12 @@ button:hover {
 /*How section */
 
 .how-its-built {
-  padding: 3rem 0; /* Increased padding for a larger section */
+  /* padding: 3rem 0; Increased padding for a larger section */
+  display: flex;
+  align-items: center;
+  justify-content: space-between; /* change this line */
+  padding: 2rem; /* change this line */
+  background-color: var(--tertiary-color); /* change this line */
 }
 
 .how-its-built-content {
@@ -338,23 +343,27 @@ button:hover {
 }
 
 .how-its-built-text {
-  flex: 1;
-  margin-right: 1rem;
+  max-width: 50%;
 }
 
 .how-its-built-text h2 {
-  font-size: 2.5rem; /* Increased font size for the title */
-  margin-bottom: 1rem;
+  font-size: 2rem;
+  font-weight: bold;
+  color: #212529; /* dark gray */
 }
 
 .how-its-built-text p {
-  font-size: 1.2rem; /* Increased font size for the paragraphs */
-  margin-bottom: 1rem;
+  font-size: 1rem;
+  color: #6c757d; /* gray */
 }
 
 .how-its-built-images {
   flex: 1;
   margin-left: 1rem;
+}
+
+.how-its-built-images img {
+  max-width: 50%;
 }
 
 .how-its-built-btn {

@@ -13,6 +13,7 @@ import store from './../Images/StoreFront2.png';
 import homescreen from './../Images/HomePage.PNG';
 import settings from './../Images/Settings.PNG';
 import orders from './../Images/PharmPortalOrders2.jpg'
+import lambdaLogo from './../Images/LambdaLogo.png'
 
 const images = [drone, drone2, drone3];
 
@@ -191,20 +192,23 @@ function Home() {
                             </p>
                             <button
                                 type="button"
-                                className="how-its-built-btn"
+                                className="button-header"
                                 onClick={handleHowClick}
                             >
                                 How We Built It
                             </button>
                         </div>
                         <div className="how-its-built-images">
-                            <img src="serviceLogosHere" alt="serviceLogos"/>
+                            <img src={lambdaLogo} alt="serviceLogos"/>
                         </div>
                     </div>
                 </div>
             </section>
             {/* Add an about section with some text and an image */}
             <section className="about">
+            <div className="about-image">
+                    <img src={dallas} alt="team" /> {/* import your team image */}
+                </div>
                 <div className="about-text">
                     <h2>About Us</h2>
                     <p>
@@ -216,9 +220,7 @@ function Home() {
                     </p>
                     <button className="button-header" onClick={handleAboutUsClick}>Learn more</button>
                 </div>
-                <div className="about-image">
-                    <img src={dallas} alt="team" /> {/* import your team image */}
-                </div>
+
             </section>
         </div>
     );
