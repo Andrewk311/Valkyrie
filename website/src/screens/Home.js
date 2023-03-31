@@ -210,7 +210,7 @@ function Home() {
                             <img className="logo-image" src={lambdaLogo} alt="serviceLogos"/>
                             <img className="logo-image" src={reactLogo} alt="serviceLogos"/>
                             <img className="logo-image" src={APIGatewayLogo} alt="serviceLogos"/>
-                            <img className="mpPic logo-image" src={missionPlannerLogo} alt="serviceLogos"/>
+                            <img className="logo-image" src={missionPlannerLogo} alt="serviceLogos"/>
                             <img className="logo-image" src={expoLogo} alt="serviceLogos"/>
                             <img className="logo-image" src={cognitoLogo} alt="serviceLogos"/>
                             <img className="logo-image" src={dynamoLogo} alt="serviceLogos"/>

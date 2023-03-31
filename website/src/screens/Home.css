@@ -367,20 +367,24 @@ button:hover {
 
 .how-its-built-images img.logo-image {
   position: absolute;
-  max-width: 145px; /* Adjust this according to the desired logo size */
-  height: auto;
+ 
 }
 
 /* Example image positions */
-.logo-image:nth-child(1) { top: -5%; left: 5%; }
-.logo-image:nth-child(2) { top: -5%; left: 60%; }
-.logo-image:nth-child(3) { top: -5%; left: 30%; }
-.logo-image:nth-child(4) { top: -5%; left: 80%; }
-.logo-image:nth-child(5) { top: 52%; left: 80%; }
-.logo-image:nth-child(6) { top: 52%; left: 5%; }
-.logo-image:nth-child(7) { top: 52%; left: 60%; }
-.logo-image:nth-child(8) { top: 52%; left: 30%; }
+.logo-image:nth-child(1) { top: -5%; left: 5%; width: 100px; height: auto;}
+.logo-image:nth-child(2) { top: -5%; left: 60%; width: 100px; height: auto; }
+.logo-image:nth-child(3) { top: -5%; left: 30%; width: 100px; height: auto;}
+.logo-image:nth-child(4) { top: -37%; left: 69%; width: 300px; height: auto;}
+.logo-image:nth-child(5) { top: 52%; left: 80%; width: 100px; height: auto;}
+.logo-image:nth-child(6) { top: 52%; left: 5%; width: 100px; height: auto;}
+.logo-image:nth-child(7) { top: 52%; left: 60%; width: 100px; height: auto;}
+.logo-image:nth-child(8) { top: 52%; left: 30%; width: 100px; height: auto;}
 /* .logo-image:nth-child(9) { top: 80%; left: 40%; } */
+
+/* .how-its-built-images .logo-image:nth-child(4) {
+  width: 500px;
+  height: auto;
+} */
 
 .how-its-built-btn {
   background-color: #007bff;
@@ -397,15 +401,15 @@ button:hover {
   background-color: #0056b3;
 }
 
-.mpPic {
+.logo-image.mpPic {
   width:500px;
   height:auto;
 }
 
 .logoContainer {
   position: absolute;
-  top: 50%; /* Adjust the top position */
-  left: 50%; /* Adjust the left position */
+  top: 35%; /* Adjust the top position */
+  left: 45%; /* Adjust the left position */
   width: 300px; /* Set the width of the container */
   height: 300px; /* Set the height of the container */
   overflow: hidden;
