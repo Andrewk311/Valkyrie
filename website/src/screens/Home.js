@@ -12,8 +12,16 @@ import tracking from './../Images/TrackOrder2.PNG';
 import store from './../Images/StoreFront2.png';
 import homescreen from './../Images/HomePage.PNG';
 import settings from './../Images/Settings.PNG';
-import orders from './../Images/PharmPortalOrders2.jpg'
-import lambdaLogo from './../Images/LambdaLogo.png'
+import orders from './../Images/PharmPortalOrders2.jpg';
+import lambdaLogo from './../Images//Logos/LambdaLogo.png';
+import reactLogo from './../Images/Logos/ReactLogo.png';
+import APIGatewayLogo from './../Images/Logos/APIGatewayLogo.png';
+import missionPlannerLogo from './../Images/Logos/MissionPlannerLogo.png';
+import expoLogo from './../Images/Logos/ExpoLogo.png';
+import cognitoLogo from './../Images/Logos/CognitoLogo.png';
+import dynamoLogo from './../Images/Logos/DynamoLogo.png';
+import graphqlLogo from './../Images/Logos/GraphqlLogo.png';
+import amplifyLogo from './../Images/Logos/AmplifyLogo.png';
 
 const images = [drone, drone2, drone3];
 
@@ -199,7 +207,17 @@ function Home() {
                             </button>
                         </div>
                         <div className="how-its-built-images">
-                            <img src={lambdaLogo} alt="serviceLogos"/>
+                            <img className="logo-image" src={lambdaLogo} alt="serviceLogos"/>
+                            <img className="logo-image" src={reactLogo} alt="serviceLogos"/>
+                            <img className="logo-image" src={APIGatewayLogo} alt="serviceLogos"/>
+                            <img className="mpPic logo-image" src={missionPlannerLogo} alt="serviceLogos"/>
+                            <img className="logo-image" src={expoLogo} alt="serviceLogos"/>
+                            <img className="logo-image" src={cognitoLogo} alt="serviceLogos"/>
+                            <img className="logo-image" src={dynamoLogo} alt="serviceLogos"/>
+                            <img className="logo-image" src={graphqlLogo} alt="serviceLogos"/>
+                            <div className="logoContainer">
+                                <img className="logo-image" src={amplifyLogo} alt="serviceLogos"/>
+                            </div>
                         </div>
                     </div>
                 </div>

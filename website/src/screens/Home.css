@@ -331,7 +331,7 @@ button:hover {
   /* padding: 3rem 0; Increased padding for a larger section */
   display: flex;
   align-items: center;
-  justify-content: space-between; /* change this line */
+  justify-content: center; /* change this line */
   padding: 2rem; /* change this line */
   background-color: var(--tertiary-color); /* change this line */
 }
@@ -340,6 +340,7 @@ button:hover {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  width: 100%;
 }
 
 .how-its-built-text {
@@ -358,13 +359,28 @@ button:hover {
 }
 
 .how-its-built-images {
+  position: relative;
   flex: 1;
   margin-left: 1rem;
+  min-height: 300px; /* Add this to establish a height reference */
 }
 
-.how-its-built-images img {
-  max-width: 50%;
+.how-its-built-images img.logo-image {
+  position: absolute;
+  max-width: 145px; /* Adjust this according to the desired logo size */
+  height: auto;
 }
+
+/* Example image positions */
+.logo-image:nth-child(1) { top: -5%; left: 5%; }
+.logo-image:nth-child(2) { top: -5%; left: 60%; }
+.logo-image:nth-child(3) { top: -5%; left: 30%; }
+.logo-image:nth-child(4) { top: -5%; left: 80%; }
+.logo-image:nth-child(5) { top: 52%; left: 80%; }
+.logo-image:nth-child(6) { top: 52%; left: 5%; }
+.logo-image:nth-child(7) { top: 52%; left: 60%; }
+.logo-image:nth-child(8) { top: 52%; left: 30%; }
+/* .logo-image:nth-child(9) { top: 80%; left: 40%; } */
 
 .how-its-built-btn {
   background-color: #007bff;
@@ -381,8 +397,30 @@ button:hover {
   background-color: #0056b3;
 }
 
+.mpPic {
+  width:500px;
+  height:auto;
+}
 
+.logoContainer {
+  position: absolute;
+  top: 50%; /* Adjust the top position */
+  left: 50%; /* Adjust the left position */
+  width: 300px; /* Set the width of the container */
+  height: 300px; /* Set the height of the container */
+  overflow: hidden;
+  /* transform: translate(-50%, -50%); */
+}
 
+.logoContainer img {
+  position: relative;
+  left: 50%;
+  top: 50%;
+  width: 200%; /* Add the width property */
+  height: auto; /* Add the height property */
+  object-fit: cover; /* Add object-fit to maintain aspect ratio */
+  transform: translate(-57%,50%);
+}
 
 /* Style the about section */
 .about {
