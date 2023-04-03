@@ -4,8 +4,10 @@ import { Ionicons } from "@expo/vector-icons";
 import MapView, {Marker} from 'react-native-maps';
 import { Dimensions } from "react-native";
 import axios from 'axios';
+import { Auth } from 'aws-amplify';
 import { WebSocketContext } from "../../WebSocketContext";
 import { CartContext } from "../browseScreens/CartContext";
+import home from './../../customIcons/HomeMarker.png';
 
 const win = Dimensions.get('window');
 const widthL = win.width;
@@ -15,6 +17,21 @@ const Tracking = (props) => {
   const [location, setLocation] = useState(null);
   const { websocket, orderStatus } = useContext(WebSocketContext);
   const { orderNumber } = useContext(CartContext);
+  const [attributes, setAttributes] = useState(null);
+  const [latitude, setLatitude] = useState('');
+  const [longitude, setLongitude] = useState('');
+  const [attributesLoaded, setAttributesLoaded] = useState(false);
+  
+  useEffect(() => {
+    async function getUserInfoAndSetCoordinates() {
+      const user = await Auth.currentAuthenticatedUser();
+      setAttributes(user);
+      console.log(user)
+      setLatitude(parseFloat(user.attributes['custom:latitude']));
+      setLongitude(parseFloat(user.attributes['custom:longitude']));
+    }
+    getUserInfoAndSetCoordinates();
+  }, []);
 
   useEffect(() => {
     if (websocket) {
@@ -40,6 +57,7 @@ const Tracking = (props) => {
   }, [websocket, orderStatus]);
 
   useEffect(() => {
+    //in here add check that if the drone coordinates is within a certain number of the target coordinate, mark it as delivered? Or wait for a signal from the drone can prob get that.
     let interval;
     console.log("OrderStatus: " + orderStatus)
     console.log("OrderNum: "  + orderNumber);
@@ -47,16 +65,11 @@ const Tracking = (props) => {
       console.log('This should work');
       const getCoordinates = async () => {
         const response = await axios.get('https://l4ob0tegqc.execute-api.us-east-1.amazonaws.com/production/getcoordinates');
-        // console.log(response.data);
-        // console.log(response.data.body);
         const body = JSON.parse(response.data.body)
-        // console.log('body is: ', body)
-        // console.log(body.latitude)
         setLocation({
           latitude: body.latitude,
           longitude: body.longitude,
         });
-        // console.log('location is: ',location)
       }
  
       interval = setInterval(() => {
@@ -78,24 +91,39 @@ const Tracking = (props) => {
         {orderStatus===null && (<Text style={{fontWeight:"bold", color:"#000000", fontSize:24, marginTop: -250, }}>Place an order to see tracking!</Text>)}
         {orderStatus!="null" && (<Text style={{fontWeight:"bold", color:"#000000", fontSize:24, marginTop: -250, }}>ORDER #AD67135</Text>)}
         </View>
-        <MapView
-          style={styles.map}
-          initialRegion={{
-            latitude: 40.505730,
-            longitude: -74.448979,
-            latitudeDelta: 0.0922,
-            longitudeDelta: 0.0421,
-          }}
-        >
-          {location && (
+        {latitude && longitude ? (
+          <MapView
+            style={styles.map}
+            initialRegion={{
+              latitude: latitude,
+              longitude: longitude,
+              latitudeDelta: 0.0322,
+              longitudeDelta: 0.0321,
+            }}
+          >
             <Marker
               coordinate={{
-                latitude: location.latitude,
-                longitude: location.longitude,
+                latitude: latitude,
+                longitude: longitude,
               }}
-            />
-          )}
-        </MapView>
+            >
+              <Image source={home} style={{height:25, width:25}}/>
+            </Marker>
+            {location && (
+              <Marker
+                coordinate={{
+                  latitude: location.latitude,
+                  longitude: location.longitude,
+                }}
+              />
+            )}
+          </MapView>
+        ): (
+          <Text style={styles.noAddressText}>
+            Please enter an address to get access to tracking features.
+          </Text>
+        )}
+
         <View style={styles.rect2}>
           <View style={styles.iconBoxStatus}>
             {orderStatus == 'Order Placed' ? 
@@ -329,5 +357,13 @@ const styles = StyleSheet.create({
     fontSize:8,
     textAlign:"center",
     alignSelf:"center"
-  }
+  },
+  noAddressText: {
+    fontSize: 14,
+    textAlign: 'center',
+  },
+  marker: {
+    width: 5,
+    height: 5,
+  },
 });
