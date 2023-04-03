@@ -26,6 +26,7 @@ export const CREATE_ORDER_MUTATION = `
 
 export const createOrder = async (orderData) => {
   try {
+    console.log(orderData)
     const result = await API.graphql({
       query: CREATE_ORDER_MUTATION,
       variables: {
