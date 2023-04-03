@@ -48,11 +48,17 @@
   color: #61dafb;
 }
 
+.table-container {
+  max-height: 500px; /* Adjust this value to the desired height */
+  overflow-y: auto;
+  width: 100%;
+  position: relative;
+}
+
 .tableWrapper {
   background-color: white;
-  width: 100%;
+  width: 100%; /* Change this value to set the desired table width */
   margin: 10px;
-  width: 95%;
   color: black;
   border-collapse: collapse;
   text-align: left;
@@ -60,6 +66,20 @@
   margin-bottom: 30px;
   overflow: hidden;
   box-shadow: 0 1px 4px rgba(0, 0, 0, 0.3);
+}
+
+.tableWrapper thead {
+  position: sticky;
+  top: 0;
+  background-color: white;
+  z-index: 100;
+}
+
+.table-body-container {
+  max-height: 400px; /* Adjust this value to the desired height */
+  overflow-y: auto;
+  width: 100%;
+  display: block;
 }
 
 th, td {
