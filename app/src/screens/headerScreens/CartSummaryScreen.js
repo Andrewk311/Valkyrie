@@ -13,10 +13,10 @@ const CartSummary = (props) => {
     const {items, removeItemFromCart, getTotalPrice, addItemToCart, setLatestOrderNumber, getTotalWeight } = useContext(CartContext);
     const [attributes, setAttributes] = React.useState(null);
     const { websocket, setWebsocket } = useContext(WebSocketContext);
-
-    var googleMapsAPI = "AIzaSyBmF_o7JmYo55KiewrTHqiDOupJ5FcbxRA";   //google maps api key to convert address to lat and long
-    Geocoder.init(googleMapsAPI);
-
+    const [email, setEmail] = React.useState('');
+    // const {address, setAddress} = React.useState('');
+    const [latitude, setLatitude] = React.useState('');
+    const [longitude, setLongitude] = React.useState('');
 
     React.useEffect(() => {   //address given address field to the auth user. Need to move to different file.
       async function getUserInfo() {
@@ -27,24 +27,28 @@ const CartSummary = (props) => {
     }, []);
 
     // will remove this eventually 
-    var email = ''
-    var address = ''
-    if(attributes == null){
-      console.log('null attributes');
-    } else {
-      console.log(attributes.attributes.email);
-      console.log(attributes.attributes.address);
-      email = attributes.attributes.email.toString(); //gets email
-      if (attributes.attributes.address != null){
-        address = attributes.attributes.address.toString(); //gets address
+    // var email = ''
+    // var address = ''
+    React.useEffect(() => {
+      if (attributes == null) {
+        console.log('null attributes');
+      } else {
+        console.log(attributes.attributes.email);
+        console.log(attributes.attributes.address);
+        setEmail(attributes.attributes.email.toString()); //gets email
+        if (attributes.attributes.address != null) {
+          setLatitude(attributes.attributes['custom:latitude'].toString()); //gets lat
+          setLongitude(attributes.attributes['custom:longitude'].toString());
+          console.log(latitude);
+        }
       }
-    }
+    }, [attributes]);
 
     // checkout functions
     const [errorMessage, setErrorMessage] = React.useState("");
     const checkoutAction = (message) => {
       if (message == 'Order Sent!'){
-        if(address == ''){
+        if(latitude == '' || longitude == ''){
           setErrorMessage('Missing Delivery Address, Head to Account Settings!')
         }else{
           createOrderObject();
@@ -58,32 +62,27 @@ const CartSummary = (props) => {
         setErrorMessage("Cart is Empty, Please add items to checkout.");
       }
       else{
-        Geocoder.from(address).then(json => {
-        const { lat, lng } = json.results[0].geometry.location;
         for(var i =0; i < items.length; i++){
           if (items[i].qty){
             orderDetails.push({name:getProduct(items[i].id).name, quantity: items[i].qty});
           }
-
         }
         const orderData = {
-          latitude: lat,
-          longitude: lng,
+          latitude: latitude,
+          longitude: longitude,
           totalPrice: getTotalPrice().toFixed(2),
           totalWeight: getTotalWeight().toFixed(2),
-          email: attributes.attributes.email.toString(),
+          email: email,
           //orderNumber: "AD" +  Math.floor(Math.random()*100000+1).toString(),  //change every order or it wont go through
-          orderNumber: "AD67135",
+          orderNumber: "AK67144",
           inTransit : false,
           isAccepted: 0,
           isActive: true,
           orders: orderDetails,
         };
-
+        console.log("lat: ",latitude)
         addOrder(orderData);
-
-        }).catch(error => console.warn(error));
-    }
+      }
     }
 
     
