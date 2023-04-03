@@ -1,3 +1,3 @@
 # Valkyrie
 
-https://www.valkyriedrone.io/
+Project info here: https://www.valkyriedrone.io/
