@@ -1,19 +1,5 @@
 {
   "api": {
-    "lambdatrigger": {
-      "dependsOn": [
-        {
-          "attributes": [
-            "Name",
-            "Arn"
-          ],
-          "category": "function",
-          "resourceName": "OrderExecution"
-        }
-      ],
-      "providerPlugin": "awscloudformation",
-      "service": "API Gateway"
-    },
     "valkyriepharmacywebs": {
       "dependsOn": [],
       "output": {
@@ -57,29 +43,5 @@
       "service": "Cognito"
     }
   },
-  "function": {
-    "OrderExecution": {
-      "build": true,
-      "providerPlugin": "awscloudformation",
-      "service": "Lambda"
-    }
-  },
-  "parameters": {
-    "AMPLIFY_function_OrderExecution_deploymentBucketName": {
-      "usedBy": [
-        {
-          "category": "function",
-          "resourceName": "OrderExecution"
-        }
-      ]
-    },
-    "AMPLIFY_function_OrderExecution_s3Key": {
-      "usedBy": [
-        {
-          "category": "function",
-          "resourceName": "OrderExecution"
-        }
-      ]
-    }
-  }
+  "function": {}
 }

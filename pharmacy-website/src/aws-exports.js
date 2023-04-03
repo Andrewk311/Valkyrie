@@ -26,11 +26,12 @@ const awsmobile = {
     ],
     "aws_appsync_graphqlEndpoint": "https://aajxsyuaszf37ou3pg47ri55o4.appsync-api.us-east-1.amazonaws.com/graphql",
     "aws_appsync_region": "us-east-1",
-    "aws_appsync_authenticationType": "AMAZON_COGNITO_USER_POOLS",
+    "aws_appsync_authenticationType": "API_KEY",
+    "aws_appsync_apiKey": "da2-ahiwumawdbhxrlrcpehxv3ftlu",
     "aws_cloud_logic_custom": [
         {
-            "name": "lambdatrigger",
-            "endpoint": "https://v2ih91m1nl.execute-api.us-east-1.amazonaws.com/staging",
+            "name": "droneSendCoords",
+            "endpoint": "https://u5wc9yfu20.execute-api.us-east-1.amazonaws.com/production",
             "region": "us-east-1"
         }
     ]

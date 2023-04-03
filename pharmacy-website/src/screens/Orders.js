@@ -105,12 +105,33 @@ function Orders() {
     }
   }
 
-  function inTransit(order) {
+  async function inTransit(order) {
     try {
-      updateOrder(order['order_number'], order['isAccepted'], true, true);
-      sendOrderStatusUpdate('Order Shipped'); //sends data to app side and will refresh 
+      
+      const payload = {
+        latitude: order['location']['latitude'],
+        longitude: order['location']['longitude']
+      };
+
+      console.log(payload);
+      const response = await API.post('droneSendCoords', '/droneSend', {
+        body: {
+          "latitude": payload.latitude,
+          "longitude": payload.longitude
+        }
+      });
+      console.log(response);
+      // Check if the request was successful
+      if (response.ok) {
+        const responseData = await response.json();
+        console.log('API Gateway response:', responseData);
+        updateOrder(order['order_number'], order['isAccepted'], true, true);
+        sendOrderStatusUpdate('Order Shipped'); //sends data to app side and will refresh 
+      } else {
+        console.error('Error calling API Gateway:', response.statusText);
+      }
     } catch (err) {
-      console.log('error updating inventory: ', err);
+      console.log('error updating transit status: ', err);
     }
   }
 
