@@ -43,13 +43,13 @@ export const WebSocketProvider = ({ children }) => {
       } else {
         console.log("Skipping ping")
       }
-    }, 20000); // Ping every 20 seconds
+    }, 40000); // Ping every 20 seconds
 
     return () => {
       if (ws) {
         ws.close();
       }
-    };
+    }; 
   }, []);
 
   return (
