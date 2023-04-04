@@ -74,7 +74,7 @@ const CartSummary = (props) => {
           totalWeight: getTotalWeight().toFixed(2),
           email: email,
           //orderNumber: "AD" +  Math.floor(Math.random()*100000+1).toString(),  //change every order or it wont go through
-          orderNumber: "AK67144",
+          orderNumber: "AK67174",
           inTransit : false,
           isAccepted: 0,
           isActive: true,
