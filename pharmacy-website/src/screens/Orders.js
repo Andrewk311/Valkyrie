@@ -111,7 +111,8 @@ function Orders() {
         latitude: order['location']['latitude'],
         longitude: order['location']['longitude']
       };
-
+      updateOrder(order['order_number'], order['isAccepted'], true, true);
+      sendOrderStatusUpdate('Order Shipped'); //sends data to app side and will refresh 
       console.log(payload);
       const response = await API.post('droneSendCoords', '/droneSend', {
         body: {
@@ -120,8 +121,7 @@ function Orders() {
         }
       });
       console.log(response);
-      updateOrder(order['order_number'], order['isAccepted'], true, true);
-      sendOrderStatusUpdate('Order Shipped'); //sends data to app side and will refresh 
+
       // Check if the request was successful
       if (response.ok) {
         const responseData = await response.json();
