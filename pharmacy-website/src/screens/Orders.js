@@ -23,6 +23,7 @@ function Orders() {
     ws.onopen = () => {
       console.log('Connected to WebSocket');
       setWebsocket(ws);
+      ws.send(JSON.stringify({ type: 'email', email: 'null' }));
       setInterval(() => {
         if (ws.readyState === WebSocket.OPEN) {
           ws.send(JSON.stringify({ type: 'ping' }));
@@ -54,9 +55,9 @@ function Orders() {
     };
   }, []);
 
-  const sendOrderStatusUpdate = (status) => {
+  const sendOrderStatusUpdate = (status, email) => {
     if (websocket && websocket.readyState === WebSocket.OPEN) {
-      websocket.send(JSON.stringify({ "action": 'orderStatusUpdate', "data": { "status": status } }));
+      websocket.send(JSON.stringify({ "action": 'orderStatusUpdate', "data": { "status": status, "email":  email} }));
       console.log('Order status updated (hopefully)');
       window.location.reload();
     }
@@ -86,7 +87,8 @@ function Orders() {
       try {
         console.log('approved order')
         updateOrder(order['order_number'], 1, false, true);
-        sendOrderStatusUpdate('Order Confirmed'); //sends data to app side and will refresh
+        var email = order['email'];
+        sendOrderStatusUpdate('Order Confirmed',email); //sends data to app side and will refresh
       } catch (err) {
         console.log('error updating inventory: ', err);
       }
@@ -112,7 +114,8 @@ function Orders() {
         longitude: order['location']['longitude']
       };
       updateOrder(order['order_number'], order['isAccepted'], true, true);
-      sendOrderStatusUpdate('Order Shipped'); //sends data to app side and will refresh 
+      var email = order['email'];
+      sendOrderStatusUpdate('Order Shipped', email); //sends data to app side and will refresh 
       console.log(payload);
       const response = await API.post('droneSendCoords', '/droneSend', {
         body: {
@@ -141,7 +144,8 @@ function Orders() {
   function isDelivered(order) {
     try {
       updateOrder(order['order_number'], order['isAccepted'], false, false);
-      sendOrderStatusUpdate('Order Delivered'); //sends data to app side and will refresh
+      var email = order['email'];
+      sendOrderStatusUpdate('Order Delivered', email); //sends data to app side and will refresh
     } catch (err) {
       console.log('error updating inventory: ', err);
     }
