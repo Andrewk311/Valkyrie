@@ -96,14 +96,16 @@ const Settings = (props) => {
   // var address = ''
   React.useEffect(() => {
     if (attributes) {
-      console.log(attributes)
+      //console.log(attributes)
       setName(attributes.attributes.name.toString());
       setFamilyName(attributes.attributes.family_name.toString());
       setEmail(attributes.attributes.email.toString());
       if (attributes.attributes.address != null) {
         setAddress(attributes.attributes.address.toString());
         setInputAddress(attributes.attributes.address.toString());
-        setSelectedCoords({latitude: attributes.attributes['custom:latitude'], longitude: attributes.attributes['custom:longitude']})
+        if(selectedCoords === null){
+          setSelectedCoords({latitude: attributes.attributes['custom:latitude'], longitude: attributes.attributes['custom:longitude']})
+        }
         setIsDeliveryLocationSet(true);
       }
     }
@@ -145,6 +147,7 @@ const Settings = (props) => {
 
   async function handleConfirmSelection() {
     if (selectedCoords) {
+      console.log("selected coords are: " + selectedCoords.latitude + ", " + selectedCoords.longitude)
       await updateUserInfo(inputAddress, selectedCoords);
       setInputAddress(inputAddress);
       setShowMap(false);
