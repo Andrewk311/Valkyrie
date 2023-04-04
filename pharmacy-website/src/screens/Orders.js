@@ -28,7 +28,7 @@ function Orders() {
           ws.send(JSON.stringify({ type: 'ping' }));
           console.log('sent ping');
         }
-      }, 20000);  //sends message to websocket every 20 seconds to stay connected. Need to move this code to the home page soon.
+      }, 60000);  //sends message to websocket every 60 seconds to stay connected. Need to move this code to the home page soon.
     };
 
     ws.onclose = () => {
