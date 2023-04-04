@@ -29,6 +29,7 @@ const Tracking = (props) => {
       console.log(user)
       setLatitude(parseFloat(user.attributes['custom:latitude']));
       setLongitude(parseFloat(user.attributes['custom:longitude']));
+      console.log(latitude);
     }
     getUserInfoAndSetCoordinates();
   }, []);
