@@ -8,6 +8,7 @@ import { Auth } from 'aws-amplify';
 import { createOrder } from '../../services/AddOrder';
 import Geocoder from 'react-native-geocoding';
 import { WebSocketContext } from '../../WebSocketContext';
+import { fetchActiveOrdersByEmail } from '../../services/listActiveOrders'
 
 const CartSummary = (props) => {
     const {items, removeItemFromCart, getTotalPrice, addItemToCart, setLatestOrderNumber, getTotalWeight } = useContext(CartContext);
@@ -17,6 +18,7 @@ const CartSummary = (props) => {
     // const {address, setAddress} = React.useState('');
     const [latitude, setLatitude] = React.useState('');
     const [longitude, setLongitude] = React.useState('');
+    const [activeOrders, setActiveOrders] = React.useState('');
 
     React.useEffect(() => {   //address given address field to the auth user. Need to move to different file.
       async function getUserInfo() {
@@ -56,7 +58,7 @@ const CartSummary = (props) => {
       }
     }
 
-    function createOrderObject(){
+    async function createOrderObject(){
       const orderDetails = [];
       if(items.length == 0){
         setErrorMessage("Cart is Empty, Please add items to checkout.");
@@ -81,11 +83,27 @@ const CartSummary = (props) => {
           orders: orderDetails,
         };
         console.log("lat: ",latitude)
-        addOrder(orderData);
+        await checkActiveOrders(email);
+        console.log('LENGTH OF THE ORDERS: ' + activeOrders.length)
+        if(activeOrders.length == 0){
+          addOrder(orderData);
+        } else {
+          console.log('TOO MANY ACTIVE ORDERS')
+        }
       }
     }
 
-    
+    async function checkActiveOrders(email){
+      try {
+        const filter = email; 
+        const items = await fetchActiveOrdersByEmail(filter);
+        setActiveOrders(items);
+        console.log(activeOrders)
+        console.log('active order works fine: ' + email)
+      } catch (err) {
+        console.log('Error fetching active orders', err);
+      }
+    }
 
     async function addOrder(order){
       try{
