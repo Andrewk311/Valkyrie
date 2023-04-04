@@ -23,6 +23,12 @@ function Orders() {
     ws.onopen = () => {
       console.log('Connected to WebSocket');
       setWebsocket(ws);
+      setInterval(() => {
+        if (ws.readyState === WebSocket.OPEN) {
+          ws.send(JSON.stringify({ type: 'ping' }));
+          console.log('sent ping');
+        }
+      }, 20000);  //sends message to websocket every 20 seconds to stay connected. Need to move this code to the home page soon.
     };
 
     ws.onclose = () => {
@@ -30,7 +36,14 @@ function Orders() {
     };
 
     ws.onmessage = (event) => {
-      console.log('event: ', event.data);
+      const message = JSON.parse(event.data);
+      console.log('message received: ', message);
+
+      if (message.type === 'pong') {
+        console.log('pong received');
+        return;
+      }
+
       window.location.reload();
     }
 
@@ -48,20 +61,6 @@ function Orders() {
       window.location.reload();
     }
   };
-
-  const testLambda = async () => {
-    try {
-      const response = await API.post('lambdatrigger', '/test', {
-        body: {
-          "latitude": 37.7749,
-          "longitude": -122.4194
-        }
-      });
-      console.log(response);
-    } catch (error) {
-      console.error(error);
-    }
-  }
 
   useEffect(() => {
     async function fetchOrder() { //can change this to any order greater than 0 to list all. Can also show active orders only if thats what you want lmk
@@ -121,17 +120,19 @@ function Orders() {
         }
       });
       console.log(response);
+      updateOrder(order['order_number'], order['isAccepted'], true, true);
+      sendOrderStatusUpdate('Order Shipped'); //sends data to app side and will refresh 
       // Check if the request was successful
       if (response.ok) {
         const responseData = await response.json();
-        console.log('API Gateway response:', responseData);
-        updateOrder(order['order_number'], order['isAccepted'], true, true);
-        sendOrderStatusUpdate('Order Shipped'); //sends data to app side and will refresh 
+        console.log('API Gateway response:', responseData); 
+
       } else {
         console.error('Error calling API Gateway:', response.statusText);
       }
     } catch (err) {
       console.log('error updating transit status: ', err);
+      //probably should just update order status here. Issue with what I did now moving it above is that it goes prematurely. Doesnt wait for coords to send or see if it works.
     }
   }
 
