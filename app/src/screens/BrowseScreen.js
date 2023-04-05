@@ -24,7 +24,7 @@ const Browse = (props) => {
         <View style={styles.column1}>
         <TouchableOpacity
                 style={styles.category}
-                onPress={() => props.navigation.navigate('Medicine')} 
+                onPress={() => props.navigation.navigate('ColdAndFlu')} 
               >         
               <View>     
               <Text style={styles.optionTitle}>Cold/Flu{"\n"}Medicine</Text>
@@ -46,7 +46,7 @@ const Browse = (props) => {
             </TouchableOpacity>
             <TouchableOpacity
                 style={styles.category}
-                onPress={() => props.navigation.navigate('FirstAidCare')} 
+                onPress={() => props.navigation.navigate('Other')} 
               >         
               <View>     
               <Text style={styles.optionTitle}>Other{"\n"}</Text>
@@ -59,7 +59,7 @@ const Browse = (props) => {
         <View style={styles.columns}>
         <TouchableOpacity
                   style={styles.category}
-                  onPress={() => props.navigation.navigate('FirstAidCare')} 
+                  onPress={() => props.navigation.navigate('OTC')} 
                 >         
                 <View>     
                 <Text style={styles.optionTitle}>Over the Counter </Text>

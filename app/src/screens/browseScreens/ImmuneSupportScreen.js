@@ -1,13 +1,57 @@
-import React from "react";
-import { Text, View, Button } from "react-native";
-import { Ionicons } from "@expo/vector-icons";
+import { useEffect, useState, useContext} from "react";
+import { View, Button} from "react-native";
+import { FlatList, StyleSheet } from 'react-native';
+import * as React from 'react';
+import { Product } from "../../components/Product";
+import { getProducts } from "../../services/ProductsService";
+import { CartContext } from "./CartContext";
+import { getAllInventory, getInventoriesByPartitionKey } from './../../services/ListInventories';
+import { API } from 'aws-amplify';
   
 const ImmuneSupport = (props) => {
+  const { addItemToCart, getItemsCount } = useContext(CartContext);
+  const [product, setProduct] = useState({});
+  const [products, setProducts] = useState([]);
+  const [inventories, setInventories] = useState([]);
+
+  useEffect(() => {
+    async function fetchInventories() {
+      try {
+        const filter = 'Vitamins & Immune Support'; 
+        const items = await getInventoriesByPartitionKey(filter);
+        setInventories(items);
+        setProducts(items);
+        console.log(items[1]);
+      } catch (err) {
+        console.log('Error fetching inventories', err);
+      }
+    }
+    fetchInventories();
+  }, []);
+
+  function onAddToCart(productId) {
+    addItemToCart(productId);
+    console.log(inventories)
+  }
+
+  function renderProduct({item: product}) {
     return (
-      <View style={{ flex: 1, alignItems: "center", justifyContent: "center" }}>
-        <Text style={{ color: "#006600", fontSize: 40 }}>Immune Support Screen!</Text>
-        <Ionicons name="ios-settings-sharp" size={80} color="#006600" />
-      </View>
+      <Product {...product} 
+      onPress={() => {onAddToCart(product.id)}}
+      />
+    );
+  }
+
+  return (
+    <View style={{backgroundColor:"rgba(227,55,55,1)"}}>
+    <FlatList
+      style={styles.productsList}
+      contentContainerStyle={styles.productsListContainer}
+      keyExtractor={(item) => item.id}
+      data={products}
+      renderItem={renderProduct}
+    />
+    </View>
     );
   };
 
@@ -26,3 +70,10 @@ ImmuneSupport.navigationOptions = ({ navigation: { goBack } }) => {
   }
 
 export default ImmuneSupport;
+const styles = StyleSheet.create({
+  productsListContainer: {
+    backgroundColor:"rgba(227,55,55,1)",
+    alignItems:'center',
+  },
+
+});

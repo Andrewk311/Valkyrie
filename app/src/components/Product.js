@@ -1,13 +1,13 @@
 import React from 'react';
 import {Text, Image, View, StyleSheet, TouchableOpacity, Dimensions} from 'react-native';
 import { Ionicons } from "@expo/vector-icons";
-export function Product({name, cost, src, onPress}) {
+export function Product({product_inventory, product_name, product_price, product_type, onPress}) {
   return (
     <View style={styles.category}>
-            <Image style={styles.tinyLogo} source={src}/>
+            <Image style={styles.tinyLogo}/>
             <View style={{padding:40, alignItems:'center', width:250,}}>
-            <Text style={styles.productTitle}>{name}</Text>
-            <Text style={{fontSize:20, marginTop:10}}>${cost}</Text>
+            <Text style={styles.productTitle}>{product_name}</Text>
+            <Text style={{fontSize:20, marginTop:10}}>${product_price}</Text>
             <TouchableOpacity style={styles.cartBtn} onPress={onPress} >
               <Ionicons name="cart" size={30} color="white" style={styles.cart}/>
               <Text style={{color:"white", fontSize:20}}>Add to Cart</Text>

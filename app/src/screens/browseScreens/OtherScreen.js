@@ -5,10 +5,10 @@ import * as React from 'react';
 import { Product } from "../../components/Product";
 import { getProducts } from "../../services/ProductsService";
 import { CartContext } from "./CartContext";
-import { getAllInventory, getInventoriesByPartitionKey } from './../../services/ListInventories';
+import { getAllInventory, getInventoriesByPartitionKey } from '../../services/ListInventories';
 import { API } from 'aws-amplify';
   
-const Pharmacy = (props) => {
+const Other = (props) => {
   const { addItemToCart, getItemsCount } = useContext(CartContext);
   const [product, setProduct] = useState({});
   const [products, setProducts] = useState([]);
@@ -17,7 +17,7 @@ const Pharmacy = (props) => {
   useEffect(() => {
     async function fetchInventories() {
       try {
-        const filter = 'Prescription'; 
+        const filter = 'Misc'; 
         const items = await getInventoriesByPartitionKey(filter);
         setInventories(items);
         setProducts(items);
@@ -55,9 +55,9 @@ const Pharmacy = (props) => {
     );
   };
 
-Pharmacy.navigationOptions = ({ navigation: { goBack } }) => {
+Other.navigationOptions = ({ navigation: { goBack } }) => {
     return  {
-      title: 'Pharmacy',
+      title: 'Other Products',
       headerLeft: (props) => (
         <Button
         title="Back"
@@ -69,7 +69,7 @@ Pharmacy.navigationOptions = ({ navigation: { goBack } }) => {
     }             
   }
 
-export default Pharmacy;
+export default Other;
 const styles = StyleSheet.create({
   productsListContainer: {
     backgroundColor:"rgba(227,55,55,1)",

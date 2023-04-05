@@ -5,19 +5,15 @@ import * as React from 'react';
 import { Product } from "../../components/Product";
 import { getProducts } from "../../services/ProductsService";
 import { CartContext } from "./CartContext";
-import { getAllInventory, getInventoriesByPartitionKey } from './../../services/ListInventories';
+import { getAllInventory, getInventoriesByPartitionKey } from '../../services/ListInventories';
 import { API } from 'aws-amplify';
 
 
-const Medicine = (props) => {
+const ColdAndFlu = (props) => {
   const { addItemToCart, getItemsCount } = useContext(CartContext);
   const [product, setProduct] = useState({});
   const [products, setProducts] = useState([]);
   const [inventories, setInventories] = useState([]);
-
-  useEffect(() => {
-    setProducts(getProducts());
-  });
 
   useEffect(() => {
     async function fetchInventories() {
@@ -25,6 +21,8 @@ const Medicine = (props) => {
         const filter = 'Cold and Flu'; 
         const items = await getInventoriesByPartitionKey(filter);
         setInventories(items);
+        setProducts(items);
+        console.log(items[1]);
       } catch (err) {
         console.log('Error fetching inventories', err);
       }
@@ -58,7 +56,7 @@ const Medicine = (props) => {
   );
 };
 
-Medicine.navigationOptions = ({ navigation: { goBack } }) => {
+ColdAndFlu.navigationOptions = ({ navigation: { goBack } }) => {
     return  {
       title: 'Cold/Flu Medicine',
       headerLeft: (props) => (
@@ -72,7 +70,7 @@ Medicine.navigationOptions = ({ navigation: { goBack } }) => {
     }             
   }
 
-export default Medicine;
+export default ColdAndFlu;
 const styles = StyleSheet.create({
   productsListContainer: {
     backgroundColor:"rgba(227,55,55,1)",

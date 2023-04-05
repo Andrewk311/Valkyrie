@@ -5,10 +5,10 @@ import * as React from 'react';
 import { Product } from "../../components/Product";
 import { getProducts } from "../../services/ProductsService";
 import { CartContext } from "./CartContext";
-import { getAllInventory, getInventoriesByPartitionKey } from './../../services/ListInventories';
+import { getAllInventory, getInventoriesByPartitionKey } from '../../services/ListInventories';
 import { API } from 'aws-amplify';
   
-const Pharmacy = (props) => {
+const OTC = (props) => {
   const { addItemToCart, getItemsCount } = useContext(CartContext);
   const [product, setProduct] = useState({});
   const [products, setProducts] = useState([]);
@@ -17,7 +17,7 @@ const Pharmacy = (props) => {
   useEffect(() => {
     async function fetchInventories() {
       try {
-        const filter = 'Prescription'; 
+        const filter = 'OTC'; 
         const items = await getInventoriesByPartitionKey(filter);
         setInventories(items);
         setProducts(items);
@@ -52,12 +52,12 @@ const Pharmacy = (props) => {
       renderItem={renderProduct}
     />
     </View>
-    );
-  };
+  );
+};
 
-Pharmacy.navigationOptions = ({ navigation: { goBack } }) => {
+OTC.navigationOptions = ({ navigation: { goBack } }) => {
     return  {
-      title: 'Pharmacy',
+      title: 'OTC Products',
       headerLeft: (props) => (
         <Button
         title="Back"
@@ -69,7 +69,7 @@ Pharmacy.navigationOptions = ({ navigation: { goBack } }) => {
     }             
   }
 
-export default Pharmacy;
+export default OTC;
 const styles = StyleSheet.create({
   productsListContainer: {
     backgroundColor:"rgba(227,55,55,1)",
