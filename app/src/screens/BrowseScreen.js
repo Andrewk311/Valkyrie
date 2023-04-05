@@ -22,17 +22,17 @@ const Browse = (props) => {
     </View>
       <View style={styles.rowContainer}>
         <View style={styles.column1}>
-          <TouchableOpacity
-                  style={styles.category}
-                  onPress={() => props.navigation.navigate('FirstAidCare')} 
-                >         
-                <View>     
-                <Text style={styles.optionTitle}>COVID-19{"\n"}Tests</Text>
-                </View>  
-                <Image style={styles.tinyLogo}
-              source={require('./../customIcons/Covid.png')}
+        <TouchableOpacity
+                style={styles.category}
+                onPress={() => props.navigation.navigate('Medicine')} 
+              >         
+              <View>     
+              <Text style={styles.optionTitle}>Cold/Flu{"\n"}Medicine</Text>
+              </View>  
+              <Image style={styles.tinyLogo}
+              source={require('./../customIcons/Medicine.png')}
               />
-              </TouchableOpacity>
+            </TouchableOpacity>
             <TouchableOpacity
                 style={styles.category}
                 onPress={() => props.navigation.navigate('ImmuneSupport')} 
@@ -46,13 +46,13 @@ const Browse = (props) => {
             </TouchableOpacity>
             <TouchableOpacity
                 style={styles.category}
-                onPress={() => props.navigation.navigate('Medicine')} 
+                onPress={() => props.navigation.navigate('FirstAidCare')} 
               >         
               <View>     
-              <Text style={styles.optionTitle}>Cold/Flu{"\n"}Medicine</Text>
+              <Text style={styles.optionTitle}>Other{"\n"}</Text>
               </View>  
               <Image style={styles.tinyLogo}
-              source={require('./../customIcons/Medicine.png')}
+              source={require('./../customIcons/FirstAid.png')}
               />
             </TouchableOpacity>
         </View>
@@ -62,24 +62,13 @@ const Browse = (props) => {
                   onPress={() => props.navigation.navigate('FirstAidCare')} 
                 >         
                 <View>     
-                <Text style={styles.optionTitle}>First-Aid{"\n"}Care</Text>
+                <Text style={styles.optionTitle}>Over the Counter </Text>
                 </View>
                 <Image style={styles.tinyLogo}
               source={require('./../customIcons/FirstAid.png')}
               />
               </TouchableOpacity>
-            <TouchableOpacity
-                style={styles.category}
-                onPress={() => props.navigation.navigate('SanitationSupplies')} 
-              >         
-              <View>     
-              <Text style={styles.optionTitle}>Sanitation{"\n"}Supplies</Text>
-              </View>  
-              <Image style={styles.tinyLogo}
-              source={require('./../customIcons/Sanitize.png')}
-              />
-            </TouchableOpacity>
-            <TouchableOpacity
+              <TouchableOpacity
                 style={styles.category}
                 onPress={() => props.navigation.navigate('Pharmacy')} 
               >         
@@ -90,6 +79,7 @@ const Browse = (props) => {
               source={require('./../customIcons/RX.png')}
               />
             </TouchableOpacity>
+            
           </View>
       </View>
     </ScrollView>
