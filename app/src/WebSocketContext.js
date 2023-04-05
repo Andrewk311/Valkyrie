@@ -32,20 +32,38 @@ export const WebSocketProvider = ({ children }) => {
       setTimeout(() => {
         console.log("Sending email message");
         ws.send(JSON.stringify({ type: 'email', email: email }));
-      }, 10000); // Add a delay of 1 second before sending the message
+      }, 1000); // Add a delay of 1 second before sending the message
     };
 
     ws.onmessage = (event) => {
       console.log("WebSocket readyState:", ws.readyState);
       console.log("Message received:", event.data);
-      const data = JSON.parse(event.data);
-      if (data.hasOwnProperty('data') && data.data.hasOwnProperty('status')) {
-        console.log(data.data.status);
-        setOrderStatus(data.data.status); // Update orderStatus based on received message
-      } else if (data.type === 'pong') {
-        console.log('Received pong message');
+    
+      var parsedMessage = JSON.parse(event.data);
+      // console.log('event.data: ' + parsedMessage2)
+      // const parsedMessage = {
+      //   "action": "orderStatusUpdate",
+      //   "data": {
+      //       "status": "Order Placed",
+      //       "email": "andrew.king@rutgers.edu"
+      //   }
+    // };
+      console.log('MESSAGE PARSED: ', parsedMessage);
+      Object.keys(parsedMessage).forEach((prop)=> console.log(prop));
+      var parsedMessage2 = JSON.parse(parsedMessage);
+      console.log('PARSED2: ' + parsedMessage2);
+      console.log('PARSED2Action: ' + parsedMessage2.data.status);
+      // console.log('ACTION: ', parsedMessage['action']);
+    
+      if (parsedMessage2 && parsedMessage2.action === 'orderStatusUpdate' && parsedMessage2.data && parsedMessage2.data.status) {
+        const status = parsedMessage2.data.status;
+        const parsedEmail = parsedMessage2.data.email;
+        console.log(status);
+        if(parsedEmail === email){
+          setOrderStatus(status); // Update orderStatus based on received message
+        }
       } else {
-        console.error('Unexpected message format:', data);
+        console.error('Unexpected message format:', event.data);
       }
     };
 

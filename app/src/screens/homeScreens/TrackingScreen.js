@@ -26,7 +26,7 @@ const Tracking = (props) => {
     async function getUserInfoAndSetCoordinates() {
       const user = await Auth.currentAuthenticatedUser();
       setAttributes(user);
-      console.log(user)
+      //console.log(user)
       setLatitude(parseFloat(user.attributes['custom:latitude']));
       setLongitude(parseFloat(user.attributes['custom:longitude']));
       console.log(latitude);

@@ -76,7 +76,7 @@ const CartSummary = (props) => {
           totalWeight: getTotalWeight().toFixed(2),
           email: email,
           //orderNumber: "AD" +  Math.floor(Math.random()*100000+1).toString(),  //change every order or it wont go through
-          orderNumber: "AK67174",
+          orderNumber: "AD67174",
           inTransit : false,
           isAccepted: 0,
           isActive: true,
@@ -115,12 +115,12 @@ const CartSummary = (props) => {
           const ws = new WebSocket('wss://07k3svmpdh.execute-api.us-east-1.amazonaws.com/production');
           ws.addEventListener('open', () => {
             console.log('WebSocket connection opened');
-            ws.send(JSON.stringify({ "action": "orderStatusUpdate", "data": { "status": "Order Placed" }}));
+            ws.send(JSON.stringify({ "action": "orderStatusUpdate", "data": { "status": "Order Placed", "email": email }}));
           });
           setWebsocket(ws);
         } else {
           console.log('ANYTHING PLEASE');
-          var test = { "action": "orderStatusUpdate", "data": { "status": "Order Placed" }};
+          var test = { "action": "orderStatusUpdate", "data": { "status": "Order Placed", "email": email }};
           websocket.send(JSON.stringify(test));
         }
       } catch (err) {
