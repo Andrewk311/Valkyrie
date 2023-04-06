@@ -64,6 +64,7 @@ const CartSummary = (props) => {
         setErrorMessage("Cart is Empty, Please add items to checkout.");
       }
       else{
+        setLatestOrderNumber("AK" +  Math.floor(Math.random()*100000+1).toString());
         for(var i =0; i < items.length; i++){
           if (items[i].qty){
             orderDetails.push({name:getProduct(items[i].id).name, quantity: items[i].qty});
@@ -75,8 +76,8 @@ const CartSummary = (props) => {
           totalPrice: getTotalPrice().toFixed(2),
           totalWeight: getTotalWeight().toFixed(2),
           email: email,
-          //orderNumber: "AD" +  Math.floor(Math.random()*100000+1).toString(),  //change every order or it wont go through
-          orderNumber: "AB67174",
+          orderNumber: CartContext.orderNumber,  //change every order or it wont go through
+          // orderNumber: "AB67174",
           inTransit : false,
           isAccepted: 0,
           isActive: true,

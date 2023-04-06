@@ -8,6 +8,8 @@ import { Auth } from 'aws-amplify';
 import { WebSocketContext } from "../../WebSocketContext";
 import { CartContext } from "../browseScreens/CartContext";
 import home from './../../customIcons/HomeMarker.png';
+import { CartContext } from '../browseScreens/CartContext';
+
 
 const win = Dimensions.get('window');
 const widthL = win.width;
@@ -90,7 +92,7 @@ const Tracking = (props) => {
         </View>
         <View>
         {orderStatus===null && (<Text style={{fontWeight:"bold", color:"#000000", fontSize:24, marginTop: -250, }}>Place an order to see tracking!</Text>)}
-        {orderStatus!="null" && (<Text style={{fontWeight:"bold", color:"#000000", fontSize:24, marginTop: -250, }}>ORDER #AD67135</Text>)}
+        {orderStatus!="null" && (<Text style={{fontWeight:"bold", color:"#000000", fontSize:24, marginTop: -250, }}>ORDER {CartContext.orderNumber}</Text>)}
         </View>
         {latitude && longitude ? (
           <MapView
