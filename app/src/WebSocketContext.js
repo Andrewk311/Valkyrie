@@ -49,19 +49,26 @@ export const WebSocketProvider = ({ children }) => {
       //   }
     // };
       console.log('MESSAGE PARSED: ', parsedMessage);
-      Object.keys(parsedMessage).forEach((prop)=> console.log(prop));
-      var parsedMessage2 = JSON.parse(parsedMessage);
-      console.log('PARSED2: ' + parsedMessage2);
-      console.log('PARSED2Action: ' + parsedMessage2.data.status);
+      console.log('PONG PRINT: ' + parsedMessage.type)
+      // Object.keys(parsedMessage).forEach((prop)=> console.log(prop));
+      //need to add check where parsedMessage
+      // var parsedMessage2 = JSON.parse(parsedMessage);
+      // console.log('PARSED2: ' + parsedMessage2);
+      if (typeof parsedMessage === 'string') {
+        parsedMessage = JSON.parse(parsedMessage);
+      }
+      // console.log('PARSED2Action: ' + parsedMessage2.data.status);
       // console.log('ACTION: ', parsedMessage['action']);
     
-      if (parsedMessage2 && parsedMessage2.action === 'orderStatusUpdate' && parsedMessage2.data && parsedMessage2.data.status) {
-        const status = parsedMessage2.data.status;
-        const parsedEmail = parsedMessage2.data.email;
+      if (parsedMessage && parsedMessage.action === 'orderStatusUpdate' && parsedMessage.data && parsedMessage.data.status) {
+        const status = parsedMessage.data.status;
+        const parsedEmail = parsedMessage.data.email;
         console.log(status);
         if(parsedEmail === email){
           setOrderStatus(status); // Update orderStatus based on received message
         }
+      } else if (parsedMessage.type === 'pong') {  //pong doesnt work yet.
+        console.log('Received pong message');
       } else {
         console.error('Unexpected message format:', event.data);
       }
