@@ -100,63 +100,69 @@ function Inventory() {
         <p style={{ color: '#92989B', fontWeight: 'bold', whiteSpace: 'pre-line', textAlign: 'center' }}>VALKYRIE{"\n"}
         </p>
       </div>
-        <p style={{ color: '#FFFFFF', alignSelf: 'flex-start', marginLeft: 20, fontSize: 'calc(25px + 2vmin)', fontWeight: 'bold', marginTop: 30, marginBottom: 15 }}>Inventory</p>
-        <hr style={{ border: '1px solid white', width: '98%' }}></hr>
-        <div className='mainContent'>
-        <table className='tableWrapper'>
-          <tbody>
+      <p style={{ color: '#FFFFFF', alignSelf: 'flex-start', marginLeft: 20, fontSize: 'calc(25px + 2vmin)', fontWeight: 'bold', marginTop: 30, marginBottom: 15 }}>Inventory</p>
+      <hr style={{ border: '1px solid white', width: '98%' }}></hr>
+      <div className="table-container-I">
+        <table className="tableWrapper-I">
+          <thead>
             <tr key={"header"}>
               <th className='th'>Product Name</th>
               <th className='th'>Product Price</th>
-              <th className='th'> Product Inventory</th>
+              <th className='th'>Product Inventory</th>
               <th className='th'>Product Weight</th>
               <th className='th'>Product Type</th>
             </tr>
-            {inventories.map((item) => (
-              <tr key={item.id}>
-                <td className='td'>{item['product_name']}</td>
-                <td className='td'>{item['product_price']}</td>
-                <td className='td'>{item['product_inventory']}</td>
-                <td className='td'>{item['product_weight']}</td>
-                <td className='td'>{item['product_type']}</td>
-              </tr>
-            ))}
-          </tbody>
+          </thead>
         </table>
-        <div className='formContainer'>
-          <form onSubmit={handleSubmit} className="form">
-            <div className="form-group">
-              <label className='label' htmlFor="product_name">Product Name:</label>
-              <input className='input' type="text" id="product_name" onChange={e => SetName(e.target.value)} required />
-            </div>
-            <div className="form-group">
-              <label className='label' htmlFor="product_price">Product Price:</label>
-              <input className='input' type="number" step="0.01" id="product_price" onChange={e => SetPrice(e.target.value)} required />
-            </div>
-            <div className="form-group">
-              <label className='label' htmlFor="product_inventory">Product Inventory:</label>
-              <input className='input' type="number" id="product_inventory" onChange={e => SetInventory(e.target.value)} required />
-            </div>
-            <div className="form-group">
-              <label className='label' htmlFor="product_weight">Product Weight:</label>
-              <input className='input' type="number" step="0.01" id="product_weight" onChange={e => SetWeight(e.target.value)} required />
-            </div>
-            <div className="form-group">
-              <label className='label' htmlFor="product_type">Product Type:</label>
-              <Select
-                isClearable={false}
-                className='dropdown'
-                options={itemTypes}
-                onChange={(type) => setType(type)}
-                required
-              />
-            </div>
-            <button className="submitBtn" type="Submit">Add Product</button>
-          </form>
+        <div className="table-body-container-I">
+          <table className="tableWrapper-I">
+            <tbody>
+              {inventories.map((item) => (
+                <tr key={item.id}>
+                  <td className='td'>{item['product_name']}</td>
+                  <td className='td'>${item['product_price']}</td>
+                  <td className='td'>{item['product_inventory']}</td>
+                  <td className='td'>{item['product_weight']}oz</td>
+                  <td className='td'>{item['product_type']}</td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
         </div>
       </div>
+      <div className='formContainer'>
+        <form onSubmit={handleSubmit} className="form">
+          <div className="form-group">
+            <label className='label' htmlFor="product_name">Product Name:</label>
+            <input className='input' type="text" id="product_name" onChange={e => SetName(e.target.value)} required />
+          </div>
+          <div className="form-group">
+            <label className='label' htmlFor="product_price">Product Price:</label>
+            <input className='input' type="number" step="0.01" id="product_price" onChange={e => SetPrice(e.target.value)} required />
+          </div>
+          <div className="form-group">
+            <label className='label' htmlFor="product_inventory">Product Inventory:</label>
+            <input className='input' type="number" id="product_inventory" onChange={e => SetInventory(e.target.value)} required />
+          </div>
+          <div className="form-group">
+            <label className='label' htmlFor="product_weight">Product Weight:</label>
+            <input className='input' type="number" step="0.01" id="product_weight" onChange={e => SetWeight(e.target.value)} required />
+          </div>
+          <div className="form-group">
+            <label className='label' htmlFor="product_type">Product Type:</label>
+            <Select
+              isClearable={false}
+              className='dropdown'
+              options={itemTypes}
+              onChange={(type) => setType(type)}
+              required
+            />
+          </div>
+          <button className="submitBtn" type="Submit">Add Product</button>
+        </form>
+      </div>
       <h2>{message}</h2>
-    </div>
+    </div >
   );
 }
 

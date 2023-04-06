@@ -1,16 +1,10 @@
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
 .Inventory {
-  background-color: #E33737;
-  align-content:center;
-  align-items: center;
-  height: 100vh;
   display: flex;
   flex-direction: column;
-  overflow-y: scroll;
+  align-items: center;
+  background-color: #E33737;
+  min-height: 100vh;
+  font-family: Arial, sans-serif;
 }
 
 .Inventory-header {
@@ -25,151 +19,97 @@
   margin-bottom: 0;
 }
 
-.button {
-  background-color: #AA9798;
-  border-radius: 25px;
-  width: 70vw;
-  height: 160px;
-  border-width: 1;
-  margin-bottom: 5%;
-  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-  font-size: calc(8px + 2vmin);
+.table-container-I {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  max-width: 1200px;
+  overflow: hidden;
+  margin-bottom: 20px;
+}
+
+.tableWrapper-I {
+  width: 100%;
+  max-width: 1200px;
+  border-collapse: collapse;
+}
+
+.tableWrapper-I th,
+.tableWrapper-I td {
+  padding: 10px;
+  text-align: left;
+  border: 1px solid #ccc;
+}
+
+.tableWrapper-I th {
+  background-color: #d41f1f;
   color: white;
+}
+
+.table-body-container-I {
+  max-height: 300px;
+  overflow-y: auto;
+  display: block;
+}
+
+/* th {
+  background-color: #d41f1f;
   font-weight: bold;
-  padding: 70px;
-}
+  color: white;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-size: 16px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2), 0 -2px 0 rgba(0, 0, 0, 0.05) inset;
+} */
 
-.App-link {
-  color: #61dafb;
-}
-
-.table {
-  border: 1px solid;
-}
-
-.mainContent {
+.formContainer {
   display: flex;
   flex-direction: column;
   align-items: center;
-  width: 100%;
+  margin-bottom: 20px;
 }
-
-.tableWrapper {
-  background-color: white;
-  width: 95%;
-  color: black;
-  border-collapse: collapse;
-  text-align: left;
-  border-radius: 10px;
-}
-
-.th {
-  padding: 15px;
-  border-bottom: 1px solid rgb(130, 118, 118);
-  border-collapse: collapse;
-}
-
-.td {
-  padding: 15px;
-  border-bottom: 1px solid rgb(130, 118, 118);
-  border-collapse: collapse;
-  font-weight: 430;
-}
-
-
-.formContainer {
-  background-color: white;
-  width: 65%;
-  color: black;
-  text-align: left;
-  border-radius: 10px;
-  padding: 20px;
-  display: flex;
-  flex-wrap: nowrap;
-  justify-content: center; /* Change to center */
-  align-items: center; /* Add align-items: center */
-  margin-top: 20px;
-  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.5); /* Add box-shadow to create depth */
-}
-
 
 .form {
-  display:flex;
-  flex-direction: row;
-  justify-content: space-between;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  max-width: 1200px;
+  margin-top: 20px;
 }
 
 .form-group {
   display: flex;
   flex-direction: column;
-  align-items: center;
-  margin-right: 20px;
+  margin: 10px;
 }
 
 .label {
   margin-bottom: 5px;
-  font-weight: bold; /* Add font-weight: bold */
-  text-transform: uppercase;
-  font-size: 14px;
-  margin-right: 10px;
+  font-weight: bold;
 }
-
 
 .input {
-  padding: 8px 12px;
-  border-radius: 4px;
-  border: 1px solid #ccc;
+  padding: 5px;
   font-size: 14px;
-  font-weight: 500; /* Add font-weight to make text in the input boxes heavier */
+  width: 200px;
 }
 
-
 .dropdown {
-  margin-bottom: 20px;
+  width: 200px;
 }
 
 .submitBtn {
-  background-color: #D32F2F;
-  color: white;
-  font-weight: bold;
-  padding: 8px 12px;
+  background-color: #ffffff;
+  color: #d41f1f;
+  padding: 12px 20px;
   border: none;
   border-radius: 4px;
   cursor: pointer;
-  text-transform: uppercase;
-  font-size: 14px;
-  width: auto;
+  font-size: 16px;
   margin-top: 20px;
-  height: fit-content;
-  align-self: center; /* Change to center */
 }
-
-
-
 
 .submitBtn:hover {
-  background-color: #B32828;
-}
-
-.submitBtn:active {
-  background-color: #8F1F1F;
-}
-
-.submitBtn:focus {
-  outline: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+  background-color: #d4d4d4;
 }
