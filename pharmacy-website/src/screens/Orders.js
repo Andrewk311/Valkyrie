@@ -23,7 +23,7 @@ function Orders() {
     ws.onopen = () => {
       console.log('Connected to WebSocket');
       setWebsocket(ws);
-      ws.send(JSON.stringify({ type: 'email', email: 'null' }));
+      ws.send(JSON.stringify({ type: 'email', email: 'pharmacist' }));
       setInterval(() => {
         if (ws.readyState === WebSocket.OPEN) {
           ws.send(JSON.stringify({ type: 'ping' }));
@@ -108,14 +108,12 @@ function Orders() {
 
   async function inTransit(order) {
     try {
-      
       const payload = {
         latitude: order['location']['latitude'],
         longitude: order['location']['longitude']
       };
       updateOrder(order['order_number'], order['isAccepted'], true, true);
       var email = order['email'];
-      sendOrderStatusUpdate('Order Shipped', email); //sends data to app side and will refresh 
       console.log(payload);
       const response = await API.post('droneSendCoords', '/droneSend', {
         body: {
@@ -123,21 +121,17 @@ function Orders() {
           "longitude": payload.longitude
         }
       });
-      console.log(response);
-
-      // Check if the request was successful
-      if (response.ok) {
-        const responseData = await response.json();
-        console.log('API Gateway response:', responseData); 
-
-      } else {
-        console.error('Error calling API Gateway:', response.statusText);
-      }
+      console.log('API Gateway response:', response);
+      sendOrderStatusUpdate('Order Shipped', email); //sends data to app side and will refresh 
+      // No need to check response.ok and response.json() here, as this is not necessary with AWS Amplify API.post
+  
     } catch (err) {
       console.log('error updating transit status: ', err);
+      sendOrderStatusUpdate('Order Shipped', email); //sends data to app side and will refresh 
       //probably should just update order status here. Issue with what I did now moving it above is that it goes prematurely. Doesnt wait for coords to send or see if it works.
     }
   }
+  
 
 
 
