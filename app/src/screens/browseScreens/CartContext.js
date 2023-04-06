@@ -9,6 +9,7 @@ export function CartProvider(props) {
 
   function addItemToCart(id) {
     const product = getProduct(id);
+    console.log(product);
     setItems((prevItems) => {
       const item = prevItems.find((item) => (item.id == id));
       if(!item) {

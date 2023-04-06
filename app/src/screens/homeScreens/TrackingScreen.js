@@ -8,7 +8,6 @@ import { Auth } from 'aws-amplify';
 import { WebSocketContext } from "../../WebSocketContext";
 import { CartContext } from "../browseScreens/CartContext";
 import home from './../../customIcons/HomeMarker.png';
-import { CartContext } from '../browseScreens/CartContext';
 
 
 const win = Dimensions.get('window');
