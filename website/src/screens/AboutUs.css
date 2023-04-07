@@ -1,39 +1,253 @@
-.App {
-    text-align: center;
-  }
-  
-  .App-logo {
-    height: 40vmin;
-    pointer-events: none;
-  }
-  
-  @media (prefers-reduced-motion: no-preference) {
-    .App-logo {
-      animation: App-logo-spin infinite 20s linear;
-    }
-  }
-  
-  .App-header {
-    background-color: #FFFFFF;
-    min-height: 100vh;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    font-size: calc(10px + 2vmin);
-    color: white;
-  }
-  
-  .App-link {
-    color: #61dafb;
-  }
-  
-  @keyframes App-logo-spin {
-    from {
-      transform: rotate(0deg);
-    }
-    to {
-      transform: rotate(360deg);
-    }
-  }
-  
+.AboutUs {
+  font-family: Arial, sans-serif;
+}
+
+.aboutUsHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.5rem 2rem;
+  background-color: var(--quaternary-color);
+  min-height: 50px;
+}
+
+.aboutUsHeader p {
+  font-size: 1.0rem;
+  margin-right: 5%;
+  font-weight: bold;
+  text-align: center;
+  flex-grow: 1;
+}
+
+.header-text {
+  font-weight: bold;
+  font-size: 1.0rem;
+  margin: 0;
+}
+
+.button-header-about {
+  background-color: #1a73e8;
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+  border-radius: 4px;
+}
+
+.button-margin-about {
+  margin-right: 16px;
+}
+
+.aboutUsSection {
+  background-color: #f1f1f1;
+  padding: 50px;
+}
+
+.aboutUsTitle {
+  text-align: center;
+  font-size: 2rem;
+  font-weight: bold;
+  margin-bottom: 1rem;
+}
+
+.teamMembers {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  padding: 50px;
+}
+
+.teamMember {
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+  max-width: 300px;
+  margin: 20px;
+  text-align: center;
+  font-family: arial;
+}
+
+.teamMemberImage {
+  width: 100%;
+  height: auto;
+}
+
+.teamMember:hover {
+  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+}
+
+.teamMemberName {
+  font-size: 18px;
+  color: black;
+  font-weight: bold;
+  padding: 16px 0;
+}
+
+.teamMemberRole {
+  font-size: 15px;
+  color: gray;
+}
+
+.teamPhotos {
+  text-align: center;
+  margin-top: 2rem;
+}
+
+.teamPhotosTitle {
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin-bottom: 1rem;
+}
+
+.teamPhoto {
+  width: 100%;
+  max-width: 800px;
+  height: auto;
+}
+
+.teamDescription {
+  text-align: center;
+  margin-top: 2rem;
+}
+
+.teamDescriptionTitle {
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin-bottom: 1rem;
+}
+
+.teamDescriptionText {
+  font-size: 1rem;
+  line-height: 1.6;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.statisticsContainer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  /* flex-wrap: wrap;
+  gap: 20px; */
+}
+
+.chart {
+  max-width: 300px; /* Adjust this value as needed */
+}
+
+.chartLeft {
+  order: 1;
+}
+
+.teamDescriptionText {
+  order: 2;
+  max-width: 900px; /* Adjust this value as needed */
+  text-align: justify;
+}
+
+.chartRight {
+  order: 3;
+}
+
+.chartImage1 {
+  width: 450px;
+  height: auto;
+  margin-left: -25px;
+  margin-top: 40px;
+}
+
+.chartImage2 {
+  width: 450px;
+  height: auto;
+  margin-left: -115px;
+  margin-top: 30px;
+}
+
+.imageCaption1 {
+  font-size: 12px;
+  text-align: center;
+  margin-top: 4px;
+  margin-bottom: 0;
+  width:130%;
+}
+.imageCaption2 {
+  font-size: 12px;
+  text-align: center;
+  margin-top: 4px;
+  margin-bottom: 0;
+  width:130%;
+  margin-left: -26%;
+}
+
+.carousel-container-about {
+  text-align: center;
+  margin-top: 2rem;
+}
+
+.carousel-title-about {
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin-bottom: 1rem;
+}
+
+.hero-carousel-about {
+  position: relative;
+  width: 100%;
+  max-width: 1000px;
+  height: 600px;
+  margin: 0 auto;
+}
+
+.carousel-slides-about {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+}
+
+.carousel-image-container-about {
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  transition: opacity 0.5s;
+}
+
+.carousel-image-container-about.active {
+  opacity: 1;
+}
+
+.carousel-image-about {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+}
+
+.carousel-button-about {
+  position: absolute;
+  top: 50%;
+  background-color: rgba(0, 0, 0, 0.5);
+  color: #fff;
+  border: none;
+  padding: 0.5rem 1rem;
+  font-size: 1rem;
+  cursor: pointer;
+  transform: translateY(-50%);
+  z-index: 1;
+}
+
+.carousel-button.prev-about {
+  left: 20px;
+}
+
+.carousel-button.next-about {
+  right: 20px;
+}
