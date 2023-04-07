@@ -1,5 +1,5 @@
 import './AboutUs.css';
-import React, { useState, useEffect } from 'react';
+import React, { useRef, useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import teamMember1 from './../Images/Dallas8.JPG';
 import teamMember2 from './../Images/Dallas4.JPG';
@@ -16,6 +16,11 @@ function AboutUs() {
 
     const [activeSlide, setActiveSlide] = useState(0);
     const navigate = useNavigate();
+    const topRef = useRef(null);
+
+    useEffect(() => {
+        topRef.current.scrollIntoView();
+      }, []);
 
     useEffect(() => {
         const timer = setTimeout(() => {
@@ -33,7 +38,7 @@ function AboutUs() {
     }
 
     function handleGoBack() {
-        navigate(-1);
+        navigate('/');
     }
 
     const prevSlide = () => {
@@ -48,6 +53,7 @@ function AboutUs() {
 
     return (
         <div className="AboutUs">
+            <div ref={topRef} />
             <header className="aboutUsHeader">
                 <button className="button-header button-margin-about" onClick={handleGoBack}>Go Back</button>
                 <p className="header-text">VALKYRIE CAPSTONE GROUP 19</p>
