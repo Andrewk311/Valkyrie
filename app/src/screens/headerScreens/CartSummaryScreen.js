@@ -11,7 +11,7 @@ import { fetchActiveOrdersByEmail } from '../../services/listActiveOrders'
 import { getProduct } from '../../services/ProductsService';
 
 const CartSummary = (props) => {
-    const {items, removeItemFromCart, getTotalPrice, addItemToCart, setLatestOrderNumber, getTotalWeight, orderNumber } = useContext(CartContext);
+    const {items, removeItemFromCart, getTotalPrice, addItemToCart, setLatestOrderNumber, getTotalWeight, orderNumber, addExtraItemInCart } = useContext(CartContext);
     const [attributes, setAttributes] = React.useState(null);
     const { websocket, setWebsocket } = useContext(WebSocketContext);
     const [email, setEmail] = React.useState('');
@@ -131,10 +131,12 @@ const CartSummary = (props) => {
 
     // add/remove items from cart
     function onAddToCart(product) {
-      addItemToCart(product);
+      addExtraItemInCart(product);
     }
 
     function onRemoveFromCart(product) {
+      console.log('PRODUCT IN CARTSUMMARYSCREEN IS: ' + product.name)
+      console.log('PRODUCT IN CARTSUMMARYSCREEN price IS: ' + product.product.product_price)
       removeItemFromCart(product);
     }
 

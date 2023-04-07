@@ -1,5 +1,6 @@
 import React, {createContext, useState} from 'react';
 import { getProduct } from '../../services/ProductsService';
+import Other from './OtherScreen';
 export const CartContext = createContext();
 
 export function CartProvider(props) {
@@ -9,22 +10,26 @@ export function CartProvider(props) {
 
   function addItemToCart(product) {
     setItems((prevItems) => {
-      const item = prevItems.find((item) => (item.name == product['product_name']));
+      console.log(prevItems);
+      console.log('product is: ' + product.name)
+      const item = prevItems.find((item) => (item.name == product.product_name)); //ISSUE IS THE OBJECT IS DIFFERENT WHEN ADDING FROM MEDICINE SCREEN AND ADDING FROM CART SCREEN
+      
+      if (item) {console.log('ITEM IS: ' + item.name)}
       if(!item) {
           return [...prevItems, {
-              name: product['product_name'],
+              name: product.product_name,
               qty: 1,
               product,
-              totalPrice: product['product_price'],
-              totalWeight: product['product_weight']
+              totalPrice: product.product_price,
+              totalWeight: product.product_weight
           }];
       }
       else { 
           return prevItems.map((item) => {
-            if(item.name == product['product_name']) {
+            if(item.name == product.product_name) {
               item.qty++;
-              item.totalPrice += product['product_price'];
-              item.totalWeight += product['product_weight'];
+              item.totalPrice += product.product_price;
+              item.totalWeight += product.product_weight;
             }
             return item;
           });
@@ -32,9 +37,41 @@ export function CartProvider(props) {
     });
 }
 
+function addExtraItemInCart(product) {
+  setItems((prevItems) => {
+    console.log(prevItems);
+    console.log('product is: ' + product.name)
+    const item = prevItems.find((item) => (item.name == product.name)); //ISSUE IS THE OBJECT IS DIFFERENT WHEN ADDING FROM MEDICINE SCREEN AND ADDING FROM CART SCREEN
+    
+    if (item) {console.log('ITEM IS: ' + item.name)}
+    if(!item) {
+        return [...prevItems, {
+          name:product['product_name'],
+          qty: 1,
+          product,
+          totalPrice: product['product_price'],
+          totalWeight: product['product_weight']
+        }];
+    }
+    else { 
+        return prevItems.map((item) => {
+          if(item.name == product.name) {
+            item.qty++;
+            item.totalPrice += product.product.product_price;
+            item.totalWeight += product.product.product_weight;
+          }
+          return item;
+        });
+    }
+  });
+}
+
 function removeItemFromCart(product) {
   setItems((prevItems) => {
-    const item = prevItems.find((item) => (item.name == product['product_name']));
+    console.log(prevItems);
+    console.log('product is: ' + product.name)
+    const item = prevItems.find((item) => (item.name == product.name));
+    console.log('ITEM IS: ' + item.name)
     if(!item) {
         return [...prevItems, {
             name:product['product_name'],
@@ -46,10 +83,10 @@ function removeItemFromCart(product) {
     }
     else { 
         return prevItems.map((item) => {
-          if(item.name == name) {
+          if(item.name == product.name) {
             item.qty--;
-            item.totalPrice -= product['product_price'];
-            item.totalWeight -= product['product_weight'];
+            item.totalPrice -= product.product.product_price;
+            item.totalWeight -= product.product.product_weight;
           }
           return item;
         });
@@ -75,7 +112,7 @@ function setLatestOrderNumber(orderNumberInput){
 
   return (
     <CartContext.Provider 
-      value={{items, setItems, getItemsCount, addItemToCart, getTotalPrice, getTotalWeight, setLatestOrderNumber, removeItemFromCart, orderNumber}}>
+      value={{items, setItems, getItemsCount, addItemToCart, getTotalPrice, getTotalWeight, setLatestOrderNumber, removeItemFromCart, orderNumber, addExtraItemInCart}}>
       {props.children}
     </CartContext.Provider>
   );
