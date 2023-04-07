@@ -21,8 +21,6 @@ const ColdAndFlu = (props) => {
         const filter = 'Cold and Flu'; 
         const items = await getInventoriesByPartitionKey(filter);
         setInventories(items);
-        setProducts(items);
-        console.log(items[1]);
       } catch (err) {
         console.log('Error fetching inventories', err);
       }
@@ -30,15 +28,14 @@ const ColdAndFlu = (props) => {
     fetchInventories();
   }, []);
 
-  function onAddToCart(productId) {
-    addItemToCart(productId);
-    console.log(inventories)
+  function onAddToCart(product) {
+    addItemToCart(product);
   }
 
   function renderProduct({item: product}) {
     return (
       <Product {...product} 
-      onPress={() => {onAddToCart(product.id)}}
+      onPress={() => {onAddToCart(product)}}
       />
     );
   }
@@ -48,12 +45,12 @@ const ColdAndFlu = (props) => {
     <FlatList
       style={styles.productsList}
       contentContainerStyle={styles.productsListContainer}
-      keyExtractor={(item) => item.id}
-      data={products}
+      keyExtractor={(item) => item.name}
+      data={inventories}
       renderItem={renderProduct}
     />
     </View>
-  );
+    );
 };
 
 ColdAndFlu.navigationOptions = ({ navigation: { goBack } }) => {

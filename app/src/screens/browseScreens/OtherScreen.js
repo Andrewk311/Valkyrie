@@ -20,8 +20,7 @@ const Other = (props) => {
         const filter = 'Misc'; 
         const items = await getInventoriesByPartitionKey(filter);
         setInventories(items);
-        setProducts(items);
-        console.log(items[1]);
+
       } catch (err) {
         console.log('Error fetching inventories', err);
       }
@@ -29,15 +28,14 @@ const Other = (props) => {
     fetchInventories();
   }, []);
 
-  function onAddToCart(productId) {
-    addItemToCart(productId);
-    console.log(inventories)
+  function onAddToCart(product) {
+    addItemToCart(product);
   }
 
   function renderProduct({item: product}) {
     return (
       <Product {...product} 
-      onPress={() => {onAddToCart(product.id)}}
+      onPress={() => {onAddToCart(product)}}
       />
     );
   }
@@ -47,8 +45,8 @@ const Other = (props) => {
     <FlatList
       style={styles.productsList}
       contentContainerStyle={styles.productsListContainer}
-      keyExtractor={(item) => item.id}
-      data={products}
+      keyExtractor={(item) => item.name}
+      data={inventories}
       renderItem={renderProduct}
     />
     </View>

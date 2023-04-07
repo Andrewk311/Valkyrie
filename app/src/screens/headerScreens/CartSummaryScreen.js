@@ -2,13 +2,13 @@ import React, { useEffect, useState, useContext } from 'react';
 import { View, Text, Button, FlatList, StyleSheet, TouchableOpacity } from 'react-native';
 import { Image } from "react-native";
 import { CartContext } from '../browseScreens/CartContext';
-import { getProduct } from '../../services/ProductsService';
 import { Ionicons } from "@expo/vector-icons";
 import { Auth } from 'aws-amplify';
 import { createOrder } from '../../services/AddOrder';
 import Geocoder from 'react-native-geocoding';
 import { WebSocketContext } from '../../WebSocketContext';
 import { fetchActiveOrdersByEmail } from '../../services/listActiveOrders'
+import { getProduct } from '../../services/ProductsService';
 
 const CartSummary = (props) => {
     const {items, removeItemFromCart, getTotalPrice, addItemToCart, setLatestOrderNumber, getTotalWeight } = useContext(CartContext);
@@ -67,7 +67,7 @@ const CartSummary = (props) => {
         setLatestOrderNumber("AK" +  Math.floor(Math.random()*100000+1).toString());
         for(var i =0; i < items.length; i++){
           if (items[i].qty){
-            orderDetails.push({name:getProduct(items[i].id).name, quantity: items[i].qty});
+            orderDetails.push({name:items[i].name, quantity: items[i].qty});
           }
         }
         const orderData = {
@@ -76,14 +76,13 @@ const CartSummary = (props) => {
           totalPrice: getTotalPrice().toFixed(2),
           totalWeight: getTotalWeight().toFixed(2),
           email: email,
-          orderNumber: CartContext.orderNumber,  //change every order or it wont go through
+          orderNumber: "1",  //change every order or it wont go through
           // orderNumber: "AB67174",
           inTransit : false,
           isAccepted: 0,
           isActive: true,
           orders: orderDetails,
         };
-        console.log("lat: ",latitude)
         await checkActiveOrders(email);
         console.log('LENGTH OF THE ORDERS: ' + activeOrders.length)
         if(activeOrders.length == 0){
@@ -130,12 +129,12 @@ const CartSummary = (props) => {
     }
 
     // add/remove items from cart
-    function onAddToCart(productId) {
-      addItemToCart(productId);
+    function onAddToCart(product) {
+      addItemToCart(product);
     }
 
-    function onRemoveFromCart(productId) {
-      removeItemFromCart(productId);
+    function onRemoveFromCart(product) {
+      removeItemFromCart(product);
     }
 
     function onSetLatestOrderNumber(orderNumber) {
@@ -166,16 +165,19 @@ function renderItem({item}) {
       return (
        <View style={styles.cartLine}>
           <View style={{flexDirection:'row', height:180, alignItems:'center'}}>
-            <Image style={styles.tinyLogo} source={getProduct(item.id).src}/>
+            <Image style={styles.tinyLogo}/>
             <View style={{flexDirection:'column', marginLeft:20}}>
-              <Text style={styles.productName}>{item.product.name}</Text>
+              <Text style={styles.productName}>{item.name}</Text>
               <Text style={styles.productCost}>$ {item.totalPrice.toFixed(2)}</Text>
             </View>
             <View style={{flexDirection:'column', alignItems:'center', marginLeft:20}}>
               <TouchableOpacity
               activeOpacity={.8} //The opacity of the button when it is pressed
               style = {styles.button}
-              onPress={() => {onAddToCart(item.id)}}
+              onPress={() => {
+                console.log('Remove: ')
+              console.log(item)
+                onAddToCart(item)}}
               >
               <Ionicons name="add" size={23} color="#AD3A5C"/>
             </TouchableOpacity>
@@ -183,7 +185,7 @@ function renderItem({item}) {
             <TouchableOpacity
               activeOpacity={.8} //The opacity of the button when it is pressed
               style = {styles.button}
-              onPress={() => {onRemoveFromCart(item.id)}} 
+              onPress={() => {onRemoveFromCart(item)}} 
               >
               <Ionicons name="trash-outline" size={20} color="#AD3A5C"/>
             </TouchableOpacity>
@@ -200,7 +202,7 @@ function renderItem({item}) {
       contentContainerStyle={styles.itemsListContainer}
       data={items}
       renderItem={renderItem}
-      keyExtractor={(item) => item.product.id.toString()}
+      keyExtractor={(item) => item.name}
       ListFooterComponent={Totals}
     />
   );

@@ -20,8 +20,6 @@ const Pharmacy = (props) => {
         const filter = 'Prescription'; 
         const items = await getInventoriesByPartitionKey(filter);
         setInventories(items);
-        setProducts(items);
-        console.log(items[1]);
       } catch (err) {
         console.log('Error fetching inventories', err);
       }
@@ -29,15 +27,14 @@ const Pharmacy = (props) => {
     fetchInventories();
   }, []);
 
-  function onAddToCart(productId) {
-    addItemToCart(productId);
-    console.log(inventories)
+  function onAddToCart(product) {
+    addItemToCart(product);
   }
 
   function renderProduct({item: product}) {
     return (
       <Product {...product} 
-      onPress={() => {onAddToCart(product.id)}}
+      onPress={() => {onAddToCart(product)}}
       />
     );
   }
@@ -47,8 +44,8 @@ const Pharmacy = (props) => {
     <FlatList
       style={styles.productsList}
       contentContainerStyle={styles.productsListContainer}
-      keyExtractor={(item) => item.id}
-      data={products}
+      keyExtractor={(item) => item.name}
+      data={inventories}
       renderItem={renderProduct}
     />
     </View>

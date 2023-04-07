@@ -7,26 +7,24 @@ export function CartProvider(props) {
   const [items, setItems] = useState([]);
   const [orderNumber, setOrderNumber] = useState("0");
 
-  function addItemToCart(id) {
-    const product = getProduct(id);
-    console.log(product);
+  function addItemToCart(product) {
     setItems((prevItems) => {
-      const item = prevItems.find((item) => (item.id == id));
+      const item = prevItems.find((item) => (item.name == product['product_name']));
       if(!item) {
           return [...prevItems, {
-              id,
+              name: product['product_name'],
               qty: 1,
               product,
-              totalPrice: product.cost,
-              totalWeight: product.weight
+              totalPrice: product['product_price'],
+              totalWeight: product['product_weight']
           }];
       }
       else { 
           return prevItems.map((item) => {
-            if(item.id == id) {
+            if(item.name == product['product_name']) {
               item.qty++;
-              item.totalPrice += product.cost;
-              item.totalWeight += product.weight;
+              item.totalPrice += product['product_price'];
+              item.totalWeight += product['product_weight'];
             }
             return item;
           });
@@ -34,25 +32,24 @@ export function CartProvider(props) {
     });
 }
 
-function removeItemFromCart(id) {
-  const product = getProduct(id);
+function removeItemFromCart(product) {
   setItems((prevItems) => {
-    const item = prevItems.find((item) => (item.id == id));
+    const item = prevItems.find((item) => (item.name == product['product_name']));
     if(!item) {
         return [...prevItems, {
-            id,
+            name:product['product_name'],
             qty: 1,
             product,
-            totalPrice: product.cost,
-            totalWeight: product.weight
+            totalPrice: product['product_price'],
+            totalWeight: product['product_weight']
         }];
     }
     else { 
         return prevItems.map((item) => {
-          if(item.id == id) {
+          if(item.name == name) {
             item.qty--;
-            item.totalPrice -= product.cost;
-            item.totalWeight -= product.weight;
+            item.totalPrice -= product['product_price'];
+            item.totalWeight -= product['product_weight'];
           }
           return item;
         });

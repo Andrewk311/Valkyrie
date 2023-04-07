@@ -21,15 +21,12 @@ const Home = (props) => {
       const user = await Auth.currentAuthenticatedUser();
       setAttributes(user);
     }
-    console.log('hi');
     getUserInfo(); 
   }, []);
 
   var name = ''
   if(attributes == null){
-    console.log('null');
   } else {
-    console.log(attributes.attributes.name);
     name = attributes.attributes.name.toString();
   }
 
