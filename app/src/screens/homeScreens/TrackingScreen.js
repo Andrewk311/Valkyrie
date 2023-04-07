@@ -91,7 +91,7 @@ const Tracking = (props) => {
         </View>
         <View>
         {orderStatus===null && (<Text style={{fontWeight:"bold", color:"#000000", fontSize:24, marginTop: -250, }}>Place an order to see tracking!</Text>)}
-        {orderStatus!="null" && (<Text style={{fontWeight:"bold", color:"#000000", fontSize:24, marginTop: -250, }}>ORDER {CartContext.orderNumber}</Text>)}
+        {orderStatus!="null" && (<Text style={{fontWeight:"bold", color:"#000000", fontSize:24, marginTop: -250, }}>ORDER #{orderNumber}</Text>)}
         </View>
         {latitude && longitude ? (
           <MapView

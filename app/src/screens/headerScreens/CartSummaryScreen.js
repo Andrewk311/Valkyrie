@@ -11,7 +11,7 @@ import { fetchActiveOrdersByEmail } from '../../services/listActiveOrders'
 import { getProduct } from '../../services/ProductsService';
 
 const CartSummary = (props) => {
-    const {items, removeItemFromCart, getTotalPrice, addItemToCart, setLatestOrderNumber, getTotalWeight } = useContext(CartContext);
+    const {items, removeItemFromCart, getTotalPrice, addItemToCart, setLatestOrderNumber, getTotalWeight, orderNumber } = useContext(CartContext);
     const [attributes, setAttributes] = React.useState(null);
     const { websocket, setWebsocket } = useContext(WebSocketContext);
     const [email, setEmail] = React.useState('');
@@ -64,20 +64,21 @@ const CartSummary = (props) => {
         setErrorMessage("Cart is Empty, Please add items to checkout.");
       }
       else{
-        setLatestOrderNumber("AK" +  Math.floor(Math.random()*100000+1).toString());
+        const newOrderNumber = "AK" +  Math.floor(Math.random()*100000+1).toString()
+        setLatestOrderNumber(newOrderNumber);
         for(var i =0; i < items.length; i++){
           if (items[i].qty){
             orderDetails.push({name:items[i].name, quantity: items[i].qty});
           }
         }
+        console.log('ORDER NUMBER FROM CART SCREEN: ' + orderNumber)
         const orderData = {
           latitude: latitude,
           longitude: longitude,
           totalPrice: getTotalPrice().toFixed(2),
           totalWeight: getTotalWeight().toFixed(2),
           email: email,
-          orderNumber: "1",  //change every order or it wont go through
-          // orderNumber: "AB67174",
+          orderNumber: newOrderNumber, 
           inTransit : false,
           isAccepted: 0,
           isActive: true,

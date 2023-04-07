@@ -69,12 +69,13 @@ function getTotalWeight() {
 }  
 
 function setLatestOrderNumber(orderNumberInput){
+  console.log('ORDER NUMBER INPUT!!: ' + orderNumberInput);
   setOrderNumber(orderNumberInput);
 }
 
   return (
     <CartContext.Provider 
-      value={{items, setItems, getItemsCount, addItemToCart, getTotalPrice, getTotalWeight, setLatestOrderNumber, removeItemFromCart}}>
+      value={{items, setItems, getItemsCount, addItemToCart, getTotalPrice, getTotalWeight, setLatestOrderNumber, removeItemFromCart, orderNumber}}>
       {props.children}
     </CartContext.Provider>
   );
