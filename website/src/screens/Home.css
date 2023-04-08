@@ -464,3 +464,21 @@ button:hover {
   height: auto;
   object-fit: cover;
 }
+
+/* Media Query for MacBook Pro screens */
+@media only screen and (min-width: 1440px) and (max-width: 2560px) {
+
+  .carousel-image {
+    max-width: 50%;
+    max-height: 50%;
+    object-fit: contain;
+  }
+
+  .carousel-button.prev {
+    left: 50px;
+  }
+  
+  .carousel-button.next {
+    right: 50px;
+  }
+}
