@@ -110,17 +110,19 @@ function AboutUs() {
                 <div className="teamDescription">
                     <h2 className="teamDescriptionTitle">About the Team</h2>
                     <div className="statisticsContainer">
+                        <p className="teamDescriptionText">
+                            We are a team of five Electrical and Computer Engineering students at Rutgers University who came together with a vision to address a pressing issue in the United States that many people may not be aware of: the decline of pharmacies in rural areas. Due to small and dispersed populations, it has become increasingly difficult for pharmacies to remain profitable in these regions, leaving 1.6 million people living over 20 miles from the nearest one. Limited public transportation and reliance on personal vehicles, family, or friends for transport exacerbate the problem for those without easy access to a pharmacy. While mail-in services do exist, they can take days or even weeks to reach patients and are often subject to delays, causing major inconveniences for those in urgent need of medication. To tackle this issue, we came up with the idea of creating a pharmaceutical delivery drone called "Valkyrie." Our innovative drone aims to provide a fast and efficient method of delivering medications to people in rural areas who would otherwise have limited access to pharmacies, thus improving healthcare accessibility and enhancing the quality of life for those in underserved communities.
+                        </p>
+                    <div class="chartsContainer">
                         <div className="chart chartLeft">
                             <img className="chartImage1" src={pharmDataChart} alt="Pharmacy Data Chart" />
                             <p className="imageCaption1">Decline of rural independent pharmacies that were the only one in the community.</p>
                         </div>
-                        <p className="teamDescriptionText">
-                            We are a team of five Electrical and Computer Engineering students at Rutgers University who came together with a vision to address a pressing issue in the United States that many people may not be aware of: the decline of pharmacies in rural areas. Due to small and dispersed populations, it has become increasingly difficult for pharmacies to remain profitable in these regions, leaving 1.6 million people living over 20 miles from the nearest one. Limited public transportation and reliance on personal vehicles, family, or friends for transport exacerbate the problem for those without easy access to a pharmacy. While mail-in services do exist, they can take days or even weeks to reach patients and are often subject to delays, causing major inconveniences for those in urgent need of medication. To tackle this issue, we came up with the idea of creating a pharmaceutical delivery drone called "Valkyrie." Our innovative drone aims to provide a fast and efficient method of delivering medications to people in rural areas who would otherwise have limited access to pharmacies, thus improving healthcare accessibility and enhancing the quality of life for those in underserved communities.
-                        </p>
                         <div className="chart chartRight">
                             <img className="chartImage2" src={pharmDataMap} alt="Pharmacy Data Map" />
                             <p className="imageCaption2">Colors represent the number of pharmacies in each area, red means none, yellow means only one.</p>
                         </div>
+                    </div>
                     </div>
                 </div>
                 <div className="carousel-container-about">
