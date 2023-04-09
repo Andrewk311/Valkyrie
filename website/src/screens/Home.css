@@ -98,7 +98,6 @@ button:hover {
 }
 
 
-
 /* Style the hero content */
 .hero-content {
   max-width: 50%;
@@ -466,11 +465,11 @@ button:hover {
 }
 
 /* Media Query for MacBook Pro screens */
-@media only screen and (min-width: 1440px) and (max-width: 2560px) {
+@media only screen and (min-device-width: 1440px) and (max-device-width: 1440px) and (min-device-height: 900px) and (max-device-height: 900px) {
 
   .carousel-image {
-    max-width: 50%;
-    max-height: 50%;
+    max-width: 35%;
+    max-height: auto;
     object-fit: contain;
   }
 
@@ -481,4 +480,14 @@ button:hover {
   .carousel-button.next {
     right: 50px;
   }
+
+  .hero {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 3.5rem;
+    background-color: var(--primary-color); /* change this line */
+  }
+  
+
 }
