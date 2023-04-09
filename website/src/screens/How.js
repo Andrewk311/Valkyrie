@@ -1,7 +1,7 @@
 import './How.css';
 import { useNavigate } from 'react-router-dom';
-import appImage from './../Images/Dallas8.JPG';
-import droneImage from './../Images/Dallas4.JPG';
+import appImage from './../Images/HomePage.PNG';
+import droneImage from './../Images/Drone.jpg';
 import droneBoxImage from './../Images/Dallas5.JPG';
 import React, { useRef, useState, useEffect } from 'react';
 
@@ -36,7 +36,7 @@ function How() {
                 <div className="categories">
                     <div className="category" onClick={() => handleCategoryClick({ title: 'App/Pharmacy Portal' })}>
                         <h2 className="category-title">App/Pharmacy Portal</h2>
-                        <img className="category-image" src={appImage} alt="App" />
+                        <img className="category-image-app" src={appImage} alt="App" />
                         <p className="category-description">
                             App/Pharmacy Portal
                 </p>
@@ -44,7 +44,7 @@ function How() {
 
                     <div className="category" onClick={() => handleCategoryClick({ title: 'The Drone' })}>
                         <h2 className="category-title">Drone</h2>
-                        <img className="category-image" src={droneImage} alt="Drone" />
+                        <img className="category-image-drone" src={droneImage} alt="Drone" />
                         <p className="category-description">
                             Drone
                 </p>
@@ -52,7 +52,7 @@ function How() {
 
                     <div className="category" onClick={() => handleCategoryClick({ title: 'Drone Box System' })}>
                         <h2 className="category-title">Payload Delivery System</h2>
-                        <img className="category-image" src={droneBoxImage} alt="Drone Box" />
+                        <img className="category-image-box" src={droneBoxImage} alt="Drone Box" />
                         <p className="category-description">
                             Payload System
                 </p>

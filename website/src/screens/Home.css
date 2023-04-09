@@ -267,7 +267,7 @@ button:hover {
 }
 
 .app-features-image-rounded img {
-  border-radius: 1.5rem; /* adjust this value to control the rounding of the corners */
+  border-radius: 1.5rem; 
 }
 
 .imageContainer {

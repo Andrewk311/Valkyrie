@@ -78,7 +78,24 @@
   margin-bottom: 1rem;
 }
 
-.category-image {
+.category-image-app {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  margin-bottom: 1rem;
+  border-radius: 5px;
+  border-radius: 1.5rem;
+}
+
+.category-image-drone {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  margin-bottom: 1rem;
+  border-radius: 5px;
+}
+
+.category-image-box {
   width: 100%;
   height: auto;
   object-fit: cover;
