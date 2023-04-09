@@ -9,6 +9,11 @@ function How() {
 
     const navigate = useNavigate();
     const [selectedCategory, setSelectedCategory] = useState(null);
+    const topRef = useRef(null);
+
+    useEffect(() => {
+        topRef.current.scrollIntoView();
+      }, []);
 
     function handleAboutUsClick() {
         navigate('/AboutUs')
@@ -24,6 +29,7 @@ function How() {
 
     return (
         <div className="HowBuilt">
+            <div ref={topRef} />
             <header className="howBuiltHeader">
                 <button className="button-header button-margin-howBuilt" onClick={handleHomeClick}>
                     Go Back
