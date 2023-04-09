@@ -3,15 +3,12 @@ import { View, Button} from "react-native";
 import { FlatList, StyleSheet } from 'react-native';
 import * as React from 'react';
 import { Product } from "../../components/Product";
-import { getProducts } from "../../services/ProductsService";
 import { CartContext } from "./CartContext";
 import { getAllInventory, getInventoriesByPartitionKey } from './../../services/ListInventories';
 import { API } from 'aws-amplify';
   
 const Pharmacy = (props) => {
   const { addItemToCart, getItemsCount } = useContext(CartContext);
-  const [product, setProduct] = useState({});
-  const [products, setProducts] = useState([]);
   const [inventories, setInventories] = useState([]);
 
   useEffect(() => {

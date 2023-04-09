@@ -1,8 +1,10 @@
 import React, { useEffect, useState } from "react";
 import { Text, View, Button } from "react-native";
+import { FlatList, StyleSheet } from 'react-native';
 import { Ionicons } from "@expo/vector-icons";
 import { fetchOrderHistoryByEmail } from '../../services/listOrderHistory';
 import { Auth } from 'aws-amplify';
+import { Order } from "../../components/Order";
 
   
 const OrderHistory = (props) => {
@@ -39,12 +41,23 @@ const OrderHistory = (props) => {
     console.log(orderHistory);
   }
 
+  function renderProduct({item: order}) {
     return (
-      <View style={{ flex: 1, alignItems: "center", justifyContent: "center" }}>
-        <Text style={{ color: "#006600", fontSize: 40 }}>Order History!</Text>
-        <Ionicons name="ios-settings-sharp" size={80} color="#006600" />
-        <Button title="checkOrders" onPress={checkOrderHistory}></Button>  
-      </View>
+      <Order {...order}
+      />
+    );
+  }
+
+  return (
+    <View style={{backgroundColor:"rgba(227,55,55,1)"}}>
+    <FlatList
+      style={styles.productsList}
+      contentContainerStyle={styles.productsListContainer}
+      keyExtractor={(item) => item.name}
+      data={orderHistory}
+      renderItem={renderProduct}
+    />
+    </View>
     );
   };
 
@@ -63,3 +76,12 @@ OrderHistory.navigationOptions = ({ navigation: { goBack } }) => {
   }
 
 export default OrderHistory;
+
+const styles = StyleSheet.create({
+  productsListContainer: {
+    backgroundColor:"rgba(227,55,55,1)",
+    height:'100%',
+    alignItems:'center',
+  },
+
+});
