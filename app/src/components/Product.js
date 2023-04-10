@@ -2,9 +2,28 @@ import React from 'react';
 import {Text, Image, View, StyleSheet, TouchableOpacity, Dimensions} from 'react-native';
 import { Ionicons } from "@expo/vector-icons";
 export function Product({product_inventory, product_name, product_price, product_type, onPress}) {
+    var maps = {
+    "Accutane": require("./../ProductImages/Accutane.png"),
+    "Advil": require("./../ProductImages/Advil.png"),
+    "Afrin": require("./../ProductImages/Afrin.png"),
+    "Albuterol": require("./../ProductImages/Albuterol.png"),
+    "Ashwagandha": require("./../ProductImages/Ashwagandha.png"),
+    "Bandages": require("./../ProductImages/Bandages.png"),
+    "Benadryl": require("./../ProductImages/Benadryl.png"),
+    "Covid Test": require("./../ProductImages/CovidTest.png"),
+    "Excederin": require("./../ProductImages/Excederin.png"),
+    "Isopropyl": require("./../ProductImages/Isopropyl.png"),
+    "Lipitor": require("./../ProductImages/Lipitor.png"),
+    "Motrin": require("./../ProductImages/Motrin.png"),
+    "Omega-3 Fish Oil": require("./../ProductImages/Omega-3FishOil.png"),
+    "Tylenol": require("./../ProductImages/Tylenol.png"),
+    "Vicodin": require("./../ProductImages/Vicodin.png"),
+    "Vitamin D": require("./../ProductImages/VitaminD.png"),
+    "Xanax": require("./../ProductImages/Xanax.png"),
+  };
   return (
     <View style={styles.category}>
-            <Image style={styles.tinyLogo}/>
+            <Image style={styles.tinyLogo} source={maps[product_name]}/>
             <View style={{padding:40, alignItems:'center', width:250,}}>
             <Text style={styles.productTitle}>{product_name}</Text>
             <Text style={{fontSize:20, marginTop:10}}>${product_price}</Text>
