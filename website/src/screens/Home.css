@@ -465,7 +465,7 @@ button:hover {
 }
 
 /* Media Query for MacBook Pro screens */
-@media only screen and (min-device-width: 1440px) and (max-device-width: 1440px) and (min-device-height: 900px) and (max-device-height: 900px) {
+/* @media only screen and (min-device-width: 1440px) and (max-device-width: 1440px) and (min-device-height: 900px) and (max-device-height: 900px) {
 
   .carousel-image {
     max-width: 35%;
@@ -486,8 +486,7 @@ button:hover {
     align-items: center;
     justify-content: space-between;
     padding: 3.5rem;
-    background-color: var(--primary-color); /* change this line */
-  }
+    background-color: var(--primary-color);
   
 
-}
+} */

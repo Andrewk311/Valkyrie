@@ -129,10 +129,15 @@
 
 .statisticsContainer {
   display: flex;
-  align-items: center;
-  justify-content: center;
-  /* flex-wrap: wrap;
-  gap: 20px; */
+  flex-direction: column;
+}
+
+.chartsContainer {
+  display: flex;
+  justify-content: space-around;
+  gap:0%;
+  margin-top: 20px;
+  order: 2;
 }
 
 .chart {
@@ -153,34 +158,22 @@
   order: 3;
 }
 
-.chartImage1 {
-  width: 450px;
-  height: auto;
-  margin-left: -25px;
-  margin-top: 40px;
+.chartImage1{
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top:11%;
 }
 
 .chartImage2 {
-  width: 450px;
-  height: auto;
-  margin-left: -115px;
-  margin-top: 30px;
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
 }
 
-.imageCaption1 {
-  font-size: 12px;
-  text-align: center;
-  margin-top: 4px;
-  margin-bottom: 0;
-  width:130%;
-}
-.imageCaption2 {
-  font-size: 12px;
-  text-align: center;
-  margin-top: 4px;
-  margin-bottom: 0;
-  width:130%;
-  margin-left: -26%;
+.imageCaption1, .imageCaption2 {
+  margin-left: 0;
+  width: 100%;
 }
 
 .carousel-container-about {
@@ -254,7 +247,7 @@
 }
 
 /* Media Query for MacBook Pro screens */
-@media only screen and (min-width: 1440px) and (max-width: 2560px) {
+/* @media only screen and (min-width: 1440px) and (max-width: 2560px) {
   .teamMembers {
     justify-content: space-around;
   }
@@ -277,7 +270,7 @@
   }
 
   .chart {
-    width: 45%; /* Adjust the width to fit both charts side by side */
+    width: 45%; 
   }
 
   .chartImage1{
@@ -297,4 +290,4 @@
     margin-left: 0;
     width: 100%;
   }
-}
+} */
