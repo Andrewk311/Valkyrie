@@ -10,44 +10,6 @@ import Home from './screens/Home'
 
 Amplify.configure(config)
 
-const theme = {
-  name: 'My Custom Theme',
-  tokens: {
-    colors: {
-      primary: '#007bff',
-      secondary: '#6c757d',
-    },
-    components: {
-      button: {
-        fontWeight: 'bold',
-        borderRadius: '9999px',
-        padding: '10px 20px',
-        borderWidth: '2px',
-        borderStyle: 'solid',
-        borderColor: {
-          value: 'var(--amplify-colors-primary)',
-        },
-        backgroundColor: {
-          value: 'var(--amplify-colors-primary)',
-        },
-        color: {
-          value: 'var(--amplify-colors-white)',
-        },
-        _hover: {
-          backgroundColor: {
-            value: 'var(--amplify-colors-primary-800)',
-          },
-        },
-        _focus: {
-          backgroundColor: {
-            value: 'var(--amplify-colors-primary-800)',
-          },
-        },
-      },
-    },
-  },
-};
-
 function App() {
   return (
     <BrowserRouter>
