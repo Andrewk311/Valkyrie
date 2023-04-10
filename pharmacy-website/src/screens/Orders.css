@@ -68,11 +68,14 @@
   box-shadow: 0 1px 4px rgba(0, 0, 0, 0.3);
 }
 
-.tableWrapper thead {
+.headerTitles{
   position: sticky;
-  top: 0;
-  background-color: white;
-  z-index: 100;
+  width:100%;
+
+}
+
+.th {
+  border-right: white;
 }
 
 /* .tableWrapper2 {

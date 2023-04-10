@@ -103,7 +103,8 @@ function Inventory() {
       <p style={{ color: '#FFFFFF', alignSelf: 'flex-start', marginLeft: 20, fontSize: 'calc(25px + 2vmin)', fontWeight: 'bold', marginTop: 30, marginBottom: 15 }}>Inventory</p>
       <hr style={{ border: '1px solid white', width: '98%' }}></hr>
       <div className="table-container-I">
-        <table className="tableWrapper-I">
+        <div className="table-body-container-I">
+          <table className="tableWrapper-I">
           <thead>
             <tr key={"header"}>
               <th className='th'>Product Name</th>
@@ -113,9 +114,6 @@ function Inventory() {
               <th className='th'>Product Type</th>
             </tr>
           </thead>
-        </table>
-        <div className="table-body-container-I">
-          <table className="tableWrapper-I">
             <tbody>
               {inventories.map((item) => (
                 <tr key={item.id}>

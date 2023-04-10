@@ -165,23 +165,19 @@ function Orders() {
       <p style={{ color: '#FFFFFF', alignSelf: 'flex-start', marginLeft: 20, fontSize: 'calc(25px + 2vmin)', fontWeight: 'bold', marginTop: 30, marginBottom: 15 }}>Orders</p>
       <hr style={{ border: '1px solid white', width: '98%' }}></hr>
       <div className="table-container">
-        <table className="tableWrapper">
-          <thead>
-            <tr key={"header"}>
+        <div className="table-body-container">
+          <table className="tableWrapper">
+            <tbody>
+            <tr key={"header"} className="headerTitles">
               <th className='th'>Order Number</th>
               <th className='th'>Email</th>
               <th className='th'>Order Location</th>
-              <th className='th'>Order Status</th>
               <th className='th'>Order Details</th>
+              <th className='th'>Order Specs.</th>
               <th className='th'>Approval Status</th>
               <th className='th'>Transit Status</th>
               <th className='th'>Active Status</th>
             </tr>
-          </thead>
-        </table>
-        <div className="table-body-container">
-          <table className="tableWrapper">
-            <tbody>
               {orders.map((order) => (
                 <tr key={order.id}>
                   <td className='td'>{order['order_number']}</td>
