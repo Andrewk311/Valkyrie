@@ -7,18 +7,21 @@ import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import Orders from './screens/Orders'
 import Inventory from './screens/Inventory'
 import Home from './screens/Home'
+import { WebSocketProvider } from './WebSocketContext';
 
 Amplify.configure(config)
 
 function App() {
   return (
-    <BrowserRouter>
-      <Routes>
-        <Route path ="/" element={<Home />} />
-        <Route path ="/orders" element={<Orders />} />
-        <Route path ="/inventory" element={<Inventory />} />
-      </Routes>
-    </BrowserRouter>
+    <WebSocketProvider>
+      <BrowserRouter>
+        <Routes>
+          <Route path ="/" element={<Home />} />
+          <Route path ="/orders" element={<Orders />} />
+          <Route path ="/inventory" element={<Inventory />} />
+        </Routes>
+      </BrowserRouter>
+    </WebSocketProvider>
   );
 }
 

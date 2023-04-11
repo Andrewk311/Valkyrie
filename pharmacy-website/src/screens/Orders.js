@@ -1,8 +1,9 @@
 import './Orders.css';
 import { getOrdersByNumber } from './../services/ListOrders';
-import { useEffect, useState } from 'react';
+import { useEffect, useState, useContext } from 'react';
 import { API } from 'aws-amplify';
 import { updateOrder } from './../services/updateOrderDetails';
+import { WebSocketContext } from '../WebSocketContext';
 
 function Orders() {
 
@@ -13,47 +14,52 @@ function Orders() {
   const [weight, SetWeight] = useState(0);
   const [message, setMessage] = useState('');
   const [type, setType] = useState("");
-  const [websocket, setWebsocket] = useState(null);
+  const {websocket, setWebsocket} = useContext(WebSocketContext);
   var isActive = true; // temp var until isActive is made 
 
 
-  useEffect(() => {
-    const ws = new WebSocket('wss://07k3svmpdh.execute-api.us-east-1.amazonaws.com/production');
+  // useEffect(() => {
+  //   const ws = new WebSocket('wss://07k3svmpdh.execute-api.us-east-1.amazonaws.com/production');
 
-    ws.onopen = () => {
-      console.log('Connected to WebSocket');
-      setWebsocket(ws);
-      ws.send(JSON.stringify({ type: 'email', email: 'pharmacist' }));
-      setInterval(() => {
-        if (ws.readyState === WebSocket.OPEN) {
-          ws.send(JSON.stringify({ type: 'ping' }));
-          console.log('sent ping');
-        }
-      }, 60000);  //sends message to websocket every 60 seconds to stay connected. Need to move this code to the home page soon.
-    };
+  //   ws.onopen = () => {
+  //     console.log('Connected to WebSocket');
+  //     setWebsocket(ws);
+  //     ws.send(JSON.stringify({ type: 'email', email: 'pharmacist' }));
+  //     setInterval(() => {
+  //       if (ws.readyState === WebSocket.OPEN) {
+  //         ws.send(JSON.stringify({ type: 'ping' }));
+  //         console.log('sent ping');
+  //       }
+  //     }, 60000);  //sends message to websocket every 60 seconds to stay connected. Need to move this code to the home page soon.
+  //   };
 
-    ws.onclose = () => {
-      console.log('WebSocket closed');
-    };
+  //   ws.onclose = () => {
+  //     console.log('WebSocket closed');
+  //   };
 
-    ws.onmessage = (event) => {
-      const message = JSON.parse(event.data);
-      console.log('message received: ', message);
+  //   ws.onmessage = (event) => {
+  //     const message = JSON.parse(event.data);
+  //     console.log('message received: ', message);
 
-      if (message.type === 'pong') {
-        console.log('pong received');
-        return;
-      }
+  //     if (message.type === 'pong') {
+  //       console.log('pong received');
+  //       return;
+  //     }
 
-      window.location.reload();
-    }
+  //     // if(message.action==="orderStatusUpdate" && message.data.status === "Order Delivered"){
+  //     //   updateOrder()
+  //     // }
 
-    return () => {
-      if (ws) {
-        ws.close();
-      }
-    };
-  }, []);
+  //     window.location.reload();
+  //     // console.log(message);
+  //   }
+
+  //   return () => {
+  //     if (ws) {
+  //       ws.close();
+  //     }
+  //   };
+  // }, []);
 
   const sendOrderStatusUpdate = (status, email) => {
     if (websocket && websocket.readyState === WebSocket.OPEN) {
