@@ -12,7 +12,9 @@ Amplify.configure(config)
 
 LogBox.ignoreLogs([
   "You should only render one navigator explicitly in your app",
-  "Sending 'onAnimatedValueUpdate' with no listeners registered."
+  "Sending `onAnimatedValueUpdate` with no listeners registered.",
+  "Require cycle: src/screens/browseScreens/CartContext.js -> src/screens/browseScreens/OtherScreen.js -> src/screens/browseScreens/CartContext.js",
+  'Warning: Each child in a list should have a unique "key" prop.'
 ]);
 
 export default function App() {
