@@ -13,15 +13,16 @@ Amplify.configure(config)
 
 function App() {
   return (
-    <WebSocketProvider>
-      <BrowserRouter>
+    
+    <BrowserRouter>
+      <WebSocketProvider>
         <Routes>
           <Route path ="/" element={<Home />} />
           <Route path ="/orders" element={<Orders />} />
           <Route path ="/inventory" element={<Inventory />} />
         </Routes>
-      </BrowserRouter>
-    </WebSocketProvider>
+      </WebSocketProvider>
+    </BrowserRouter>
   );
 }
 

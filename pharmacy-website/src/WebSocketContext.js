@@ -1,9 +1,13 @@
 import React, { createContext, useState, useEffect } from 'react';
+import { useLocation } from 'react-router-dom';
 
 export const WebSocketContext = createContext();
 
 export const WebSocketProvider = ({ children }) => {
     const [websocket, setWebsocket] = useState(null);
+    const location = useLocation();
+    const [showPopup, setShowPopup] = useState(false);
+    const togglePopup = () => setShowPopup(!showPopup);
 
     useEffect(() => {
         const ws = new WebSocket('wss://07k3svmpdh.execute-api.us-east-1.amazonaws.com/production');
@@ -27,18 +31,24 @@ export const WebSocketProvider = ({ children }) => {
         ws.onmessage = (event) => {
             const message = JSON.parse(event.data);
             console.log('message received: ', message);
- 
+
             if (message.type === 'pong') {
                 console.log('pong received');
                 return;
             }
 
-            // if(message.action==="orderStatusUpdate" && message.data.status === "Order Delivered"){
-            //   updateOrder()
-            // }
+            // Show popup when a new order is received
+            var message2 = JSON.parse(message);
+            if (message2.data.status === 'Order Placed') {
+                console.log('This works');
+                setShowPopup(true);
+                setTimeout(() => setShowPopup(false), 5000); // Hide popup after 5 seconds
+            }
 
-            window.location.reload();
-            // console.log(message);
+            if (location.pathname === '/orders') {
+                window.location.reload();
+            }
+
         }
 
         return () => {
@@ -46,12 +56,35 @@ export const WebSocketProvider = ({ children }) => {
                 ws.close();
             }
         };
-    }, []);
+    }, [location]);
 
     return (
-        <WebSocketContext.Provider value={{ websocket, setWebsocket }}>
-            {children}
-        </WebSocketContext.Provider>
+        <>
+            {showPopup && (
+                <Popup message="A new order has been placed."/>
+            )}
+            <WebSocketContext.Provider value={{ websocket, setWebsocket }}>
+                {children}
+            </WebSocketContext.Provider>
+        </>
     );
 
 };
+
+const Popup = ({ message }) => (
+    <div
+      style={{
+        position: 'fixed',
+        top: 0,
+        left: 0,
+        width: '100%',
+        padding: '1rem',
+        background: 'green',
+        color: 'white',
+        textAlign: 'center',
+        zIndex: 1000,
+      }}
+    >
+      {message}
+    </div>
+  );
