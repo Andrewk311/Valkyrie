@@ -22,6 +22,7 @@ const Tracking = (props) => {
   const [latitude, setLatitude] = useState('');
   const [longitude, setLongitude] = useState('');
   const [attributesLoaded, setAttributesLoaded] = useState(false);
+  const [email, setEmail] = useState('');
   
   useEffect(() => {
     async function getUserInfoAndSetCoordinates() {
@@ -30,6 +31,7 @@ const Tracking = (props) => {
       //console.log(user)
       setLatitude(parseFloat(user.attributes['custom:latitude']));
       setLongitude(parseFloat(user.attributes['custom:longitude']));
+      setEmail(user.attributes.email);
       console.log(latitude);
     }
     getUserInfoAndSetCoordinates();
@@ -83,6 +85,10 @@ const Tracking = (props) => {
   }, [orderStatus]);
 
   
+  function sendDeliveredStatus(){
+    var test = { "action": "orderStatusUpdate", "data": { "status": "Order Delivered", "email": email }};
+    websocket.send(JSON.stringify(test));
+  }
 
     return (
       <View style={{ flex: 1, alignItems: "center", justifyContent: "center", backgroundColor: "rgba(227,55,55,1)", flex: 1}}>
@@ -99,8 +105,8 @@ const Tracking = (props) => {
             initialRegion={{
               latitude: latitude,
               longitude: longitude,
-              latitudeDelta: 0.0322,
-              longitudeDelta: 0.0321,
+              latitudeDelta: 0.0122,
+              longitudeDelta: 0.0121,
             }}
           >
             <Marker
@@ -185,8 +191,10 @@ const Tracking = (props) => {
                 source={require('./../../customIcons/RedLine.png')} />
                 <><Image style={styles.tinyLogo}
               source={require('./../../customIcons/GrayCircle.png')} />
+              <Button title="verify" onPress={sendDeliveredStatus}/>
             </>
             </>
+            
               : 
               ''}
 
