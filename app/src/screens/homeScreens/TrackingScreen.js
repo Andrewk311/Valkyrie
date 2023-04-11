@@ -8,6 +8,8 @@ import { Auth } from 'aws-amplify';
 import { WebSocketContext } from "../../WebSocketContext";
 import { CartContext } from "../browseScreens/CartContext";
 import home from './../../customIcons/HomeMarker.png';
+import { updateOrder } from '../../services/updateOrder';
+
 
 
 const win = Dimensions.get('window');
@@ -86,6 +88,7 @@ const Tracking = (props) => {
 
   
   function sendDeliveredStatus(){
+    updateOrder(orderNumber, false, false);
     var test = { "action": "orderStatusUpdate", "data": { "status": "Order Delivered", "email": email }};
     websocket.send(JSON.stringify(test));
   }
