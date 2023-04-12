@@ -69,7 +69,7 @@ const components = {
       const { toSignIn } = useAuthenticator();
 
       return (
-        <View textAlign="center">
+        <div textAlign="center">
           <button
             fontWeight="normal"
             onClick={toSignIn}
@@ -78,7 +78,7 @@ const components = {
           >
             Back to Sign In
           </button>
-        </View>
+        </div>
       );
     },
   },
