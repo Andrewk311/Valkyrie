@@ -58,6 +58,53 @@
   
 }
 
+.amplify-flex {
+  background-color: #E33737;
+  align-content: center;
+}
+
+.amplify-visually-hidden {
+  color: white;
+  font-weight: bold;
+}
+.amplify-label {
+  color: white;
+  font-weight: 200;
+}
+.amplify-flex > amplify-field{
+  background-color: #AA9798;
+}
+.amplify-tabs {
+  background-color: white;
+}
+.amplify-button {
+  background-color: #AA9798;
+  border-width: 0;
+  border-radius: 12px;
+  margin-right: 10px;
+  margin-left:10px;
+  padding: 7px;
+  margin-top:10px;
+}
+
+.div > button {
+  background-color: #AA9798;
+}
+.section:not(*) { color: gray } 
+.data-amplify-router-content {
+  align-items: center;
+  align-content: center;
+  justify-content:center;
+}
+.amplify-tabs-item {
+  background-color: #AA9798;
+  border-width: 0;
+  border-radius: 12px;
+  margin-right: 10px;
+  margin-left:10px;
+  padding: 7px;
+  margin-top:10px;
+}
 .signOutButton {
   background-color: white;
   border-radius: 25px;

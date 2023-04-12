@@ -4,6 +4,7 @@ import {Auth} from 'aws-amplify';
 import { withAuthenticator, Authenticator, SignIn, SignUp, useTheme, useAuthenticator, Heading} from '@aws-amplify/ui-react';
 import {useNavigate} from 'react-router-dom';
 import dog from './../dallas2.JPG';
+import logo from './../logo.png';
 
 const components = {
   // Header() {
@@ -26,13 +27,17 @@ const components = {
       </div>
     );
   },
-
+  // WORKING HEREEEE
   SignIn: {
     Header() {
       return (
-        <h3 style={{padding: "32px 0 0 32px"}}>
-          Sign in to your account
-        </h3>
+        <div style={{textAlign:'center', alignContent: "center", marginTop: "-3%"}}>
+          <p style={{color:'#92989B', fontWeight:'bold',fontSize:25}}>Valkyrie Pharmacy Portal</p>
+          <p style={{backgroundColor:'#E33737', marginBottom:'-3%',}}><img src={logo} style={{width:'150px', height:'90px', marginBottom:'8%', marginTop:'3%'}}></img></p>
+          
+        </div>
+        
+
       );
     },
     Footer() {
@@ -57,12 +62,11 @@ const components = {
       const { tokens } = useTheme();
 
       return (
-        <Heading
-          padding={`${tokens.space.xl} 0 0 ${tokens.space.xl}`}
-          level={3}
-        >
-          Create a new account
-        </Heading>
+        <div style={{textAlign:'center', alignContent: "center", marginTop: "-3%"}}>
+          <p style={{color:'#92989B', fontWeight:'bold',fontSize:25}}>Valkyrie Pharmacy Portal</p>
+          <p style={{backgroundColor:'#E33737', marginBottom:'-3%',}}><img src={logo} style={{width:'150px', height:'90px', marginBottom:'8%', marginTop:'3%'}}></img></p>
+
+        </div>
       );
     },
     Footer() {
@@ -260,4 +264,4 @@ export default function App() {
             </div>
     </Authenticator>
   );
-}
+};
