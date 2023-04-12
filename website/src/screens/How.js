@@ -14,6 +14,10 @@ import settings from './../Images/HowItBuiltPics/Settings2.PNG';
 import deliveryLocationGif from './../Images/HowItBuiltPics/DeliveryLocation.gif';
 import googleMapsLogo from './../Images/HowItBuiltPics/GoogleMapsApi.png';
 import expo from './../Images/Logos/ExpoLogo.png'
+import productDB from './../Images/HowItBuiltPics/ProductDB.jpg';
+import pharmPortalInventory from './../Images/HowItBuiltPics/PharmPortalInventory.jpg';
+import browseScreenGif from './../Images/HowItBuiltPics/BrowseScreenGif2.gif';
+
 
 function How() {
 
@@ -142,7 +146,19 @@ function How() {
 
                                     {selectedFeature === "product" && (
                                         <div className="feature-section">
-                                            {/* Product Screens/Cart content */}
+                                            <h3>Product Screens/Cart:</h3>
+                                            <div className="feature-content">
+                                                <div className="image-container">
+                                                    <img className="feature-image-productDB" src={productDB} alt="Image 1" />
+                                                    <img className="feature-image-productPharm" src={pharmPortalInventory} alt="Image 2" />
+                                                    <img className="feature-image whiteAppImages" src={browseScreenGif} alt="gif"/>
+                                                    <img className="feature-image whiteAppImages" src={deliveryLocationGif} alt="gif"/>
+                                                </div>
+                                                <p className="feature-description">
+                                                    {/* Add the text description here */}
+                                                    Talk about how we load all the product, show ordering and cart stuff as well.
+                                                </p>
+                                            </div>
                                         </div>
                                     )}
 
