@@ -1,7 +1,7 @@
 import './Home.css';
-import React, {View, Text, Image, Button, Heading} from 'react';
+import React, {View, Text, Image, Button} from 'react';
 import {Auth} from 'aws-amplify';
-import { withAuthenticator, Authenticator, SignIn, SignUp, useTheme, useAuthenticator} from '@aws-amplify/ui-react';
+import { withAuthenticator, Authenticator, SignIn, SignUp, useTheme, useAuthenticator, Heading} from '@aws-amplify/ui-react';
 import {useNavigate} from 'react-router-dom';
 import dog from './../dallas2.JPG';
 
