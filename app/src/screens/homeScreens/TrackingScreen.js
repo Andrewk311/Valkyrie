@@ -108,8 +108,8 @@ const Tracking = (props) => {
             initialRegion={{
               latitude: latitude,
               longitude: longitude,
-              latitudeDelta: 0.0122,
-              longitudeDelta: 0.0121,
+              latitudeDelta: 0.0072,
+              longitudeDelta: 0.0071,
             }}
           >
             <Marker
