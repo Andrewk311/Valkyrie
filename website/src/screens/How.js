@@ -134,7 +134,7 @@ function How() {
                                                 </div>
                                                 <p className="feature-description">
                                                     {/* Add the text description here */}
-                                                    The delivery address, latitude, and longitude is all saved as cognito user attributes for the current logged in user, saving between sessions. On the settings page, when the user inputs their address and presses "Enter", it is sent through the Google Maps Api to obtain a pair of coordinates. Then, an Expo mapview component opens with a marker set at that exact location, giving the user the ability to drag it to the exact spot where they want the package to be dropped off. Once "Confirm Delivery Location" is pressed, the new coordinates of that marker are saved to the user's cognito attributes. Finally, when the user opens up the tracking page, the surrounding area will be around where the initial marker was set.
+                                                    Users' delivery information, including address and coordinates, is saved in their Cognito user attributes for future sessions. Upon entering their address on the settings page and submitting it, the Google Maps API is used to retrieve the coordinates. An Expo mapview is then displayed with a draggable marker that allows users to fine-tune the delivery location. When the user confirms the delivery location, the new coordinates are saved to their Cognito attributes. The tracking page displays the surrounding area around the initial marker.
                                                 </p>
                                             </div>
                                         </div>
