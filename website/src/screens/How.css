@@ -1,3 +1,16 @@
+:root {
+  --primary-color: #1a73e8;
+  --secondary-color: #0f58c9;
+  --text-color: #333;
+  --bg-color: #f1f1f1;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  color: var(--text-color);
+}
+
+
 .HowBuilt {
   font-family: Arial, sans-serif;
 }
@@ -153,22 +166,30 @@
 
 .feature-section {
   margin-bottom: 1rem;
+  
 }
 
 .feature-content {
   display: flex;
   flex-direction: row;
-  /* flex-wrap: wrap; */
+  flex-wrap: wrap;
   align-items: flex-start;
-  justify-content: flex-start;
-  gap: 1rem;
+  justify-content: space-between;
+  gap: 3rem;
+  background-color: #e6ecf5; /* Light blue-gray background color */
+  padding: 1.5rem; /* Add padding for better spacing */
+  border-radius: 5px; /* Add border-radius for a softer look */
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1); /* Add a subtle box shadow for depth */
+  margin-bottom: 2rem; /* Increase margin for better spacing between feature sections */
+  
 }
 
 .image-container {
   display: flex;
   align-items: center;
-  gap: 1rem;
-  width: 100%;
+  gap: 2rem;
+  width: 50%;
+  /* flex-wrap: nowrap; */
 }
 
 .feature-image {
@@ -179,17 +200,44 @@
   border-radius: 5px;
 }
 
+.feature-image-pharmLog {
+  flex: 1 1 40%;
+  max-width: 80%;
+  height: auto;
+  object-fit: cover;
+  border-radius: 5px;
+}
+
+.feature-image-userAtt {
+  flex: 1 1 40%;
+  max-width: 100%;
+  height: auto;
+  object-fit: cover;
+  border-radius: 5px;
+}
+
 .feature-description {
   flex: 1 1 50%;
-  font-size: 0.8rem;
-  line-height: 1.4;
-  margin-top: 6%;
-  margin-right:35%;
+  font-size: 1rem;
+  line-height: 1.8;
+  padding: 1rem; /* Add padding for better spacing */
+  border-radius: 5px; /* Add border-radius for a softer look */
+  background-image: linear-gradient(to right, rgba(255, 255, 255, 0.3), rgba(255, 255, 255, 0.7)); /* Add a subtle background gradient */
+  backdrop-filter: blur(5px); /* Soften the background behind the gradient */
+  font-weight: bold;
+}
+
+.logo-container {
+  display:flex;
+  flex-direction: column;
+  width:30%;
+  gap: 2.5rem;
+  margin-right: -20%;
 }
 
 .whiteAppImages {
   border-radius: 1.5rem;
-  border: 2px solid black;
+  /* border: 2px solid black; */
 }
 
 .features-and-tabs {
@@ -205,4 +253,19 @@
   display: flex;
   gap: 5px;
   /* margin-bottom: 10%; */
+}
+
+.feature-tabs button {
+  background-color: var(--primary-color);
+  border: none;
+  color: white;
+  padding: 10px 15px;
+  font-size: 0.8rem;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s ease-in-out;
+}
+
+.feature-tabs button:hover {
+  background-color: var(--secondary-color);
 }
