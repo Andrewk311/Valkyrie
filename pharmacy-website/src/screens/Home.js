@@ -1,5 +1,5 @@
 import './Home.css';
-import React, {View, Text, Image, Button} from 'react';
+import React from 'react';
 import {Auth} from 'aws-amplify';
 import { withAuthenticator, Authenticator, SignIn, SignUp, useTheme, useAuthenticator, Heading} from '@aws-amplify/ui-react';
 import {useNavigate} from 'react-router-dom';
@@ -70,14 +70,14 @@ const components = {
 
       return (
         <View textAlign="center">
-          <Button
+          <button
             fontWeight="normal"
             onClick={toSignIn}
             size="small"
             variation="link"
           >
             Back to Sign In
-          </Button>
+          </button>
         </View>
       );
     },
@@ -95,7 +95,7 @@ const components = {
       );
     },
     Footer() {
-      return <Text>Footer Information</Text>;
+      return <p>Footer Information</p>;
     },
   },
   SetupTOTP: {
@@ -111,7 +111,7 @@ const components = {
       );
     },
     Footer() {
-      return <Text>Footer Information</Text>;
+      return <p>Footer Information</p>;
     },
   },
   ConfirmSignIn: {
@@ -127,7 +127,7 @@ const components = {
       );
     },
     Footer() {
-      return <Text>Footer Information</Text>;
+      return <p>Footer Information</p>;
     },
   },
   ResetPassword: {
@@ -143,7 +143,7 @@ const components = {
       );
     },
     Footer() {
-      return <Text>Footer Information</Text>;
+      return <p>Footer Information</p>;
     },
   },
   ConfirmResetPassword: {
@@ -159,7 +159,7 @@ const components = {
       );
     },
     Footer() {
-      return <Text>Footer Information</Text>;
+      return <p>Footer Information</p>;
     },
   },
 };
