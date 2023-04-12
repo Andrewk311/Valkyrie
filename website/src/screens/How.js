@@ -100,7 +100,7 @@ function How() {
                                         <button onClick={() => handleFeatureClick("delivery")}>Delivery Address Confirmation</button>
                                         <button onClick={() => handleFeatureClick("product")}>Product Screens/Cart</button>
                                         <button onClick={() => handleFeatureClick("orderStatus")}>Order Status Updates</button>
-                                        <button onClick={() => handleFeatureClick("tracking")}>Tracking</button>
+                                        <button onClick={() => handleFeatureClick("tracking")}>Tracking/Drone Flight</button>
                                     </div>
                                     {/* App/Pharmacy Portal content */}
                                     {selectedFeature === "signup" && (
@@ -164,13 +164,47 @@ function How() {
 
                                     {selectedFeature === "orderStatus" && (
                                         <div className="feature-section">
-                                            {/* Order Status Updates content */}
+                                            <h3>Order Status Updates:</h3>
+                                            <div className="feature-content">
+                                                <div className="image-container">
+                                                    <img className="feature-image-userAtt" src={userAttributes} alt="Image 1" />
+                                                    <img className="feature-image whiteAppImages" src={settings} alt="Image 2" />
+                                                    <img className="feature-image whiteAppImages" src={locationConfirm} alt="Image 3" />
+                                                    <img className="feature-image whiteAppImages" src={deliveryLocationGif} alt="gif" />
+                                                    <div className="logo-container">
+                                                        <img className="feature-image logo-image" src={cognito} alt="Image 1" />
+                                                        <img className="feature-image logo-image" src={expo} alt="Image 2" />
+                                                        <img className="feature-image logo-image" src={googleMapsLogo} alt="Image 3" />
+                                                    </div>
+                                                </div>
+                                                <p className="feature-description">
+                                                    {/* Add the text description here */}
+                                                    The order status updates between the app and pharmacy portal are managed through an AWS API Gateway WebSocket, AWS Lambdas for routing, a DynamoDB table for orders, and a DynamoDB table for connection data. The WebSocket has a connect route to store user data, an orderStatusUpdate route for sending personalized order updates to users, an email route for processing JSON emails, and a ping route to maintain the connection. When a user places an order, the DynamoDB table updates, and a JSON with status "Order Placed" is sent to the pharmacist. The pharmacist's table refreshes and allows sending "Order Confirmed" and "Order Shipped" messages via buttons, which update the app client. Once the order is delivered, the app notifies the pharmacy, and the order becomes inactive.
+                                                </p> 
+                                            </div>
                                         </div>
                                     )}
 
                                     {selectedFeature === "tracking" && (
                                         <div className="feature-section">
-                                            {/* Tracking content */}
+                                            <h3>Tracking/Drone Flight:</h3>
+                                            <div className="feature-content">
+                                                <div className="image-container">
+                                                    <img className="feature-image-userAtt" src={userAttributes} alt="Image 1" />
+                                                    <img className="feature-image whiteAppImages" src={settings} alt="Image 2" />
+                                                    <img className="feature-image whiteAppImages" src={locationConfirm} alt="Image 3" />
+                                                    <img className="feature-image whiteAppImages" src={deliveryLocationGif} alt="gif" />
+                                                    <div className="logo-container">
+                                                        <img className="feature-image logo-image" src={cognito} alt="Image 1" />
+                                                        <img className="feature-image logo-image" src={expo} alt="Image 2" />
+                                                        <img className="feature-image logo-image" src={googleMapsLogo} alt="Image 3" />
+                                                    </div>
+                                                </div>
+                                                <p className="feature-description">
+                                                    {/* Add the text description here */}
+                                                    Drone communication uses the Mavlink Python library in AWS Lambdas, connecting to MissionPlanner flight software. When the pharmacist confirms transit, an API Gateway triggers an AWS Lambda, sending the drone coordinates and flightplan, including a 20-second ground pause before returning. Upon initiating transit, drone position tracking starts on the tracking page. Another API Gateway REST API, running every 3 seconds, calls a Lambda to retrieve the drone's latitude and longitude, updating the map. When the drone delivers the package, the user confirms delivery, marking it as "Order Delivered."
+                                                </p> 
+                                            </div>
                                         </div>
                                     )}
                                 </div>
