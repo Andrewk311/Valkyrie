@@ -166,7 +166,6 @@ body {
 
 .feature-section {
   margin-bottom: 1rem;
-  
 }
 
 .feature-content {
@@ -187,14 +186,22 @@ body {
 .image-container {
   display: flex;
   align-items: center;
-  gap: 2rem;
+  gap: 3.5rem;
   width: 50%;
-  /* flex-wrap: nowrap; */
+  flex-wrap: nowrap;
 }
 
 .feature-image {
   flex: 1 1 40%;
   max-width: 20%;
+  height: auto;
+  object-fit: cover;
+  border-radius: 5px;
+}
+
+.logo-image {
+  flex: none; /* Override the flex properties */
+  max-width: 100%; /* Allow the logo images to use the full width */
   height: auto;
   object-fit: cover;
   border-radius: 5px;
@@ -244,11 +251,10 @@ body {
 }
 
 .logo-container {
-  display:flex;
+  display: flex;
   flex-direction: column;
-  width:30%;
   gap: 2.5rem;
-  margin-right: -20%;
+  flex-shrink: 0; 
 }
 
 .whiteAppImages {

@@ -129,12 +129,12 @@ function How() {
                                                     <img className="feature-image-userAtt" src={userAttributes} alt="Image 1" />
                                                     <img className="feature-image whiteAppImages" src={settings} alt="Image 2" />
                                                     <img className="feature-image whiteAppImages" src={locationConfirm} alt="Image 3" />
-                                                    <img className="feature-image whiteAppImages" src={deliveryLocationGif} alt="gif"/>
-                                                </div>
-                                                <div className="logo-container">
-                                                    <img className="feature-image" src={cognito} alt="Image 1" />
-                                                    <img className="feature-image" src={expo} alt="Image 2" />
-                                                    <img className="feature-image" src={googleMapsLogo} alt="Image 3" />
+                                                    <img className="feature-image whiteAppImages" src={deliveryLocationGif} alt="gif" />
+                                                    <div className="logo-container">
+                                                        <img className="feature-image logo-image" src={cognito} alt="Image 1" />
+                                                        <img className="feature-image logo-image" src={expo} alt="Image 2" />
+                                                        <img className="feature-image logo-image" src={googleMapsLogo} alt="Image 3" />
+                                                    </div>
                                                 </div>
                                                 <p className="feature-description">
                                                     {/* Add the text description here */}
@@ -151,8 +151,8 @@ function How() {
                                                 <div className="image-container">
                                                     <img className="feature-image-productDB" src={productDB} alt="Image 1" />
                                                     <img className="feature-image-productPharm" src={pharmPortalInventory} alt="Image 2" />
-                                                    <img className="feature-image whiteAppImages" src={browseScreenGif} alt="gif"/>
-                                                    <img className="feature-image whiteAppImages" src={deliveryLocationGif} alt="gif"/>
+                                                    <img className="feature-image whiteAppImages" src={browseScreenGif} alt="gif" />
+                                                    <img className="feature-image whiteAppImages" src={deliveryLocationGif} alt="gif" />
                                                 </div>
                                                 <p className="feature-description">
                                                     {/* Add the text description here */}
