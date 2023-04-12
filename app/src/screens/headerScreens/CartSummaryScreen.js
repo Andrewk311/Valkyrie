@@ -11,6 +11,25 @@ import { fetchActiveOrdersByEmail } from '../../services/listActiveOrders'
 import { getProduct } from '../../services/ProductsService';
 
 const CartSummary = (props) => {
+  var maps = {
+    "Accutane": require("./../../ProductImages/Accutane.png"),
+    "Advil": require("./../../ProductImages/Advil.png"),
+    "Afrin": require("./../../ProductImages/Afrin.png"),
+    "Albuterol": require("./../../ProductImages/Albuterol.png"),
+    "Ashwagandha": require("./../../ProductImages/Ashwagandha.png"),
+    "Bandages": require("./../../ProductImages/Bandages.png"),
+    "Benadryl": require("./../../ProductImages/Benadryl.png"),
+    "Covid Test": require("./../../ProductImages/CovidTest.png"),
+    "Excederin": require("./../../ProductImages/Excederin.png"),
+    "Isopropyl": require("./../../ProductImages/Isopropyl.png"),
+    "Lipitor": require("./../../ProductImages/Lipitor.png"),
+    "Motrin": require("./../../ProductImages/Motrin.png"),
+    "Omega-3 Fish Oil": require("./../../ProductImages/Omega-3FishOil.png"),
+    "Tylenol": require("./../../ProductImages/Tylenol.png"),
+    "Vicodin": require("./../../ProductImages/Vicodin.png"),
+    "Vitamin D": require("./../../ProductImages/VitaminD.png"),
+    "Xanax": require("./../../ProductImages/Xanax.png"),
+  };
     const {items, removeItemFromCart, getTotalPrice, addItemToCart, setLatestOrderNumber, getTotalWeight, orderNumber, addExtraItemInCart } = useContext(CartContext);
     const [attributes, setAttributes] = React.useState(null);
     const { websocket, setWebsocket } = useContext(WebSocketContext);
@@ -168,7 +187,7 @@ function renderItem({item}) {
       return (
        <View style={styles.cartLine}>
           <View style={{flexDirection:'row', height:180, alignItems:'center'}}>
-            <Image style={styles.tinyLogo}/>
+            <Image style={styles.tinyLogo} source={maps[item.name]}/>
             <View style={{flexDirection:'column', marginLeft:20}}>
               <Text style={styles.productName}>{item.name}</Text>
               <Text style={styles.productCost}>$ {item.totalPrice.toFixed(2)}</Text>

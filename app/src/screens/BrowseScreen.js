@@ -62,7 +62,7 @@ const Browse = (props) => {
                   onPress={() => props.navigation.navigate('OTC')} 
                 >         
                 <View>     
-                <Text style={styles.optionTitle}>Over the Counter </Text>
+                <Text style={styles.optionTitle}>Over the {"\n"}Counter </Text>
                 </View>
                 <Image style={styles.tinyLogo}
               source={require('./../customIcons/FirstAid.png')}
