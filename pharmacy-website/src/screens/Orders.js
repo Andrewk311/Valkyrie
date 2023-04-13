@@ -120,7 +120,7 @@ function Orders() {
         longitude: order['location']['longitude']
       };
       updateOrder(order['order_number'], order['isAccepted'], true, true);
-      // var email = order['email'];
+      var email = order['email'];
       // console.log(payload);
       // const response = await API.post('droneSendCoords', '/droneSend', {
       //   body: {
