@@ -120,15 +120,15 @@ function Orders() {
         longitude: order['location']['longitude']
       };
       updateOrder(order['order_number'], order['isAccepted'], true, true);
-      var email = order['email'];
-      console.log(payload);
-      const response = await API.post('droneSendCoords', '/droneSend', {
-        body: {
-          "latitude": payload.latitude,
-          "longitude": payload.longitude
-        }
-      });
-      console.log('API Gateway response:', response);
+      // var email = order['email'];
+      // console.log(payload);
+      // const response = await API.post('droneSendCoords', '/droneSend', {
+      //   body: {
+      //     "latitude": payload.latitude,
+      //     "longitude": payload.longitude
+      //   }
+      // });
+      // console.log('API Gateway response:', response);
       sendOrderStatusUpdate('Order Shipped', email); //sends data to app side and will refresh 
       // No need to check response.ok and response.json() here, as this is not necessary with AWS Amplify API.post
   
