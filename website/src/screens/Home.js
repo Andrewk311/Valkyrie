@@ -12,7 +12,8 @@ import tracking from './../Images/TrackOrder2.PNG';
 import store from './../Images/StoreFront2.png';
 import homescreen from './../Images/HomePage.PNG';
 import settings from './../Images/Settings.PNG';
-import orders from './../Images/PharmPortalOrders2.jpg';
+import orders from './../Images/OrderTable.png';
+import inventory from './../Images/InventoryTable.png'
 import lambdaLogo from './../Images//Logos/LambdaLogo.png';
 import reactLogo from './../Images/Logos/ReactLogo.png';
 import APIGatewayLogo from './../Images/Logos/APIGatewayLogo.png';
@@ -60,12 +61,12 @@ function Home() {
         <div className="App">
             <header className="homePageHeader">
                 <nav>
-                    <a href="https://pharmacy.valkyriedrone.io" class="portal-button">Pharm portal</a>
+                    <a href="https://pharmacy.valkyriedrone.io" class="portal-button">Pharm Portal</a>
                 </nav>
                 <p style={{ fontWeight: 'bold' }}>VALKYRIE CAPSTONE GROUP 19</p>
                 <div className="buttons-container">
                     <button className="button-header button-margin" onClick={handleAboutUsClick}>About Us</button>
-                    <button className="button-header" onClick={handleHowClick}>How its Built</button>
+                    <button className="button-header" onClick={handleHowClick}>How it's Built</button>
                 </div>
             </header>
             {/* Add a hero section with a title, subtitle and a button */}
@@ -90,8 +91,6 @@ function Home() {
                         </div>
                     </div>
                     {/* <img src={images[0]}></img> */}
-                    <button className="carousel-button prev" onClick={prevSlide}>Prev</button>
-                    <button className="carousel-button next" onClick={nextSlide}>Next</button>
                 </div>
             </section>
             {/* Add a features section with some icons, titles and descriptions */}
@@ -149,7 +148,7 @@ function Home() {
                     <p>
                         With our user-friendly app, you can easily track your drone delivery in real-time, order from a wide range of pharmacy products, and manage your prescriptions. Experience seamless access to healthcare like never before.
                     </p>
-                    <button className="button-header">Download App</button>
+                    <button className="whiteBtn">Download App</button>
                 </div>
             </section>
             <section className="pharmacy-portal">
@@ -167,59 +166,47 @@ function Home() {
                         <div className="col-md-6">
                             <div className="pharmacy-portal-image-container">
                                 <div className="pharmacy-portal-image ">
-                                    <img src={orders} alt="first image" />
+                                    <img style={{width:'75%', height:'90%', borderRadius:'0.25rem'}} src={orders} alt="first image" />
                                 </div>
-                                {/* <div className="pharmacy-portal-image app-features-image-rounded">
-                                    <img src={store} alt="second image" />
+                                <div className="pharmacy-portal-image ">
+                                    <img style={{width:'75%', height:'90%', borderRadius:'0.25rem'}} src ={inventory}></img>
                                 </div>
-                                <div className="pharmacy-portal-image app-features-image-rounded">
-                                    <img src={homescreen} alt="third image" />
-                                </div>
-                                <div className="pharmacy-portal-image app-features-image-rounded">
-                                    <img src={settings} alt="fourth image" />
-                                </div> */}
                             </div>
                         </div>
                     </div>
                 </div>
             </section>
             <section className="how-its-built">
-                <div className="container">
-                    <div className="how-its-built-content">
-                        <div className="how-its-built-text">
-                            <h2>How It's Built</h2>
-                            <p>
+                <div style={{padding:'4rem 2rem'}}>
+                <h2 style={{fontSize: '2.5rem', marginTop:'-3%'}}>How It's Built</h2>
+                            <p style={{fontSize: '1.2rem', color: 'black'}}>
                                 Our platform was built using a combination of cutting-edge technologies,
                                 including AWS services, Mission Planner drone flight software, React JS,
                                 and React Native/Expo. We've harnessed the power of these tools to create
                                 a seamless and efficient experience for our users.
                             </p>
-                            <p>
+                            <p style={{fontSize: '1.2rem', color: 'black'}}>
                                 To learn more about the specific AWS services we used and how we've
                                 implemented them, check out our detailed page.
                             </p>
                             <button
                                 type="button"
-                                className="button-header"
+                                className="whiteBtn"
                                 onClick={handleHowClick}
                             >
                                 How We Built It
                             </button>
-                        </div>
-                        <div className="how-its-built-images">
-                            <img className="logo-image" src={lambdaLogo} alt="serviceLogos"/>
-                            <img className="logo-image" src={reactLogo} alt="serviceLogos"/>
-                            <img className="logo-image" src={APIGatewayLogo} alt="serviceLogos"/>
-                            <img className="logo-image" src={missionPlannerLogo} alt="serviceLogos"/>
-                            <img className="logo-image" src={expoLogo} alt="serviceLogos"/>
-                            <img className="logo-image" src={cognitoLogo} alt="serviceLogos"/>
-                            <img className="logo-image" src={dynamoLogo} alt="serviceLogos"/>
-                            <img className="logo-image" src={graphqlLogo} alt="serviceLogos"/>
-                            <div className="logoContainer">
-                                <img className="logo-image" src={amplifyLogo} alt="serviceLogos"/>
-                            </div>
-                        </div>
-                    </div>
+                </div>
+                <div>
+                    <img className="logo-image" src={lambdaLogo} alt="serviceLogos"/>
+                    <img className="logo-image" src={reactLogo} alt="serviceLogos"/>
+                    <img className="logo-image" src={APIGatewayLogo} alt="serviceLogos"/>
+                    <img className="logo-image" src={missionPlannerLogo} alt="serviceLogos"/>
+                    <img className="logo-image" src={expoLogo} alt="serviceLogos"/>
+                    <img className="logo-image" src={cognitoLogo} alt="serviceLogos"/>
+                    <img className="logo-image" src={dynamoLogo} alt="serviceLogos"/>
+                    <img className="logo-image" src={graphqlLogo} alt="serviceLogos"/>
+                    <img className="logo-image" src={amplifyLogo} alt="serviceLogos"/>
                 </div>
             </section>
             {/* Add an about section with some text and an image */}

@@ -8,12 +8,12 @@
 
 /* Define some colors for convenience */
 :root {
-  --primary-color: #1a73e8; /* blue */
-  --secondary-color: #f8f9fa; /* light gray */
+  --secondary-color: #ccccff; /* light gray */
   --tertiary-color: #343a40; /* dark gray */
   --quaternary-color: #ffffff; /* white */
   --quinary-color: #a5a5a5;
   --senary-color: #ffe3e3;
+  --primary-color:#ccccff;
 }
 
 .homePageHeader {
@@ -28,8 +28,8 @@
 .portal-button {
   display: inline-block;
   padding: .5rem 1rem;
-  background-color: var(--primary-color);
-  color: var(--quaternary-color);
+  background-color:#ccccff;
+  color: black;
   text-decoration: none;
   border-radius: .25rem;
   transition: background-color 0.3s ease;
@@ -65,8 +65,8 @@ nav a:hover {
 .button-header {
   display: inline-block;
   padding: .5rem 1rem;
-  background-color: var(--primary-color);
-  color: var(--quaternary-color);
+  background-color: #ccccff;
+  color: black;
   text-decoration: none;
   border-radius: .25rem;
   transition: background-color 0.3s ease;
@@ -75,7 +75,19 @@ nav a:hover {
   cursor: pointer;
   transition: opacity 0.3s ease-in-out;
 }
-
+.whiteBtn {
+  display: inline-block;
+  padding: .5rem 1rem;
+  background-color:white;
+  color: black;
+  text-decoration: none;
+  border-radius: .25rem;
+  transition: background-color 0.3s ease;
+  border: none;
+  font-family: 'Montserrat', sans-serif;
+  cursor: pointer;
+  transition: opacity 0.3s ease-in-out;
+}
 .button-margin {
   margin-right: 0.5rem;
 }
@@ -94,24 +106,21 @@ button:hover {
   align-items: center;
   justify-content: space-between;
   padding: 7rem;
-  background-color: var(--primary-color); /* change this line */
+  background-color: #ccccff; /* change this line */
 }
 
 
 /* Style the hero content */
-.hero-content {
-  max-width: 50%;
-}
 
 .hero-title {
   font-size: 3rem;
   font-weight: bold;
-  color: var(--quaternary-color);
+  color: black;
 }
 
 .hero-subtitle {
   font-size: 1.5rem;
-  color: var(--quaternary-color);
+  color: black;
 }
 
 /* Style the hero button */
@@ -134,8 +143,8 @@ button:hover {
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 100%;
-  height: 100%;
+  max-width: 100%;
+  max-height: 100%;
 }
 
 .hero-image img {
@@ -146,22 +155,18 @@ button:hover {
 
 .hero-carousel {
   flex: 1;
-  max-width: 50%;
-  position: relative;
+  max-width: 100%;
+  min-width: 70%;
+  min-height: 70%;
 }
 
 .carousel-slides {
-  position: relative;
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 100%;
-  height: 100%;
 }
 
 .carousel-image-container {
-  position: absolute;
-
   display: flex;
   justify-content: center;
   align-items: center;
@@ -177,6 +182,7 @@ button:hover {
   max-width: 35%;
   max-height: 35%;
   object-fit: contain;
+  padding: 19px;
 }
 
 .carousel-image.active {
@@ -232,7 +238,7 @@ button:hover {
 }
 
 .feature-title {
-    font-size:1.25rem; 
+    font-size:1.29rem; 
     font-weight:bold; 
     color:#212529; /* dark gray */ 
     text-align:center; 
@@ -252,7 +258,7 @@ button:hover {
   align-items: center;
   justify-content: space-between;
   padding: 4rem 2rem;
-  background-color: var(--quinary-color);
+  background-color: #ccccff;
 }
 
 .app-features-image {
@@ -278,6 +284,7 @@ button:hover {
 /* Style the app features text */
 .app-features-text {
   max-width: 50%;
+  color: black;
 }
 
 .app-features-text h2 {
@@ -287,27 +294,34 @@ button:hover {
 }
 
 .app-features-text p {
-  font-size: 1rem;
-  color: #ffffff; /* gray */
+  font-size: 1.2rem;
+  color: black; /* gray */
 }
 
 /* Style the pharm portal section */
 .pharmacy-portal {
-  display: flex;
   align-items: center;
-  justify-content: space-between;
-  padding: 4rem 2rem;
-  background-color: var(--senary-color);
+  align-content: center;
+  padding: 1rem 2rem;
+  background-color: white;
 }
 
 .pharmacy-portal h2 {
   font-size: 2.5rem;
   margin-bottom: 1.5rem;
+
+}
+.pharmacy-portal p {
+  color:#6c757d; /* gray */ 
+  font-size:.875rem; 
+  font-weight: bold;
 }
 
 .pharmacy-portal-image-container {
   display: flex;
   justify-content: space-between;
+  flex-direction: row;
+  margin-top: 2%;
 }
 
 .pharmacy-portal-image {
@@ -327,18 +341,19 @@ button:hover {
 /*How section */
 
 .how-its-built {
-  /* padding: 3rem 0; Increased padding for a larger section */
-  display: flex;
-  align-items: center;
-  justify-content: center; /* change this line */
-  padding: 2rem; /* change this line */
-  background-color: var(--tertiary-color); /* change this line */
+  padding: 4rem 0rem;
+  flex-direction: column;
+  display:flex;
+  flex-wrap: wrap;
+  width: 100%;
+  background-color: #ccccff; /* change this line */
 }
 
 .how-its-built-content {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  flex-wrap: wrap;
   width: 100%;
 }
 
@@ -349,35 +364,30 @@ button:hover {
 .how-its-built-text h2 {
   font-size: 2rem;
   font-weight: bold;
-  color: #212529; /* dark gray */
 }
 
 .how-its-built-text p {
   font-size: 1rem;
-  color: #6c757d; /* gray */
+  color: black;
 }
 
 .how-its-built-images {
   position: relative;
-  flex: 1;
   margin-left: 1rem;
-  min-height: 300px; /* Add this to establish a height reference */
+  min-height: 30px; /* Add this to establish a height reference */
+  width:100px;
+  height:100px;
+  
 }
 
-.how-its-built-images img.logo-image {
-  position: absolute;
- 
+.logo-image {
+  width:100px;
+  height:100px;
+  margin-left: 60px;
 }
+
 
 /* Example image positions */
-.logo-image:nth-child(1) { top: -5%; left: 5%; width: 100px; height: auto;}
-.logo-image:nth-child(2) { top: -5%; left: 60%; width: 100px; height: auto; }
-.logo-image:nth-child(3) { top: -5%; left: 30%; width: 100px; height: auto;}
-.logo-image:nth-child(4) { top: -37%; left: 69%; width: 300px; height: auto;}
-.logo-image:nth-child(5) { top: 52%; left: 80%; width: 100px; height: auto;}
-.logo-image:nth-child(6) { top: 52%; left: 5%; width: 100px; height: auto;}
-.logo-image:nth-child(7) { top: 52%; left: 60%; width: 100px; height: auto;}
-.logo-image:nth-child(8) { top: 52%; left: 30%; width: 100px; height: auto;}
 /* .logo-image:nth-child(9) { top: 80%; left: 40%; } */
 
 /* .how-its-built-images .logo-image:nth-child(4) {
@@ -431,7 +441,7 @@ button:hover {
   align-items: center;
   justify-content: space-between; /* change this line */
   padding: 2rem; /* change this line */
-  background-color: var(--secondary-color); /* change this line */
+  background-color: white; /* change this line */
 }
 
 /* Style the about text */
@@ -442,12 +452,12 @@ button:hover {
 .about-text h2 {
   font-size: 2rem;
   font-weight: bold;
-  color: #212529; /* dark gray */
+  color: black; /* dark gray */
 }
 
 .about-text p {
-  font-size: 1rem;
-  color: #6c757d; /* gray */
+  font-size: 1.2rem;
+  color: black; /* gray */
 }
 
 /* Style the about image */
