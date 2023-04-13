@@ -7,6 +7,7 @@ import React, { useRef, useState, useEffect } from 'react';
 import appSignIn from './../Images/HowItBuiltPics/AppSignIn.png';
 import appSignUp from './../Images/HowItBuiltPics/AppSignUp.png';
 import pharmPortalLogin from './../Images/HowItBuiltPics/PharmPortalLogin.jpg';
+import pharmPortalCreateAccount from './../Images/HowItBuiltPics/PharmPortalCreateAccount.jpg';
 import cognito from './../Images/Logos/CognitoLogo.png'
 import userAttributes from './../Images/HowItBuiltPics/userAttributes.jpg';
 import locationConfirm from './../Images/HowItBuiltPics/LocationConfirm.PNG';
@@ -17,6 +18,8 @@ import expo from './../Images/Logos/ExpoLogo.png'
 import productDB from './../Images/HowItBuiltPics/ProductDB.jpg';
 import pharmPortalInventory from './../Images/HowItBuiltPics/PharmPortalInventory.jpg';
 import browseScreenGif from './../Images/HowItBuiltPics/BrowseScreenGif2.gif';
+import cartGif from './../Images/HowItBuiltPics/CartGif.gif';
+import loginGif from './../Images/HowItBuiltPics/LoginGif.gif';
 
 
 function How() {
@@ -107,12 +110,13 @@ function How() {
                                         <div className="feature-section">
                                             <h3>Sign-up/Login:</h3>
                                             <div className="feature-content">
-                                                <div className="image-container">
-                                                    <img className="feature-image whiteAppImages" src={appSignIn} alt="Image 1" />
+                                                <div className="image-container-login">
+                                                    <img className="feature-image whiteAppImages" src={loginGif} alt="gif" />
                                                     <img className="feature-image whiteAppImages" src={appSignUp} alt="Image 2" />
                                                     <img className="feature-image-pharmLog" src={pharmPortalLogin} alt="Image 3" />
-                                                </div>
-                                                <img className="feature-image" src={cognito} alt="Image 4" />
+                                                    <img className="feature-image-pharmCreate" src={pharmPortalCreateAccount} alt="Image 3" />
+                                                    <img className="feature-image" src={cognito} alt="Image 4" />
+                                                </div>   
                                                 <p className="feature-description">
                                                     {/* Add the text description here */}
                                                     The Valkyrie app and Pharmacy Portal both have a seamless sign-up and login process powered by AWS Cognito. AWS Cognito is a robust authentication and user management service that offers a variety of features, such as user registration, authentication, and access control. By leveraging this, our Pharmacy Portal and App benefit from its security measures, including encryption, and multi-factor authentication. The sign-up process is quick and straightforward, allowing you to create a new account with just a few clicks. Once registered, you can access either application with your secure login credentials. In case you forget your password, the system also provides an easy-to-use password reset feature.
@@ -152,7 +156,7 @@ function How() {
                                                     <img className="feature-image-productDB" src={productDB} alt="Image 1" />
                                                     <img className="feature-image-productPharm" src={pharmPortalInventory} alt="Image 2" />
                                                     <img className="feature-image whiteAppImages" src={browseScreenGif} alt="gif" />
-                                                    <img className="feature-image whiteAppImages" src={deliveryLocationGif} alt="gif" />
+                                                    <img className="feature-image whiteAppImages" src={cartGif} alt="gif" />
                                                 </div>
                                                 <p className="feature-description">
                                                     {/* Add the text description here */}

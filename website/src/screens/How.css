@@ -191,6 +191,14 @@ body {
   flex-wrap: nowrap;
 }
 
+.image-container-login {
+  display: flex;
+  align-items: center;
+  gap: 5rem;
+  width: 50%;
+  flex-wrap: nowrap;
+}
+
 .feature-image {
   flex: 1 1 40%;
   max-width: 20%;
@@ -210,6 +218,14 @@ body {
 .feature-image-pharmLog {
   flex: 1 1 40%;
   max-width: 80%;
+  height: auto;
+  object-fit: cover;
+  border-radius: 5px;
+}
+
+.feature-image-pharmCreate {
+  flex: 1 1 40%;
+  max-width: 46%;
   height: auto;
   object-fit: cover;
   border-radius: 5px;
