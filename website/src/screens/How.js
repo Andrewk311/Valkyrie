@@ -20,6 +20,10 @@ import pharmPortalInventory from './../Images/HowItBuiltPics/PharmPortalInventor
 import browseScreenGif from './../Images/HowItBuiltPics/BrowseScreenGif2.gif';
 import cartGif from './../Images/HowItBuiltPics/CartGif.gif';
 import loginGif from './../Images/HowItBuiltPics/LoginGif.gif';
+import webSocketAPI from './../Images/HowItBuiltPics/WebSocketAPI.jpg';
+import ordersDynamo from './../Images/HowItBuiltPics/OrdersDynamo.jpg';
+import connectionDynamo from './../Images/HowItBuiltPics/ConnectionDynamo.jpg';
+import orderStatusGif from './../Images/HowItBuiltPics/OrderUpdateStatusGif.gif';
 
 
 function How() {
@@ -170,15 +174,12 @@ function How() {
                                         <div className="feature-section">
                                             <h3>Order Status Updates:</h3>
                                             <div className="feature-content">
-                                                <div className="image-container">
-                                                    <img className="feature-image-userAtt" src={userAttributes} alt="Image 1" />
-                                                    <img className="feature-image whiteAppImages" src={settings} alt="Image 2" />
-                                                    <img className="feature-image whiteAppImages" src={locationConfirm} alt="Image 3" />
-                                                    <img className="feature-image whiteAppImages" src={deliveryLocationGif} alt="gif" />
-                                                    <div className="logo-container">
-                                                        <img className="feature-image logo-image" src={cognito} alt="Image 1" />
-                                                        <img className="feature-image logo-image" src={expo} alt="Image 2" />
-                                                        <img className="feature-image logo-image" src={googleMapsLogo} alt="Image 3" />
+                                                <div className="image-container-order">
+                                                    <img className="feature-image-websocket" src={webSocketAPI} alt="Image 1" />
+                                                    <img className="feature-image-orderUpdate" src={orderStatusGif} alt="gif" />              
+                                                    <div className="table-container">
+                                                        <img className="feature-image-otherDB" src={ordersDynamo} alt="Image 1" />
+                                                        <img className="feature-image-otherDB" src={connectionDynamo} alt="Image 2" />
                                                     </div>
                                                 </div>
                                                 <p className="feature-description">

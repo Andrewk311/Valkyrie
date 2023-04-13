@@ -191,6 +191,14 @@ body {
   flex-wrap: nowrap;
 }
 
+.image-container-order {
+  display: flex;
+  align-items: center;
+  gap: 5rem;
+  width: 50%;
+  flex-wrap: nowrap;
+}
+
 .image-container-login {
   display: flex;
   align-items: center;
@@ -247,6 +255,22 @@ body {
   border-radius: 5px;
 }
 
+.feature-image-otherDB {
+  flex: 1 1 40%;
+  max-width: 60%;
+  height: auto;
+  object-fit: cover;
+  border-radius: 5px;
+}
+
+.feature-image-websocket {
+  flex: 1 1 40%;
+  max-width: 40%;
+  height: auto;
+  object-fit: cover;
+  border-radius: 5px;
+}
+
 .feature-image-productPharm {
   flex: 1 1 40%;
   max-width: 75%;
@@ -254,6 +278,15 @@ body {
   object-fit: cover;
   border-radius: 5px;
 }
+
+.feature-image-orderUpdate {
+  flex: 1 1 40%;
+  max-width: 60%;
+  height: auto;
+  object-fit: cover;
+  border-radius: 5px;
+}
+
 
 .feature-description {
   flex: 1 1 50%;
@@ -270,6 +303,13 @@ body {
   display: flex;
   flex-direction: column;
   gap: 2.5rem;
+  flex-shrink: 0; 
+}
+
+.table-container {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
   flex-shrink: 0; 
 }
 
