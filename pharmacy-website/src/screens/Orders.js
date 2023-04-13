@@ -106,6 +106,7 @@ function Orders() {
       try {
         console.log('declined order')
         updateOrder(order['order_number'], -1, false, false);
+        window.location.reload();
       } catch (err) {
         console.log('error updating inventory: ', err);
       }
