@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useContext } from "react";
-import { Text, View, Button, StyleSheet, Image } from "react-native";
+import { Text, View, Button, StyleSheet, Image, TouchableOpacity } from "react-native";
 import { Ionicons } from "@expo/vector-icons";
 import MapView, {Marker} from 'react-native-maps';
 import { Dimensions } from "react-native";
@@ -99,8 +99,42 @@ const Tracking = (props) => {
           <Text style={styles.where}> Where's My Order? </Text>
         </View>
         <View>
-        {orderStatus===null && (<Text style={{fontWeight:"bold", color:"#000000", fontSize:24, marginTop: -250, }}>Place an order to see tracking!</Text>)}
-        {orderStatus!="null" && (<Text style={{fontWeight:"bold", color:"#000000", fontSize:24, marginTop: -250, }}>ORDER #{orderNumber}</Text>)}
+        {orderStatus === null && (
+        <Text style={{fontWeight:"bold", color:"#000000", fontSize:24, marginTop: -250, }}>
+          Place an order to see tracking!
+        </Text>
+      )}
+      {orderStatus === "Order Shipped" && (
+        <View style={{ flexDirection: 'row', alignItems: 'center', marginTop: -250 }}>
+          <Text style={{fontWeight:"bold", color:"#000000", fontSize:24 }}>
+            ORDER #{orderNumber}
+          </Text>
+          <TouchableOpacity
+            onPress={sendDeliveredStatus}
+            style={{
+              backgroundColor: "#4CAF50",
+              paddingHorizontal: 20,
+              paddingVertical: 10,
+              borderRadius: 5,
+              marginLeft: 10,
+            }}
+          >
+            <Text style={{ color: "#FFFFFF", fontWeight: "bold", fontSize: 18 }}>
+              Verify Delivery
+            </Text>
+          </TouchableOpacity>
+        </View>
+      )}
+      {orderStatus === "Order Delivered" && (
+          <Text style={{fontWeight:"bold", color:"#000000", fontSize:22, marginTop: -250 }}>
+            ORDER #{orderNumber} Delivered!
+          </Text>
+      )}
+      {orderStatus !== null && orderStatus !== "Order Shipped" && orderStatus !== "Order Delivered" && (
+        <Text style={{fontWeight:"bold", color:"#000000", fontSize:24, marginTop: -250 }}>
+          ORDER #{orderNumber}
+        </Text>
+      )}
         </View>
         {latitude && longitude ? (
           <MapView
@@ -194,7 +228,6 @@ const Tracking = (props) => {
                 source={require('./../../customIcons/RedLine.png')} />
                 <><Image style={styles.tinyLogo}
               source={require('./../../customIcons/GrayCircle.png')} />
-              <Button title="verify" onPress={sendDeliveredStatus}/>
             </>
             </>
             
