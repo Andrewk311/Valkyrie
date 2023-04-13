@@ -186,7 +186,7 @@ body {
 .image-container {
   display: flex;
   align-items: center;
-  gap: 3.5rem;
+  gap: 3rem;
   width: 50%;
   flex-wrap: nowrap;
 }
