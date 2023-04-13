@@ -49,6 +49,10 @@ export const WebSocketProvider = ({ children }) => {
                 window.location.reload();
             }
 
+            if (location.pathname === '/orders/') {
+                window.location.reload();
+            }
+
         }
 
         return () => {
