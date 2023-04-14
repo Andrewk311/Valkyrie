@@ -500,3 +500,197 @@ button:hover {
   
 
 } */
+
+/* Mobile devices */
+@media (max-width: 480px) {
+
+  .buttons-container {
+    display: flex;
+    flex-direction: row;
+  }
+
+  .homePageHeader {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0.5rem 2rem;
+    background-color: var(--quaternary-color);
+    min-height: 50px; /* add this line */
+    gap:1rem;
+  }
+
+  .button-header {
+    display: inline-block;
+    padding: .5rem 1rem;
+    background-color: #ccccff;
+    color: black;
+    text-decoration: none;
+    border-radius: .25rem;
+    transition: background-color 0.3s ease;
+    border: none;
+    font-family: 'Montserrat', sans-serif;
+    cursor: pointer;
+    transition: opacity 0.3s ease-in-out;
+  }
+
+  .button-margin {
+    margin-right: 1.0rem;
+  }
+
+  /* Adjust hero section */
+  .hero {
+    flex-direction: column;
+    padding: 4rem 1rem;
+    width:100%;
+  }
+
+  /* Adjust hero title and subtitle */
+  .hero-title {
+    font-size: 2rem;
+  }
+
+  .hero-subtitle {
+    font-size: 1.2rem;
+  }
+
+  /* Adjust feature cards */
+  .feature-card {
+    flex-basis: calc(100% - 1rem);
+    margin-bottom: 1rem;
+  }
+
+  /* Adjust app features section */
+  .app-features {
+    flex-direction: column;
+    padding: 2rem 1rem;
+    width: 100%;
+  }
+
+  /* Adjust app features image container */
+  .imageContainer {
+    flex-direction: row;
+    align-items: center;
+    gap: 1rem;
+  }
+
+  /* Adjust app features image */
+  .app-features-image img {
+    width: 100%;
+  }
+
+  .app-features-image-rounded img {
+    border-radius: 1rem; 
+  }
+
+  /* Adjust app features text */
+  .app-features-text {
+    max-width: 100%;
+    margin-bottom: 1rem;
+  }
+
+  .app-features-text p {
+    font-size: 1rem;
+    color: black; /* gray */
+  }
+
+  .app-features-text h2 {
+    font-size: 1.54rem;
+    font-weight: bold;
+    color: #212529; /* dark gray */
+  }
+
+  /* Style the pharm portal section */
+  .pharmacy-portal {
+    align-items: center;
+    align-content: center;
+    padding: 1rem 2rem;
+    background-color: white;
+  }
+
+  .pharmacy-portal h2 {
+    font-size: 1.54rem;
+    margin-bottom: 1.5rem;
+
+  }
+  .pharmacy-portal p {
+    color:#6c757d; /* gray */ 
+    font-size:.875rem; 
+    font-weight: bold;
+  }
+
+  .pharmacy-portal-image-container {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row;
+    margin-top: 2%;
+  }
+
+  .pharmacy-portal-image {
+    flex: 1;
+    margin-right: 1rem;
+  }
+
+  .pharmacy-portal-image:last-child {
+    margin-right: 0;
+  }
+
+  .pharmacy-portal-image img {
+    width: 100%;
+    height: auto;
+  }
+
+  /* Adjust how it's built section */
+  .how-its-built {
+    padding: 2rem 1rem;
+  }
+
+  /* Adjust how it's built content */
+  .how-its-built-content {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  /* Adjust how it's built text */
+  .how-its-built-text {
+    max-width: 100%;
+    margin-bottom: 1rem;
+  }
+
+  .how-its-built-text h2 {
+    font-size: 2rem;
+    font-weight: bold;
+  }
+  
+  .how-its-built-text p {
+    font-size: 1rem;
+    color: black;
+  }
+
+  /* Adjust about section */
+  .about {
+    flex-direction: column;
+    padding: 2rem 1rem;
+  }
+
+  /* Adjust about text */
+  .about-text {
+    max-width: 100%;
+    margin-bottom: 1rem;
+  }
+
+  /* Adjust about image */
+  .about-image {
+    max-width: 100%;
+  }
+
+  .about-text h2 {
+    font-size: 2rem;
+    font-weight: bold;
+    color: black; /* dark gray */
+  }
+  
+  .about-text p {
+    font-size: 1.2rem;
+    color: black; /* gray */
+  }
+}

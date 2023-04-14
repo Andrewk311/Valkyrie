@@ -287,6 +287,13 @@ body {
   border-radius: 5px;
 }
 
+.feature-image-rest {
+  flex: 1 1 40%;
+  max-width: 80%;
+  height: auto;
+  object-fit: cover;
+  border-radius: 5px;
+}
 
 .feature-description {
   flex: 1 1 50%;
