@@ -26,6 +26,7 @@ import connectionDynamo from './../Images/HowItBuiltPics/ConnectionDynamo.jpg';
 import orderStatusGif from './../Images/HowItBuiltPics/OrderUpdateStatusGif.gif';
 import restAPIs from './../Images/HowItBuiltPics/RESTAPIs.jpg';
 import trackingGif from './../Images/HowItBuiltPics/TrackingGif.gif';
+import missionPlannerTracking from './../Images/HowItBuiltPics/MissionPlannerTracking.png';
 
 
 
@@ -200,6 +201,7 @@ function How() {
                                                 <div className="image-container">
                                                     <img className="feature-image-rest" src={restAPIs} alt="Image 1" />
                                                     <img className="feature-image whiteAppImages" src={trackingGif} alt="gif" />
+                                                    <img className="feature-image-MP" src={missionPlannerTracking} alt="Image 2" />
                                                     {/* <img className="feature-image whiteAppImages" src={locationConfirm} alt="Image 3" />
                                                     <img className="feature-image whiteAppImages" src={deliveryLocationGif} alt="gif" />
                                                     <div className="logo-container">
