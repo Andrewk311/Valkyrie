@@ -100,6 +100,9 @@ button:hover {
   opacity: 0.2;
 }
 
+.header-title {
+  font-weight: bold;
+}
 /* Style the hero section */
 .hero {
   display: flex;
@@ -123,35 +126,7 @@ button:hover {
   color: black;
 }
 
-/* Style the hero button */
-.hero-button {
-  display: inline-block;
-  margin-top: 1rem;
-  padding: .75rem 1.5rem;
-  border-radius: .25rem;
-  background-color: var(--primary-color);
-  color: var(--quaternary-color);
-  text-decoration: none;
-}
-
-.hero-button:hover {
-  background-color: darken(var(--primary-color),10%);
-}
-
 /* Style the hero image */
-.hero-image {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  max-width: 100%;
-  max-height: 100%;
-}
-
-.hero-image img {
-  max-width: 100%;
-  max-height: 100%;
-  object-fit: contain;
-}
 
 .hero-carousel {
   flex: 1;
@@ -329,6 +304,11 @@ button:hover {
   margin-right: 1rem;
 }
 
+.table-image {
+  width:75%;
+  height:80%;
+  border-radius:0.25rem;
+}
 .pharmacy-portal-image:last-child {
   margin-right: 0;
 }
@@ -357,27 +337,20 @@ button:hover {
   width: 100%;
 }
 
-.how-its-built-text {
-  max-width: 50%;
+.how-its-built-padding {
+  padding:4rem 2rem;
 }
 
-.how-its-built-text h2 {
-  font-size: 2rem;
+
+.how-its-built-padding h2 {
+  font-size: 2.5rem;
   font-weight: bold;
+  margin-top:-3%;
 }
 
-.how-its-built-text p {
-  font-size: 1rem;
+.how-its-built-padding p {
+  font-size: 1.2rem;
   color: black;
-}
-
-.how-its-built-images {
-  position: relative;
-  margin-left: 1rem;
-  min-height: 30px; /* Add this to establish a height reference */
-  width:100px;
-  height:100px;
-  
 }
 
 .logo-image {
@@ -395,17 +368,6 @@ button:hover {
   height: auto;
 } */
 
-.how-its-built-btn {
-  background-color: #007bff;
-  color: #ffffff;
-  border: none;
-  border-radius: 0.25rem;
-  font-size: 1.2rem; /* Increased font size for the button */
-  padding: 0.75rem 1.5rem; /* Increased padding for a bigger button */
-  cursor: pointer;
-  transition: background-color 0.3s;
-}
-
 .how-its-built-btn:hover {
   background-color: #0056b3;
 }
@@ -413,26 +375,6 @@ button:hover {
 .logo-image.mpPic {
   width:500px;
   height:auto;
-}
-
-.logoContainer {
-  position: absolute;
-  top: 35%; /* Adjust the top position */
-  left: 45%; /* Adjust the left position */
-  width: 300px; /* Set the width of the container */
-  height: 300px; /* Set the height of the container */
-  overflow: hidden;
-  /* transform: translate(-50%, -50%); */
-}
-
-.logoContainer img {
-  position: relative;
-  left: 50%;
-  top: 50%;
-  width: 200%; /* Add the width property */
-  height: auto; /* Add the height property */
-  object-fit: cover; /* Add object-fit to maintain aspect ratio */
-  transform: translate(-57%,50%);
 }
 
 /* Style the about section */

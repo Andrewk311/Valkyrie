@@ -63,7 +63,7 @@ function Home() {
                 <nav>
                     <a href="https://pharmacy.valkyriedrone.io" class="portal-button">Pharm Portal</a>
                 </nav>
-                <p style={{ fontWeight: 'bold' }}>VALKYRIE CAPSTONE GROUP 19</p>
+                <p className="header-title">VALKYRIE CAPSTONE GROUP 19</p>
                 <div className="buttons-container">
                     <button className="button-header button-margin" onClick={handleAboutUsClick}>About Us</button>
                     <button className="button-header" onClick={handleHowClick}>How it's Built</button>
@@ -177,15 +177,15 @@ function Home() {
                 </div>
             </section>
             <section className="how-its-built">
-                <div style={{padding:'4rem 2rem'}}>
-                <h2 style={{fontSize: '2.5rem', marginTop:'-3%'}}>How It's Built</h2>
-                            <p style={{fontSize: '1.2rem', color: 'black'}}>
+                <div className="how-its-built-padding" >
+                <h2>How It's Built</h2>
+                            <p>
                                 Our platform was built using a combination of cutting-edge technologies,
                                 including AWS services, Mission Planner drone flight software, React JS,
                                 and React Native/Expo. We've harnessed the power of these tools to create
                                 a seamless and efficient experience for our users.
                             </p>
-                            <p style={{fontSize: '1.2rem', color: 'black'}}>
+                            <p>
                                 To learn more about the specific AWS services we used and how we've
                                 implemented them, check out our detailed page.
                             </p>
