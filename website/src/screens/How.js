@@ -99,7 +99,7 @@ function How() {
                     <div className='selected-category-info'>
                         <h2>Select one of the above categories to learn more about how it was made!</h2>
                     </div>
-                )};
+                )}
                 {selectedCategory && (
                     <div className="selected-category-info">
                         <h2>{selectedCategory.title} Features:</h2>
@@ -294,7 +294,8 @@ function How() {
                         </div>
                         {selectedCategory.title === 'Drone Box System' && (
                             <div>
-                                <div>
+                                
+                                <div className='feature-tabs'>
                                     <button onClick={() => handleFeatureClick("Box")}>Box</button>
                                     <button onClick={() => handleFeatureClick("Electrical")}>Electrical Components</button>
                                 </div>
