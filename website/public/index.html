@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8" />
     <link rel="icon" href="%PUBLIC_URL%/logo.png" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta id="viewport-meta" name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="theme-color" content="#000000" />
     <meta
       name="description"
@@ -39,5 +39,21 @@
       To begin the development, run `npm start` or `yarn start`.
       To create a production bundle, use `npm run build` or `yarn build`.
     -->
+    <script>
+      function setViewport() {
+        const viewportMeta = document.getElementById('viewport-meta');
+        const windowWidth = window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth;
+        const breakpoint = 480;
+        
+        if (windowWidth < breakpoint) {
+          viewportMeta.setAttribute('content', 'width=480, initial-scale=' + (windowWidth / breakpoint));
+        } else {
+          viewportMeta.setAttribute('content', 'width=device-width, initial-scale=1');
+        }
+      }
+    
+      window.addEventListener('resize', setViewport);
+      setViewport();
+    </script>
   </body>
 </html>
