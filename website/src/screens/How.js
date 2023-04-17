@@ -1,8 +1,8 @@
 import './How.css';
 import { useNavigate } from 'react-router-dom';
 import appImage from './../Images/Software.png';
-import droneImage from './../Images/Drone.jpg';
-import droneBoxImage from './../Images/Dallas5.JPG';
+import droneImage from './../Images/HowItBuiltPics/DronePicBobby1.jpg';
+import droneBoxImage from './../Images/HowItBuiltPics/BoxProtoype.jpg';
 import React, { useRef, useState, useEffect } from 'react';
 import appSignIn from './../Images/HowItBuiltPics/AppSignIn.png';
 import appSignUp from './../Images/HowItBuiltPics/AppSignUp.png';
@@ -27,7 +27,7 @@ import orderStatusGif from './../Images/HowItBuiltPics/OrderUpdateStatusGif.gif'
 import restAPIs from './../Images/HowItBuiltPics/RESTAPIs.jpg';
 import trackingGif from './../Images/HowItBuiltPics/TrackingGif.gif';
 import missionPlannerTracking from './../Images/HowItBuiltPics/MissionPlannerTracking.png';
-
+import appLogo from './../Images/Logos/AppLogo.png'
 
 
 function How() {
@@ -72,15 +72,13 @@ function How() {
 
                 <div className="categories">
                     <div className="category" onClick={() => handleCategoryClick({ title: 'App/Pharmacy Portal' })}>
-                        <h2 className="category-title">App/Pharmacy Portal</h2>
-                        <img className="category-image-app" src={appImage} alt="App" />
+                        <img className="category-image-app" src={appLogo} alt="App" />
                         <p className="category-description">
                             App/Pharmacy Portal
                         </p>
                     </div>
 
                     <div className="category" onClick={() => handleCategoryClick({ title: 'The Drone' })}>
-                        <h2 className="category-title">Drone</h2>
                         <img className="category-image-drone" src={droneImage} alt="Drone" />
                         <p className="category-description">
                             Drone
@@ -88,7 +86,6 @@ function How() {
                     </div>
 
                     <div className="category" onClick={() => handleCategoryClick({ title: 'Drone Box System' })}>
-                        <h2 className="category-title">Payload Delivery System</h2>
                         <img className="category-image-box" src={droneBoxImage} alt="Drone Box" />
                         <p className="category-description">
                             Payload System
@@ -123,7 +120,7 @@ function How() {
                                                     <img className="feature-image whiteAppImages" src={appSignUp} alt="Image 2" />
                                                     <img className="feature-image-pharmLog" src={pharmPortalLogin} alt="Image 3" />
                                                     <img className="feature-image-pharmCreate" src={pharmPortalCreateAccount} alt="Image 3" />
-                                                    <img className="feature-image" src={cognito} alt="Image 4" />
+                                                    <img className="feature-image-cognito" src={cognito} alt="Image 4" />
                                                 </div>
                                                 <p className="feature-description">
                                                     {/* Add the text description here */}
@@ -137,7 +134,7 @@ function How() {
                                         <div className="feature-section">
                                             <h3>Delivery Address Confirmation:</h3>
                                             <div className="feature-content">
-                                                <div className="image-container">
+                                                <div className="image-container-delivery">
                                                     <img className="feature-image-userAtt" src={userAttributes} alt="Image 1" />
                                                     <img className="feature-image whiteAppImages" src={settings} alt="Image 2" />
                                                     <img className="feature-image whiteAppImages" src={locationConfirm} alt="Image 3" />
@@ -160,7 +157,7 @@ function How() {
                                         <div className="feature-section">
                                             <h3>Product Screens/Cart:</h3>
                                             <div className="feature-content">
-                                                <div className="image-container">
+                                                <div className="image-container-product">
                                                     <img className="feature-image-productDB" src={productDB} alt="Image 1" />
                                                     <img className="feature-image-productPharm" src={pharmPortalInventory} alt="Image 2" />
                                                     <img className="feature-image whiteAppImages" src={browseScreenGif} alt="gif" />
@@ -198,9 +195,9 @@ function How() {
                                         <div className="feature-section">
                                             <h3>Tracking/Drone Flight:</h3>
                                             <div className="feature-content">
-                                                <div className="image-container">
+                                                <div className="image-container-tracking">
                                                     <img className="feature-image-rest" src={restAPIs} alt="Image 1" />
-                                                    <img className="feature-image whiteAppImages" src={trackingGif} alt="gif" />
+                                                    <img className="feature-image-tracking whiteAppImages" src={trackingGif} alt="gif" />
                                                     <img className="feature-image-MP" src={missionPlannerTracking} alt="Image 2" />
                                                     {/* <img className="feature-image whiteAppImages" src={locationConfirm} alt="Image 3" />
                                                     <img className="feature-image whiteAppImages" src={deliveryLocationGif} alt="gif" />
