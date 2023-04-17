@@ -592,7 +592,8 @@ button:hover {
   .pharmacy-portal p {
     color:#6c757d; /* gray */ 
     font-size:.875rem; 
-    font-weight: bold;
+    font-weight: normal;
+    margin-top: -3%;
   }
 
   .pharmacy-portal-image-container {
@@ -626,51 +627,11 @@ button:hover {
     flex-direction: column;
     align-items: center;
   }
-
-  /* Adjust how it's built text */
-  /* .how-its-built-text {
-    max-width: 100%;
-    margin-bottom: 1rem;
-  } */
-
-  /* .how-its-built-text h2 {
-    font-size: 2rem;
-    font-weight: bold;
-  }
   
-  .how-its-built-text p {
-    font-size: 1rem;
-    color: black;
-  } */
-
-  /*How section */
-
-  /* .how-its-built {
-    padding: 4rem 0rem;
-    flex-direction: column;
-    display:flex;
-    flex-wrap: wrap;
-    width: 100%;
-    background-color: #ccccff; 
-  } */
-
-  /* .how-its-built-content {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    flex-wrap: wrap;
-    width: 100%;
-  } */
-
-  /* .how-its-built-padding {
-    padding:4rem 2rem;
-  } */
-
-
   .how-its-built-padding h2 {
     font-size: 2.5rem;
     font-weight: bold;
-    margin-top:-17%;
+    margin-top:-23%;
   }
 
   .how-its-built-padding p {
