@@ -28,7 +28,14 @@ import restAPIs from './../Images/HowItBuiltPics/RESTAPIs.jpg';
 import trackingGif from './../Images/HowItBuiltPics/TrackingGif.gif';
 import missionPlannerTracking from './../Images/HowItBuiltPics/MissionPlannerTracking.png';
 import appLogo from './../Images/Logos/AppLogo.png'
-
+import dronePicParts from './../Images/HowItBuiltPics/DronePicParts.jpg';
+import dronePicParts2 from './../Images/HowItBuiltPics/DronePicParts2.jpg';
+import dronePicParts3 from './../Images/HowItBuiltPics/DronePicParts3.jpg';
+import dronePicParts4 from './../Images/Drone2.jpg';
+import dronePicParts5 from './../Images/Drone.jpg';
+import battery from './../Images/HowItBuiltPics/Battery.jpg';
+import missionPlannerStats from './../Images/HowItBuiltPics/MissionPlannerStats.png';
+import droneFly from './../Images/HowItBuiltPics/DroneFly.jpg';
 
 function How() {
 
@@ -230,12 +237,13 @@ function How() {
                                         <div className="feature-section">
                                             <h3>Parts:</h3>
                                             <div className="feature-content">
-                                                <div className="image-container-login">
-                                                    <img className="feature-image whiteAppImages" src={loginGif} alt="gif" />
-                                                    <img className="feature-image whiteAppImages" src={appSignUp} alt="Image 2" />
-                                                    <img className="feature-image-pharmLog" src={pharmPortalLogin} alt="Image 3" />
-                                                    <img className="feature-image-pharmCreate" src={pharmPortalCreateAccount} alt="Image 3" />
-                                                    <img className="feature-image" src={cognito} alt="Image 4" />
+                                                <div className="image-container-parts">
+                                                    <img className="drone-image" src={dronePicParts} alt="Image 1" />
+                                                    <img className="drone-image" src={dronePicParts2} alt="Image 2" />
+                                                    <img className="drone-image-vertical" src={dronePicParts3} alt="Image 3" />
+                                                    <img className="drone-image-vertical" src={dronePicParts4} alt="Image 4" />
+                                                    <img className="drone-image-vertical" src={dronePicParts5} alt="Image 5" />
+
                                                 </div>
                                                 <p className="feature-description">
                                                     {/* Add the text description here */}
@@ -249,16 +257,8 @@ function How() {
                                         <div className="feature-section">
                                             <h3>Battery:</h3>
                                             <div className="feature-content">
-                                                <div className="image-container">
-                                                    <img className="feature-image-userAtt" src={userAttributes} alt="Image 1" />
-                                                    <img className="feature-image whiteAppImages" src={settings} alt="Image 2" />
-                                                    <img className="feature-image whiteAppImages" src={locationConfirm} alt="Image 3" />
-                                                    <img className="feature-image whiteAppImages" src={deliveryLocationGif} alt="gif" />
-                                                    <div className="logo-container">
-                                                        <img className="feature-image logo-image" src={cognito} alt="Image 1" />
-                                                        <img className="feature-image logo-image" src={expo} alt="Image 2" />
-                                                        <img className="feature-image logo-image" src={googleMapsLogo} alt="Image 3" />
-                                                    </div>
+                                                <div className="image-container-battery">
+                                                    <img className="drone-image" src={battery} alt="Image 1" />
                                                 </div>
                                                 <p className="feature-description">
                                                     {/* Add the text description here */}
@@ -272,11 +272,10 @@ function How() {
                                         <div className="feature-section">
                                             <h3>Autonomous Flight:</h3>
                                             <div className="feature-content">
-                                                <div className="image-container">
-                                                    <img className="feature-image-productDB" src={productDB} alt="Image 1" />
-                                                    <img className="feature-image-productPharm" src={pharmPortalInventory} alt="Image 2" />
-                                                    <img className="feature-image whiteAppImages" src={browseScreenGif} alt="gif" />
-                                                    <img className="feature-image whiteAppImages" src={cartGif} alt="gif" />
+                                                <div className="image-container-auto">
+                                                    <img className="drone-image-MP" src={missionPlannerStats} alt="Image 1" />
+                                                    <img className="drone-image-MP" src={missionPlannerTracking} alt="Image 2" />
+                                                    <img className="drone-image-fly" src={droneFly} alt="Image 3" />
                                                 </div>
                                                 <p className="feature-description">
                                                     {/* Add the text description here */}

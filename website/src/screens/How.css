@@ -194,10 +194,19 @@ body {
   flex-wrap: nowrap;
 }
 
+.image-container-delivery {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  width: 50%;
+  flex-wrap: nowrap;
+}
+
+
 .image-container-order {
   display: flex;
   align-items: center;
-  gap: 5rem;
+  gap: 3rem;
   width: 50%;
   flex-wrap: nowrap;
 }
@@ -210,12 +219,93 @@ body {
   flex-wrap: nowrap;
 }
 
+.image-container-product {
+  display: flex;
+  align-items: center;
+  gap: 3rem;
+  width: 50%;
+  flex-wrap: nowrap;
+}
+
+.image-container-tracking {
+  display: flex;
+  align-items: center;
+  gap: 3rem;
+  width: 50%;
+  flex-wrap: nowrap;
+}
+
+.image-container-battery {
+  display: flex;
+  align-items: center;
+  gap: 3rem;
+  width: 50%;
+  flex-wrap: nowrap;
+}
+
+.image-container-auto {
+  display: flex;
+  align-items: center;
+  gap: 5.6rem;
+  width: 50%;
+  flex-wrap: nowrap;
+}
+
 .feature-image {
   flex: 1 1 40%;
   max-width: 20%;
   height: auto;
   object-fit: cover;
   border-radius: 5px;
+}
+
+.image-container-parts {
+  display: flex;
+  align-items: center;
+  gap: 6rem;
+  width: 50%;
+  flex-wrap: nowrap;
+}
+
+.drone-image {
+  flex: 1 1 40%;
+  max-width: 40%;
+  height: auto;
+  object-fit: cover;
+  border-radius: 5px;
+}
+
+.drone-image-fly {
+  flex: 1 1 40%;
+  max-width:57%;
+  height: auto;
+  object-fit: cover;
+  border-radius: 5px;
+}
+
+.drone-image-MP {
+  flex: 1 1 40%;
+  max-width: 60%;
+  height: auto;
+  object-fit: cover;
+  border-radius: 5px;
+}
+
+.drone-image-vertical {
+  flex: 1 1 40%;
+  max-width: 22.5%;
+  height: auto;
+  object-fit: cover;
+  border-radius: 5px;
+}
+
+.feature-image-cognito {
+  flex: 1 1 40%;
+  max-width: 15%;
+  height: auto;
+  object-fit: cover;
+  border-radius: 5px;
+  margin-left:-3%;
 }
 
 .feature-image-tracking {
@@ -578,6 +668,8 @@ body {
     width: 50%;
     flex-wrap: wrap;
   }
+
+  
   
   .image-container-login {
     display: flex;
@@ -609,6 +701,63 @@ body {
     gap: 5rem;
     width: 100%;
     flex-wrap: wrap;
+  }
+
+  .image-container-parts {
+    display: flex;
+    align-items: center;
+    gap: 3rem;
+    width: 100%;
+    flex-wrap: wrap;
+  }
+
+  .image-container-battery {
+    display: flex;
+    align-items: center;
+    gap: 3rem;
+    width: 100%;
+    flex-wrap: wrap;
+  }
+
+  .image-container-auto {
+    display: flex;
+    flex-direction:row;
+    gap: 2rem;
+    width: 100%;
+    flex-wrap: wrap;
+  }
+
+  .drone-image-fly {
+    flex: 1 1 40%;
+    max-width:45%;
+    height: auto;
+    object-fit: cover;
+    border-radius: 5px;
+    margin-left: 24%;
+  }
+  
+  .drone-image-MP {
+    flex: 1 1 40%;
+    max-width: 45%;
+    height: auto;
+    object-fit: cover;
+    border-radius: 5px;
+  }
+  
+  .drone-image {
+    flex: 1 1 40%;
+    max-width: 40%;
+    height: auto;
+    object-fit: cover;
+    border-radius: 5px;
+  }
+  
+  .drone-image-vertical {
+    flex: 1 1 40%;
+    max-width: 22.5%;
+    height: auto;
+    object-fit: cover;
+    border-radius: 5px;
   }
   
   .feature-image {
