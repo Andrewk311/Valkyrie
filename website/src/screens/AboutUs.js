@@ -86,7 +86,7 @@ function AboutUs() {
                                 Bobby Putra
                             </a>
                         </h3>
-                        <p className="teamMemberRole">Drone Manufacturing/Testing</p>
+                        <p className="teamMemberRole">Drone Manufacturing</p>
                     </div>
                     <div className="teamMember">
                         <img className="teamMemberImage" src={teamMember4} alt="Team Member 4" />
@@ -130,7 +130,7 @@ function AboutUs() {
                 </section>
                 <section classname="teamMoments">
                 <div className="carousel-container-about">
-                    <h2 className="carousel-title-about"><br></br>Team Moments (this part needs work)</h2>
+                    <h2 className="carousel-title-about"><br></br>Team Moments</h2>
                     <div className="hero-carousel-about">
                         <div className="carousel-slides-about">
                             {images.map((image, index) => (
@@ -144,10 +144,10 @@ function AboutUs() {
                             ))}
                         </div>
                         <button className="carousel-button prev-about" onClick={prevSlide}>
-                            Prev
+                            {'<'}--
                         </button>
                         <button className="carousel-button next-about" onClick={nextSlide}>
-                            Next
+                            --{'>'}
                         </button>
                     </div>
                 </div>
