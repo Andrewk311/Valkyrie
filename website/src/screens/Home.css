@@ -444,8 +444,9 @@ button:hover {
 } */
 
 /* Mobile devices */
-@media (max-width: 480px) {
+@media screen and (max-width: 480px) {
 
+  
   .buttons-container {
     display: flex;
     flex-direction: row;
@@ -457,7 +458,7 @@ button:hover {
     justify-content: space-between;
     padding: 0.5rem 2rem;
     background-color: var(--quaternary-color);
-    min-height: 50px; /* add this line */
+    min-height: 50px;
     gap:1rem;
   }
 
@@ -476,7 +477,7 @@ button:hover {
   }
 
   .button-margin {
-    margin-right: 1.0rem;
+    margin-right: 0.5rem;
   }
 
   /* Adjust hero section */
