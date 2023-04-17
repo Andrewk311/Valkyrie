@@ -241,6 +241,7 @@ body {
   gap: 3rem;
   width: 50%;
   flex-wrap: nowrap;
+  margin-left:28.55%;
 }
 
 .image-container-auto {
@@ -714,9 +715,10 @@ body {
   .image-container-battery {
     display: flex;
     align-items: center;
-    gap: 3rem;
+    gap: 2rem;
     width: 100%;
     flex-wrap: wrap;
+    margin-left: 8%;
   }
 
   .image-container-auto {
