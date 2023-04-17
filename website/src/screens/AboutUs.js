@@ -107,6 +107,8 @@ function AboutUs() {
                         <p className="teamMemberRole">Drone Flight Testing</p>
                     </div>
                 </div>
+                </section>
+                <section className="aboutTeam">
                 <div className="teamDescription">
                     <h2 className="teamDescriptionTitle">About the Team</h2>
                     <div className="statisticsContainer">
@@ -125,8 +127,10 @@ function AboutUs() {
                     </div>
                     </div>
                 </div>
+                </section>
+                <section classname="teamMoments">
                 <div className="carousel-container-about">
-                    <h2 className="carousel-title-about">Team Moments (this part needs work)</h2>
+                    <h2 className="carousel-title-about"><br></br>Team Moments (this part needs work)</h2>
                     <div className="hero-carousel-about">
                         <div className="carousel-slides-about">
                             {images.map((image, index) => (

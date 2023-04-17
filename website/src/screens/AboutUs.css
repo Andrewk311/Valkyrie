@@ -44,8 +44,8 @@
 }
 
 .aboutUsSection {
-  background-color: #f1f1f1;
   padding: 20px;
+  background-color: #ccccff;
 }
 
 .aboutUsTitle {
@@ -61,6 +61,7 @@
   justify-content: center;
   padding: 50px;
   margin-top: -2rem;
+  background-color: #ccccff;
 }
 
 .teamMember {
@@ -69,6 +70,7 @@
   margin: 20px;
   text-align: center;
   font-family: arial;
+  background-color: white;
 }
 
 .teamMemberImage {
@@ -82,14 +84,14 @@
 
 .teamMemberName {
   font-size: 18px;
-  color: black;
+  color: #212529;
   font-weight: bold;
   padding: 16px 0;
 }
 
 .teamMemberRole {
   font-size: 15px;
-  color: gray;
+  color: #212529;
 }
 
 .teamPhotos {
@@ -101,6 +103,7 @@
   font-size: 1.5rem;
   font-weight: bold;
   margin-bottom: 1rem;
+  color: #212529;
 }
 
 .teamPhoto {
@@ -112,6 +115,7 @@
 .teamDescription {
   text-align: center;
   margin-top: 2rem;
+  background-color: white;
 }
 
 .teamDescriptionTitle {
@@ -134,10 +138,11 @@
 
 .chartsContainer {
   display: flex;
-  justify-content: space-around;
-  gap:0%;
+  gap:10%;
   margin-top: 20px;
   order: 2;
+  justify-content: center;
+  align-items: center;
 }
 
 .chart {
@@ -160,15 +165,10 @@
 
 .chartImage1{
   width: 100%;
-  margin-left: auto;
-  margin-right: auto;
-  margin-top:11%;
 }
 
 .chartImage2 {
   width: 100%;
-  margin-left: auto;
-  margin-right: auto;
 }
 
 .imageCaption1, .imageCaption2 {
@@ -176,15 +176,20 @@
   width: 100%;
 }
 
+.teamMoments {
+  background-color: #ccccff;
+}
+
 .carousel-container-about {
   text-align: center;
   margin-top: 2rem;
+  background-color: #ccccff;
 }
 
 .carousel-title-about {
   font-size: 1.5rem;
   font-weight: bold;
-  margin-bottom: 1rem;
+
 }
 
 .hero-carousel-about {
