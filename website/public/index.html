@@ -42,11 +42,13 @@
     <script>
       function setViewport() {
         const viewportMeta = document.getElementById('viewport-meta');
+        const breakpoint = 480;
         const windowWidth = window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth;
         const deviceWidth = Math.min(screen.width, screen.height);
+        const initialScale = deviceWidth / breakpoint;
         
-        if (windowWidth < deviceWidth) {
-          viewportMeta.setAttribute('content', 'width=' + deviceWidth + ', initial-scale=' + (windowWidth / deviceWidth));
+        if (deviceWidth <= breakpoint) {
+          viewportMeta.setAttribute('content', 'width=' + breakpoint + ', initial-scale=' + initialScale);
         } else {
           viewportMeta.setAttribute('content', 'width=device-width, initial-scale=1');
         }
