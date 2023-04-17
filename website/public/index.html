@@ -52,8 +52,12 @@
         }
       }
     
-      window.addEventListener('resize', setViewport);
-      setViewport();
+      function handleViewportUpdate() {
+        setTimeout(setViewport, 100);
+      }
+    
+      window.addEventListener('DOMContentLoaded', handleViewportUpdate);
+      window.addEventListener('orientationchange', handleViewportUpdate);
     </script>
   </body>
 </html>
