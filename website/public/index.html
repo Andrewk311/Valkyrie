@@ -43,10 +43,10 @@
       function setViewport() {
         const viewportMeta = document.getElementById('viewport-meta');
         const windowWidth = window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth;
-        const breakpoint = 480;
+        const deviceWidth = Math.min(screen.width, screen.height);
         
-        if (windowWidth < breakpoint) {
-          viewportMeta.setAttribute('content', 'width=480, initial-scale=' + (windowWidth / breakpoint));
+        if (windowWidth < deviceWidth) {
+          viewportMeta.setAttribute('content', 'width=' + deviceWidth + ', initial-scale=' + (windowWidth / deviceWidth));
         } else {
           viewportMeta.setAttribute('content', 'width=device-width, initial-scale=1');
         }
