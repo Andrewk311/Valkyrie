@@ -684,6 +684,17 @@ button:hover {
     /* margin-left: 60px; */
   }
 
+  .logo-box {
+    display:flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    /* margin-right: %; */
+    margin-left: -13%;
+    gap:0.5rem;
+    /* width: 70%; */
+  }
+
   .how-its-built-btn:hover {
     background-color: #0056b3;
   }

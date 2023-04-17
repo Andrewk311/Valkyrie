@@ -197,7 +197,7 @@ function Home() {
                                 How We Built It
                             </button>
                 </div>
-                <div>
+                <div className="logo-box">
                     <img className="logo-image" src={lambdaLogo} alt="serviceLogos"/>
                     <img className="logo-image" src={reactLogo} alt="serviceLogos"/>
                     <img className="logo-image" src={APIGatewayLogo} alt="serviceLogos"/>
