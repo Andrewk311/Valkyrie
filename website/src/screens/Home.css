@@ -475,7 +475,7 @@ button:hover {
   .hero {
     flex-direction: column;
     padding: 4rem 1rem;
-    width:100%;
+    width:93.4%;
   }
 
   /* Adjust hero title and subtitle */
@@ -540,7 +540,7 @@ button:hover {
   .app-features {
     flex-direction: column;
     padding: 2rem 1rem;
-    width: 100%;
+    width: 93.4%;
   }
 
   /* Adjust app features image container */
@@ -552,7 +552,7 @@ button:hover {
 
   /* Adjust app features image */
   .app-features-image img {
-    width: 100%;
+    width: 90%;
   }
 
   .app-features-image-rounded img {
@@ -561,7 +561,7 @@ button:hover {
 
   /* Adjust app features text */
   .app-features-text {
-    max-width: 100%;
+    max-width: 90%;
     margin-bottom: 1rem;
   }
 
