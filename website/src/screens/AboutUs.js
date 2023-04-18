@@ -2,7 +2,7 @@ import './AboutUs.css';
 import React, { useRef, useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import andrewPic from './../Images/Headshots/AndrewHeadshot.JPG';
-import teamMember2 from './../Images/Dallas4.JPG';
+import ayleenPic from './../Images/Headshots/AyleenHeadshot.jpg';
 import bobbyPic from './../Images/Headshots/BobbyHeadshot.jpeg';
 import teamMember4 from './../Images/Dallas6.JPG';
 import teamMember5 from './../Images/Dallas7.JPG';
@@ -10,7 +10,7 @@ import teamPhoto from './../Images/Dallas2.jpg';
 import pharmDataChart from './../Images/PharmDataChart.png';
 import pharmDataMap from './../Images/PharmData.png';
 
-const images = [andrewPic, teamMember2, bobbyPic, teamMember4, teamMember5];
+const images = [andrewPic, ayleenPic, bobbyPic, teamMember4, teamMember5];
 
 function AboutUs() {
 
@@ -71,7 +71,7 @@ function AboutUs() {
                         <p className="teamMemberRole">Backend/Frontend</p>
                     </div>
                     <div className="teamMember">
-                        <img className="teamMemberImage" src={teamMember2} alt="Team Member 2" />
+                        <img className="teamMemberImage" src={ayleenPic} alt="Team Member 2" />
                         <h3 className="teamMemberName">
                             <a href="https://www.linkedin.com/in/ayleen-durasno/" target="_blank" rel="noopener noreferrer">
                                 Ayleen Durasno
