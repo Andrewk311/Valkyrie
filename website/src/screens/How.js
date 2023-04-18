@@ -300,12 +300,40 @@ function How() {
                                 {/* App/Pharmacy Portal content */}
                                 {selectedFeature === "Box" && (
                                     <div className="feature-section">
-                                        {/* Sign-up/Login content */}
+                                        {selectedFeature === "Box" && (
+                                        <div className="feature-section">
+                                            <h3>Box:</h3>
+                                            <div className="feature-content">
+                                                <div className="image-container-battery">
+                                                    <img className="drone-image" src={battery} alt="Image 1" />
+                                                    <img className="drone-image" src={battery2} alt="Image 2" />
+                                                </div>
+                                                <p className="feature-description">
+                                                    {/* Add the text description here */}
+                                                    The case and door of the APDS utilize 3D printed elements designed in Solidworks and printed with PLA filament, which was selected for its low cost in manufacturing, ability to protect cargo from rough flight conditions, and sustainability in production. The APDS box includes a dedicated compartment to store and protect batteries from excessive jostling during flight, along with the delivery compartment which houses the medical payload and electronics to control the door mechanisms. 
+                                                </p>
+                                            </div>
+                                        </div>
+                                    )}
                                     </div>
                                 )}
                                 {selectedFeature === "Electrical" && (
                                     <div className="feature-section">
-                                        {/* Delivery Address Confirmation content */}
+                                        {selectedFeature === "Electrical" && (
+                                        <div className="feature-section">
+                                            <h3>Electrical Components:</h3>
+                                            <div className="feature-content">
+                                                <div className="image-container-battery">
+                                                    <img className="drone-image" src={battery} alt="Image 1" />
+                                                    <img className="drone-image" src={battery2} alt="Image 2" />
+                                                </div>
+                                                <p className="feature-description">
+                                                    {/* Add the text description here */}
+                                                    The payload delivery system is controlled by an Arduino Uno microcontroller which is able to receive Bluetooth signals from the user upon arrival at the the delivery location, at which point servo motors open the delivery doors and allow the medicine to be delivered to the user. The microcontroller and associated hardware can be powered directly from the drone’s batteries, or via an additional battery mounted in the APDS, though at the cost of a lower maximum payload weight.
+                                                </p>
+                                            </div>
+                                        </div>
+                                    )}
                                     </div>
                                 )}
                             </div>

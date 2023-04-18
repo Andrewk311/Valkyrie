@@ -1,16 +1,16 @@
 import './AboutUs.css';
 import React, { useRef, useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
-import teamMember1 from './../Images/Dallas8.JPG';
+import andrewPic from './../Images/Headshots/AndrewHeadshot.JPG';
 import teamMember2 from './../Images/Dallas4.JPG';
-import teamMember3 from './../Images/Dallas5.JPG';
+import bobbyPic from './../Images/Headshots/BobbyHeadshot.jpeg';
 import teamMember4 from './../Images/Dallas6.JPG';
 import teamMember5 from './../Images/Dallas7.JPG';
 import teamPhoto from './../Images/Dallas2.jpg';
 import pharmDataChart from './../Images/PharmDataChart.png';
 import pharmDataMap from './../Images/PharmData.png';
 
-const images = [teamMember1, teamMember2, teamMember3, teamMember4, teamMember5];
+const images = [andrewPic, teamMember2, bobbyPic, teamMember4, teamMember5];
 
 function AboutUs() {
 
@@ -62,7 +62,7 @@ function AboutUs() {
                 <h1 className="aboutUsTitle">Meet the Team</h1>
                 <div className="teamMembers">
                     <div className="teamMember">
-                        <img className="teamMemberImage" src={teamMember1} alt="Team Member 1" />
+                        <img className="teamMemberImage" src={andrewPic} alt="Team Member 1" />
                         <h3 className="teamMemberName">
                             <a href="https://www.linkedin.com/in/andrew--king/" target="_blank" rel="noopener noreferrer">
                                 Andrew King
@@ -80,7 +80,7 @@ function AboutUs() {
                         <p className="teamMemberRole">Frontend/UI</p>
                     </div>
                     <div className="teamMember">
-                        <img className="teamMemberImage" src={teamMember3} alt="Team Member 3" />
+                        <img className="teamMemberImage" src={bobbyPic} alt="Team Member 3" />
                         <h3 className="teamMemberName">
                             <a href="https://www.linkedin.com/in/bobby-putra/" target="_blank" rel="noopener noreferrer">
                                 Bobby Putra
