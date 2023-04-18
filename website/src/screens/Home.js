@@ -79,6 +79,7 @@ function Home() {
                 </div>
                 {/* Add a hero image with a drone */}
                 <div className="hero-carousel">
+                    <p>*Add video here*</p>
                     <div className="carousel-slides">
                         <div className={`carousel-image-container ${activeSlide === 0 ? 'active' : ''}`}>
                             <img className="carousel-image" src={images[0]} alt="drone" />
