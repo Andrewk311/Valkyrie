@@ -9,18 +9,34 @@ import teamMember4 from './../Images/Dallas7.JPG';
 import teamPhoto from './../Images/Dallas2.jpg';
 import pharmDataChart from './../Images/PharmDataChart.png';
 import pharmDataMap from './../Images/PharmData.png';
+import ayleenPharm from './../Images/TeamPics/AyleenPharm.JPG';
+import bobbyPharm from './../Images/TeamPics/BobbyPharm.jpg';
+import andrewAyleenCode from './../Images/TeamPics/AndrewAyleenCode.jpg';
+import andrewAyleenCode2 from './../Images/TeamPics/AndrewAyleenCode2.jpg';
+import kieranSunitDrone from './../Images/TeamPics/KieranSunitDrone.jpg';
 
-const images = [andrewPic, ayleenPic, bobbyPic, teamMember4, sunitPic];
+const images = [ayleenPharm, andrewAyleenCode, bobbyPharm, kieranSunitDrone, andrewAyleenCode2];
 
 function AboutUs() {
 
     const [activeSlide, setActiveSlide] = useState(0);
     const navigate = useNavigate();
     const topRef = useRef(null);
+    const [windowWidth, setWindowWidth] = useState(window.innerWidth);
+
+    useEffect(() => {
+        const handleResize = () => {
+          setWindowWidth(window.innerWidth);
+        };
+        window.addEventListener("resize", handleResize);
+        return () => {
+          window.removeEventListener("resize", handleResize);
+        };
+      }, []);    
 
     useEffect(() => {
         topRef.current.scrollIntoView();
-      }, []);
+    }, []);
 
     useEffect(() => {
         const timer = setTimeout(() => {
@@ -107,37 +123,41 @@ function AboutUs() {
                         <p className="teamMemberRole">Drone Flight Testing</p>
                     </div>
                 </div>
-                </section>
-                <section className="aboutTeam">
+            </section>
+            <section className="aboutTeam">
                 <div className="teamDescription">
                     <h2 className="teamDescriptionTitle">About the Team</h2>
                     <div className="statisticsContainer">
                         <p className="teamDescriptionText">
                             We are a team of five Electrical and Computer Engineering students at Rutgers University who came together with a vision to address a pressing issue in the United States that many people may not be aware of: the decline of pharmacies in rural areas. Due to small and dispersed populations, it has become increasingly difficult for pharmacies to remain profitable in these regions, leaving 1.6 million people living over 20 miles from the nearest one. Limited public transportation and reliance on personal vehicles, family, or friends for transport exacerbate the problem for those without easy access to a pharmacy. While mail-in services do exist, they can take days or even weeks to reach patients and are often subject to delays, causing major inconveniences for those in urgent need of medication. To tackle this issue, we came up with the idea of creating a pharmaceutical delivery drone called "Valkyrie." Our innovative drone aims to provide a fast and efficient method of delivering medications to people in rural areas who would otherwise have limited access to pharmacies, thus improving healthcare accessibility and enhancing the quality of life for those in underserved communities.
                         </p>
-                    <div class="chartsContainer">
-                        <div className="chart chartLeft">
-                            <img className="chartImage1" src={pharmDataChart} alt="Pharmacy Data Chart" />
-                            <p className="imageCaption1">Decline of rural independent pharmacies that were the only one in the community.</p>
+                        <div class="chartsContainer">
+                            <div className="chart chartLeft">
+                                <img className="chartImage1" src={pharmDataChart} alt="Pharmacy Data Chart" />
+                                <p className="imageCaption1">Decline of rural independent pharmacies that were the only one in the community.</p>
+                            </div>
+                            <div className="chart chartRight">
+                                <img className="chartImage2" src={pharmDataMap} alt="Pharmacy Data Map" />
+                                <p className="imageCaption2">Colors represent the number of pharmacies in each area, red means none, yellow means only one.</p>
+                            </div>
                         </div>
-                        <div className="chart chartRight">
-                            <img className="chartImage2" src={pharmDataMap} alt="Pharmacy Data Map" />
-                            <p className="imageCaption2">Colors represent the number of pharmacies in each area, red means none, yellow means only one.</p>
-                        </div>
-                    </div>
                     </div>
                 </div>
-                </section>
-                <section classname="teamMoments">
+            </section>
+            <section className="teamMoments">
                 <div className="carousel-container-about">
                     <h2 className="carousel-title-about"><br></br>Team Moments</h2>
                     <div className="hero-carousel-about">
-                        <div className="carousel-slides-about">
+                        <div className="carousel-slides-about" 
+                        style={{ 
+                            transform:
+                                windowWidth > 480
+                                ? `translateX(-${activeSlide * 50}%)`
+                                : `translateX(-${activeSlide * 0}%)`,}}>
                             {images.map((image, index) => (
                                 <div
                                     key={index}
-                                    className={`carousel-image-container-about ${activeSlide === index ? "active" : ""
-                                        }`}
+                                    className={`carousel-image-container-about ${activeSlide === index ? "active" : ""}`}
                                 >
                                     <img className="carousel-image-about" src={image} alt="Team moment" />
                                 </div>
