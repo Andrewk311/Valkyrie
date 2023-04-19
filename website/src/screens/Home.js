@@ -144,6 +144,7 @@ function Home() {
                         no matter how remote or inaccessible.
                     </p>
                 </div>
+                <p>*Replace this with demo vid* </p>
             </section>
             <iframe className="YouTube" src="https://www.youtube.com/embed/5Vj0OXxlANE" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
             </div>
