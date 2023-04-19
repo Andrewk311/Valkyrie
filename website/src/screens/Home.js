@@ -7,6 +7,8 @@ import safety from './../Images/SafetyIcon.jpg';
 import convenience from './../Images/ConvenienceIcon.jpg';
 import drone2 from './../Images/Drone2.jpg';
 import drone3 from './../Images/Drone3.jpg';
+import droneBox1 from './../Images/HowItBuiltPics/DroneWithBox.jpg';
+import dronePicParts2 from './../Images/HowItBuiltPics/DronePicParts2.jpg';
 import dallas from './../Images/Dallas2.jpg';
 import tracking from './../Images/TrackOrder2.PNG';
 import store from './../Images/StoreFront2.png';
@@ -24,17 +26,28 @@ import dynamoLogo from './../Images/Logos/DynamoLogo.png';
 import graphqlLogo from './../Images/Logos/GraphqlLogo.png';
 import amplifyLogo from './../Images/Logos/AmplifyLogo.png';
 
-const images = [drone, drone2, drone3];
+const images = [drone, drone2, drone3, droneBox1];
 
 function Home() {
 
     const navigate = useNavigate();
     const [activeSlide, setActiveSlide] = useState(0);
+    const [windowWidth, setWindowWidth] = useState(window.innerWidth);
+
+    useEffect(() => {
+        const handleResize = () => {
+          setWindowWidth(window.innerWidth);
+        };
+        window.addEventListener("resize", handleResize);
+        return () => {
+          window.removeEventListener("resize", handleResize);
+        };
+      }, []);
 
     useEffect(() => {
         const timer = setTimeout(() => {
             setActiveSlide((prevSlide) => (prevSlide === images.length - 1 ? 0 : prevSlide + 1));
-        }, 6000);
+        }, 4000);
         return () => clearTimeout(timer);
     }, [activeSlide]);
 
@@ -78,25 +91,28 @@ function Home() {
                     </p>
                 </div>
                 {/* Add a hero image with a drone */}
-                <div className="hero-carousel">
-                    <p>*Add video here*</p>
-                    <div className="carousel-slides">
-                        <div className={`carousel-image-container ${activeSlide === 0 ? 'active' : ''}`}>
-                            <img className="carousel-image" src={images[0]} alt="drone" />
-                        </div>
-                        <div className={`carousel-image-container ${activeSlide === 1 ? 'active' : ''}`}>
-                            <img className="carousel-image" src={images[1]} alt="speed" />
-                        </div>
-                        <div className={`carousel-image-container ${activeSlide === 2 ? 'active' : ''}`}>
-                            <img className="carousel-image" src={images[2]} alt="safety" />
+                <div className="carousel-container-about-home">
+                    <div className="hero-carousel-about">
+                        <div className="carousel-slides-about" 
+                        style={{ 
+                            transform:
+                                windowWidth > 480
+                                ? `translateX(-${activeSlide * 50}%)`
+                                : `translateX(-${activeSlide * 0}%)`,}}>
+                            {images.map((image, index) => (
+                                <div
+                                    key={index}
+                                    className={`carousel-image-container-about ${activeSlide === index ? "active" : ""}`}
+                                >
+                                    <img className="carousel-image-about" src={image} alt="Team moment" />
+                                </div>
+                            ))}
                         </div>
                     </div>
-                    {/* <img src={images[0]}></img> */}
                 </div>
             </section>
-            {/* Add a features section with some icons, titles and descriptions */}
+            <div className="featuresAndVid">
             <section className="features">
-                {/* Add a feature card for speed */}
                 <div className="feature-card">
                     <div className="feature-icon">
                         <img src={speed} alt="speed" /> {/* import your speed icon */}
@@ -129,6 +145,8 @@ function Home() {
                     </p>
                 </div>
             </section>
+            <iframe className="YouTube" src="https://www.youtube.com/embed/5Vj0OXxlANE" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+            </div>
             <section className="app-features">
                 <div className="imageContainer">
                     <div className="app-features-image app-features-image-rounded">

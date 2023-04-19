@@ -16,6 +16,10 @@
   --primary-color:#ccccff;
 }
 
+body {
+  overflow-x: hidden;
+}
+
 .homePageHeader {
   display: flex;
   align-items: center;
@@ -108,12 +112,16 @@ button:hover {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 7rem;
+  /* padding: 1rem; */
   background-color: #ccccff; /* change this line */
 }
 
 
 /* Style the hero content */
+
+.hero-content {
+  width:70%;
+}
 
 .hero-title {
   font-size: 3rem;
@@ -126,22 +134,38 @@ button:hover {
   color: black;
 }
 
+.YouTube {
+  width: 672px;
+  height: 378px;
+  margin-top:-2%;
+  margin-bottom:2%;
+}
+
 /* Style the hero image */
 
-.hero-carousel {
+/* .hero-carousel {
   flex: 1;
-  max-width: 100%;
-  min-width: 70%;
-  min-height: 70%;
+  max-width: 50%;
+  position: relative;
+} */
+
+.carousel-container-about-home{
+  max-width:50%;
 }
 
 .carousel-slides {
+  position: relative;
   display: flex;
   justify-content: center;
   align-items: center;
+  width: 75%;
+  height: auto;
+  /* margin-left:55%;
+  margin-top:-10%; */
 }
 
 .carousel-image-container {
+  position: absolute;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -157,7 +181,6 @@ button:hover {
   max-width: 35%;
   max-height: 35%;
   object-fit: contain;
-  padding: 19px;
 }
 
 .carousel-image.active {
@@ -182,6 +205,12 @@ button:hover {
 
 .carousel-button.next {
   right: 120px;
+}
+
+.featuresAndVid {
+  display:flex;
+  flex-direction:column;
+  align-items: center;
 }
 
 /* Style the features section */
@@ -491,6 +520,12 @@ button:hover {
   .feature-card {
     flex-basis: calc(100% - 1rem);
     margin-bottom: 1rem;
+  }
+
+  .YouTube {
+    width: 431.2px;
+    height: 242.55px;
+    margin-top:-9%;
   }
 
   /* Style the features section */
