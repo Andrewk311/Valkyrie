@@ -252,6 +252,17 @@ body {
   flex-wrap: nowrap;
 }
 
+.image-container-box {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  /* justify-content: center; */
+  gap: 10rem;
+  width: 50%;
+  flex-wrap: nowrap;
+  margin-left:9%;
+}
+
 .feature-image {
   flex: 1 1 40%;
   max-width: 20%;
@@ -266,6 +277,22 @@ body {
   gap: 6rem;
   width: 50%;
   flex-wrap: nowrap;
+}
+
+.drone-image-box {
+  flex: 1 1 40%;
+  max-width: 30%;
+  height: auto;
+  object-fit: cover;
+  border-radius: 5px;
+}
+
+.drone-image-bottom {
+  flex: 1 1 40%;
+  max-width: 40%;
+  height: auto;
+  object-fit: cover;
+  border-radius: 5px;
 }
 
 .drone-image {
@@ -298,6 +325,15 @@ body {
   height: auto;
   object-fit: cover;
   border-radius: 5px;
+}
+
+.box-model {
+  flex: 1 1 40%;
+  max-width: 50%;
+  height: auto;
+  object-fit: cover;
+  /* border-radius: 5px; */
+  /* margin-left:-3%; */
 }
 
 .feature-image-cognito {
@@ -727,6 +763,42 @@ body {
     gap: 2rem;
     width: 100%;
     flex-wrap: wrap;
+  }
+
+  .image-container-box {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    /* justify-content: center; */
+    gap: 0.5rem;
+    width: 100%;
+    flex-wrap: wrap;
+    margin-left:0%;
+  }
+
+  .box-model {
+    flex: 1 1 40%;
+    max-width: 55%;
+    height: auto;
+    object-fit: cover;
+    /* border-radius: 5px; */
+    /* margin-left:-3%; */
+  }
+
+  .drone-image-box {
+    flex: 1 1 40%;
+    max-width: 40%;
+    height: auto;
+    object-fit: cover;
+    border-radius: 5px;
+  }
+
+  .drone-image-bottom {
+    flex: 1 1 40%;
+    max-width: 50%;
+    height: auto;
+    object-fit: cover;
+    border-radius: 5px;
   }
 
   .drone-image-fly {

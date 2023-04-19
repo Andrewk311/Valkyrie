@@ -37,6 +37,11 @@ import battery from './../Images/HowItBuiltPics/Battery.jpg';
 import battery2 from './../Images/HowItBuiltPics/Battery2.jpg';
 import missionPlannerStats from './../Images/HowItBuiltPics/MissionPlannerStats.png';
 import droneFly from './../Images/HowItBuiltPics/DroneFly.jpg';
+import boxModel from './../Images/HowItBuiltPics/BoxModel.jpg';
+import droneWithBox3 from './../Images/HowItBuiltPics/DroneWithBox3.jpg';
+import droneBottom from './../Images/HowItBuiltPics/DroneBottom.jpg';
+
+
 
 function How() {
 
@@ -309,9 +314,10 @@ function How() {
                                         <div className="feature-section">
                                             <h3>Box:</h3>
                                             <div className="feature-content">
-                                                <div className="image-container-battery">
-                                                    <img className="drone-image" src={battery} alt="Image 1" />
-                                                    <img className="drone-image" src={battery2} alt="Image 2" />
+                                                <div className="image-container-box">
+                                                    <img className="box-model" src={boxModel} alt="Image 1" />
+                                                    <img className="drone-image-box" src={droneWithBox3} alt="Image 2" />
+                                                    <img className="drone-image-bottom" src={droneBottom} alt="Image 2" />
                                                 </div>
                                                 <p className="feature-description">
                                                     {/* Add the text description here */}
