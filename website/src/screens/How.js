@@ -174,8 +174,8 @@ function How() {
                                                 <p className="feature-description">
                                                     {/* Add the text description here */}
                                                     There are two main DyanmoDB tables used for storing the data. One table is responsible for storing Order Data, this includes any information necessary for 
-                                                    an order to be processed. The second table stores all the inventory data. As seen in the second photo, our Pharmacy Portal alllows for the pharmacist to check and 
-                                                    update inventory with a simple form. Query calls are made to pull all the information and display it to the pharmacist and to populate the app's browse screens. Any changes to the tables 
+                                                    an order to be processed. The second table stores all the inventory data. As seen in the second photo, our Pharmacy Portal allows for the pharmacist to check and 
+                                                    update inventory with a simple form. GraphQL query calls are made to pull all the information and display it to the pharmacist and to populate the app's browse screens. Any changes to the tables 
                                                     will be reflected on the app's end as well. Through each browse screen, each product avaiable will be able to be added to the user's cart and in the cart, deletion of products can be done. 
                                                     Once an order is checked out by a user, the pharmacist will be able to log onto their portal and confirm/deny the order and make any necessary live tracking updates.
 
