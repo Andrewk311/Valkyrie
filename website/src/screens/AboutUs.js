@@ -14,8 +14,10 @@ import bobbyPharm from './../Images/TeamPics/BobbyPharm.jpg';
 import andrewAyleenCode from './../Images/TeamPics/AndrewAyleenCode.jpg';
 import andrewAyleenCode2 from './../Images/TeamPics/AndrewAyleenCode2.jpg';
 import kieranSunitDrone from './../Images/TeamPics/KieranSunitDrone.jpg';
+import droneSetupBTS from './../Images/TeamPics/DroneSetupBTS.jpg';
+import droneSetupBTS2 from './../Images/TeamPics/DroneSetupBTS2.jpg';
 
-const images = [ayleenPharm, andrewAyleenCode, bobbyPharm, kieranSunitDrone, andrewAyleenCode2];
+const images = [ayleenPharm, andrewAyleenCode, bobbyPharm, kieranSunitDrone, droneSetupBTS, droneSetupBTS2, andrewAyleenCode2];
 
 function AboutUs() {
 
@@ -102,7 +104,7 @@ function AboutUs() {
                                 Bobby Putra
                             </a>
                         </h3>
-                        <p className="teamMemberRole">Drone Manufacturing</p>
+                        <p className="teamMemberRole">Lead Drone Engineer</p>
                     </div>
                     <div className="teamMember">
                         <img className="teamMemberImage" src={teamMember4} alt="Team Member 4" />

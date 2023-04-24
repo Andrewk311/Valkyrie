@@ -244,6 +244,15 @@ body {
   margin-left:28.55%;
 }
 
+.image-container-electric {
+  display: flex;
+  align-items: center;
+  gap: 3rem;
+  width: 75%;
+  flex-wrap: nowrap;
+  margin-left:15%;
+}
+
 .image-container-auto {
   display: flex;
   align-items: center;
@@ -326,6 +335,15 @@ body {
   object-fit: cover;
   border-radius: 5px;
 }
+
+.drone-image-schematic {
+  flex: 1 1 40%;
+  max-width: 56%;
+  height: auto;
+  object-fit: cover;
+  border-radius: 5px;
+}
+
 
 .box-model {
   flex: 1 1 40%;
@@ -755,6 +773,15 @@ body {
     width: 100%;
     flex-wrap: wrap;
     margin-left: 8%;
+  }
+
+  .image-container-electric {
+    display: flex;
+    align-items: center;
+    gap: 3rem;
+    width: 90%;
+    flex-wrap: nowrap;
+    margin-left:0%;
   }
 
   .image-container-auto {

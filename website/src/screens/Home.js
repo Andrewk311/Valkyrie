@@ -25,6 +25,7 @@ import cognitoLogo from './../Images/Logos/CognitoLogo.png';
 import dynamoLogo from './../Images/Logos/DynamoLogo.png';
 import graphqlLogo from './../Images/Logos/GraphqlLogo.png';
 import amplifyLogo from './../Images/Logos/AmplifyLogo.png';
+import teamPic from './../Images/TeamPics/TeamPic.png';
 
 const images = [drone, drone2, drone3, droneBox1];
 
@@ -146,7 +147,7 @@ function Home() {
                 </div>
                 <p>*Replace this with demo vid* </p>
             </section>
-            <iframe className="YouTube" src="https://www.youtube.com/embed/5Vj0OXxlANE" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+            <iframe className="YouTube" src="https://www.youtube.com/embed/MMpjPErWlhY" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
             </div>
             <section className="app-features">
                 <div className="imageContainer">
@@ -232,7 +233,7 @@ function Home() {
             {/* Add an about section with some text and an image */}
             <section className="about">
             <div className="about-image">
-                    <img src={dallas} alt="team" /> {/* import your team image */}
+                    <img src={teamPic} alt="team" /> 
                 </div>
                 <div className="about-text">
                     <h2>About Us</h2>

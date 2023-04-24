@@ -40,8 +40,8 @@ import droneFly from './../Images/HowItBuiltPics/DroneFly.jpg';
 import boxModel from './../Images/HowItBuiltPics/BoxModel.jpg';
 import droneWithBox3 from './../Images/HowItBuiltPics/DroneWithBox3.jpg';
 import droneBottom from './../Images/HowItBuiltPics/DroneBottom.jpg';
-
-
+import droneElectricStuff from './../Images/HowItBuiltPics/DroneElectricStuff.jpg';
+import electricSchematic from './../Images/HowItBuiltPics/ElectricSchematic.png';
 
 function How() {
 
@@ -334,9 +334,9 @@ function How() {
                                         <div className="feature-section">
                                             <h3>Electrical Components:</h3>
                                             <div className="feature-content">
-                                                <div className="image-container-battery">
-                                                    <img className="drone-image" src={battery} alt="Image 1" />
-                                                    <img className="drone-image" src={battery2} alt="Image 2" />
+                                                <div className="image-container-electric">
+                                                    <img className="drone-image" src={droneElectricStuff} alt="Image 1" />
+                                                    <img className="drone-image-schematic" src={electricSchematic} alt="Image 2" />
                                                 </div>
                                                 <p className="feature-description">
                                                     {/* Add the text description here */}
