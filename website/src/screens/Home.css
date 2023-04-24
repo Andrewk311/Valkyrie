@@ -173,6 +173,13 @@ button:hover {
   transition: opacity 0.5s;
 }
 
+.carousel-image-about-home {
+  width: 350px;
+  height: 500px;
+  object-fit: cover;
+  margin-bottom: 3%;
+}
+
 .carousel-image-container.active {
   opacity: 1;
 }

@@ -105,7 +105,7 @@ function Home() {
                                     key={index}
                                     className={`carousel-image-container-about ${activeSlide === index ? "active" : ""}`}
                                 >
-                                    <img className="carousel-image-about" src={image} alt="Team moment" />
+                                    <img className="carousel-image-about-home" src={image} alt="Team moment" />
                                 </div>
                             ))}
                         </div>
