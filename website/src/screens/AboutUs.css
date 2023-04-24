@@ -222,9 +222,9 @@
   }
   
   .carousel-image-about {
-    width: 310px;
-    height: auto;
-    object-fit: contain;
+    width: 400px;
+    height: 500px;
+    object-fit: cover;
     margin-bottom: 3%;
   }
   
@@ -428,8 +428,8 @@
   
   .carousel-image-about {
     width: 275px;
-    height:auto;
-    object-fit: contain;
+    height:375px;
+    object-fit: cover;
     margin-bottom: 3%;
   }
   
