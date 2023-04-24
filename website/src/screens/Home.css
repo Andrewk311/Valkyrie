@@ -424,7 +424,7 @@ button:hover {
 
 /* Style the about image */
 .about-image {
-  max-width: 20%; /* Adjust the width to your desired size */
+  max-width: 30%; /* Adjust the width to your desired size */
   margin-left: auto;
   margin-right: auto;
   text-align: center;
