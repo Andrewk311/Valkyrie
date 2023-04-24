@@ -74,8 +74,9 @@
 }
 
 .teamMemberImage {
-  width: 100%;
-  height: auto;
+  object-fit: cover;
+  width: 201px;
+  height: 375px;
 }
 
 .teamMember:hover {
@@ -97,6 +98,7 @@
 .teamPhotos {
   text-align: center;
   margin-top: 2rem;
+
 }
 
 .teamPhotosTitle {
@@ -285,8 +287,9 @@
   }
   
   .teamMemberImage {
+    object-fit: cover;
     width: 100%;
-    height: auto;
+    height: 200px;
   }
   
   .teamMember:hover {
