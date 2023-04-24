@@ -1,8 +1,8 @@
 import './How.css';
 import { useNavigate } from 'react-router-dom';
 import appImage from './../Images/Software.png';
-import droneImage from './../Images/HowItBuiltPics/DronePicBobby1.jpg';
-import droneBoxImage from './../Images/HowItBuiltPics/BoxProtoype.jpg';
+import droneImage from './../Images/HowItBuiltPics/DronePicBobby1.png';
+import droneBoxImage from './../Images/HowItBuiltPics/BoxProtoype.png';
 import React, { useRef, useState, useEffect } from 'react';
 import appSignIn from './../Images/HowItBuiltPics/AppSignIn.png';
 import appSignUp from './../Images/HowItBuiltPics/AppSignUp.png';
@@ -49,6 +49,7 @@ function How() {
     const [selectedCategory, setSelectedCategory] = useState(null);
     const topRef = useRef(null);
     const [selectedFeature, setSelectedFeature] = useState(null);
+    const [highlight, setHighlight] = useState(false);
 
     useEffect(() => {
         topRef.current.scrollIntoView();
@@ -82,9 +83,13 @@ function How() {
             </header>
             <section className="howBuiltSection">
                 <h1 className="howBuiltTitle">How We Built Valkyrie:</h1>
-
                 <div className="categories">
-                    <div className="category" onClick={() => handleCategoryClick({ title: 'App/Pharmacy Portal' })}>
+                    <div className="category" onClick={() => 
+                        handleCategoryClick({ title: 'App/Pharmacy Portal' })}
+                        sx={{
+                            bgcolor: selectedCategory === 'App/Pharmacy Portal' ? 'lightgrey' : 'unset',
+                          }}
+                    >
                         <img className="category-image-app" src={appLogo} alt="App" />
                         <p className="category-description">
                             App/Pharmacy Portal
