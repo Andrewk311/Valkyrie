@@ -1,6 +1,5 @@
 import React, {createContext, useState} from 'react';
 import { getProduct } from '../../services/ProductsService';
-import Other from './OtherScreen';
 export const CartContext = createContext();
 
 export function CartProvider(props) {

@@ -65,7 +65,7 @@ const Settings = (props) => {
     );
   }
 
-  var googleMapsAPI = "AIzaSyBmF_o7JmYo55KiewrTHqiDOupJ5FcbxRA";   //google maps api key to convert address to lat and long
+  var googleMapsAPI = "AIzaSyCu9MM1Gg0DsRt37c9fWu6mO4gA8TqUQsM";   //google maps api key to convert address to lat and long
   Geocoder.init(googleMapsAPI);
 
   // first retrival of user info
