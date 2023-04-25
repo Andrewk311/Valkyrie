@@ -736,3 +736,63 @@ button:hover {
     color: black; /* gray */
   }
 }
+
+@media screen and (min-width: 1200px) and (max-width: 1300px) {
+
+  .carousel-image-about-home {
+    width: 220px;
+    height: 350px;
+    object-fit: cover;
+    margin-bottom: 3%;
+  }
+}
+
+@media screen and (min-width: 1301px) and (max-width: 1400px) {
+
+  .carousel-image-about-home {
+    width: 250px;
+    height: 400px;
+    object-fit: cover;
+    margin-bottom: 3%;
+  }
+}
+
+@media screen and (min-width: 1401px) and (max-width: 1500px) {
+
+  .carousel-image-about-home {
+    width: 270px;
+    height: 450px;
+    object-fit: cover;
+    margin-bottom: 3%;
+  }
+}
+
+@media screen and (min-width: 1501px) and (max-width: 1600px) {
+
+  .carousel-image-about-home {
+    width: 290px;
+    height: 470px;
+    object-fit: cover;
+    margin-bottom: 3%;
+  }
+}
+
+@media screen and (min-width: 1601px) and (max-width: 1700px) {
+
+  .carousel-image-about-home {
+    width: 310px;
+    height: 485px;
+    object-fit: cover;
+    margin-bottom: 3%;
+  }
+}
+
+@media screen and (min-width: 1701px) and (max-width: 1800px) {
+
+  .carousel-image-about-home {
+    width: 330px;
+    height: 500px;
+    object-fit: cover;
+    margin-bottom: 3%;
+  }
+}
