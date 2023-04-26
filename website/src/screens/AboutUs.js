@@ -5,7 +5,7 @@ import andrewPic from './../Images/Headshots/AndrewHeadshot.JPG';
 import ayleenPic from './../Images/Headshots/AyleenHeadshot.jpg';
 import bobbyPic from './../Images/Headshots/BobbyHeadshot2.jpg';
 import sunitPic from './../Images/Headshots/SunitHeadshot.JPG';
-import teamMember4 from './../Images/Dallas7.JPG';
+import kieranPic from './../Images/Headshots/KieranHeadshot.jpg';
 import teamPhoto from './../Images/Dallas2.jpg';
 import pharmDataChart from './../Images/PharmDataChart.png';
 import pharmDataMap from './../Images/PharmData.png';
@@ -107,7 +107,7 @@ function AboutUs() {
                         <p className="teamMemberRole">Lead Drone Engineer</p>
                     </div>
                     <div className="teamMember">
-                        <img className="teamMemberImage" src={teamMember4} alt="Team Member 4" />
+                        <img className="teamMemberImage" src={kieranPic} alt="Team Member 4" />
                         <h3 className="teamMemberName">
                             <a href="https://www.linkedin.com/in/kieran-burns-324668186/" target="_blank" rel="noopener noreferrer">
                                 Kieran Burns
