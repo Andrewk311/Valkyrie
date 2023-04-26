@@ -80,7 +80,7 @@ export default OrderHistory;
 const styles = StyleSheet.create({
   productsListContainer: {
     backgroundColor:"rgba(227,55,55,1)",
-    height:'100%',
+    height:100,
     alignItems:'center',
   },
 

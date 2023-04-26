@@ -6,7 +6,7 @@ import { Ionicons } from "@expo/vector-icons";
 export function Order({order_number, isAccepted, orders, orderSpecification}) {
   return (
     <View style={styles.category}>
-            <View style={{width:'100%', marginLeft:16, marginTop:10}}>
+            <View style={{width:100, marginLeft:16, marginTop:10}}>
                 <View style={{flexDirection:'row'}}>
                     <View style={{marginRight:90,}}>
                         <Text style={styles.orderNumber}>Order: {order_number}</Text>

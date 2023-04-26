@@ -1,5 +1,5 @@
 import React, { createContext, useState, useEffect } from 'react';
-import { Auth } from 'aws-amplify';
+import { Auth, Hub } from 'aws-amplify';
 
 export const WebSocketContext = createContext();
 
@@ -10,10 +10,32 @@ export const WebSocketProvider = ({ children }) => {
 
   useEffect(() => {
     async function getUserInfo() {
-      const user = await Auth.currentAuthenticatedUser();
-      setEmail(user.attributes.email);
+      try{
+        const user = await Auth.currentAuthenticatedUser();
+        setEmail(user.attributes.email);
+      } catch (error){
+        console.log(error);
+      }
     }
     getUserInfo();
+  }, []);
+
+  useEffect(() => {
+    const listener = (data) => {
+      switch (data.payload.event) {
+        case 'signIn':
+          setEmail(data.payload.data.attributes.email);
+          break;
+        case 'signOut':
+          setEmail(null);
+          break;
+        default:
+          break;
+      }
+    };
+
+    Hub.listen('auth', listener);
+    return () => Hub.remove('auth', listener);
   }, []);
 
   useEffect(() => {
@@ -38,28 +60,12 @@ export const WebSocketProvider = ({ children }) => {
     ws.onmessage = (event) => {
       console.log("WebSocket readyState:", ws.readyState);
       console.log("Message received:", event.data);
-    
       var parsedMessage = JSON.parse(event.data);
-      // console.log('event.data: ' + parsedMessage2)
-      // const parsedMessage = {
-      //   "action": "orderStatusUpdate",
-      //   "data": {
-      //       "status": "Order Placed",
-      //       "email": "andrew.king@rutgers.edu"
-      //   }
-    // };
       console.log('MESSAGE PARSED: ', parsedMessage);
       console.log('PONG PRINT: ' + parsedMessage.type)
-      // Object.keys(parsedMessage).forEach((prop)=> console.log(prop));
-      //need to add check where parsedMessage
-      // var parsedMessage2 = JSON.parse(parsedMessage);
-      // console.log('PARSED2: ' + parsedMessage2);
       if (typeof parsedMessage === 'string') {
         parsedMessage = JSON.parse(parsedMessage);
       }
-      // console.log('PARSED2Action: ' + parsedMessage2.data.status);
-      // console.log('ACTION: ', parsedMessage['action']);
-    
       if (parsedMessage && parsedMessage.action === 'orderStatusUpdate' && parsedMessage.data && parsedMessage.data.status) {
         const status = parsedMessage.data.status;
         const parsedEmail = parsedMessage.data.email;

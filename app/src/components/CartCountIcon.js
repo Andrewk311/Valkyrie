@@ -7,7 +7,7 @@ export function CartCountIcon({navigation}) {
   const {getItemsCount} = useContext(CartContext);
   return (
     <View style={styles.container}>
-       <Ionicons name="cart" size={20} color="#000000"/>
+       <Ionicons name="cart" size={20} color='black'/>
       <Text style={styles.text} 
         onPress={() => {
           navigation.navigate('CartSummary');

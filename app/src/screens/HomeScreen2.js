@@ -170,7 +170,7 @@ const styles = StyleSheet.create({
     alignSelf:"center",
   },
   blackBold: {
-    color: "#00000",
+    color: "#000000",
     fontSize: 25,
     textAlign: "center",
     fontWeight:"bold",

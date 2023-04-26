@@ -29,7 +29,7 @@ const Account = (props) => {
           >         
           <Ionicons name="ios-map" size={50} color="black" />
           <View style={{marginLeft:20}}>     
-          <Text style={{color:"#000000", fontWeight:"bold", fontSize:20}}>Order Status</Text>
+          <Text style={{color:"white", fontWeight:"bold", fontSize:20}}>Order Status</Text>
           <Text style={{color:"white", fontWeight:"bold"}}>Live Tracking Available</Text>
           </View>  
         </TouchableOpacity>
@@ -86,7 +86,7 @@ const Account = (props) => {
               <Text style={styles.optionTitle}>Order History</Text>
               <Text style={styles.optionDescription}>View all previous orders and current order status</Text>
               </View>
-              <Ionicons name="ios-arrow-forward" size={30} color="#AA9798" marginRight="0"/>
+              <Ionicons name="ios-arrow-forward" size={30} color="#AA9798" marginRight="0%"/>
             </TouchableOpacity>
             <TouchableOpacity
             style={styles.SignOutBtn}

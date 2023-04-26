@@ -14,7 +14,8 @@ LogBox.ignoreLogs([
   "You should only render one navigator explicitly in your app",
   "Sending `onAnimatedValueUpdate` with no listeners registered.",
   "Require cycle: src/screens/browseScreens/CartContext.js -> src/screens/browseScreens/OtherScreen.js -> src/screens/browseScreens/CartContext.js",
-  'Warning: Each child in a list should have a unique "key" prop.'
+  'Warning: Each child in a list should have a unique "key" prop.',
+  'Warning: Failed %s type: %s%s, prop, Invalid prop `color` supplied to `Text`: #00000'
 ]);
 
 export default function App() {

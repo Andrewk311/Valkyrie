@@ -166,7 +166,7 @@ const Settings = (props) => {
           <TouchableWithoutFeedback onPress={Keyboard.dismiss} accessible={false}>
             <View style={{ flex: 1, justifyContent: "center" }}>
               <Text style={styles.whiteTitle}>General Info</Text>
-              <View style={{ borderBottomColor: 'white', borderBottomWidth: 3, width: '100%', alignSelf: 'center', marginBottom: 20, }} />
+              <View style={{ borderBottomColor: 'white', borderBottomWidth: 3, width: 100, alignSelf: 'center', marginBottom: 20, }} />
               <View style={{ marginLeft: 20, }}>
                 <Text style={styles.header}>Full Name</Text>
                 <TextInput
