@@ -176,9 +176,9 @@ const CartSummary = (props) => {
           </View>
           <TouchableOpacity style ={styles.checkoutBtn} 
           onPress={() => {checkoutAction((attributes.attributes.address == " ") ? 'Address is Missing, unable to Checkout' : 'Order Sent!')}} >
-            <Text style={{fontSize:20, fontWeight:'350'}}>Checkout</Text>
+            <Text style={{fontSize:20, fontWeight:'300'}}>Checkout</Text>
           </TouchableOpacity>
-          {errorMessage && <Text style={{fontSize:'15', marginTop:15, }}> {errorMessage} </Text>}
+          {errorMessage && <Text style={{fontSize:15, marginTop:15, }}> {errorMessage} </Text>}
       </View>
     );
   }
