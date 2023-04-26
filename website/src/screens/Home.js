@@ -146,7 +146,7 @@ function Home() {
                     </p>
                 </div>
             </section>
-            <iframe className="YouTube" src="https://www.youtube.com/embed/MMpjPErWlhY" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+            <iframe className="YouTube" src="https://www.youtube.com/embed/fdaaaqhy-HI" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
             </div>
             <section className="app-features">
                 <div className="imageContainer">
