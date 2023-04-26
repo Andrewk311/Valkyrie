@@ -87,6 +87,11 @@
   margin-top:10px;
 }
 
+.amplify-tabs-item:nth-of-type(2) {
+  display: none;
+}
+
+
 .div > button {
   background-color: #AA9798;
 }
